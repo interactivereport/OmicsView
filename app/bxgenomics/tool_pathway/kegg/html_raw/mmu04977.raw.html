@@ -1,0 +1,408 @@
+<html>
+<!---
+ENTRY       mmu04977
+DEFINITION  Vitamin digestion and absorption - Mus musculus (mouse)
+--->
+<head>
+<title>
+KEGG PATHWAY: Vitamin digestion and absorption - Mus musculus (mouse)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Vitamin digestion and absorption - Mus musculus (mouse)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=04977&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map04977.keg&query=mmu&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+mmu04977">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=mmu04977&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Vitamins are a diverse and chemically unrelated group of organic substances that share a common feature of being essential for normal health and well-being. They catalyze numerous biochemical reactions. Because humans and other mammals cannot synthesize these compounds (except for some synthesis of niacin), they must obtain them from exogenous sources via intestinal absorption. Vitamins  are classified based on their solubility in water or fat. Most of the water-soluble vitamins are transported across the small intestinal membrane by carrier-mediated mechanisms, but vitamin B12, cobalamin, is transported by a receptor-mediated mechanism. Intestinal absorption of fat-soluble vitamins requires all of the processes needed for fat absorption. After digestion, these vitamins and the products of pancreatic hydrolysis of triglycerides (TG) are emulsified by bile salts to form mixed micelles which are taken up by intestinal enterocytes and incorporated into chylomicrons (CM). CM are then secreted into the lymphatic system, and finally moves into the plasma.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="mmu.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu" selected>Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="04977" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="mmu04977" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/mmu/mmu04977.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=1150,662,4	href="/dbget-bin/www_bget?C00422"	title="C00422 (Triacylglycerol)" onmouseover="popupTimer(&quot;C00422&quot;, &quot;C00422 (Triacylglycerol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1153,693,4	href="/dbget-bin/www_bget?C02530"	title="C02530 (Cholesterol ester)" onmouseover="popupTimer(&quot;C02530&quot;, &quot;C02530 (Cholesterol ester)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1286,664,4	href="/dbget-bin/www_bget?C00422"	title="C00422 (Triacylglycerol)" onmouseover="popupTimer(&quot;C00422&quot;, &quot;C00422 (Triacylglycerol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1288,692,4	href="/dbget-bin/www_bget?C02530"	title="C02530 (Cholesterol ester)" onmouseover="popupTimer(&quot;C02530&quot;, &quot;C02530 (Cholesterol ester)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=120,758,4	href="/dbget-bin/www_bget?C01558"	title="C01558 (Bile salt)" onmouseover="popupTimer(&quot;C01558&quot;, &quot;C01558 (Bile salt)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=928,656,4	href="/dbget-bin/www_bget?C00422"	title="C00422 (Triacylglycerol)" onmouseover="popupTimer(&quot;C00422&quot;, &quot;C00422 (Triacylglycerol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=935,686,4	href="/dbget-bin/www_bget?C02530"	title="C02530 (Cholesterol ester)" onmouseover="popupTimer(&quot;C02530&quot;, &quot;C02530 (Cholesterol ester)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1266,681,4	href="/dbget-bin/www_bget?C02075+C05443+C02477+C02059+C00828+C05377"	title="C02075 (Retinyl ester), C05443 (Vitamin D3), C02477 (alpha-Tocopherol), C02059 (Phylloquinone), C00828 (Menaquinone), C05377 (Menadione)" onmouseover="popupTimer(&quot;C02075&quot;, &quot;C02075 (Retinyl ester), C05443 (Vitamin D3), C02477 (alpha-Tocopherol), C02059 (Phylloquinone), C00828 (Menaquinone), C05377 (Menadione)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1131,684,4	href="/dbget-bin/www_bget?C02075+C05443+C02477+C02059+C00828+C05377"	title="C02075 (Retinyl ester), C05443 (Vitamin D3), C02477 (alpha-Tocopherol), C02059 (Phylloquinone), C00828 (Menaquinone), C05377 (Menadione)" onmouseover="popupTimer(&quot;C02075&quot;, &quot;C02075 (Retinyl ester), C05443 (Vitamin D3), C02477 (alpha-Tocopherol), C02059 (Phylloquinone), C00828 (Menaquinone), C05377 (Menadione)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=843,717,4	href="/dbget-bin/www_bget?C02075"	title="C02075 (Retinyl ester)" onmouseover="popupTimer(&quot;C02075&quot;, &quot;C02075 (Retinyl ester)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=747,770,4	href="/dbget-bin/www_bget?C00473"	title="C00473 (Retinol)" onmouseover="popupTimer(&quot;C00473&quot;, &quot;C00473 (Retinol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=373,605,4	href="/dbget-bin/www_bget?C13202+C12981"	title="C13202 (alpha-Tocopherol acetate), C12981 (dl-alpha-Tocopherol nicotinate)" onmouseover="popupTimer(&quot;C13202&quot;, &quot;C13202 (alpha-Tocopherol acetate), C12981 (dl-alpha-Tocopherol nicotinate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=373,689,4	href="/dbget-bin/www_bget?C02477"	title="C02477 (alpha-Tocopherol)" onmouseover="popupTimer(&quot;C02477&quot;, &quot;C02477 (alpha-Tocopherol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=229,605,4	href="/dbget-bin/www_bget?C02075"	title="C02075 (Retinyl ester)" onmouseover="popupTimer(&quot;C02075&quot;, &quot;C02075 (Retinyl ester)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=229,771,4	href="/dbget-bin/www_bget?C00473"	title="C00473 (Retinol)" onmouseover="popupTimer(&quot;C00473&quot;, &quot;C00473 (Retinol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=481,341,4	href="/dbget-bin/www_bget?C05776"	title="C05776 (Vitamin B12)" onmouseover="popupTimer(&quot;C05776&quot;, &quot;C05776 (Vitamin B12)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=443,190,4	href="/dbget-bin/www_bget?C05776"	title="C05776 (Vitamin B12)" onmouseover="popupTimer(&quot;C05776&quot;, &quot;C05776 (Vitamin B12)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=801,304,4	href="/dbget-bin/www_bget?C05776"	title="C05776 (Vitamin B12)" onmouseover="popupTimer(&quot;C05776&quot;, &quot;C05776 (Vitamin B12)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=912,305,4	href="/dbget-bin/www_bget?C05776"	title="C05776 (Vitamin B12)" onmouseover="popupTimer(&quot;C05776&quot;, &quot;C05776 (Vitamin B12)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=680,373,4	href="/dbget-bin/www_bget?C05776"	title="C05776 (Vitamin B12)" onmouseover="popupTimer(&quot;C05776&quot;, &quot;C05776 (Vitamin B12)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1092,300,4	href="/dbget-bin/www_bget?C05776"	title="C05776 (Vitamin B12)" onmouseover="popupTimer(&quot;C05776&quot;, &quot;C05776 (Vitamin B12)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1354,363,4	href="/dbget-bin/www_bget?C05776"	title="C05776 (Vitamin B12)" onmouseover="popupTimer(&quot;C05776&quot;, &quot;C05776 (Vitamin B12)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1034,266,4	href="/dbget-bin/www_bget?C05776"	title="C05776 (Vitamin B12)" onmouseover="popupTimer(&quot;C05776&quot;, &quot;C05776 (Vitamin B12)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=565,436,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=516,445,4	href="/dbget-bin/www_bget?C00120+C00864"	title="C00120 (Biotin), C00864 (Pantothenate)" onmouseover="popupTimer(&quot;C00120&quot;, &quot;C00120 (Biotin), C00864 (Pantothenate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=477,502,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=465,510,4	href="/dbget-bin/www_bget?C00072"	title="C00072 (Ascorbate)" onmouseover="popupTimer(&quot;C00072&quot;, &quot;C00072 (Ascorbate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=478,366,4	href="/dbget-bin/www_bget?C00378"	title="C00378 (Thiamine)" onmouseover="popupTimer(&quot;C00378&quot;, &quot;C00378 (Thiamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=319,210,4	href="/dbget-bin/www_bget?C00068"	title="C00068 (Thiamin diphosphate)" onmouseover="popupTimer(&quot;C00068&quot;, &quot;C00068 (Thiamin diphosphate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=253,238,4	href="/dbget-bin/www_bget?C00061"	title="C00061 (FMN)" onmouseover="popupTimer(&quot;C00061&quot;, &quot;C00061 (FMN)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=273,257,4	href="/dbget-bin/www_bget?C00016"	title="C00016 (FAD)" onmouseover="popupTimer(&quot;C00016&quot;, &quot;C00016 (FAD)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=264,387,4	href="/dbget-bin/www_bget?C00255"	title="C00255 (Riboflavin)" onmouseover="popupTimer(&quot;C00255&quot;, &quot;C00255 (Riboflavin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=206,210,4	href="/dbget-bin/www_bget?C05552"	title="C05552 (Biocytin)" onmouseover="popupTimer(&quot;C05552&quot;, &quot;C05552 (Biocytin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=151,253,4	href="/dbget-bin/www_bget?C00072"	title="C00072 (Ascorbate)" onmouseover="popupTimer(&quot;C00072&quot;, &quot;C00072 (Ascorbate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=319,348,4	href="/dbget-bin/www_bget?C00378"	title="C00378 (Thiamine)" onmouseover="popupTimer(&quot;C00378&quot;, &quot;C00378 (Thiamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=206,431,4	href="/dbget-bin/www_bget?C00120"	title="C00120 (Biotin)" onmouseover="popupTimer(&quot;C00120&quot;, &quot;C00120 (Biotin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=396,259,4	href="/dbget-bin/www_bget?C00647"	title="C00647 (Pyridoxamine phosphate)" onmouseover="popupTimer(&quot;C00647&quot;, &quot;C00647 (Pyridoxamine phosphate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=395,321,4	href="/dbget-bin/www_bget?C00534"	title="C00534 (Pyridoxamine)" onmouseover="popupTimer(&quot;C00534&quot;, &quot;C00534 (Pyridoxamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=177,305,4	href="/dbget-bin/www_bget?C00010"	title="C00010 (CoA)" onmouseover="popupTimer(&quot;C00010&quot;, &quot;C00010 (CoA)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=178,452,4	href="/dbget-bin/www_bget?C00864"	title="C00864 (Pantothenate)" onmouseover="popupTimer(&quot;C00864&quot;, &quot;C00864 (Pantothenate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=91,563,4	href="/dbget-bin/www_bget?C00504"	title="C00504 (Folate)" onmouseover="popupTimer(&quot;C00504&quot;, &quot;C00504 (Folate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=120,305,4	href="/dbget-bin/www_bget?C00003"	title="C00003 (NAD+)" onmouseover="popupTimer(&quot;C00003&quot;, &quot;C00003 (NAD+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=120,524,4	href="/dbget-bin/www_bget?C00153"	title="C00153 (Nicotinamide)" onmouseover="popupTimer(&quot;C00153&quot;, &quot;C00153 (Nicotinamide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=317,605,4	href="/dbget-bin/www_bget?C05443"	title="C05443 (Vitamin D3)" onmouseover="popupTimer(&quot;C05443&quot;, &quot;C05443 (Vitamin D3)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=421,604,4	href="/dbget-bin/www_bget?C02059"	title="C02059 (Phylloquinone)" onmouseover="popupTimer(&quot;C02059&quot;, &quot;C02059 (Phylloquinone)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=421,648,4	href="/dbget-bin/www_bget?C05377"	title="C05377 (Menadione)" onmouseover="popupTimer(&quot;C05377&quot;, &quot;C05377 (Menadione)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=421,630,4	href="/dbget-bin/www_bget?C00828"	title="C00828 (Menaquinone)" onmouseover="popupTimer(&quot;C00828&quot;, &quot;C00828 (Menaquinone)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=902,675,4	href="/dbget-bin/www_bget?C02075+C05443+C02477+C02059+C00828+C05377"	title="C02075 (Retinyl ester), C05443 (Vitamin D3), C02477 (alpha-Tocopherol), C02059 (Phylloquinone), C00828 (Menaquinone), C05377 (Menadione)" onmouseover="popupTimer(&quot;C02075&quot;, &quot;C02075 (Retinyl ester), C05443 (Vitamin D3), C02477 (alpha-Tocopherol), C02059 (Phylloquinone), C00828 (Menaquinone), C05377 (Menadione)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=695,691,4	href="/dbget-bin/www_bget?C02477"	title="C02477 (alpha-Tocopherol)" onmouseover="popupTimer(&quot;C02477&quot;, &quot;C02477 (alpha-Tocopherol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=552,576,4	href="/dbget-bin/www_bget?C00504"	title="C00504 (Folate)" onmouseover="popupTimer(&quot;C00504&quot;, &quot;C00504 (Folate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=83,722,4	href="/dbget-bin/www_bget?C00681"	title="C00681 (1-Acyl-sn-glycerol 3-phosphate)" onmouseover="popupTimer(&quot;C00681&quot;, &quot;C00681 (1-Acyl-sn-glycerol 3-phosphate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=69,686,4	href="/dbget-bin/www_bget?C02112+C01885"	title="C02112 (2-Acylglycerol), C01885 (1-Acylglycerol)" onmouseover="popupTimer(&quot;C02112&quot;, &quot;C02112 (2-Acylglycerol), C01885 (1-Acylglycerol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=164,681,4	href="/dbget-bin/www_bget?C00473+C02094+C05443+C02477+C02059+C00828+C05377"	title="C00473 (Retinol), C02094 (beta-Carotene), C05443 (Vitamin D3), C02477 (alpha-Tocopherol), C02059 (Phylloquinone), C00828 (Menaquinone), C05377 (Menadione)" onmouseover="popupTimer(&quot;C00473&quot;, &quot;C00473 (Retinol), C02094 (beta-Carotene), C05443 (Vitamin D3), C02477 (alpha-Tocopherol), C02059 (Phylloquinone), C00828 (Menaquinone), C05377 (Menadione)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=83,649,4	href="/dbget-bin/www_bget?C00162"	title="C00162 (Fatty acid)" onmouseover="popupTimer(&quot;C00162&quot;, &quot;C00162 (Fatty acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=203,764,4	href="/dbget-bin/www_bget?C00187"	title="C00187 (Cholesterol)" onmouseover="popupTimer(&quot;C00187&quot;, &quot;C00187 (Cholesterol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=478,387,4	href="/dbget-bin/www_bget?C00255"	title="C00255 (Riboflavin)" onmouseover="popupTimer(&quot;C00255&quot;, &quot;C00255 (Riboflavin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=371,259,4	href="/dbget-bin/www_bget?C00018"	title="C00018 (Pyridoxal phosphate)" onmouseover="popupTimer(&quot;C00018&quot;, &quot;C00018 (Pyridoxal phosphate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=370,321,4	href="/dbget-bin/www_bget?C00250"	title="C00250 (Pyridoxal)" onmouseover="popupTimer(&quot;C00250&quot;, &quot;C00250 (Pyridoxal)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=289,649,4	href="/dbget-bin/www_bget?C02094"	title="C02094 (beta-Carotene)" onmouseover="popupTimer(&quot;C02094&quot;, &quot;C02094 (beta-Carotene)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=684,754,4	href="/dbget-bin/www_bget?C00376"	title="C00376 (Retinal)" onmouseover="popupTimer(&quot;C00376&quot;, &quot;C00376 (Retinal)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=486,752,4	href="/dbget-bin/www_bget?C02094"	title="C02094 (beta-Carotene)" onmouseover="popupTimer(&quot;C02094&quot;, &quot;C02094 (beta-Carotene)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1319,419,4	href="/dbget-bin/www_bget?C00378"	title="C00378 (Thiamine)" onmouseover="popupTimer(&quot;C00378&quot;, &quot;C00378 (Thiamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1296,441,4	href="/dbget-bin/www_bget?C00255"	title="C00255 (Riboflavin)" onmouseover="popupTimer(&quot;C00255&quot;, &quot;C00255 (Riboflavin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1276,465,4	href="/dbget-bin/www_bget?C00120"	title="C00120 (Biotin)" onmouseover="popupTimer(&quot;C00120&quot;, &quot;C00120 (Biotin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1250,482,4	href="/dbget-bin/www_bget?C00864"	title="C00864 (Pantothenate)" onmouseover="popupTimer(&quot;C00864&quot;, &quot;C00864 (Pantothenate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1225,508,4	href="/dbget-bin/www_bget?C00072"	title="C00072 (Ascorbate)" onmouseover="popupTimer(&quot;C00072&quot;, &quot;C00072 (Ascorbate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1172,540,4	href="/dbget-bin/www_bget?C00504"	title="C00504 (Folate)" onmouseover="popupTimer(&quot;C00504&quot;, &quot;C00504 (Folate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=500,560,4	href="/dbget-bin/www_bget?C00504"	title="C00504 (Folate)" onmouseover="popupTimer(&quot;C00504&quot;, &quot;C00504 (Folate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=530,554,4	href="/dbget-bin/www_bget?C00080"	title="C00080 (H+)" onmouseover="popupTimer(&quot;C00080&quot;, &quot;C00080 (H+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1201,528,4	href="/dbget-bin/www_bget?C00153"	title="C00153 (Nicotinamide)" onmouseover="popupTimer(&quot;C00153&quot;, &quot;C00153 (Nicotinamide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1338,396,4	href="/dbget-bin/www_bget?C00018"	title="C00018 (Pyridoxal phosphate)" onmouseover="popupTimer(&quot;C00018&quot;, &quot;C00018 (Pyridoxal phosphate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1122,632,1168,649	href="/dbget-bin/www_bget?mmu:238055"	title="238055 (Apob)" />
+<area shape=rect	coords=1260,636,1306,653	href="/dbget-bin/www_bget?mmu:238055"	title="238055 (Apob)" />
+<area shape=rect	coords=1304,677,1350,694	href="/dbget-bin/www_bget?mmu:11808"	title="11808 (Apoa4)" />
+<area shape=rect	coords=1262,715,1308,732	href="/dbget-bin/www_bget?mmu:11806"	title="11806 (Apoa1)" />
+<area shape=rect	coords=1164,671,1210,688	href="/dbget-bin/www_bget?mmu:11808"	title="11808 (Apoa4)" />
+<area shape=rect	coords=1124,713,1170,730	href="/dbget-bin/www_bget?mmu:11806"	title="11806 (Apoa1)" />
+<area shape=rect	coords=896,709,942,726	href="/dbget-bin/www_bget?mmu:11806"	title="11806 (Apoa1)" />
+<area shape=rect	coords=946,661,992,678	href="/dbget-bin/www_bget?mmu:11808"	title="11808 (Apoa4)" />
+<area shape=rect	coords=897,625,943,642	href="/dbget-bin/www_bget?mmu:238055"	title="238055 (Apob)" />
+<area shape=rect	coords=605,680,651,697	href="/dbget-bin/www_bget?mmu:20778"	title="20778 (Scarb1)" />
+<area shape=rect	coords=605,306,651,323	href="/dbget-bin/www_bget?mmu:65969"	title="65969 (Cubn)" />
+<area shape=rect	coords=720,287,766,304	href="/dbget-bin/www_bget?mmu:65969"	title="65969 (Cubn)" />
+<area shape=rect	coords=778,269,824,286	href="/dbget-bin/www_bget?mmu:14603"	title="14603 (Gif)" />
+<area shape=rect	coords=459,306,505,323	href="/dbget-bin/www_bget?mmu:14603"	title="14603 (Gif)" />
+<area shape=rect	coords=465,263,511,280	href="/dbget-bin/www_bget?mmu:14603"	title="14603 (Gif)" />
+<area shape=rect	coords=966,290,1012,307	href="/dbget-bin/www_bget?mmu:68421"	title="68421 (Lmbrd1)" />
+<area shape=rect	coords=891,270,937,287	href="/dbget-bin/www_bget?mmu:14603"	title="14603 (Gif)" />
+<area shape=rect	coords=1118,293,1164,310	href="/dbget-bin/www_bget?mmu:17250"	title="17250 (Abcc1)" />
+<area shape=rect	coords=1283,354,1329,371	href="/dbget-bin/www_bget?mmu:21452"	title="21452 (Tcn2)" />
+<area shape=rect	coords=1034,354,1080,371	href="/dbget-bin/www_bget?mmu:21452"	title="21452 (Tcn2)" />
+<area shape=rect	coords=657,337,703,354	href="/dbget-bin/www_bget?mmu:14603"	title="14603 (Gif)" />
+<area shape=rect	coords=703,337,749,354	href="/dbget-bin/www_bget?mmu:65969"	title="65969 (Cubn)" />
+<area shape=rect	coords=668,258,714,275	href="/dbget-bin/www_bget?mmu:65969"	title="65969 (Cubn)" />
+<area shape=rect	coords=1013,232,1059,249	href="/dbget-bin/www_bget?mmu:67096"	title="67096 (Mmachc)" />
+<area shape=rect	coords=773,760,819,777	href="/dbget-bin/www_bget?mmu:19660"	title="19660 (Rbp2)" />
+<area shape=rect	coords=808,739,854,756	href="/dbget-bin/www_bget?mmu:79235"	title="79235 (Lrat)" />
+<area shape=rect	coords=605,432,651,449	href="/dbget-bin/www_bget?mmu:330064"	title="330064 (Slc5a6)" />
+<area shape=rect	coords=515,498,561,515	href="/dbget-bin/www_bget?mmu:20522"	title="20522 (Slc23a1)" />
+<area shape=rect	coords=602,569,648,586	href="/dbget-bin/www_bget?mmu:20509"	title="20509 (Slc19a1)" />
+<area shape=rect	coords=516,358,562,375	href="/dbget-bin/www_bget?mmu:116914+mmu:80721"	title="116914 (Slc19a2), 80721 (Slc19a3)" />
+<area shape=rect	coords=209,320,255,337	href="/dbget-bin/www_bget?mmu:26363"	title="26363 (Btd)" />
+<area shape=rect	coords=41,384,87,401	href="/dbget-bin/www_bget?mmu:53320"	title="53320 (Folh1)" />
+<area shape=rect	coords=515,746,561,763	href="/dbget-bin/www_bget?mmu:20778"	title="20778 (Scarb1)" />
+<area shape=rect	coords=516,380,562,397	href="/dbget-bin/www_bget?mmu:69698"	title="69698 (Slc52a3)" />
+<area shape=rect	coords=756,719,802,736	href="/dbget-bin/www_bget?mmu:245532"	title="245532 (Awat2)" />
+<area shape=rect	coords=602,548,648,565	href="/dbget-bin/www_bget?mmu:52466"	title="52466 (Slc46a1)" />
+<area shape=rect	coords=233,682,279,699	href="/dbget-bin/www_bget?mmu:69060"	title="69060 (Pnlip)" />
+<area shape=rect	coords=233,703,279,720	href="/dbget-bin/www_bget?mmu:665270"	title="665270 (Plb1)" />
+<area shape=rect	coords=40,45,356,70	href="/dbget-bin/www_bget?mmu04977"	title="mmu04977: Vitamin digestion and absorption" onmouseover="popupTimer(&quot;mmu04977&quot;, &quot;mmu04977: Vitamin digestion and absorption&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=634,101,749,126	href="/kegg-bin/show_pathway?mmu04530"	title="mmu04530: Tight junction" onmouseover="popupTimer(&quot;mmu04530&quot;, &quot;mmu04530: Tight junction&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=287,780,402,814	href="/kegg-bin/show_pathway?ko00830"	title="ko00830: Retinol metabolism" onmouseover="popupTimer(&quot;ko00830&quot;, &quot;ko00830: Retinol metabolism&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=79,802,194,827	href="/kegg-bin/show_pathway?mmu04976"	title="mmu04976: Bile secretion" onmouseover="popupTimer(&quot;mmu04976&quot;, &quot;mmu04976: Bile secretion&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=754,363,846,388	href="/kegg-bin/show_pathway?mmu04144"	title="mmu04144: Endocytosis" onmouseover="popupTimer(&quot;mmu04144&quot;, &quot;mmu04144: Endocytosis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=881,369,973,394	href="/kegg-bin/show_pathway?mmu04142"	title="mmu04142: Lysosome" onmouseover="popupTimer(&quot;mmu04142&quot;, &quot;mmu04142: Lysosome&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=762,574,863,608	href="/kegg-bin/show_pathway?mmu04975"	title="mmu04975: Fat digestion and absorption" onmouseover="popupTimer(&quot;mmu04975&quot;, &quot;mmu04975: Fat digestion and absorption&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=246,467,356,501	href="/kegg-bin/show_pathway?ko00770"	title="ko00770: Pantothenate and CoA biosynthesis" onmouseover="popupTimer(&quot;ko00770&quot;, &quot;ko00770: Pantothenate and CoA biosynthesis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=350,397,442,431	href="/kegg-bin/show_pathway?ko00740"	title="ko00740: Riboflavin metabolism" onmouseover="popupTimer(&quot;ko00740&quot;, &quot;ko00740: Riboflavin metabolism&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=274,166,366,200	href="/kegg-bin/show_pathway?ko00730"	title="ko00730: Thiamine metabolism" onmouseover="popupTimer(&quot;ko00730&quot;, &quot;ko00730: Thiamine metabolism&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=161,166,253,200	href="/kegg-bin/show_pathway?ko00780"	title="ko00780: Biotin metabolism" onmouseover="popupTimer(&quot;ko00780&quot;, &quot;ko00780: Biotin metabolism&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=47,166,139,200	href="/kegg-bin/show_pathway?ko00790"	title="ko00790: Folate biosynthesis" onmouseover="popupTimer(&quot;ko00790&quot;, &quot;ko00790: Folate biosynthesis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=166,522,308,556	href="/kegg-bin/show_pathway?ko00760"	title="ko00760: Nicotinate and nicotinamide metabolism" onmouseover="popupTimer(&quot;ko00760&quot;, &quot;ko00760: Nicotinate and nicotinamide metabolism&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=338,216,430,250	href="/kegg-bin/show_pathway?ko00750"	title="ko00750: Vitamin B6 metabolism" onmouseover="popupTimer(&quot;ko00750&quot;, &quot;ko00750: Vitamin B6 metabolism&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

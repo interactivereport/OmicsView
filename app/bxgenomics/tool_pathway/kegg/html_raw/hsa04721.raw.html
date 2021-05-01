@@ -1,0 +1,325 @@
+<html>
+<!---
+ENTRY       hsa04721
+DEFINITION  Synaptic vesicle cycle - Homo sapiens (human)
+--->
+<head>
+<title>
+KEGG PATHWAY: Synaptic vesicle cycle - Homo sapiens (human)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Synaptic vesicle cycle - Homo sapiens (human)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=04721&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map04721.keg&query=hsa&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+hsa04721">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=hsa04721&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Communication between neurons is mediated by the release of neurotransmitter from synaptic vesicles (SVs). At the nerve terminal, SVs cycle through repetitive episodes of exocytosis and endocytosis. SVs are filled with neurotransmitters by active transport. The loaded SVs are then docked at a specialized region of the presynaptic plasma membrane known as the active zone, where they undergo a priming reaction. Upon arrival of an action potential, Ca2+ enters through voltage-gated channels and neurotransmitter is released by exocytosis, usually in less than a millisecond. After fusion, the vesicle is retrieved by endocytosis and reloaded for another round of exocytosis.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="hsa.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa" selected>Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="04721" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="hsa04721" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/hsa/hsa04721.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=657,748,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1220,233,4	href="/dbget-bin/www_bget?C00080"	title="C00080 (H+)" onmouseover="popupTimer(&quot;C00080&quot;, &quot;C00080 (H+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1081,365,4	href="/dbget-bin/www_bget?C00080"	title="C00080 (H+)" onmouseover="popupTimer(&quot;C00080&quot;, &quot;C00080 (H+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=676,290,4	href="/dbget-bin/www_bget?C03758+C01996+C00334+C00025+C16041+C00037+C00547+C00780+C00002+C00388"	title="C03758 (Dopamine), C01996 (Acetylcholine), C00334 (4-Aminobutanoate), C00025 (L-Glutamate), C16041 (Leu-enkephalin), C00037 (Glycine), C00547 (L-Noradrenaline), C00780 (Serotonin), C00002 (ATP), C00388 (Histamine)" onmouseover="popupTimer(&quot;C03758&quot;, &quot;C03758 (Dopamine), C01996 (Acetylcholine), C00334 (4-Aminobutanoate), C00025 (L-Glutamate), C16041 (Leu-enkephalin), C00037 (Glycine), C00547 (L-Noradrenaline), C00780 (Serotonin), C00002 (ATP), C00388 (Histamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=554,161,4	href="/dbget-bin/www_bget?C03758+C01996+C00334+C00025+C16041+C00037+C00547+C00780+C00002+C00388"	title="C03758 (Dopamine), C01996 (Acetylcholine), C00334 (4-Aminobutanoate), C00025 (L-Glutamate), C16041 (Leu-enkephalin), C00037 (Glycine), C00547 (L-Noradrenaline), C00780 (Serotonin), C00002 (ATP), C00388 (Histamine)" onmouseover="popupTimer(&quot;C03758&quot;, &quot;C03758 (Dopamine), C01996 (Acetylcholine), C00334 (4-Aminobutanoate), C00025 (L-Glutamate), C16041 (Leu-enkephalin), C00037 (Glycine), C00547 (L-Noradrenaline), C00780 (Serotonin), C00002 (ATP), C00388 (Histamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=633,689,679,706	href="/dbget-bin/www_bget?hsa:773+hsa:774"	title="773 (CACNA1A), 774 (CACNA1B)" />
+<area shape=rect	coords=388,635,434,652	href="/dbget-bin/www_bget?hsa:112755+hsa:2054+hsa:6804+hsa:6809"	title="112755 (STX1B), 2054 (STX2), 6804 (STX1A), 6809 (STX3)" />
+<area shape=rect	coords=180,648,226,665	href="/dbget-bin/www_bget?hsa:22999"	title="22999 (RIMS1)" />
+<area shape=rect	coords=606,606,652,623	href="/dbget-bin/www_bget?hsa:10814+hsa:10815+hsa:339302+hsa:594855"	title="10814 (CPLX2), 10815 (CPLX1), 339302 (CPLX4), 594855 (CPLX3)" />
+<area shape=rect	coords=180,625,226,642	href="/dbget-bin/www_bget?hsa:5864"	title="5864 (RAB3A)" />
+<area shape=rect	coords=388,612,434,629	href="/dbget-bin/www_bget?hsa:6844"	title="6844 (VAMP2)" />
+<area shape=rect	coords=388,662,434,679	href="/dbget-bin/www_bget?hsa:6616"	title="6616 (SNAP25)" />
+<area shape=rect	coords=1131,636,1177,653	href="/dbget-bin/www_bget?hsa:8775"	title="8775 (NAPA)" />
+<area shape=rect	coords=1131,614,1177,631	href="/dbget-bin/www_bget?hsa:4905"	title="4905 (NSF)" />
+<area shape=rect	coords=659,610,705,627	href="/dbget-bin/www_bget?hsa:6857"	title="6857 (SYT1)" />
+<area shape=rect	coords=262,336,308,353	href="/dbget-bin/www_bget?hsa:6857"	title="6857 (SYT1)" />
+<area shape=rect	coords=260,383,306,400	href="/dbget-bin/www_bget?hsa:6844"	title="6844 (VAMP2)" />
+<area shape=rect	coords=1303,509,1349,526	href="/dbget-bin/www_bget?hsa:1211+hsa:1212+hsa:1213+hsa:8218"	title="1211 (CLTA), 1212 (CLTB), 1213 (CLTC), 8218 (CLTCL1)" />
+<area shape=rect	coords=1353,529,1399,546	href="/dbget-bin/www_bget?hsa:1173+hsa:1175+hsa:160+hsa:161+hsa:163"	title="1173 (AP2M1), 1175 (AP2S1), 160 (AP2A1), 161 (AP2A2), 163 (AP2B1)" />
+<area shape=rect	coords=1265,671,1311,688	href="/dbget-bin/www_bget?hsa:1759+hsa:1785+hsa:26052"	title="1759 (DNM1), 1785 (DNM2), 26052 (DNM3)" />
+<area shape=rect	coords=1346,672,1392,689	href="/dbget-bin/www_bget?hsa:1759+hsa:1785+hsa:26052"	title="1759 (DNM1), 1785 (DNM2), 26052 (DNM3)" />
+<area shape=rect	coords=387,589,433,606	href="/dbget-bin/www_bget?hsa:6857"	title="6857 (SYT1)" />
+<area shape=rect	coords=277,628,323,645	href="/dbget-bin/www_bget?hsa:6812"	title="6812 (STXBP1)" />
+<area shape=rect	coords=1077,578,1123,595	href="/dbget-bin/www_bget?hsa:6857"	title="6857 (SYT1)" />
+<area shape=rect	coords=884,627,930,644	href="/dbget-bin/www_bget?hsa:6616"	title="6616 (SNAP25)" />
+<area shape=rect	coords=930,580,976,597	href="/dbget-bin/www_bget?hsa:6844"	title="6844 (VAMP2)" />
+<area shape=rect	coords=878,603,924,620	href="/dbget-bin/www_bget?hsa:112755+hsa:2054+hsa:6804+hsa:6809"	title="112755 (STX1B), 2054 (STX2), 6804 (STX1A), 6809 (STX3)" />
+<area shape=rect	coords=387,548,433,565	href="/dbget-bin/www_bget?hsa:10497+hsa:23025+hsa:440279"	title="10497 (UNC13B), 23025 (UNC13A), 440279 (UNC13C)" />
+<area shape=rect	coords=335,517,381,534	href="/dbget-bin/www_bget?hsa:6857"	title="6857 (SYT1)" />
+<area shape=rect	coords=530,179,576,196	href="/dbget-bin/www_bget?hsa:140679+hsa:246213+hsa:57030+hsa:57084+hsa:6570+hsa:6571+hsa:6572"	title="140679 (SLC32A1), 246213 (SLC17A8), 57030 (SLC17A7), 57084 (SLC17A6), 6570 (SLC18A1), 6571 (SLC18A2), 6572 (SLC18A3)" />
+<area shape=rect	coords=652,309,698,326	href="/dbget-bin/www_bget?hsa:140679+hsa:246213+hsa:57030+hsa:57084+hsa:6570+hsa:6571+hsa:6572"	title="140679 (SLC32A1), 246213 (SLC17A8), 57030 (SLC17A7), 57084 (SLC17A6), 6570 (SLC18A1), 6571 (SLC18A2), 6572 (SLC18A3)" />
+<area shape=rect	coords=1014,356,1060,373	href="/dbget-bin/www_bget?hsa:10312+hsa:127124+hsa:155066+hsa:23545+hsa:245972+hsa:245973+hsa:50617+hsa:51382+hsa:51606+hsa:523+hsa:525+hsa:526+hsa:527+hsa:528+hsa:529+hsa:533+hsa:534+hsa:535+hsa:8992+hsa:90423+hsa:9114+hsa:9296+hsa:9550"	title="10312 (TCIRG1), 127124 (ATP6V1G3), 155066 (ATP6V0E2), 23545 (ATP6V0A2), 245972 (ATP6V0D2), 245973 (ATP6V1C2), 50617 (ATP6V0A4), 51382 (ATP6V1D), 51606 (ATP6V1H), 523 (ATP6V1A), 525 (ATP6V1B1), 526 (ATP6V1B2), 527 (ATP6V0C), 528 (ATP6V1C1), 529 (ATP6V1E1), 533 (ATP6V0B), 534 (ATP6V1G2), 535 (ATP6V0A1), 8992 (ATP6V0E1), 90423 (ATP6V1E2), 9114 (ATP6V0D1), 9296 (ATP6V1F), 9550 (ATP6V1G1)" />
+<area shape=rect	coords=1154,226,1200,243	href="/dbget-bin/www_bget?hsa:10312+hsa:127124+hsa:155066+hsa:23545+hsa:245972+hsa:245973+hsa:50617+hsa:51382+hsa:51606+hsa:523+hsa:525+hsa:526+hsa:527+hsa:528+hsa:529+hsa:533+hsa:534+hsa:535+hsa:8992+hsa:90423+hsa:9114+hsa:9296+hsa:9550"	title="10312 (TCIRG1), 127124 (ATP6V1G3), 155066 (ATP6V0E2), 23545 (ATP6V0A2), 245972 (ATP6V0D2), 245973 (ATP6V1C2), 50617 (ATP6V0A4), 51382 (ATP6V1D), 51606 (ATP6V1H), 523 (ATP6V1A), 525 (ATP6V1B1), 526 (ATP6V1B2), 527 (ATP6V0C), 528 (ATP6V1C1), 529 (ATP6V1E1), 533 (ATP6V0B), 534 (ATP6V1G2), 535 (ATP6V0A1), 8992 (ATP6V0E1), 90423 (ATP6V1E2), 9114 (ATP6V0D1), 9296 (ATP6V1F), 9550 (ATP6V1G1)" />
+<area shape=rect	coords=40,45,262,70	href="/dbget-bin/www_bget?hsa04721"	title="hsa04721: Synaptic vesicle cycle" onmouseover="popupTimer(&quot;hsa04721&quot;, &quot;hsa04721: Synaptic vesicle cycle&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=365,890,457,924	href="/kegg-bin/show_pathway?hsa04724"	title="hsa04724: Glutamatergic synapse" onmouseover="popupTimer(&quot;hsa04724&quot;, &quot;hsa04724: Glutamatergic synapse&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=475,890,567,924	href="/kegg-bin/show_pathway?hsa04725"	title="hsa04725: Cholinergic synapse" onmouseover="popupTimer(&quot;hsa04725&quot;, &quot;hsa04725: Cholinergic synapse&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=585,891,677,925	href="/kegg-bin/show_pathway?hsa04726"	title="hsa04726: Serotonergic synapse" onmouseover="popupTimer(&quot;hsa04726&quot;, &quot;hsa04726: Serotonergic synapse&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=880,892,972,926	href="/kegg-bin/show_pathway?hsa04727"	title="hsa04727: GABAergic synapse" onmouseover="popupTimer(&quot;hsa04727&quot;, &quot;hsa04727: GABAergic synapse&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=990,892,1082,926	href="/kegg-bin/show_pathway?hsa04728"	title="hsa04728: Dopaminergic synapse" onmouseover="popupTimer(&quot;hsa04728&quot;, &quot;hsa04728: Dopaminergic synapse&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1192,526,1284,551	href="/kegg-bin/show_pathway?hsa04144"	title="hsa04144: Endocytosis" onmouseover="popupTimer(&quot;hsa04144&quot;, &quot;hsa04144: Endocytosis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

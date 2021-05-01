@@ -1,0 +1,402 @@
+<html>
+<!---
+ENTRY       hsa04392
+DEFINITION  Hippo signaling pathway - multiple species - Homo sapiens (human)
+--->
+<head>
+<title>
+KEGG PATHWAY: Hippo signaling pathway - multiple species - Homo sapiens (human)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Hippo signaling pathway - multiple species - Homo sapiens (human)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=04392&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map04392.keg&query=hsa&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+hsa04392">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=hsa04392&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Hippo signaling pathways control diverse aspects of cell proliferation, survival, and morphogenesis in eukaryotes. The core organization of these networks is conserved over a billion years of evolution, with related forms described in animals and fungi. In Drosophila and mammals, Hippo/MST co-operate with Mats/Mob1 and Salvador/WW45 to activate Warts/LATS, which negatively regulates Yorkie/YAP. Yorkie/YAP interact with Scalloped/TEAD to promote gene transcriptions and control organ size through the balance between cell proliferation and apoptosis. In C. elegans, WTS-1 YAP-1 EGL-44 axis is conserved and regulates thermotolerance and healthy lifespan. In S. cerevisiae, the LATS-related Dbf2 or Dbf20 kinase in complex with Mob1 controls mitotic exit and cytokinesis, and the Hippo/MST family of kinases, STE-20, modulates Tec1, the putative yeast TEAD ortholog.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="hsa.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa" selected>Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+<option value="dme">Drosophila melanogaster (fruit fly)</option>
+<option value="dpo">Drosophila pseudoobscura pseudoobscura</option>
+<option value="dan">Drosophila ananassae</option>
+<option value="der">Drosophila erecta</option>
+<option value="dpe">Drosophila persimilis</option>
+<option value="dse">Drosophila sechellia</option>
+<option value="dsi">Drosophila simulans</option>
+<option value="dwi">Drosophila willistoni</option>
+<option value="dya">Drosophila yakuba</option>
+<option value="dgr">Drosophila grimshawi</option>
+<option value="dmo">Drosophila mojavensis</option>
+<option value="dvi">Drosophila virilis</option>
+<option value="mde">Musca domestica (house fly)</option>
+<option value="aga">Anopheles gambiae (mosquito)</option>
+<option value="aag">Aedes aegypti (yellow fever mosquito)</option>
+<option value="cqu">Culex quinquefasciatus (southern house mosquito)</option>
+<option value="ame">Apis mellifera (honey bee)</option>
+<option value="bim">Bombus impatiens (common eastern bumble bee)</option>
+<option value="bter">Bombus terrestris (buff-tailed bumblebee)</option>
+<option value="soc">Solenopsis invicta (red fire ant)</option>
+<option value="aec">Acromyrmex echinatior (Panamanian leafcutter ant)</option>
+<option value="acep">Atta cephalotes (leaf cutting ant)</option>
+<option value="pbar">Pogonomyrmex barbatus (red harvester ant)</option>
+<option value="hst">Harpegnathos saltator (Jerdon's jumping ant)</option>
+<option value="cfo">Camponotus floridanus (Florida carpenter ant)</option>
+<option value="lhu">Linepithema humile (Argentine ant)</option>
+<option value="pgc">Pseudomyrmex gracilis</option>
+<option value="nvi">Nasonia vitripennis (jewel wasp)</option>
+<option value="tca">Tribolium castaneum (red flour beetle)</option>
+<option value="dpa">Dendroctonus ponderosae (mountain pine beetle)</option>
+<option value="nvl">Nicrophorus vespilloides</option>
+<option value="bmor">Bombyx mori (domestic silkworm)</option>
+<option value="dpl">Danaus plexippus (monarch butterfly)</option>
+<option value="pxy">Plutella xylostella (diamondback moth)</option>
+<option value="api">Acyrthosiphon pisum (pea aphid)</option>
+<option value="dnx">Diuraphis noxia (Russian wheat aphid)</option>
+<option value="phu">Pediculus humanus corporis (human body louse)</option>
+<option value="fcd">Folsomia candida</option>
+<option value="cel">Caenorhabditis elegans (nematode)</option>
+<option value="cbr">Caenorhabditis briggsae</option>
+<option value="nai">Necator americanus</option>
+<option value="bmy">Brugia malayi (filaria)</option>
+<option value="loa">Loa loa (eye worm)</option>
+<option value="tsp">Trichinella spiralis</option>
+<option value="sce">Saccharomyces cerevisiae (budding yeast)</option>
+<option value="ago">Ashbya gossypii (Eremothecium gossypii)</option>
+<option value="erc">Eremothecium cymbalariae</option>
+<option value="kla">Kluyveromyces lactis</option>
+<option value="lth">Lachancea thermotolerans</option>
+<option value="vpo">Vanderwaltozyma polyspora</option>
+<option value="zro">Zygosaccharomyces rouxii</option>
+<option value="cgr">Candida glabrata</option>
+<option value="ncs">Naumovozyma castellii</option>
+<option value="ndi">Naumovozyma dairenensis</option>
+<option value="tpf">Tetrapisispora phaffii</option>
+<option value="tbl">Tetrapisispora blattae</option>
+<option value="tdl">Torulaspora delbrueckii</option>
+<option value="kaf">Kazachstania africana</option>
+<option value="ppa">Komagataella phaffii</option>
+<option value="dha">Debaryomyces hansenii</option>
+<option value="pic">Scheffersomyces stipitis</option>
+<option value="pgu">Meyerozyma guilliermondii</option>
+<option value="spaa">Spathaspora passalidarum</option>
+<option value="lel">Lodderomyces elongisporus</option>
+<option value="cal">Candida albicans</option>
+<option value="ctp">Candida tropicalis</option>
+<option value="cot">Candida orthopsilosis</option>
+<option value="cdu">Candida dubliniensis</option>
+<option value="cten">Candida tenuis</option>
+<option value="yli">Yarrowia lipolytica</option>
+<option value="clu">Clavispora lusitaniae</option>
+<option value="caur">Candida auris</option>
+</select>
+<input type="hidden" name="mapno" value="04392" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="hsa04392" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/hsa/hsa04392.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=rect	coords=272,152,318,169	href="/dbget-bin/www_bget?hsa:23286"	title="23286 (WWC1)" />
+<area shape=rect	coords=241,135,287,152	href="/dbget-bin/www_bget?hsa:4771"	title="4771 (NF2)" />
+<area shape=rect	coords=241,169,287,186	href="/dbget-bin/www_bget?hsa:122786+hsa:79981"	title="122786 (FRMD6), 79981 (FRMD1)" />
+<area shape=rect	coords=383,169,429,186	href="/dbget-bin/www_bget?hsa:60485"	title="60485 (SAV1)" />
+<area shape=rect	coords=366,152,412,169	href="/dbget-bin/www_bget?hsa:6788"	title="6788 (STK3)" />
+<area shape=rect	coords=745,152,791,169	href="/dbget-bin/www_bget?hsa:10413+hsa:25937"	title="10413 (YAP1), 25937 (WWTR1)" />
+<area shape=rect	coords=508,152,554,169	href="/dbget-bin/www_bget?hsa:26524+hsa:9113"	title="26524 (LATS2), 9113 (LATS1)" />
+<area shape=rect	coords=488,169,534,186	href="/dbget-bin/www_bget?hsa:55233+hsa:92597"	title="55233 (MOB1A), 92597 (MOB1B)" />
+<area shape=rect	coords=762,169,808,186	href="/dbget-bin/www_bget?hsa:7003+hsa:7004+hsa:7005+hsa:8463"	title="7003 (TEAD1), 7004 (TEAD4), 7005 (TEAD3), 8463 (TEAD2)" />
+<area shape=rect	coords=603,152,649,169	href="/dbget-bin/www_bget?hsa:10413+hsa:25937"	title="10413 (YAP1), 25937 (WWTR1)" />
+<area shape=rect	coords=272,322,318,339	href="/dbget-bin/www_bget?hsa:23286"	title="23286 (WWC1)" />
+<area shape=rect	coords=241,305,287,322	href="/dbget-bin/www_bget?hsa:4771"	title="4771 (NF2)" />
+<area shape=rect	coords=383,339,429,356	href="/dbget-bin/www_bget?hsa:60485"	title="60485 (SAV1)" />
+<area shape=rect	coords=366,322,412,339	href="/dbget-bin/www_bget?hsa:6788"	title="6788 (STK3)" />
+<area shape=rect	coords=488,339,534,356	href="/dbget-bin/www_bget?hsa:55233+hsa:92597"	title="55233 (MOB1A), 92597 (MOB1B)" />
+<area shape=rect	coords=508,322,554,339	href="/dbget-bin/www_bget?hsa:26524+hsa:9113"	title="26524 (LATS2), 9113 (LATS1)" />
+<area shape=rect	coords=603,322,649,339	href="/dbget-bin/www_bget?hsa:10413"	title="10413 (YAP1)" />
+<area shape=rect	coords=745,322,791,339	href="/dbget-bin/www_bget?hsa:10413"	title="10413 (YAP1)" />
+<area shape=rect	coords=762,339,808,356	href="/dbget-bin/www_bget?hsa:7003+hsa:7004+hsa:7005+hsa:8463"	title="7003 (TEAD1), 7004 (TEAD4), 7005 (TEAD3), 8463 (TEAD2)" />
+<area shape=rect	coords=366,672,412,689	href="/dbget-bin/www_bget?hsa:5058"	title="5058 (PAK1)" />
+<area shape=rect	coords=488,645,534,662	href="/dbget-bin/www_bget?hsa:55233+hsa:92597"	title="55233 (MOB1A), 92597 (MOB1B)" />
+<area shape=rect	coords=745,672,791,689	href="/dbget-bin/www_bget?hsa:7003+hsa:7004+hsa:7005+hsa:8463"	title="7003 (TEAD1), 7004 (TEAD4), 7005 (TEAD3), 8463 (TEAD2)" />
+<area shape=rect	coords=508,493,554,510	href="/dbget-bin/www_bget?hsa:26524+hsa:9113"	title="26524 (LATS2), 9113 (LATS1)" />
+<area shape=rect	coords=603,493,649,510	href="/dbget-bin/www_bget?hsa:10413"	title="10413 (YAP1)" />
+<area shape=rect	coords=762,510,808,527	href="/dbget-bin/www_bget?hsa:7003+hsa:7004+hsa:7005+hsa:8463"	title="7003 (TEAD1), 7004 (TEAD4), 7005 (TEAD3), 8463 (TEAD2)" />
+<area shape=rect	coords=366,471,412,488	href="/dbget-bin/www_bget?hsa:6788"	title="6788 (STK3)" />
+<area shape=rect	coords=383,501,429,518	href="/dbget-bin/www_bget?hsa:60485"	title="60485 (SAV1)" />
+<area shape=rect	coords=125,495,171,512	href="/dbget-bin/www_bget?hsa:54798+hsa:8642"	title="54798 (DCHS2), 8642 (DCHS1)" />
+<area shape=rect	coords=125,300,171,317	href="/dbget-bin/www_bget?hsa:54798+hsa:8642"	title="54798 (DCHS2), 8642 (DCHS1)" />
+<area shape=rect	coords=125,322,171,339	href="/dbget-bin/www_bget?hsa:79633"	title="79633 (FAT4)" />
+<area shape=rect	coords=125,130,171,147	href="/dbget-bin/www_bget?hsa:54798+hsa:8642"	title="54798 (DCHS2), 8642 (DCHS1)" />
+<area shape=rect	coords=125,152,171,169	href="/dbget-bin/www_bget?hsa:79633"	title="79633 (FAT4)" />
+<area shape=rect	coords=125,174,171,191	href="/dbget-bin/www_bget?hsa:102800317+hsa:1454"	title="102800317, 1454 (CSNK1E)" />
+<area shape=rect	coords=745,493,791,510	href="/dbget-bin/www_bget?hsa:10413"	title="10413 (YAP1)" />
+<area shape=rect	coords=305,284,351,301	href="/dbget-bin/www_bget?hsa:83937+hsa:9770"	title="83937 (RASSF4), 9770 (RASSF2)" />
+<area shape=rect	coords=305,117,351,134	href="/dbget-bin/www_bget?hsa:166824"	title="166824 (RASSF6)" />
+<area shape=rect	coords=305,96,351,113	href="/dbget-bin/www_bget?hsa:11186"	title="11186 (RASSF1)" />
+<area shape=rect	coords=461,207,507,224	href="/dbget-bin/www_bget?hsa:126374+hsa:84962+hsa:8994"	title="126374 (WTIP), 84962 (AJUBA), 8994 (LIMD1)" />
+<area shape=rect	coords=462,376,508,393	href="/dbget-bin/www_bget?hsa:126374+hsa:84962+hsa:8994"	title="126374 (WTIP), 84962 (AJUBA), 8994 (LIMD1)" />
+<area shape=rect	coords=125,344,171,361	href="/dbget-bin/www_bget?hsa:102800317+hsa:1454"	title="102800317, 1454 (CSNK1E)" />
+<area shape=rect	coords=40,45,427,70	href="/dbget-bin/www_bget?hsa04392"	title="hsa04392: Hippo signaling pathway - multiple species" onmouseover="popupTimer(&quot;hsa04392&quot;, &quot;hsa04392: Hippo signaling pathway - multiple species&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=111,206,239,240	href="/kegg-bin/show_pathway?hsa04390"	title="hsa04390: Hippo signaling pathway" onmouseover="popupTimer(&quot;hsa04390&quot;, &quot;hsa04390: Hippo signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=111,387,239,421	href="/kegg-bin/show_pathway?map04391"	title="map04391: Hippo signaling pathway - fly" onmouseover="popupTimer(&quot;map04391&quot;, &quot;map04391: Hippo signaling pathway - fly&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=234,602,362,627	href="/kegg-bin/show_pathway?map04111"	title="map04111: Cell cycle - yeast" onmouseover="popupTimer(&quot;map04111&quot;, &quot;map04111: Cell cycle - yeast&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=514,685,642,719	href="/kegg-bin/show_pathway?map04011"	title="map04011: MAPK signaling pathway - yeast" onmouseover="popupTimer(&quot;map04011&quot;, &quot;map04011: MAPK signaling pathway - yeast&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

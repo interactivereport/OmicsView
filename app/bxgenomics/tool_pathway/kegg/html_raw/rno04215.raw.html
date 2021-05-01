@@ -1,0 +1,410 @@
+<html>
+<!---
+ENTRY       rno04215
+DEFINITION  Apoptosis - multiple species - Rattus norvegicus (rat)
+--->
+<head>
+<title>
+KEGG PATHWAY: Apoptosis - multiple species - Rattus norvegicus (rat)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(obj){
+  var form = document.forms["form2"];
+  var idx = obj.selectedIndex;
+  var value = obj.options[idx].value;
+	
+  if(value == "1.0_T01003")
+  {
+    form.scale.value = "1.0";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.70_T01003")
+  {
+    form.scale.value = "0.70";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.35_T01003")
+  {
+    form.scale.value = "0.35";
+    form.orgs.value  = "T01003";
+  }
+  else
+	{
+    form.scale.value = value;
+		form.orgs.value  = '';
+    if(form.image)
+    {
+		form.image.value  = '';
+    }
+		form.map.value = "rno04215";
+	}
+
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Apoptosis - multiple species - Rattus norvegicus (rat)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=04215&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map04215.keg&query=rno&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+rno04215">Pathway entry</a>
+
+| <a href="https://www.kegg.jp/kegg-bin/download?entry=rno04215&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Apoptosis is an evolutionarily conserved process used by multicellular organisms to developmentally regulate cell number or to eliminate cells that are potentially detrimental to the organism. The major players are caspases, caspase inhibitors, members of the Bcl-2 family of pro- and anti-apoptotic proteins and adaptors of the Ced-4/APAF-1 type. Mammals, by comparison with Caenorhabditis and Drosophila, exhibit highly complex extrinsic and intrinsic pathways for apoptosis induction. However, recent analyses of whole genome sequences from cnidarians (e.g. Hydra) suggest that the caspase and Bcl-2 families were already highly complex in cnidarians and that Caenorhabditis and Drosophila lost many of the genes involved in apoptosis.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="rno.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno" selected>Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="oro">Odobenus rosmarus divergens (Pacific walrus)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="oor">Orcinus orca (killer whale)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="tmu">Trichechus manatus latirostris (Florida manatee)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+<option value="dme">Drosophila melanogaster (fruit fly)</option>
+<option value="dpo">Drosophila pseudoobscura pseudoobscura</option>
+<option value="dan">Drosophila ananassae</option>
+<option value="der">Drosophila erecta</option>
+<option value="dpe">Drosophila persimilis</option>
+<option value="dse">Drosophila sechellia</option>
+<option value="dsi">Drosophila simulans</option>
+<option value="dwi">Drosophila willistoni</option>
+<option value="dya">Drosophila yakuba</option>
+<option value="dgr">Drosophila grimshawi</option>
+<option value="dmo">Drosophila mojavensis</option>
+<option value="dvi">Drosophila virilis</option>
+<option value="mde">Musca domestica (house fly)</option>
+<option value="aga">Anopheles gambiae (mosquito)</option>
+<option value="aag">Aedes aegypti (yellow fever mosquito)</option>
+<option value="cqu">Culex quinquefasciatus (southern house mosquito)</option>
+<option value="ame">Apis mellifera (honey bee)</option>
+<option value="bim">Bombus impatiens (common eastern bumble bee)</option>
+<option value="bter">Bombus terrestris (buff-tailed bumblebee)</option>
+<option value="soc">Solenopsis invicta (red fire ant)</option>
+<option value="aec">Acromyrmex echinatior (Panamanian leafcutter ant)</option>
+<option value="acep">Atta cephalotes (leaf cutting ant)</option>
+<option value="pbar">Pogonomyrmex barbatus (red harvester ant)</option>
+<option value="hst">Harpegnathos saltator (Jerdon's jumping ant)</option>
+<option value="dqu">Dinoponera quadriceps</option>
+<option value="cfo">Camponotus floridanus (Florida carpenter ant)</option>
+<option value="lhu">Linepithema humile (Argentine ant)</option>
+<option value="pgc">Pseudomyrmex gracilis</option>
+<option value="pcf">Polistes canadensis</option>
+<option value="nvi">Nasonia vitripennis (jewel wasp)</option>
+<option value="mdl">Microplitis demolitor</option>
+<option value="tca">Tribolium castaneum (red flour beetle)</option>
+<option value="dpa">Dendroctonus ponderosae (mountain pine beetle)</option>
+<option value="nvl">Nicrophorus vespilloides</option>
+<option value="bmor">Bombyx mori (domestic silkworm)</option>
+<option value="dpl">Danaus plexippus (monarch butterfly)</option>
+<option value="pmac">Papilio machaon (common yellow swallowtail)</option>
+<option value="prap">Pieris rapae (cabbage white)</option>
+<option value="haw">Helicoverpa armigera (cotton bollworm)</option>
+<option value="pxy">Plutella xylostella (diamondback moth)</option>
+<option value="api">Acyrthosiphon pisum (pea aphid)</option>
+<option value="dnx">Diuraphis noxia (Russian wheat aphid)</option>
+<option value="clec">Cimex lectularius (bed bug)</option>
+<option value="phu">Pediculus humanus corporis (human body louse)</option>
+<option value="zne">Zootermopsis nevadensis</option>
+<option value="fcd">Folsomia candida</option>
+<option value="cel">Caenorhabditis elegans (nematode)</option>
+<option value="cbr">Caenorhabditis briggsae</option>
+<option value="nai">Necator americanus</option>
+<option value="bmy">Brugia malayi (filaria)</option>
+<option value="loa">Loa loa (eye worm)</option>
+<option value="tsp">Trichinella spiralis</option>
+<option value="nve">Nematostella vectensis (sea anemone)</option>
+<option value="epa">Exaiptasia pallida</option>
+<option value="adf">Acropora digitifera (stony coral)</option>
+<option value="hmg">Hydra vulgaris</option>
+</select>
+<input type="hidden" name="mapno" value="04215" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="select_scale" onChange="resize_map(this)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="rno04215" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="orgs">
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/rno/rno04215.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=rect	coords=615,486,661,503	href="/dbget-bin/www_bget?rno:296468"	title="296468 (Birc7)" />
+<area shape=rect	coords=821,475,867,492	href="/dbget-bin/www_bget?rno:64026"	title="64026 (Casp7)" />
+<area shape=rect	coords=662,399,708,416	href="/dbget-bin/www_bget?rno:78963"	title="78963 (Apaf1)" />
+<area shape=rect	coords=282,490,328,507	href="/dbget-bin/www_bget?rno:29884"	title="29884 (Bok)" />
+<area shape=rect	coords=567,164,613,181	href="/dbget-bin/www_bget?rno:100363502+rno:25309+rno:25310"	title="100363502, 25309 (Cycs), 25310 (Cyct)" />
+<area shape=rect	coords=723,234,769,251	href="/dbget-bin/www_bget?rno:58918"	title="58918 (Casp9)" />
+<area shape=rect	coords=821,224,867,241	href="/dbget-bin/www_bget?rno:64026"	title="64026 (Casp7)" />
+<area shape=rect	coords=821,247,867,264	href="/dbget-bin/www_bget?rno:25402"	title="25402 (Casp3)" />
+<area shape=rect	coords=615,234,661,251	href="/dbget-bin/www_bget?rno:60371+rno:63879+rno:64041+rno:78971"	title="60371 (Birc2), 63879 (Xiap), 64041 (Birc5), 78971 (Birc3)" />
+<area shape=rect	coords=662,164,708,181	href="/dbget-bin/www_bget?rno:78963"	title="78963 (Apaf1)" />
+<area shape=rect	coords=512,211,558,228	href="/dbget-bin/www_bget?rno:100360940+rno:288753"	title="100360940, 288753 (Diablo)" />
+<area shape=rect	coords=512,234,558,251	href="/dbget-bin/www_bget?rno:297376"	title="297376 (Htra2)" />
+<area shape=rect	coords=512,257,558,274	href="/dbget-bin/www_bget?rno:287606"	title="287606 (Sept4)" />
+<area shape=rect	coords=357,225,403,242	href="/dbget-bin/www_bget?rno:24887"	title="24887 (Bax)" />
+<area shape=rect	coords=357,247,403,264	href="/dbget-bin/www_bget?rno:116502"	title="116502 (Bak1)" />
+<area shape=rect	coords=282,234,328,251	href="/dbget-bin/www_bget?rno:24224+rno:24888"	title="24224 (Bcl2), 24888 (Bcl2l1)" />
+<area shape=rect	coords=0,0,1,1	href="/dbget-bin/www_bget?rno:100363502+rno:25309+rno:25310"	title="100363502, 25309 (Cycs), 25310 (Cyct)" />
+<area shape=rect	coords=567,828,613,845	href="/dbget-bin/www_bget?rno:100363502+rno:25309+rno:25310"	title="100363502, 25309 (Cycs), 25310 (Cyct)" />
+<area shape=rect	coords=615,900,661,917	href="/dbget-bin/www_bget?rno:313876+rno:64041"	title="313876 (Birc6), 64041 (Birc5)" />
+<area shape=rect	coords=662,828,708,845	href="/dbget-bin/www_bget?rno:78963"	title="78963 (Apaf1)" />
+<area shape=rect	coords=357,902,403,919	href="/dbget-bin/www_bget?rno:116502"	title="116502 (Bak1)" />
+<area shape=rect	coords=282,902,328,919	href="/dbget-bin/www_bget?rno:24888"	title="24888 (Bcl2l1)" />
+<area shape=rect	coords=207,902,253,919	href="/dbget-bin/www_bget?rno:114558"	title="114558 (Becn1)" />
+<area shape=rect	coords=723,899,769,916	href="/dbget-bin/www_bget?rno:58918"	title="58918 (Casp9)" />
+<area shape=rect	coords=723,922,769,939	href="/dbget-bin/www_bget?rno:64026"	title="64026 (Casp7)" />
+<area shape=rect	coords=615,660,661,677	href="/dbget-bin/www_bget?rno:64041"	title="64041 (Birc5)" />
+<area shape=rect	coords=662,121,708,138	href="/dbget-bin/www_bget?rno:266610"	title="266610 (Fadd)" />
+<area shape=rect	coords=723,187,769,204	href="/dbget-bin/www_bget?rno:64044"	title="64044 (Casp8)" />
+<area shape=rect	coords=207,121,253,138	href="/dbget-bin/www_bget?rno:25625"	title="25625 (Tnfrsf1a)" />
+<area shape=rect	coords=436,355,482,372	href="/dbget-bin/www_bget?rno:116554+rno:25272+rno:50658"	title="116554 (Mapk8), 25272 (Mapk10), 50658 (Mapk9)" />
+<area shape=rect	coords=662,775,708,792	href="/dbget-bin/www_bget?rno:266610"	title="266610 (Fadd)" />
+<area shape=rect	coords=723,821,769,838	href="/dbget-bin/www_bget?rno:64044"	title="64044 (Casp8)" />
+<area shape=rect	coords=207,775,253,792	href="/dbget-bin/www_bget?rno:24596"	title="24596 (Ngfr)" />
+<area shape=rect	coords=207,234,253,251	href="/dbget-bin/www_bget?rno:317673+rno:492821+rno:64547+rno:64625"	title="317673 (Bbc3), 492821 (Pmaip1), 64547 (Bcl2l11), 64625 (Bid)" />
+<area shape=rect	coords=40,45,303,70	href="/dbget-bin/www_bget?rno04215"	title="rno04215: Apoptosis - multiple species" onmouseover="popupTimer(&quot;rno04215&quot;, &quot;rno04215: Apoptosis - multiple species&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=158,154,291,179	href="/kegg-bin/show_pathway?rno04210"	title="rno04210: Apoptosis" onmouseover="popupTimer(&quot;rno04210&quot;, &quot;rno04210: Apoptosis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=162,382,295,407	href="/kegg-bin/show_pathway?map04214"	title="map04214: Apoptosis - fly" onmouseover="popupTimer(&quot;map04214&quot;, &quot;map04214: Apoptosis - fly&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

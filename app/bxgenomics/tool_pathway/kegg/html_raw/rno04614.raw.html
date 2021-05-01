@@ -1,0 +1,362 @@
+<html>
+<!---
+ENTRY       rno04614
+DEFINITION  Renin-angiotensin system - Rattus norvegicus (rat)
+--->
+<head>
+<title>
+KEGG PATHWAY: Renin-angiotensin system - Rattus norvegicus (rat)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(obj){
+  var form = document.forms["form2"];
+  var idx = obj.selectedIndex;
+  var value = obj.options[idx].value;
+	
+  if(value == "1.0_T01003")
+  {
+    form.scale.value = "1.0";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.70_T01003")
+  {
+    form.scale.value = "0.70";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.35_T01003")
+  {
+    form.scale.value = "0.35";
+    form.orgs.value  = "T01003";
+  }
+  else
+	{
+    form.scale.value = value;
+		form.orgs.value  = '';
+    if(form.image)
+    {
+		form.image.value  = '';
+    }
+		form.map.value = "rno04614";
+	}
+
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Renin-angiotensin system - Rattus norvegicus (rat)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=04614&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map04614.keg&query=rno&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+rno04614">Pathway entry</a>
+
+| <a href="https://www.kegg.jp/kegg-bin/download?entry=rno04614&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+The renin-angiotensin system (RAS) is a peptidergic system with endocrine characteristics regarding to the regulation of the blood pressure and hydro-electrolytic balance. In the classical RAS, the enzyme renin cleaves its substrate angiotensinogen (Agt) forming the decapeptide angiotensin I that is in turn cleaved by angiotensin-converting enzyme (ACE) to produce the angiotensin II (Ang II), a key player of this system. Ang II activates its AT1 receptor (AT1R), the principal receptor that mediates the majority of the known actions of Ang II in the kidney, including vasoconstriction, renal sodium (Na+) reabsorption, and aldosterone secretion, increasing blood pressure and contributing to the development of hypertension. In addition to (ACE)/Ang II/AT1R and AT2R axis, other signaling pathways in the RAS, such as ACE2/angiotensin-(1-7)/Mas and Ang IV/IRAP, and other active peptide of the RAS, with physiological relevance as Ang III, Ang A and alamandine, are now widely recognized.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="rno.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno" selected>Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="oro">Odobenus rosmarus divergens (Pacific walrus)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="oor">Orcinus orca (killer whale)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="tmu">Trichechus manatus latirostris (Florida manatee)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="04614" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="select_scale" onChange="resize_map(this)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="rno04614" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="orgs">
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/rno/rno04614.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=458,378,4	href="/dbget-bin/www_bget?C02135"	title="C02135 (Angiotensin II)" onmouseover="popupTimer(&quot;C02135&quot;, &quot;C02135 (Angiotensin II)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=458,544,4	href="/dbget-bin/www_bget?C15849"	title="C15849 (Angiotensin IV)" onmouseover="popupTimer(&quot;C15849&quot;, &quot;C15849 (Angiotensin IV)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=458,461,4	href="/dbget-bin/www_bget?C15848"	title="C15848 (Angiotensin III)" onmouseover="popupTimer(&quot;C15848&quot;, &quot;C15848 (Angiotensin III)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=458,188,4	href="/dbget-bin/www_bget?C15850"	title="C15850 (Angiotensin (1-7))" onmouseover="popupTimer(&quot;C15850&quot;, &quot;C15850 (Angiotensin (1-7))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=458,85,4	href="/dbget-bin/www_bget?C15852"	title="C15852 (Angiotensin (1-5))" onmouseover="popupTimer(&quot;C15852&quot;, &quot;C15852 (Angiotensin (1-5))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=335,188,4	href="/dbget-bin/www_bget?C15851"	title="C15851 (Angiotensin (1-9))" onmouseover="popupTimer(&quot;C15851&quot;, &quot;C15851 (Angiotensin (1-9))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=233,378,4	href="/dbget-bin/www_bget?C00873"	title="C00873 (Angiotensin I)" onmouseover="popupTimer(&quot;C00873&quot;, &quot;C00873 (Angiotensin I)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=458,593,4	href="/dbget-bin/www_bget?C20972"	title="C20972 (Angiotensin (5-8))" onmouseover="popupTimer(&quot;C20972&quot;, &quot;C20972 (Angiotensin (5-8))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=458,642,4	href="/dbget-bin/www_bget?C20973"	title="C20973 (Angiotensin (5-7))" onmouseover="popupTimer(&quot;C20973&quot;, &quot;C20973 (Angiotensin (5-7))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=525,244,4	href="/dbget-bin/www_bget?C20971"	title="C20971 (Alamandine)" onmouseover="popupTimer(&quot;C20971&quot;, &quot;C20971 (Alamandine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=493,315,4	href="/dbget-bin/www_bget?C20970"	title="C20970 (Angiotensin A)" onmouseover="popupTimer(&quot;C20970&quot;, &quot;C20970 (Angiotensin A)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=407,300,453,317	href="/dbget-bin/www_bget?rno:302668"	title="302668 (Ace2)" />
+<area shape=rect	coords=269,229,315,246	href="/dbget-bin/www_bget?rno:302668"	title="302668 (Ace2)" />
+<area shape=rect	coords=407,115,453,132	href="/dbget-bin/www_bget?rno:24310+rno:498012"	title="24310 (Ace), 498012 (Ace3)" />
+<area shape=rect	coords=369,148,415,165	href="/dbget-bin/www_bget?rno:24310+rno:498012"	title="24310 (Ace), 498012 (Ace3)" />
+<area shape=rect	coords=279,428,325,445	href="/dbget-bin/www_bget?rno:24310+rno:498012"	title="24310 (Ace), 498012 (Ace3)" />
+<area shape=rect	coords=580,393,626,410	href="/dbget-bin/www_bget?rno:24180+rno:81638"	title="24180 (Agtr1a), 81638 (Agtr1b)" />
+<area shape=rect	coords=580,308,626,325	href="/dbget-bin/www_bget?rno:24182"	title="24182 (Agtr2)" />
+<area shape=rect	coords=345,258,391,275	href="/dbget-bin/www_bget?rno:117041"	title="117041 (Nln)" />
+<area shape=rect	coords=345,238,391,255	href="/dbget-bin/www_bget?rno:64517"	title="64517 (Thop1)" />
+<area shape=rect	coords=345,278,391,295	href="/dbget-bin/www_bget?rno:24590"	title="24590 (Mme)" />
+<area shape=rect	coords=407,490,453,507	href="/dbget-bin/www_bget?rno:81641"	title="81641 (Anpep)" />
+<area shape=rect	coords=407,414,453,431	href="/dbget-bin/www_bget?rno:64017"	title="64017 (Enpep)" />
+<area shape=rect	coords=269,249,315,266	href="/dbget-bin/www_bget?rno:296370"	title="296370 (Ctsa)" />
+<area shape=rect	coords=269,269,315,286	href="/dbget-bin/www_bget?rno:54242"	title="54242 (Cpa3)" />
+<area shape=rect	coords=580,180,626,197	href="/dbget-bin/www_bget?rno:25153"	title="25153 (Mas1)" />
+<area shape=rect	coords=369,168,415,185	href="/dbget-bin/www_bget?rno:24590"	title="24590 (Mme)" />
+<area shape=rect	coords=580,535,626,552	href="/dbget-bin/www_bget?rno:108348118+rno:171105"	title="108348118, 171105 (Lnpep)" />
+<area shape=rect	coords=280,382,326,399	href="/dbget-bin/www_bget?rno:100360872+rno:25627"	title="100360872 (Mcpt1l1), 25627 (Cma1)" />
+<area shape=rect	coords=280,402,326,419	href="/dbget-bin/www_bget?rno:290257+rno:408207+rno:408240"	title="290257 (Ctsg), 408207 (Mcpt8l3), 408240 (Mcpt8l2)" />
+<area shape=rect	coords=73,369,119,386	href="/dbget-bin/www_bget?rno:24179"	title="24179 (Agt)" />
+<area shape=rect	coords=148,381,194,398	href="/dbget-bin/www_bget?rno:24715"	title="24715 (Ren)" />
+<area shape=rect	coords=580,671,626,688	href="/dbget-bin/www_bget?rno:302526"	title="302526 (Atp6ap2)" />
+<area shape=rect	coords=202,478,248,495	href="/dbget-bin/www_bget?rno:100361452+rno:100911689+rno:103690048+rno:108348116+rno:24523+rno:24594+rno:24841+rno:292855+rno:292858+rno:292866+rno:292868+rno:292872+rno:408242"	title="100361452 (Klk1c4), 100911689, 103690048, 108348116, 24523 (Klk1), 24594 (Klk1b3), 24841 (Klk1c2), 292855 (Klk1c12), 292858 (Klk1c10), 292866 (Klk1c8), 292868 (Klk1c9), 292872 (Klk1c3), 408242 (Klk1c6)" />
+<area shape=rect	coords=202,500,248,517	href="/dbget-bin/www_bget?rno:290257+rno:408207+rno:408240"	title="290257 (Ctsg), 408207 (Mcpt8l3), 408240 (Mcpt8l2)" />
+<area shape=rect	coords=580,235,626,252	href="/dbget-bin/www_bget?rno:293648"	title="293648 (Mrgprd)" />
+<area shape=rect	coords=517,276,563,293	href="/dbget-bin/www_bget?rno:302668"	title="302668 (Ace2)" />
+<area shape=rect	coords=407,556,453,573	href="/dbget-bin/www_bget?rno:81641"	title="81641 (Anpep)" />
+<area shape=rect	coords=407,605,453,622	href="/dbget-bin/www_bget?rno:83471"	title="83471 (Prep)" />
+<area shape=rect	coords=407,323,453,340	href="/dbget-bin/www_bget?rno:293118"	title="293118 (Prcp)" />
+<area shape=rect	coords=40,45,277,70	href="/dbget-bin/www_bget?rno04614"	title="rno04614: Renin-angiotensin system" onmouseover="popupTimer(&quot;rno04614&quot;, &quot;rno04614: Renin-angiotensin system&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=230,587,356,622	href="/kegg-bin/show_pathway?rno04610"	title="rno04610: Complement and coagulation cascades" onmouseover="popupTimer(&quot;rno04610&quot;, &quot;rno04610: Complement and coagulation cascades&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=678,417,804,452	href="/kegg-bin/show_pathway?rno04270"	title="rno04270: Vascular smooth muscle contraction" onmouseover="popupTimer(&quot;rno04270&quot;, &quot;rno04270: Vascular smooth muscle contraction&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=80,282,192,307	href="/kegg-bin/show_pathway?rno04924"	title="rno04924: Renin secretion" onmouseover="popupTimer(&quot;rno04924&quot;, &quot;rno04924: Renin secretion&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=678,457,804,492	href="/kegg-bin/show_pathway?rno04925"	title="rno04925: Aldosterone synthesis and secretion" onmouseover="popupTimer(&quot;rno04925&quot;, &quot;rno04925: Aldosterone synthesis and secretion&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

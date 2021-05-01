@@ -1,0 +1,317 @@
+<html>
+<!---
+ENTRY       mmu05216
+DEFINITION  Thyroid cancer - Mus musculus (mouse)
+--->
+<head>
+<title>
+KEGG PATHWAY: Thyroid cancer - Mus musculus (mouse)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Thyroid cancer - Mus musculus (mouse)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=05216&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map05216.keg&query=mmu&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+mmu05216">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=mmu05216&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Thyroid cancer is the most common endocrine malignancy and accounts for the majority of endocrine cancer- related deaths each year. More than 95% of thyroid carcinomas are derived from follicular cells.  Their behavior varies from the indolent growing, well-differentiated papillary and follicular carcinomas (PTC and FTC, respectively) to the extremely aggressive undifferentiated carcinoma (UC). Somatic rearrangements of RET and TRK are almost exclusively found in PTC and may be found in early stages. The most distinctive molecular features of FTC are the prominence of aneuploidy and the high prevalence of RAS mutations and PAX8-PPAR{gamma} rearrangements. p53 seems to play a crucial role in the dedifferentiation process of thyroid carcinoma.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="mmu.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu" selected>Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="05216" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="mmu05216" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/mmu/mmu05216.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=rect	coords=346,300,392,317	href="/dbget-bin/www_bget?mmu:15461+mmu:16653+mmu:18176"	title="15461 (Hras), 16653 (Kras), 18176 (Nras)" />
+<area shape=rect	coords=739,401,785,418	href="/dbget-bin/www_bget?mmu:19016"	title="19016 (Pparg)" />
+<area shape=rect	coords=424,300,470,317	href="/dbget-bin/www_bget?mmu:109880"	title="109880 (Braf)" />
+<area shape=rect	coords=424,177,470,194	href="/dbget-bin/www_bget?mmu:109880"	title="109880 (Braf)" />
+<area shape=rect	coords=579,300,625,317	href="/dbget-bin/www_bget?mmu:26413+mmu:26417"	title="26413 (Mapk1), 26417 (Mapk3)" />
+<area shape=rect	coords=502,300,548,317	href="/dbget-bin/www_bget?mmu:26395+mmu:26396"	title="26395 (Map2k1), 26396 (Map2k2)" />
+<area shape=rect	coords=685,354,731,371	href="/dbget-bin/www_bget?mmu:18510+mmu:19016"	title="18510 (Pax8), 19016 (Pparg)" />
+<area shape=rect	coords=739,374,785,391	href="/dbget-bin/www_bget?mmu:20181+mmu:20182+mmu:20183"	title="20181 (Rxra), 20182 (Rxrb), 20183 (Rxrg)" />
+<area shape=rect	coords=467,674,513,691	href="/dbget-bin/www_bget?mmu:12387"	title="12387 (Ctnnb1)" />
+<area shape=rect	coords=812,662,858,679	href="/dbget-bin/www_bget?mmu:17869"	title="17869 (Myc)" />
+<area shape=rect	coords=199,674,245,691	href="/dbget-bin/www_bget?mmu:12550"	title="12550 (Cdh1)" />
+<area shape=rect	coords=579,158,625,175	href="/dbget-bin/www_bget?mmu:26413+mmu:26417"	title="26413 (Mapk1), 26417 (Mapk3)" />
+<area shape=rect	coords=812,685,858,702	href="/dbget-bin/www_bget?mmu:12443"	title="12443 (Ccnd1)" />
+<area shape=rect	coords=502,158,548,175	href="/dbget-bin/www_bget?mmu:26395+mmu:26396"	title="26395 (Map2k1), 26396 (Map2k2)" />
+<area shape=rect	coords=424,142,470,159	href="/dbget-bin/www_bget?mmu:109880"	title="109880 (Braf)" />
+<area shape=rect	coords=346,141,392,158	href="/dbget-bin/www_bget?mmu:15461+mmu:16653+mmu:18176"	title="15461 (Hras), 16653 (Kras), 18176 (Nras)" />
+<area shape=rect	coords=255,109,301,126	href="/dbget-bin/www_bget?mmu:19713+mmu:27057+mmu:76551"	title="19713 (Ret), 27057 (Ncoa4), 76551 (Ccdc6)" />
+<area shape=rect	coords=199,156,245,173	href="/dbget-bin/www_bget?mmu:108989+mmu:18211+mmu:21787+mmu:59069"	title="108989 (Tpr), 18211 (Ntrk1), 21787 (Tfg), 59069 (Tpm3)" />
+<area shape=rect	coords=699,674,745,691	href="/dbget-bin/www_bget?mmu:16842+mmu:21414+mmu:21415+mmu:21416"	title="16842 (Lef1), 21414 (Tcf7), 21415 (Tcf7l1), 21416 (Tcf7l2)" />
+<area shape=rect	coords=740,586,786,603	href="/dbget-bin/www_bget?mmu:22059"	title="22059 (Trp53)" />
+<area shape=rect	coords=870,566,916,583	href="/dbget-bin/www_bget?mmu:12575"	title="12575 (Cdkn1a)" />
+<area shape=rect	coords=922,566,968,583	href="/dbget-bin/www_bget?mmu:13197+mmu:17873+mmu:23882"	title="13197 (Gadd45a), 17873 (Gadd45b), 23882 (Gadd45g)" />
+<area shape=rect	coords=870,588,916,605	href="/dbget-bin/www_bget?mmu:12028"	title="12028 (Bax)" />
+<area shape=rect	coords=922,588,968,605	href="/dbget-bin/www_bget?mmu:12018"	title="12018 (Bak1)" />
+<area shape=rect	coords=870,610,916,627	href="/dbget-bin/www_bget?mmu:107986"	title="107986 (Ddb2)" />
+<area shape=rect	coords=922,610,968,627	href="/dbget-bin/www_bget?mmu:27015"	title="27015 (Polk)" />
+<area shape=rect	coords=40,45,195,70	href="/dbget-bin/www_bget?mmu05216"	title="mmu05216: Thyroid cancer" onmouseover="popupTimer(&quot;mmu05216&quot;, &quot;mmu05216: Thyroid cancer&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=516,221,619,255	href="/kegg-bin/show_pathway?mmu04010"	title="mmu04010: MAPK signaling pathway" onmouseover="popupTimer(&quot;mmu04010&quot;, &quot;mmu04010: MAPK signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=433,378,536,412	href="/kegg-bin/show_pathway?mmu03320"	title="mmu03320: PPAR signaling pathway" onmouseover="popupTimer(&quot;mmu03320&quot;, &quot;mmu03320: PPAR signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=730,540,833,574	href="/kegg-bin/show_pathway?mmu04115"	title="mmu04115: p53 signaling pathway" onmouseover="popupTimer(&quot;mmu04115&quot;, &quot;mmu04115: p53 signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=351,709,454,743	href="/kegg-bin/show_pathway?mmu04520"	title="mmu04520: Adherens junction" onmouseover="popupTimer(&quot;mmu04520&quot;, &quot;mmu04520: Adherens junction&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=525,709,628,743	href="/kegg-bin/show_pathway?mmu04310"	title="mmu04310: Wnt signaling pathway" onmouseover="popupTimer(&quot;mmu04310&quot;, &quot;mmu04310: Wnt signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

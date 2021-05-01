@@ -1,0 +1,419 @@
+<html>
+<!---
+ENTRY       hsa04213
+DEFINITION  Longevity regulating pathway - multiple species - Homo sapiens (human)
+--->
+<head>
+<title>
+KEGG PATHWAY: Longevity regulating pathway - multiple species - Homo sapiens (human)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Longevity regulating pathway - multiple species - Homo sapiens (human)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=04213&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map04213.keg&query=hsa&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+hsa04213">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=hsa04213&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Aging is a complex process of accumulation of molecular, cellular, and organ damage, leading to loss of function and increased vulnerability to disease and death. Despite the complexity of aging, recent work has shown that dietary restriction (DR) and genetic down-regulation of nutrient-sensing pathways, namely IIS (insulin/insulin-like growth factor signalling) and TOR (target-of- rapamycin) can substantially increase healthy life span of laboratory model organisms. These nutrient signaling pathways are conserved in various organisms. In worms, flies, and mammals, DR reduces signalling through IIS/TOR pathways, deactivating the PI3K/Akt/TOR intracellular signalling cascade and consequently activating the antiaging FOXO family transcription factor(s). In yeast, the effects of DR on life- span extension are associated with reduced activities of the TOR/Sch9 and Ras/PKA pathways and require the serine-threonine kinase Rim15 and transcription factors Gis1 and Msn2/4. These transcription factors (FOXO, DAF-16, Gis1, and Msn2/4) transactivate genes involved in resistance to oxidative stress, energy metabolism, DNA damage repair, glucose metabolism, autophagy and protection of proteins by chaperones.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="hsa.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa" selected>Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+<option value="dme">Drosophila melanogaster (fruit fly)</option>
+<option value="dpo">Drosophila pseudoobscura pseudoobscura</option>
+<option value="dan">Drosophila ananassae</option>
+<option value="der">Drosophila erecta</option>
+<option value="dpe">Drosophila persimilis</option>
+<option value="dse">Drosophila sechellia</option>
+<option value="dsi">Drosophila simulans</option>
+<option value="dwi">Drosophila willistoni</option>
+<option value="dya">Drosophila yakuba</option>
+<option value="dgr">Drosophila grimshawi</option>
+<option value="dmo">Drosophila mojavensis</option>
+<option value="dvi">Drosophila virilis</option>
+<option value="mde">Musca domestica (house fly)</option>
+<option value="aga">Anopheles gambiae (mosquito)</option>
+<option value="aag">Aedes aegypti (yellow fever mosquito)</option>
+<option value="cqu">Culex quinquefasciatus (southern house mosquito)</option>
+<option value="ame">Apis mellifera (honey bee)</option>
+<option value="bim">Bombus impatiens (common eastern bumble bee)</option>
+<option value="bter">Bombus terrestris (buff-tailed bumblebee)</option>
+<option value="soc">Solenopsis invicta (red fire ant)</option>
+<option value="aec">Acromyrmex echinatior (Panamanian leafcutter ant)</option>
+<option value="acep">Atta cephalotes (leaf cutting ant)</option>
+<option value="pbar">Pogonomyrmex barbatus (red harvester ant)</option>
+<option value="hst">Harpegnathos saltator (Jerdon's jumping ant)</option>
+<option value="cfo">Camponotus floridanus (Florida carpenter ant)</option>
+<option value="lhu">Linepithema humile (Argentine ant)</option>
+<option value="pgc">Pseudomyrmex gracilis</option>
+<option value="nvi">Nasonia vitripennis (jewel wasp)</option>
+<option value="tca">Tribolium castaneum (red flour beetle)</option>
+<option value="dpa">Dendroctonus ponderosae (mountain pine beetle)</option>
+<option value="nvl">Nicrophorus vespilloides</option>
+<option value="bmor">Bombyx mori (domestic silkworm)</option>
+<option value="dpl">Danaus plexippus (monarch butterfly)</option>
+<option value="pxy">Plutella xylostella (diamondback moth)</option>
+<option value="api">Acyrthosiphon pisum (pea aphid)</option>
+<option value="dnx">Diuraphis noxia (Russian wheat aphid)</option>
+<option value="phu">Pediculus humanus corporis (human body louse)</option>
+<option value="fcd">Folsomia candida</option>
+<option value="cel">Caenorhabditis elegans (nematode)</option>
+<option value="cbr">Caenorhabditis briggsae</option>
+<option value="nai">Necator americanus</option>
+<option value="bmy">Brugia malayi (filaria)</option>
+<option value="loa">Loa loa (eye worm)</option>
+<option value="tsp">Trichinella spiralis</option>
+<option value="sce">Saccharomyces cerevisiae (budding yeast)</option>
+<option value="ago">Ashbya gossypii (Eremothecium gossypii)</option>
+<option value="erc">Eremothecium cymbalariae</option>
+<option value="kla">Kluyveromyces lactis</option>
+<option value="lth">Lachancea thermotolerans</option>
+<option value="vpo">Vanderwaltozyma polyspora</option>
+<option value="zro">Zygosaccharomyces rouxii</option>
+<option value="cgr">Candida glabrata</option>
+<option value="ncs">Naumovozyma castellii</option>
+<option value="ndi">Naumovozyma dairenensis</option>
+<option value="tpf">Tetrapisispora phaffii</option>
+<option value="tbl">Tetrapisispora blattae</option>
+<option value="tdl">Torulaspora delbrueckii</option>
+<option value="kaf">Kazachstania africana</option>
+<option value="ppa">Komagataella phaffii</option>
+<option value="dha">Debaryomyces hansenii</option>
+<option value="pic">Scheffersomyces stipitis</option>
+<option value="pgu">Meyerozyma guilliermondii</option>
+<option value="spaa">Spathaspora passalidarum</option>
+<option value="lel">Lodderomyces elongisporus</option>
+<option value="cal">Candida albicans</option>
+<option value="ctp">Candida tropicalis</option>
+<option value="cot">Candida orthopsilosis</option>
+<option value="cdu">Candida dubliniensis</option>
+<option value="cten">Candida tenuis</option>
+<option value="yli">Yarrowia lipolytica</option>
+<option value="clu">Clavispora lusitaniae</option>
+<option value="caur">Candida auris</option>
+</select>
+<input type="hidden" name="mapno" value="04213" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="hsa04213" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/hsa/hsa04213.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=584,235,4	href="/dbget-bin/www_bget?C05981"	title="C05981 (Phosphatidylinositol-3,4,5-trisphosphate)" onmouseover="popupTimer(&quot;C05981&quot;, &quot;C05981 (Phosphatidylinositol-3,4,5-trisphosphate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=584,422,4	href="/dbget-bin/www_bget?C05981"	title="C05981 (Phosphatidylinositol-3,4,5-trisphosphate)" onmouseover="popupTimer(&quot;C05981&quot;, &quot;C05981 (Phosphatidylinositol-3,4,5-trisphosphate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=584,643,4	href="/dbget-bin/www_bget?C05981"	title="C05981 (Phosphatidylinositol-3,4,5-trisphosphate)" onmouseover="popupTimer(&quot;C05981&quot;, &quot;C05981 (Phosphatidylinositol-3,4,5-trisphosphate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=584,825,4	href="/dbget-bin/www_bget?C00575"	title="C00575 (3',5'-Cyclic AMP)" onmouseover="popupTimer(&quot;C00575&quot;, &quot;C00575 (3',5'-Cyclic AMP)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=584,188,4	href="/dbget-bin/www_bget?C00575"	title="C00575 (3',5'-Cyclic AMP)" onmouseover="popupTimer(&quot;C00575&quot;, &quot;C00575 (3',5'-Cyclic AMP)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=986,224,1032,241	href="/dbget-bin/www_bget?hsa:2308+hsa:2309"	title="2308 (FOXO1), 2309 (FOXO3)" />
+<area shape=rect	coords=759,273,805,290	href="/dbget-bin/www_bget?hsa:6198+hsa:6199"	title="6198 (RPS6KB1), 6199 (RPS6KB2)" />
+<area shape=rect	coords=682,273,728,290	href="/dbget-bin/www_bget?hsa:2475+hsa:57521+hsa:84335"	title="2475 (MTOR), 57521 (RPTOR), 84335 (AKT1S1)" />
+<area shape=rect	coords=693,224,739,241	href="/dbget-bin/www_bget?hsa:10000+hsa:207+hsa:208"	title="10000 (AKT3), 207 (AKT1), 208 (AKT2)" />
+<area shape=rect	coords=490,224,536,241	href="/dbget-bin/www_bget?hsa:5290+hsa:5291+hsa:5293+hsa:5295+hsa:5296+hsa:8503"	title="5290 (PIK3CA), 5291 (PIK3CB), 5293 (PIK3CD), 5295 (PIK3R1), 5296 (PIK3R2), 8503 (PIK3R3)" />
+<area shape=rect	coords=226,237,272,254	href="/dbget-bin/www_bget?hsa:3479"	title="3479 (IGF1)" />
+<area shape=rect	coords=315,237,361,254	href="/dbget-bin/www_bget?hsa:3480"	title="3480 (IGF1R)" />
+<area shape=rect	coords=404,206,450,223	href="/dbget-bin/www_bget?hsa:3667+hsa:8471+hsa:8660"	title="3667 (IRS1), 8471 (IRS4), 8660 (IRS2)" />
+<area shape=rect	coords=404,250,450,267	href="/dbget-bin/www_bget?hsa:3265+hsa:3845+hsa:4893"	title="3265 (HRAS), 3845 (KRAS), 4893 (NRAS)" />
+<area shape=rect	coords=986,413,1032,430	href="/dbget-bin/www_bget?hsa:2309"	title="2309 (FOXO3)" />
+<area shape=rect	coords=759,467,805,484	href="/dbget-bin/www_bget?hsa:6198+hsa:6199"	title="6198 (RPS6KB1), 6199 (RPS6KB2)" />
+<area shape=rect	coords=682,467,728,484	href="/dbget-bin/www_bget?hsa:2475+hsa:57521"	title="2475 (MTOR), 57521 (RPTOR)" />
+<area shape=rect	coords=693,413,739,430	href="/dbget-bin/www_bget?hsa:10000+hsa:207+hsa:208"	title="10000 (AKT3), 207 (AKT1), 208 (AKT2)" />
+<area shape=rect	coords=490,413,536,430	href="/dbget-bin/www_bget?hsa:5290+hsa:5291+hsa:5293+hsa:5295+hsa:5296+hsa:8503"	title="5290 (PIK3CA), 5291 (PIK3CB), 5293 (PIK3CD), 5295 (PIK3R1), 5296 (PIK3R2), 8503 (PIK3R3)" />
+<area shape=rect	coords=226,413,272,430	href="/dbget-bin/www_bget?hsa:3479+hsa:3630"	title="3479 (IGF1), 3630 (INS)" />
+<area shape=rect	coords=316,413,362,430	href="/dbget-bin/www_bget?hsa:3480"	title="3480 (IGF1R)" />
+<area shape=rect	coords=404,390,450,407	href="/dbget-bin/www_bget?hsa:3667"	title="3667 (IRS1)" />
+<area shape=rect	coords=986,634,1032,651	href="/dbget-bin/www_bget?hsa:2309"	title="2309 (FOXO3)" />
+<area shape=rect	coords=695,634,741,651	href="/dbget-bin/www_bget?hsa:10000+hsa:207+hsa:208"	title="10000 (AKT3), 207 (AKT1), 208 (AKT2)" />
+<area shape=rect	coords=490,633,536,650	href="/dbget-bin/www_bget?hsa:5290+hsa:5291+hsa:5293"	title="5290 (PIK3CA), 5291 (PIK3CB), 5293 (PIK3CD)" />
+<area shape=rect	coords=316,633,362,650	href="/dbget-bin/www_bget?hsa:3643"	title="3643 (INSR)" />
+<area shape=rect	coords=404,815,450,832	href="/dbget-bin/www_bget?hsa:3845"	title="3845 (KRAS)" />
+<area shape=rect	coords=695,815,741,832	href="/dbget-bin/www_bget?hsa:5566+hsa:5567+hsa:5568"	title="5566 (PRKACA), 5567 (PRKACB), 5568 (PRKACG)" />
+<area shape=rect	coords=759,693,803,710	href="/dbget-bin/www_bget?hsa:6198+hsa:6199"	title="6198 (RPS6KB1), 6199 (RPS6KB2)" />
+<area shape=rect	coords=682,693,728,710	href="/dbget-bin/www_bget?hsa:2475+hsa:57521"	title="2475 (MTOR), 57521 (RPTOR)" />
+<area shape=rect	coords=692,898,738,915	href="/dbget-bin/www_bget?hsa:2475"	title="2475 (MTOR)" />
+<area shape=rect	coords=986,491,1032,508	href="/dbget-bin/www_bget?hsa:1979"	title="1979 (EIF4EBP2)" />
+<area shape=rect	coords=986,693,1032,710	href="/dbget-bin/www_bget?hsa:3170"	title="3170 (FOXA2)" />
+<area shape=rect	coords=404,606,450,623	href="/dbget-bin/www_bget?hsa:3667"	title="3667 (IRS1)" />
+<area shape=rect	coords=693,180,739,197	href="/dbget-bin/www_bget?hsa:5566+hsa:5567+hsa:5568"	title="5566 (PRKACA), 5567 (PRKACB), 5568 (PRKACG)" />
+<area shape=rect	coords=490,180,536,197	href="/dbget-bin/www_bget?hsa:107+hsa:108+hsa:109+hsa:111+hsa:112+hsa:113+hsa:114+hsa:115+hsa:196883"	title="107 (ADCY1), 108 (ADCY2), 109 (ADCY3), 111 (ADCY5), 112 (ADCY6), 113 (ADCY7), 114 (ADCY8), 115 (ADCY9), 196883 (ADCY4)" />
+<area shape=rect	coords=605,273,651,290	href="/dbget-bin/www_bget?hsa:51422+hsa:53632+hsa:5562+hsa:5563+hsa:5564+hsa:5565+hsa:5571"	title="51422 (PRKAG2), 53632 (PRKAG3), 5562 (PRKAA1), 5563 (PRKAA2), 5564 (PRKAB1), 5565 (PRKAB2), 5571 (PRKAG1)" />
+<area shape=rect	coords=226,214,272,231	href="/dbget-bin/www_bget?hsa:3630"	title="3630 (INS)" />
+<area shape=rect	coords=316,214,362,231	href="/dbget-bin/www_bget?hsa:3643"	title="3643 (INSR)" />
+<area shape=rect	coords=1266,216,1312,233	href="/dbget-bin/www_bget?hsa:6648"	title="6648 (SOD2)" />
+<area shape=rect	coords=1266,441,1312,458	href="/dbget-bin/www_bget?hsa:6647+hsa:6648"	title="6647 (SOD1), 6648 (SOD2)" />
+<area shape=rect	coords=1266,658,1312,675	href="/dbget-bin/www_bget?hsa:6648"	title="6648 (SOD2)" />
+<area shape=rect	coords=1266,467,1312,484	href="/dbget-bin/www_bget?hsa:1410+hsa:3303+hsa:3304+hsa:3305+hsa:3306+hsa:3310+hsa:3312"	title="1410 (CRYAB), 3303 (HSPA1A), 3304 (HSPA1B), 3305 (HSPA1L), 3306 (HSPA2), 3310 (HSPA6), 3312 (HSPA8)" />
+<area shape=rect	coords=1266,923,1312,940	href="/dbget-bin/www_bget?hsa:81570"	title="81570 (CLPB)" />
+<area shape=rect	coords=605,467,651,484	href="/dbget-bin/www_bget?hsa:51422+hsa:53632+hsa:5562+hsa:5563+hsa:5564+hsa:5565+hsa:5571"	title="51422 (PRKAG2), 53632 (PRKAG3), 5562 (PRKAA1), 5563 (PRKAA2), 5564 (PRKAB1), 5565 (PRKAB2), 5571 (PRKAG1)" />
+<area shape=rect	coords=1266,240,1312,257	href="/dbget-bin/www_bget?hsa:847"	title="847 (CAT)" />
+<area shape=rect	coords=1266,265,1312,282	href="/dbget-bin/www_bget?hsa:9474"	title="9474 (ATG5)" />
+<area shape=rect	coords=1266,681,1312,698	href="/dbget-bin/www_bget?hsa:847"	title="847 (CAT)" />
+<area shape=rect	coords=1266,897,1312,914	href="/dbget-bin/www_bget?hsa:847"	title="847 (CAT)" />
+<area shape=rect	coords=1266,869,1312,886	href="/dbget-bin/www_bget?hsa:6648"	title="6648 (SOD2)" />
+<area shape=rect	coords=923,757,969,774	href="/dbget-bin/www_bget?hsa:23411"	title="23411 (SIRT1)" />
+<area shape=rect	coords=923,301,969,318	href="/dbget-bin/www_bget?hsa:23411"	title="23411 (SIRT1)" />
+<area shape=rect	coords=923,561,969,578	href="/dbget-bin/www_bget?hsa:23411"	title="23411 (SIRT1)" />
+<area shape=rect	coords=904,527,950,544	href="/dbget-bin/www_bget?hsa:3065+hsa:3066"	title="3065 (HDAC1), 3066 (HDAC2)" />
+<area shape=rect	coords=40,45,475,70	href="/dbget-bin/www_bget?hsa04213"	title="hsa04213: Longevity regulating pathway - multiple species" onmouseover="popupTimer(&quot;hsa04213&quot;, &quot;hsa04213: Longevity regulating pathway - multiple species&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=198,317,306,351	href="/kegg-bin/show_pathway?hsa04910"	title="hsa04910: Insulin signaling pathway" onmouseover="popupTimer(&quot;hsa04910&quot;, &quot;hsa04910: Insulin signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=695,317,803,351	href="/kegg-bin/show_pathway?hsa04150"	title="hsa04150: mTOR signaling pathway" onmouseover="popupTimer(&quot;hsa04150&quot;, &quot;hsa04150: mTOR signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=425,317,545,351	href="/kegg-bin/show_pathway?hsa04151"	title="hsa04151: PI3K-Akt signaling pathway" onmouseover="popupTimer(&quot;hsa04151&quot;, &quot;hsa04151: PI3K-Akt signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1040,194,1148,228	href="/kegg-bin/show_pathway?hsa04068"	title="hsa04068: FoxO signaling pathway" onmouseover="popupTimer(&quot;hsa04068&quot;, &quot;hsa04068: FoxO signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=561,317,681,351	href="/kegg-bin/show_pathway?hsa04152"	title="hsa04152: AMPK signaling pathway" onmouseover="popupTimer(&quot;hsa04152&quot;, &quot;hsa04152: AMPK signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=167,166,296,200	href="/kegg-bin/show_pathway?hsa04211"	title="hsa04211: Longevity regulating pathway" onmouseover="popupTimer(&quot;hsa04211&quot;, &quot;hsa04211: Longevity regulating pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=167,578,296,612	href="/kegg-bin/show_pathway?map04212"	title="map04212: Longevity regulating pathway - worm" onmouseover="popupTimer(&quot;map04212&quot;, &quot;map04212: Longevity regulating pathway - worm&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

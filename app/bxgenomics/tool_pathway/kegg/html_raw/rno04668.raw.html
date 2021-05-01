@@ -1,0 +1,419 @@
+<html>
+<!---
+ENTRY       rno04668
+DEFINITION  TNF signaling pathway - Rattus norvegicus (rat)
+--->
+<head>
+<title>
+KEGG PATHWAY: TNF signaling pathway - Rattus norvegicus (rat)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(obj){
+  var form = document.forms["form2"];
+  var idx = obj.selectedIndex;
+  var value = obj.options[idx].value;
+	
+  if(value == "1.0_T01003")
+  {
+    form.scale.value = "1.0";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.70_T01003")
+  {
+    form.scale.value = "0.70";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.35_T01003")
+  {
+    form.scale.value = "0.35";
+    form.orgs.value  = "T01003";
+  }
+  else
+	{
+    form.scale.value = value;
+		form.orgs.value  = '';
+    if(form.image)
+    {
+		form.image.value  = '';
+    }
+		form.map.value = "rno04668";
+	}
+
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>TNF signaling pathway - Rattus norvegicus (rat)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=04668&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map04668.keg&query=rno&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+rno04668">Pathway entry</a>
+
+| <a href="https://www.kegg.jp/kegg-bin/download?entry=rno04668&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Tumor necrosis factor (TNF), as a critical cytokine, can induce a wide range of intracellular signal pathways including apoptosis and cell survival as well as inflammation and immunity. Activated TNF is assembled to a homotrimer and binds to its receptors (TNFR1, TNFR2) resulting in the trimerization of TNFR1 or TNFR2. TNFR1 is expressed by nearly all cells and is the major receptor for TNF (also called TNF-alpha). In contrast, TNFR2 is expressed in limited cells such as CD4 and CD8 T lymphocytes, endothelial cells, microglia, oligodendrocytes, neuron subtypes, cardiac myocytes, thymocytes and human mesenchymal stem cells. It is the receptor for both TNF and LTA (also called TNF-beta). Upon binding of the ligand, TNFR mediates the association of some adaptor proteins such as TRADD or TRAF2, which in turn initiate recruitment of signal transducers. TNFR1 signaling induces activation of many genes, primarily controlled by two distinct pathways, NF-kappa B pathway and the MAPK cascade, or apoptosis and necroptosis. TNFR2 signaling activates NF-kappa B pathway including PI3K-dependent NF-kappa B pathway and JNK pathway leading to survival.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="rno.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno" selected>Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="oro">Odobenus rosmarus divergens (Pacific walrus)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="oor">Orcinus orca (killer whale)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="tmu">Trichechus manatus latirostris (Florida manatee)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="04668" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="select_scale" onChange="resize_map(this)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="rno04668" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="orgs">
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/rno/rno04668.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=rect	coords=143,323,189,340	href="/dbget-bin/www_bget?rno:103694380+rno:24835"	title="103694380, 24835 (Tnf)" />
+<area shape=rect	coords=234,323,280,340	href="/dbget-bin/www_bget?rno:25625"	title="25625 (Tnfrsf1a)" />
+<area shape=rect	coords=351,323,397,340	href="/dbget-bin/www_bget?rno:246756"	title="246756 (Tradd)" />
+<area shape=rect	coords=397,314,443,331	href="/dbget-bin/www_bget?rno:311786+rno:684173"	title="311786 (Traf2), 684173 (Traf5)" />
+<area shape=rect	coords=397,331,443,348	href="/dbget-bin/www_bget?rno:306886"	title="306886 (Ripk1)" />
+<area shape=rect	coords=399,211,445,228	href="/dbget-bin/www_bget?rno:60371+rno:78971"	title="60371 (Birc2), 78971 (Birc3)" />
+<area shape=rect	coords=480,314,526,331	href="/dbget-bin/www_bget?rno:100910771+rno:313121"	title="100910771, 313121 (Map3k7)" />
+<area shape=rect	coords=638,297,684,314	href="/dbget-bin/www_bget?rno:287398+rno:363855"	title="287398 (Map2k4), 363855 (Map2k7)" />
+<area shape=rect	coords=638,328,684,345	href="/dbget-bin/www_bget?rno:108348082+rno:114495+rno:303200"	title="108348082, 114495 (Map2k6), 303200 (Map2k3)" />
+<area shape=rect	coords=716,328,762,345	href="/dbget-bin/www_bget?rno:29513+rno:60352+rno:689314+rno:81649"	title="29513 (Mapk13), 60352 (Mapk12), 689314 (Mapk11), 81649 (Mapk14)" />
+<area shape=rect	coords=716,297,762,314	href="/dbget-bin/www_bget?rno:116554+rno:25272+rno:50658"	title="116554 (Mapk8), 25272 (Mapk10), 50658 (Mapk9)" />
+<area shape=rect	coords=559,461,605,478	href="/dbget-bin/www_bget?rno:309295"	title="309295 (Ikbkg)" />
+<area shape=rect	coords=559,427,605,444	href="/dbget-bin/www_bget?rno:84351"	title="84351 (Ikbkb)" />
+<area shape=rect	coords=638,427,684,444	href="/dbget-bin/www_bget?rno:25493"	title="25493 (Nfkbia)" />
+<area shape=rect	coords=638,457,684,474	href="/dbget-bin/www_bget?rno:309165+rno:81736"	title="309165 (Rela), 81736 (Nfkb1)" />
+<area shape=rect	coords=559,363,605,380	href="/dbget-bin/www_bget?rno:309165+rno:81736"	title="309165 (Rela), 81736 (Nfkb1)" />
+<area shape=rect	coords=559,346,605,363	href="/dbget-bin/www_bget?rno:116596"	title="116596 (Map3k8)" />
+<area shape=rect	coords=638,379,684,396	href="/dbget-bin/www_bget?rno:170851"	title="170851 (Map2k1)" />
+<area shape=rect	coords=716,379,762,396	href="/dbget-bin/www_bget?rno:116590+rno:50689"	title="116590 (Mapk1), 50689 (Mapk3)" />
+<area shape=rect	coords=797,360,843,377	href="/dbget-bin/www_bget?rno:314384+rno:361715"	title="314384 (Rps6ka5), 361715 (Rps6ka4)" />
+<area shape=rect	coords=874,360,920,377	href="/dbget-bin/www_bget?rno:310616+rno:314638+rno:362165+rno:362339+rno:406169+rno:500131+rno:79255+rno:81646+rno:81647"	title="310616 (Creb3l4), 314638 (Creb3l3), 362165 (Creb3l1), 362339 (Creb3l2), 406169 (Atf6b), 500131 (Creb5), 79255 (Atf4), 81646 (Creb1), 81647 (Atf2)" />
+<area shape=rect	coords=874,328,920,345	href="/dbget-bin/www_bget?rno:24253"	title="24253 (Cebpb)" />
+<area shape=rect	coords=873,297,919,314	href="/dbget-bin/www_bget?rno:24516+rno:314322"	title="24516 (Jun), 314322 (Fos)" />
+<area shape=rect	coords=635,143,681,160	href="/dbget-bin/www_bget?rno:266610"	title="266610 (Fadd)" />
+<area shape=rect	coords=713,161,759,178	href="/dbget-bin/www_bget?rno:64044"	title="64044 (Casp8)" />
+<area shape=rect	coords=791,133,837,150	href="/dbget-bin/www_bget?rno:64026"	title="64026 (Casp7)" />
+<area shape=rect	coords=791,155,837,172	href="/dbget-bin/www_bget?rno:25402"	title="25402 (Casp3)" />
+<area shape=rect	coords=397,525,443,542	href="/dbget-bin/www_bget?rno:306886"	title="306886 (Ripk1)" />
+<area shape=rect	coords=1094,123,1140,140	href="/dbget-bin/www_bget?rno:24770+rno:287562"	title="24770 (Ccl2), 287562 (Ccl12)" />
+<area shape=rect	coords=1144,123,1190,140	href="/dbget-bin/www_bget?rno:81780"	title="81780 (Ccl5)" />
+<area shape=rect	coords=1194,123,1240,140	href="/dbget-bin/www_bget?rno:29538"	title="29538 (Ccl20)" />
+<area shape=rect	coords=1094,143,1140,160	href="/dbget-bin/www_bget?rno:114105+rno:171551+rno:81503"	title="114105 (Cxcl2), 171551 (Cxcl3), 81503 (Cxcl1)" />
+<area shape=rect	coords=1144,143,1190,160	href="/dbget-bin/www_bget?rno:114105+rno:171551+rno:81503"	title="114105 (Cxcl2), 171551 (Cxcl3), 81503 (Cxcl1)" />
+<area shape=rect	coords=1194,143,1240,160	href="/dbget-bin/www_bget?rno:114105+rno:171551+rno:81503"	title="114105 (Cxcl2), 171551 (Cxcl3), 81503 (Cxcl1)" />
+<area shape=rect	coords=1144,164,1190,181	href="/dbget-bin/www_bget?rno:245920"	title="245920 (Cxcl10)" />
+<area shape=rect	coords=1194,164,1240,181	href="/dbget-bin/www_bget?rno:89808"	title="89808 (Cx3cl1)" />
+<area shape=rect	coords=1094,200,1140,217	href="/dbget-bin/www_bget?rno:78965"	title="78965 (Csf1)" />
+<area shape=rect	coords=1144,200,1190,217	href="/dbget-bin/www_bget?rno:116630"	title="116630 (Csf2)" />
+<area shape=rect	coords=1094,236,1140,253	href="/dbget-bin/www_bget?rno:246097"	title="246097 (Fas)" />
+<area shape=rect	coords=1144,236,1190,253	href="/dbget-bin/www_bget?rno:301365"	title="301365 (Il18r1)" />
+<area shape=rect	coords=1193,236,1239,253	href="/dbget-bin/www_bget?rno:29146"	title="29146 (Jag1)" />
+<area shape=rect	coords=1094,272,1140,289	href="/dbget-bin/www_bget?rno:24494"	title="24494 (Il1b)" />
+<area shape=rect	coords=1144,273,1190,290	href="/dbget-bin/www_bget?rno:24498"	title="24498 (Il6)" />
+<area shape=rect	coords=1193,273,1239,290	href="/dbget-bin/www_bget?rno:25670"	title="25670 (Il15)" />
+<area shape=rect	coords=1242,273,1288,290	href="/dbget-bin/www_bget?rno:60584"	title="60584 (Lif)" />
+<area shape=rect	coords=1292,273,1338,290	href="/dbget-bin/www_bget?rno:103694380+rno:24835+rno:25008"	title="103694380, 24835 (Tnf), 25008 (Lta)" />
+<area shape=rect	coords=1094,308,1140,325	href="/dbget-bin/www_bget?rno:680611"	title="680611 (Bcl3)" />
+<area shape=rect	coords=1144,307,1190,324	href="/dbget-bin/www_bget?rno:25493"	title="25493 (Nfkbia)" />
+<area shape=rect	coords=1193,307,1239,324	href="/dbget-bin/www_bget?rno:89829"	title="89829 (Socs3)" />
+<area shape=rect	coords=1242,307,1288,324	href="/dbget-bin/www_bget?rno:683206"	title="683206 (Tnfaip3)" />
+<area shape=rect	coords=1292,307,1338,324	href="/dbget-bin/www_bget?rno:687813"	title="687813 (Traf1)" />
+<area shape=rect	coords=1094,344,1140,361	href="/dbget-bin/www_bget?rno:246208"	title="246208 (Ifi47)" />
+<area shape=rect	coords=1094,380,1140,397	href="/dbget-bin/www_bget?rno:314322"	title="314322 (Fos)" />
+<area shape=rect	coords=1145,380,1191,397	href="/dbget-bin/www_bget?rno:24516"	title="24516 (Jun)" />
+<area shape=rect	coords=1196,380,1242,397	href="/dbget-bin/www_bget?rno:24517"	title="24517 (Junb)" />
+<area shape=rect	coords=1094,416,1140,433	href="/dbget-bin/www_bget?rno:171045"	title="171045 (Mmp3)" />
+<area shape=rect	coords=1145,416,1191,433	href="/dbget-bin/www_bget?rno:81687"	title="81687 (Mmp9)" />
+<area shape=rect	coords=1196,416,1242,433	href="/dbget-bin/www_bget?rno:81707"	title="81707 (Mmp14)" />
+<area shape=rect	coords=1094,452,1140,469	href="/dbget-bin/www_bget?rno:24323"	title="24323 (Edn1)" />
+<area shape=rect	coords=1094,488,1140,505	href="/dbget-bin/www_bget?rno:291912"	title="291912 (Nod2)" />
+<area shape=rect	coords=1094,524,1140,541	href="/dbget-bin/www_bget?rno:25464"	title="25464 (Icam1)" />
+<area shape=rect	coords=1145,524,1191,541	href="/dbget-bin/www_bget?rno:25544"	title="25544 (Sele)" />
+<area shape=rect	coords=1196,524,1242,541	href="/dbget-bin/www_bget?rno:25361"	title="25361 (Vcam1)" />
+<area shape=rect	coords=1094,560,1140,577	href="/dbget-bin/www_bget?rno:29527"	title="29527 (Ptgs2)" />
+<area shape=rect	coords=143,734,189,751	href="/dbget-bin/www_bget?rno:103694380+rno:24835+rno:25008"	title="103694380, 24835 (Tnf), 25008 (Lta)" />
+<area shape=rect	coords=236,734,282,751	href="/dbget-bin/www_bget?rno:156767"	title="156767 (Tnfrsf1b)" />
+<area shape=rect	coords=397,717,443,734	href="/dbget-bin/www_bget?rno:687813"	title="687813 (Traf1)" />
+<area shape=rect	coords=397,734,443,751	href="/dbget-bin/www_bget?rno:311786"	title="311786 (Traf2)" />
+<area shape=rect	coords=559,735,605,752	href="/dbget-bin/www_bget?rno:60371+rno:78971"	title="60371 (Birc2), 78971 (Birc3)" />
+<area shape=rect	coords=559,645,605,662	href="/dbget-bin/www_bget?rno:170911+rno:25513+rno:29741+rno:366508+rno:60664+rno:85243"	title="170911 (Pik3ca), 25513 (Pik3r1), 29741 (Pik3r2), 366508 (Pik3cd), 60664 (Pik3r3), 85243 (Pik3cb)" />
+<area shape=rect	coords=716,645,762,662	href="/dbget-bin/www_bget?rno:24185+rno:25233+rno:29414"	title="24185 (Akt1), 25233 (Akt2), 29414 (Akt3)" />
+<area shape=rect	coords=559,686,605,703	href="/dbget-bin/www_bget?rno:360640"	title="360640 (Map3k14)" />
+<area shape=rect	coords=797,686,843,703	href="/dbget-bin/www_bget?rno:309295+rno:309361+rno:84351"	title="309295 (Ikbkg), 309361 (Chuk), 84351 (Ikbkb)" />
+<area shape=rect	coords=397,751,443,768	href="/dbget-bin/www_bget?rno:362788"	title="362788 (Traf3)" />
+<area shape=rect	coords=476,525,522,542	href="/dbget-bin/www_bget?rno:246240"	title="246240 (Ripk3)" />
+<area shape=rect	coords=292,370,338,387	href="/dbget-bin/www_bget?rno:361167"	title="361167 (Bag4)" />
+<area shape=rect	coords=559,525,605,542	href="/dbget-bin/www_bget?rno:690743"	title="690743 (Mlkl)" />
+<area shape=rect	coords=638,525,684,542	href="/dbget-bin/www_bget?rno:288731"	title="288731 (Pgam5)" />
+<area shape=rect	coords=638,542,684,559	href="/dbget-bin/www_bget?rno:288731"	title="288731 (Pgam5)" />
+<area shape=rect	coords=716,534,762,551	href="/dbget-bin/www_bget?rno:114114"	title="114114 (Dnm1l)" />
+<area shape=rect	coords=480,297,526,314	href="/dbget-bin/www_bget?rno:308267+rno:315139+rno:317546"	title="308267 (Tab2), 315139 (Tab1), 317546 (Tab3)" />
+<area shape=rect	coords=481,271,527,288	href="/dbget-bin/www_bget?rno:365057"	title="365057 (Map3k5)" />
+<area shape=rect	coords=559,444,605,461	href="/dbget-bin/www_bget?rno:309361"	title="309361 (Chuk)" />
+<area shape=rect	coords=714,211,760,228	href="/dbget-bin/www_bget?rno:311567"	title="311567 (Itch)" />
+<area shape=rect	coords=793,211,839,228	href="/dbget-bin/www_bget?rno:117279"	title="117279 (Cflar)" />
+<area shape=rect	coords=720,797,766,814	href="/dbget-bin/www_bget?rno:116554+rno:25272+rno:50658"	title="116554 (Mapk8), 25272 (Mapk10), 50658 (Mapk9)" />
+<area shape=rect	coords=883,656,929,673	href="/dbget-bin/www_bget?rno:309165+rno:81736"	title="309165 (Rela), 81736 (Nfkb1)" />
+<area shape=rect	coords=883,686,929,703	href="/dbget-bin/www_bget?rno:25493"	title="25493 (Nfkbia)" />
+<area shape=rect	coords=880,797,926,814	href="/dbget-bin/www_bget?rno:24516"	title="24516 (Jun)" />
+<area shape=rect	coords=558,797,604,814	href="/dbget-bin/www_bget?rno:192126"	title="192126 (Dab2ip)" />
+<area shape=rect	coords=716,735,762,752	href="/dbget-bin/www_bget?rno:306886"	title="306886 (Ripk1)" />
+<area shape=rect	coords=481,372,527,389	href="/dbget-bin/www_bget?rno:360640"	title="360640 (Map3k14)" />
+<area shape=rect	coords=797,734,843,751	href="/dbget-bin/www_bget?rno:108348082+rno:303200"	title="108348082, 303200 (Map2k3)" />
+<area shape=rect	coords=883,734,929,751	href="/dbget-bin/www_bget?rno:29513+rno:60352+rno:689314+rno:81649"	title="29513 (Mapk13), 60352 (Mapk12), 689314 (Mapk11), 81649 (Mapk14)" />
+<area shape=rect	coords=883,859,929,876	href="/dbget-bin/www_bget?rno:24508"	title="24508 (Irf1)" />
+<area shape=rect	coords=1094,859,1140,876	href="/dbget-bin/www_bget?rno:24481"	title="24481 (Ifnb1)" />
+<area shape=rect	coords=40,45,245,70	href="/dbget-bin/www_bget?rno04668"	title="rno04668: TNF signaling pathway" onmouseover="popupTimer(&quot;rno04668&quot;, &quot;rno04668: TNF signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=963,108,1055,133	href="/kegg-bin/show_pathway?rno04210"	title="rno04210: Apoptosis" onmouseover="popupTimer(&quot;rno04210&quot;, &quot;rno04210: Apoptosis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=694,473,800,507	href="/kegg-bin/show_pathway?rno04064"	title="rno04064: NF-kappa B signaling pathway" onmouseover="popupTimer(&quot;rno04064&quot;, &quot;rno04064: NF-kappa B signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=575,250,681,284	href="/kegg-bin/show_pathway?rno04010"	title="rno04010: MAPK signaling pathway" onmouseover="popupTimer(&quot;rno04010&quot;, &quot;rno04010: MAPK signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=604,609,710,643	href="/kegg-bin/show_pathway?rno04151"	title="rno04151: PI3K-Akt signaling pathway" onmouseover="popupTimer(&quot;rno04151&quot;, &quot;rno04151: PI3K-Akt signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=806,393,912,427	href="/kegg-bin/show_pathway?rno04120"	title="rno04120: Ubiquitin mediated proteolysis" onmouseover="popupTimer(&quot;rno04120&quot;, &quot;rno04120: Ubiquitin mediated proteolysis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

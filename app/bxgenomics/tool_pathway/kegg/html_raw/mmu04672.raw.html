@@ -1,0 +1,394 @@
+<html>
+<!---
+ENTRY       mmu04672
+DEFINITION  Intestinal immune network for IgA production - Mus musculus (mouse)
+--->
+<head>
+<title>
+KEGG PATHWAY: Intestinal immune network for IgA production - Mus musculus (mouse)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Intestinal immune network for IgA production - Mus musculus (mouse)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=04672&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map04672.keg&query=mmu&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+mmu04672">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=mmu04672&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+The intestine is the largest lymphoid tissue in the body. One striking feature of intestinal immunity is its ability to generate great amounts of noninflammatory immunoglobulin A (IgA) antibodies that serve as the first line of defense against microorganisms. The basic map of IgA production includes induction of mucosal B cells in the Peyer's patches, circulation through the bloodstream and homing to intestinal mucosa of IgA-commited plasma cells, and local antibody production for export across the intestinal membranes. Multiple cytokines, including TGF-{beta}, IL-10, IL-4, IL-5, and IL-6, are required to promote IgA class switching and terminal differentiation process of the B cells. Secreted IgA promotes immune exclusion by entrapping dietary antigens and microorganisms in the mucus and functions for neutralization of toxins and pathogenic microbes.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="mmu.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu" selected>Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+<option value="gga">Gallus gallus (chicken)</option>
+<option value="mgp">Meleagris gallopavo (turkey)</option>
+<option value="cjo">Coturnix japonica (Japanese quail)</option>
+<option value="apla">Anas platyrhynchos (mallard)</option>
+<option value="acyg">Anser cygnoides domesticus (swan goose)</option>
+<option value="tgu">Taeniopygia guttata (zebra finch)</option>
+<option value="gfr">Geospiza fortis (medium ground-finch)</option>
+<option value="fab">Ficedula albicollis (collared flycatcher)</option>
+<option value="phi">Pseudopodoces humilis (Tibetan ground-tit)</option>
+<option value="pmaj">Parus major (Great Tit)</option>
+<option value="ccw">Corvus cornix (hooded crow)</option>
+<option value="fpg">Falco peregrinus (peregrine falcon)</option>
+<option value="fch">Falco cherrug (Saker falcon)</option>
+<option value="clv">Columba livia (rock pigeon)</option>
+<option value="aam">Apteryx australis mantelli (brown kiwi)</option>
+<option value="asn">Alligator sinensis (Chinese alligator)</option>
+<option value="amj">Alligator mississippiensis (American alligator)</option>
+<option value="pss">Pelodiscus sinensis (Chinese soft-shelled turtle)</option>
+<option value="cmy">Chelonia mydas (green sea turtle)</option>
+<option value="cpic">Chrysemys picta (western painted turtle)</option>
+<option value="acs">Anolis carolinensis (green anole)</option>
+<option value="pvt">Pogona vitticeps (central bearded dragon)</option>
+<option value="pbi">Python bivittatus (Burmese python)</option>
+<option value="gja">Gekko japonicus</option>
+<option value="xla">Xenopus laevis (African clawed frog)</option>
+<option value="xtr">Xenopus tropicalis (western clawed frog)</option>
+<option value="npr">Nanorana parkeri</option>
+<option value="dre">Danio rerio (zebrafish)</option>
+<option value="srx">Sinocyclocheilus rhinocerous</option>
+<option value="sanh">Sinocyclocheilus anshuiensis</option>
+<option value="sgh">Sinocyclocheilus grahami</option>
+<option value="ipu">Ictalurus punctatus (channel catfish)</option>
+<option value="amex">Astyanax mexicanus (Mexican tetra)</option>
+<option value="tru">Takifugu rubripes (torafugu)</option>
+<option value="tng">Tetraodon nigroviridis (spotted green pufferfish)</option>
+<option value="lco">Larimichthys crocea (large yellow croaker)</option>
+<option value="ncc">Notothenia coriiceps (black rockcod)</option>
+<option value="mze">Maylandia zebra (zebra mbuna)</option>
+<option value="ola">Oryzias latipes (Japanese medaka)</option>
+<option value="xma">Xiphophorus maculatus (southern platyfish)</option>
+<option value="csem">Cynoglossus semilaevis (tongue sole)</option>
+<option value="lcf">Lates calcarifer (barramundi perch)</option>
+<option value="hcq">Hippocampus comes (tiger tail seahorse)</option>
+<option value="bpec">Boleophthalmus pectinirostris (great blue-spotted mudskipper)</option>
+<option value="sasa">Salmo salar (Atlantic salmon)</option>
+<option value="els">Esox lucius (northern pike)</option>
+<option value="sfm">Scleropages formosus (Asian bonytongue)</option>
+<option value="lcm">Latimeria chalumnae (coelacanth)</option>
+<option value="cmk">Callorhinchus milii (elephant shark)</option>
+</select>
+<input type="hidden" name="mapno" value="04672" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="mmu04672" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/mmu/mmu04672.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=742,498,4	href="/dbget-bin/www_bget?C00777+C15493"	title="C00777 (Retinoate), C15493 (9-cis-Retinoic acid)" onmouseover="popupTimer(&quot;C00777&quot;, &quot;C00777 (Retinoate), C15493 (9-cis-Retinoic acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=473,1003,519,1020	href="/dbget-bin/www_bget?mmu:21803"	title="21803 (Tgfb1)" />
+<area shape=rect	coords=1447,668,1493,685	href="/dbget-bin/www_bget?mmu:16191"	title="16191 (Il5)" />
+<area shape=rect	coords=1447,688,1493,705	href="/dbget-bin/www_bget?mmu:16193"	title="16193 (Il6)" />
+<area shape=rect	coords=442,505,488,522	href="/dbget-bin/www_bget?mmu:69583"	title="69583 (Tnfsf13)" />
+<area shape=rect	coords=442,525,488,542	href="/dbget-bin/www_bget?mmu:24099"	title="24099 (Tnfsf13b)" />
+<area shape=rect	coords=375,669,421,686	href="/dbget-bin/www_bget?mmu:21947"	title="21947 (Cd40lg)" />
+<area shape=rect	coords=550,669,596,686	href="/dbget-bin/www_bget?mmu:21939"	title="21939 (Cd40)" />
+<area shape=rect	coords=550,524,596,541	href="/dbget-bin/www_bget?mmu:72049"	title="72049 (Tnfrsf13c)" />
+<area shape=rect	coords=550,484,596,501	href="/dbget-bin/www_bget?mmu:57916"	title="57916 (Tnfrsf13b)" />
+<area shape=rect	coords=550,504,596,521	href="/dbget-bin/www_bget?mmu:21935"	title="21935 (Tnfrsf17)" />
+<area shape=rect	coords=296,480,342,497	href="/dbget-bin/www_bget?mmu:12519+mmu:12524"	title="12519 (Cd80), 12524 (Cd86)" />
+<area shape=rect	coords=295,618,341,635	href="/dbget-bin/www_bget?mmu:12487"	title="12487 (Cd28)" />
+<area shape=rect	coords=550,649,596,666	href="/dbget-bin/www_bget?mmu:100504404+mmu:14960+mmu:14961+mmu:14969+mmu:14998+mmu:14999+mmu:15000+mmu:15001+mmu:15002"	title="100504404 (H2-Ea-ps), 14960 (H2-Aa), 14961 (H2-Ab1), 14969 (H2-Eb1), 14998 (H2-DMa), 14999 (H2-DMb1), 15000 (H2-DMb2), 15001 (H2-Oa), 15002 (H2-Ob)" />
+<area shape=rect	coords=1138,513,1184,530	href="/dbget-bin/www_bget?mmu:12769"	title="12769 (Ccr9)" />
+<area shape=rect	coords=1447,708,1493,725	href="/dbget-bin/www_bget?mmu:16153"	title="16153 (Il10)" />
+<area shape=rect	coords=1138,493,1184,510	href="/dbget-bin/www_bget?mmu:12777"	title="12777 (Ccr10)" />
+<area shape=rect	coords=1291,493,1337,510	href="/dbget-bin/www_bget?mmu:56838"	title="56838 (Ccl28)" />
+<area shape=rect	coords=1221,921,1267,938	href="/dbget-bin/www_bget?mmu:16168"	title="16168 (Il15)" />
+<area shape=rect	coords=442,875,488,892	href="/dbget-bin/www_bget?mmu:69583"	title="69583 (Tnfsf13)" />
+<area shape=rect	coords=442,895,488,912	href="/dbget-bin/www_bget?mmu:24099"	title="24099 (Tnfsf13b)" />
+<area shape=rect	coords=550,629,596,646	href="/dbget-bin/www_bget?mmu:57916"	title="57916 (Tnfrsf13b)" />
+<area shape=rect	coords=548,900,594,917	href="/dbget-bin/www_bget?mmu:57916"	title="57916 (Tnfrsf13b)" />
+<area shape=rect	coords=886,495,932,512	href="/dbget-bin/www_bget?mmu:12769"	title="12769 (Ccr9)" />
+<area shape=rect	coords=886,516,932,533	href="/dbget-bin/www_bget?mmu:16401+mmu:16421"	title="16401 (Itga4), 16421 (Itgb7)" />
+<area shape=rect	coords=1138,533,1184,550	href="/dbget-bin/www_bget?mmu:16401+mmu:16421"	title="16401 (Itga4), 16421 (Itgb7)" />
+<area shape=rect	coords=1199,533,1245,550	href="/dbget-bin/www_bget?mmu:17123"	title="17123 (Madcam1)" />
+<area shape=rect	coords=1291,473,1337,490	href="/dbget-bin/www_bget?mmu:20315"	title="20315 (Cxcl12)" />
+<area shape=rect	coords=346,480,392,497	href="/dbget-bin/www_bget?mmu:100504404+mmu:14960+mmu:14961+mmu:14969+mmu:14998+mmu:14999+mmu:15000+mmu:15001+mmu:15002"	title="100504404 (H2-Ea-ps), 14960 (H2-Aa), 14961 (H2-Ab1), 14969 (H2-Eb1), 14998 (H2-DMa), 14999 (H2-DMb1), 15000 (H2-DMb2), 15001 (H2-Oa), 15002 (H2-Ob)" />
+<area shape=rect	coords=442,734,488,751	href="/dbget-bin/www_bget?mmu:16189"	title="16189 (Il4)" />
+<area shape=rect	coords=603,659,649,676	href="/dbget-bin/www_bget?mmu:11628"	title="11628 (Aicda)" />
+<area shape=rect	coords=603,504,649,521	href="/dbget-bin/www_bget?mmu:11628"	title="11628 (Aicda)" />
+<area shape=rect	coords=599,875,645,892	href="/dbget-bin/www_bget?mmu:641025"	title="641025 (CRP55H)" />
+<area shape=rect	coords=597,609,643,626	href="/dbget-bin/www_bget?mmu:641025"	title="641025 (CRP55H)" />
+<area shape=rect	coords=598,458,644,475	href="/dbget-bin/www_bget?mmu:641025"	title="641025 (CRP55H)" />
+<area shape=rect	coords=1291,513,1337,530	href="/dbget-bin/www_bget?mmu:20300"	title="20300 (Ccl25)" />
+<area shape=rect	coords=490,393,536,410	href="/dbget-bin/www_bget?mmu:16189"	title="16189 (Il4)" />
+<area shape=rect	coords=442,412,488,429	href="/dbget-bin/www_bget?mmu:16191"	title="16191 (Il5)" />
+<area shape=rect	coords=490,412,536,429	href="/dbget-bin/www_bget?mmu:16193"	title="16193 (Il6)" />
+<area shape=rect	coords=442,431,488,448	href="/dbget-bin/www_bget?mmu:16153"	title="16153 (Il10)" />
+<area shape=rect	coords=442,393,488,410	href="/dbget-bin/www_bget?mmu:16183"	title="16183 (Il2)" />
+<area shape=rect	coords=490,431,536,448	href="/dbget-bin/www_bget?mmu:21803"	title="21803 (Tgfb1)" />
+<area shape=rect	coords=442,714,488,731	href="/dbget-bin/www_bget?mmu:21803"	title="21803 (Tgfb1)" />
+<area shape=rect	coords=442,980,488,997	href="/dbget-bin/www_bget?mmu:16193"	title="16193 (Il6)" />
+<area shape=rect	coords=442,960,488,977	href="/dbget-bin/www_bget?mmu:16153"	title="16153 (Il10)" />
+<area shape=rect	coords=442,754,488,771	href="/dbget-bin/www_bget?mmu:16183"	title="16183 (Il2)" />
+<area shape=rect	coords=442,774,488,791	href="/dbget-bin/www_bget?mmu:16191"	title="16191 (Il5)" />
+<area shape=rect	coords=279,1059,325,1076	href="/dbget-bin/www_bget?mmu:17000"	title="17000 (Ltbr)" />
+<area shape=rect	coords=348,1059,394,1076	href="/dbget-bin/www_bget?mmu:53859"	title="53859 (Map3k14)" />
+<area shape=rect	coords=375,689,421,706	href="/dbget-bin/www_bget?mmu:54167"	title="54167 (Icos)" />
+<area shape=rect	coords=550,689,596,706	href="/dbget-bin/www_bget?mmu:50723"	title="50723 (Icosl)" />
+<area shape=rect	coords=1138,473,1184,490	href="/dbget-bin/www_bget?mmu:12767"	title="12767 (Cxcr4)" />
+<area shape=rect	coords=1138,921,1184,938	href="/dbget-bin/www_bget?mmu:16169"	title="16169 (Il15ra)" />
+<area shape=rect	coords=1596,489,1642,506	href="/dbget-bin/www_bget?mmu:641025"	title="641025 (CRP55H)" />
+<area shape=rect	coords=1596,314,1642,331	href="/dbget-bin/www_bget?mmu:18703"	title="18703 (Pigr)" />
+<area shape=rect	coords=184,541,298,575	href="/kegg-bin/show_pathway?mmu04612"	title="mmu04612: Antigen processing and presentation" onmouseover="popupTimer(&quot;mmu04612&quot;, &quot;mmu04612: Antigen processing and presentation&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=189,650,291,684	href="/kegg-bin/show_pathway?mmu04660"	title="mmu04660: T cell receptor signaling pathway" onmouseover="popupTimer(&quot;mmu04660&quot;, &quot;mmu04660: T cell receptor signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=571,793,670,827	href="/kegg-bin/show_pathway?mmu04662"	title="mmu04662: B cell receptor signaling pathway" onmouseover="popupTimer(&quot;mmu04662&quot;, &quot;mmu04662: B cell receptor signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1149,616,1293,650	href="/kegg-bin/show_pathway?mmu04670"	title="mmu04670: Leukocyte transendothelial migration" onmouseover="popupTimer(&quot;mmu04670&quot;, &quot;mmu04670: Leukocyte transendothelial migration&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=40,45,452,70	href="/dbget-bin/www_bget?mmu04672"	title="mmu04672: Intestinal immune network for IgA production" onmouseover="popupTimer(&quot;mmu04672&quot;, &quot;mmu04672: Intestinal immune network for IgA production&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,345 @@
+<html>
+<!---
+ENTRY       mmu04961
+DEFINITION  Endocrine and other factor-regulated calcium reabsorption - Mus musculus (mouse)
+--->
+<head>
+<title>
+KEGG PATHWAY: Endocrine and other factor-regulated calcium reabsorption - Mus musculus (mouse)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Endocrine and other factor-regulated calcium reabsorption - Mus musculus (mouse)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=04961&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map04961.keg&query=mmu&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+mmu04961">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=mmu04961&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Calcium (Ca2+) is essential for numerous physiological functions including intracellular signalling processes, neuronal excitability, muscle contraction and bone formation. Therefore, its homeostasis is finely maintained through the coordination of intestinal absorption, renal reabsorption, and bone resorption. In kidney, the late part of the distal convoluted tubule (DCT) and the connecting tubule (CNT) are the site of active Ca2+ transport and precisely regulate Ca2+ reabsorption. Following Ca2+ entry through TRPV5, Ca2+ bound to calbindin-D28K diffuses to the basolateral side, where it is extruded into the blood compartment through NCX1 and to a lesser extent PMCA1b. In the urinary compartment, both klotho and tissue kallikrein (TK) increase the apical abundance of TRPV5. In the blood compartment, PTH, 1,25(OH)2D3 and estrogen increase the transcription and protein expression of  the luminal Ca2+ channels, calbindins, and the extrusion systems.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="mmu.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu" selected>Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="04961" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="mmu04961" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/mmu/mmu04961.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=756,171,4	href="/dbget-bin/www_bget?C01673"	title="C01673 (Calcitriol)" onmouseover="popupTimer(&quot;C01673&quot;, &quot;C01673 (Calcitriol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=652,172,4	href="/dbget-bin/www_bget?C16051"	title="C16051 (Parathyroid hormone)" onmouseover="popupTimer(&quot;C16051&quot;, &quot;C16051 (Parathyroid hormone)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=831,170,4	href="/dbget-bin/www_bget?C00951"	title="C00951 (Estradiol-17beta)" onmouseover="popupTimer(&quot;C00951&quot;, &quot;C00951 (Estradiol-17beta)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=756,285,4	href="/dbget-bin/www_bget?C01673"	title="C01673 (Calcitriol)" onmouseover="popupTimer(&quot;C01673&quot;, &quot;C01673 (Calcitriol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=110,829,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=108,650,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=953,619,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=835,612,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=957,724,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=497,678,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=637,739,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=770,680,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=297,719,4	href="/dbget-bin/www_bget?C00165"	title="C00165 (Diacylglycerol)" onmouseover="popupTimer(&quot;C00165&quot;, &quot;C00165 (Diacylglycerol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=368,707,4	href="/dbget-bin/www_bget?C01245"	title="C01245 (D-myo-Inositol 1,4,5-trisphosphate)" onmouseover="popupTimer(&quot;C01245&quot;, &quot;C01245 (D-myo-Inositol 1,4,5-trisphosphate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=831,284,4	href="/dbget-bin/www_bget?C00951"	title="C00951 (Estradiol-17beta)" onmouseover="popupTimer(&quot;C00951&quot;, &quot;C00951 (Estradiol-17beta)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=377,539,4	href="/dbget-bin/www_bget?C00575"	title="C00575 (3',5'-Cyclic AMP)" onmouseover="popupTimer(&quot;C00575&quot;, &quot;C00575 (3',5'-Cyclic AMP)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=958,541,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=841,534,4	href="/dbget-bin/www_bget?C00238"	title="C00238 (Potassium cation)" onmouseover="popupTimer(&quot;C00238&quot;, &quot;C00238 (Potassium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=135,642,181,659	href="/dbget-bin/www_bget?mmu:194352"	title="194352 (Trpv5)" />
+<area shape=rect	coords=629,222,675,239	href="/dbget-bin/www_bget?mmu:19228"	title="19228 (Pth1r)" />
+<area shape=rect	coords=401,586,447,603	href="/dbget-bin/www_bget?mmu:194352"	title="194352 (Trpv5)" />
+<area shape=rect	coords=734,308,780,325	href="/dbget-bin/www_bget?mmu:22337"	title="22337 (Vdr)" />
+<area shape=rect	coords=873,606,919,623	href="/dbget-bin/www_bget?mmu:20541"	title="20541 (Slc8a1)" />
+<area shape=rect	coords=873,716,919,733	href="/dbget-bin/www_bget?mmu:67972"	title="67972 (Atp2b1)" />
+<area shape=rect	coords=614,616,660,633	href="/dbget-bin/www_bget?mmu:12307"	title="12307 (Calb1)" />
+<area shape=rect	coords=525,670,571,687	href="/dbget-bin/www_bget?mmu:12307"	title="12307 (Calb1)" />
+<area shape=rect	coords=615,699,661,716	href="/dbget-bin/www_bget?mmu:12307"	title="12307 (Calb1)" />
+<area shape=rect	coords=693,671,739,688	href="/dbget-bin/www_bget?mmu:12307"	title="12307 (Calb1)" />
+<area shape=rect	coords=135,740,181,757	href="/dbget-bin/www_bget?mmu:12062"	title="12062 (Bdkrb2)" />
+<area shape=rect	coords=570,536,616,553	href="/dbget-bin/www_bget?mmu:194352"	title="194352 (Trpv5)" />
+<area shape=rect	coords=242,415,288,432	href="/dbget-bin/www_bget?mmu:194352"	title="194352 (Trpv5)" />
+<area shape=rect	coords=384,321,430,338	href="/dbget-bin/www_bget?mmu:194352"	title="194352 (Trpv5)" />
+<area shape=rect	coords=403,452,449,469	href="/dbget-bin/www_bget?mmu:194352"	title="194352 (Trpv5)" />
+<area shape=rect	coords=566,330,612,347	href="/dbget-bin/www_bget?mmu:194352"	title="194352 (Trpv5)" />
+<area shape=rect	coords=566,359,612,376	href="/dbget-bin/www_bget?mmu:194352"	title="194352 (Trpv5)" />
+<area shape=rect	coords=505,330,551,347	href="/dbget-bin/www_bget?mmu:194352"	title="194352 (Trpv5)" />
+<area shape=rect	coords=505,359,551,376	href="/dbget-bin/www_bget?mmu:194352"	title="194352 (Trpv5)" />
+<area shape=rect	coords=266,486,312,503	href="/dbget-bin/www_bget?mmu:12757+mmu:67300+mmu:74325"	title="12757 (Clta), 67300 (Cltc), 74325 (Cltb)" />
+<area shape=rect	coords=287,460,333,477	href="/dbget-bin/www_bget?mmu:11771+mmu:11772+mmu:11773+mmu:232910+mmu:71770"	title="11771 (Ap2a1), 11772 (Ap2a2), 11773 (Ap2m1), 232910 (Ap2s1), 71770 (Ap2b1)" />
+<area shape=rect	coords=435,435,481,452	href="/dbget-bin/www_bget?mmu:53869"	title="53869 (Rab11a)" />
+<area shape=rect	coords=135,438,181,455	href="/dbget-bin/www_bget?mmu:103967+mmu:13429+mmu:13430"	title="103967 (Dnm3), 13429 (Dnm1), 13430 (Dnm2)" />
+<area shape=rect	coords=135,398,181,415	href="/dbget-bin/www_bget?mmu:103967+mmu:13429+mmu:13430"	title="103967 (Dnm3), 13429 (Dnm1), 13430 (Dnm2)" />
+<area shape=rect	coords=84,592,130,609	href="/dbget-bin/www_bget?mmu:16591"	title="16591 (Kl)" />
+<area shape=rect	coords=222,681,268,698	href="/dbget-bin/www_bget?mmu:18750+mmu:18751+mmu:18752"	title="18750 (Prkca), 18751 (Prkcb), 18752 (Prkcg)" />
+<area shape=rect	coords=229,740,275,757	href="/dbget-bin/www_bget?mmu:14682"	title="14682 (Gnaq)" />
+<area shape=rect	coords=320,740,366,757	href="/dbget-bin/www_bget?mmu:18795+mmu:18796+mmu:18797+mmu:18798"	title="18795 (Plcb1), 18796 (Plcb2), 18797 (Plcb3), 18798 (Plcb4)" />
+<area shape=rect	coords=54,740,100,757	href="/dbget-bin/www_bget?mmu:13646+mmu:13648+mmu:16612+mmu:16613+mmu:16616+mmu:16617+mmu:16618+mmu:16622+mmu:16623+mmu:16624+mmu:18050"	title="13646 (Klk1b22), 13648 (Klk1b9), 16612 (Klk1), 16613 (Klk1b11), 16616 (Klk1b21), 16617 (Klk1b24), 16618 (Klk1b26), 16622 (Klk1b5), 16623 (Klk1b1), 16624 (Klk1b8), 18050 (Klk1b3)" />
+<area shape=rect	coords=809,308,855,325	href="/dbget-bin/www_bget?mmu:13982"	title="13982 (Esr1)" />
+<area shape=rect	coords=255,577,301,594	href="/dbget-bin/www_bget?mmu:18747+mmu:18749"	title="18747 (Prkaca), 18749 (Prkacb)" />
+<area shape=rect	coords=447,499,493,516	href="/dbget-bin/www_bget?mmu:11512+mmu:11515"	title="11512 (Adcy6), 11515 (Adcy9)" />
+<area shape=rect	coords=547,449,593,466	href="/dbget-bin/www_bget?mmu:14683"	title="14683 (Gnas)" />
+<area shape=rect	coords=873,529,919,546	href="/dbget-bin/www_bget?mmu:11928+mmu:11931+mmu:11932+mmu:11933+mmu:11936+mmu:232975+mmu:27222+mmu:67821+mmu:98660"	title="11928 (Atp1a1), 11931 (Atp1b1), 11932 (Atp1b2), 11933 (Atp1b3), 11936 (Fxyd2), 232975 (Atp1a3), 27222 (Atp1a4), 67821 (Atp1b4), 98660 (Atp1a2)" />
+<area shape=rect	coords=816,482,862,499	href="/dbget-bin/www_bget?mmu:16591"	title="16591 (Kl)" />
+<area shape=rect	coords=594,376,640,393	href="/dbget-bin/www_bget?mmu:53869"	title="53869 (Rab11a)" />
+<area shape=rect	coords=594,313,640,330	href="/dbget-bin/www_bget?mmu:53869"	title="53869 (Rab11a)" />
+<area shape=rect	coords=479,376,525,393	href="/dbget-bin/www_bget?mmu:53869"	title="53869 (Rab11a)" />
+<area shape=rect	coords=479,313,525,330	href="/dbget-bin/www_bget?mmu:53869"	title="53869 (Rab11a)" />
+<area shape=rect	coords=194,104,309,129	href="/kegg-bin/show_pathway?mmu04530"	title="mmu04530: Tight junction" onmouseover="popupTimer(&quot;mmu04530&quot;, &quot;mmu04530: Tight junction&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=325,377,417,402	href="/kegg-bin/show_pathway?mmu04144"	title="mmu04144: Endocytosis" onmouseover="popupTimer(&quot;mmu04144&quot;, &quot;mmu04144: Endocytosis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=40,45,589,70	href="/dbget-bin/www_bget?mmu04961"	title="mmu04961: Endocrine and other factor-regulated calcium reabsorption" onmouseover="popupTimer(&quot;mmu04961&quot;, &quot;mmu04961: Endocrine and other factor-regulated calcium reabsorption&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

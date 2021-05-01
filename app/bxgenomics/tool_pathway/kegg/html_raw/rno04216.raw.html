@@ -1,0 +1,452 @@
+<html>
+<!---
+ENTRY       rno04216
+DEFINITION  Ferroptosis - Rattus norvegicus (rat)
+--->
+<head>
+<title>
+KEGG PATHWAY: Ferroptosis - Rattus norvegicus (rat)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(obj){
+  var form = document.forms["form2"];
+  var idx = obj.selectedIndex;
+  var value = obj.options[idx].value;
+	
+  if(value == "1.0_T01003")
+  {
+    form.scale.value = "1.0";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.70_T01003")
+  {
+    form.scale.value = "0.70";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.35_T01003")
+  {
+    form.scale.value = "0.35";
+    form.orgs.value  = "T01003";
+  }
+  else
+	{
+    form.scale.value = value;
+		form.orgs.value  = '';
+    if(form.image)
+    {
+		form.image.value  = '';
+    }
+		form.map.value = "rno04216";
+	}
+
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Ferroptosis - Rattus norvegicus (rat)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=04216&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map04216.keg&query=rno&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+rno04216">Pathway entry</a>
+
+| <a href="https://www.kegg.jp/kegg-bin/download?entry=rno04216&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Ferroptosis is a regulated form of cell death and characterized by a production of reactive oxygen species (ROS) from accumulated iron and lipid peroxidation. It can be induced by experimental compounds (e.g.,erastin, RSL3) or clinical drugs(e.g., sulfasalazine, sorafenib) in cancer cell and certain normal cells. It is involved in multiple physiological and pathological processes, such as cancer cell death, neurodegenerative disease, tissue damage and acute renal failure.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="rno.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno" selected>Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="oro">Odobenus rosmarus divergens (Pacific walrus)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="oor">Orcinus orca (killer whale)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="tmu">Trichechus manatus latirostris (Florida manatee)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+<option value="gga">Gallus gallus (chicken)</option>
+<option value="mgp">Meleagris gallopavo (turkey)</option>
+<option value="cjo">Coturnix japonica (Japanese quail)</option>
+<option value="apla">Anas platyrhynchos (mallard)</option>
+<option value="acyg">Anser cygnoides domesticus (swan goose)</option>
+<option value="tgu">Taeniopygia guttata (zebra finch)</option>
+<option value="gfr">Geospiza fortis (medium ground-finch)</option>
+<option value="fab">Ficedula albicollis (collared flycatcher)</option>
+<option value="phi">Pseudopodoces humilis (Tibetan ground-tit)</option>
+<option value="pmaj">Parus major (Great Tit)</option>
+<option value="ccae">Cyanistes caeruleus (blue tit)</option>
+<option value="ccw">Corvus cornix (hooded crow)</option>
+<option value="fpg">Falco peregrinus (peregrine falcon)</option>
+<option value="fch">Falco cherrug (Saker falcon)</option>
+<option value="clv">Columba livia (rock pigeon)</option>
+<option value="egz">Egretta garzetta (little egret)</option>
+<option value="aam">Apteryx australis mantelli (brown kiwi)</option>
+<option value="asn">Alligator sinensis (Chinese alligator)</option>
+<option value="amj">Alligator mississippiensis (American alligator)</option>
+<option value="pss">Pelodiscus sinensis (Chinese soft-shelled turtle)</option>
+<option value="cmy">Chelonia mydas (green sea turtle)</option>
+<option value="cpic">Chrysemys picta (western painted turtle)</option>
+<option value="acs">Anolis carolinensis (green anole)</option>
+<option value="pvt">Pogona vitticeps (central bearded dragon)</option>
+<option value="pbi">Python bivittatus (Burmese python)</option>
+<option value="gja">Gekko japonicus</option>
+<option value="xla">Xenopus laevis (African clawed frog)</option>
+<option value="xtr">Xenopus tropicalis (western clawed frog)</option>
+<option value="npr">Nanorana parkeri</option>
+<option value="dre">Danio rerio (zebrafish)</option>
+<option value="srx">Sinocyclocheilus rhinocerous</option>
+<option value="sanh">Sinocyclocheilus anshuiensis</option>
+<option value="sgh">Sinocyclocheilus grahami</option>
+<option value="ccar">Cyprinus carpio (common carp)</option>
+<option value="ipu">Ictalurus punctatus (channel catfish)</option>
+<option value="amex">Astyanax mexicanus (Mexican tetra)</option>
+<option value="tru">Takifugu rubripes (torafugu)</option>
+<option value="tng">Tetraodon nigroviridis (spotted green pufferfish)</option>
+<option value="lco">Larimichthys crocea (large yellow croaker)</option>
+<option value="ncc">Notothenia coriiceps (black rockcod)</option>
+<option value="mze">Maylandia zebra (zebra mbuna)</option>
+<option value="ola">Oryzias latipes (Japanese medaka)</option>
+<option value="xma">Xiphophorus maculatus (southern platyfish)</option>
+<option value="pret">Poecilia reticulata (guppy)</option>
+<option value="nfu">Nothobranchius furzeri (turquoise killifish)</option>
+<option value="kmr">Kryptolebias marmoratus (mangrove rivulus)</option>
+<option value="csem">Cynoglossus semilaevis (tongue sole)</option>
+<option value="lcf">Lates calcarifer (barramundi perch)</option>
+<option value="sdu">Seriola dumerili (greater amberjack)</option>
+<option value="hcq">Hippocampus comes (tiger tail seahorse)</option>
+<option value="bpec">Boleophthalmus pectinirostris (great blue-spotted mudskipper)</option>
+<option value="malb">Monopterus albus (swamp eel)</option>
+<option value="sasa">Salmo salar (Atlantic salmon)</option>
+<option value="otw">Oncorhynchus tshawytscha (Chinook salmon)</option>
+<option value="els">Esox lucius (northern pike)</option>
+<option value="sfm">Scleropages formosus (Asian bonytongue)</option>
+<option value="lcm">Latimeria chalumnae (coelacanth)</option>
+<option value="cmk">Callorhinchus milii (elephant shark)</option>
+</select>
+<input type="hidden" name="mapno" value="04216" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="select_scale" onChange="resize_map(this)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="rno04216" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="orgs">
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/rno/rno04216.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=274,204,4	href="/dbget-bin/www_bget?C00025"	title="C00025 (L-Glutamate)" onmouseover="popupTimer(&quot;C00025&quot;, &quot;C00025 (L-Glutamate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=274,153,4	href="/dbget-bin/www_bget?C00491"	title="C00491 (L-Cystine)" onmouseover="popupTimer(&quot;C00491&quot;, &quot;C00491 (L-Cystine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=575,153,4	href="/dbget-bin/www_bget?C00051"	title="C00051 (Glutathione)" onmouseover="popupTimer(&quot;C00051&quot;, &quot;C00051 (Glutathione)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=117,133,4	href="/dbget-bin/www_bget?C21478"	title="C21478 (Erastin)" onmouseover="popupTimer(&quot;C21478&quot;, &quot;C21478 (Erastin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=355,153,4	href="/dbget-bin/www_bget?C00097"	title="C00097 (L-Cysteine)" onmouseover="popupTimer(&quot;C00097&quot;, &quot;C00097 (L-Cysteine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=465,153,4	href="/dbget-bin/www_bget?C00669"	title="C00669 (gamma-L-Glutamyl-L-cysteine)" onmouseover="popupTimer(&quot;C00669&quot;, &quot;C00669 (gamma-L-Glutamyl-L-cysteine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=571,261,4	href="/dbget-bin/www_bget?C00024"	title="C00024 (Acetyl-CoA)" onmouseover="popupTimer(&quot;C00024&quot;, &quot;C00024 (Acetyl-CoA)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=571,319,4	href="/dbget-bin/www_bget?C00356"	title="C00356 ((S)-3-Hydroxy-3-methylglutaryl-CoA)" onmouseover="popupTimer(&quot;C00356&quot;, &quot;C00356 ((S)-3-Hydroxy-3-methylglutaryl-CoA)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=660,319,4	href="/dbget-bin/www_bget?C00418"	title="C00418 ((R)-Mevalonate)" onmouseover="popupTimer(&quot;C00418&quot;, &quot;C00418 ((R)-Mevalonate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=775,319,4	href="/dbget-bin/www_bget?C11378"	title="C11378 (Ubiquinone-10)" onmouseover="popupTimer(&quot;C11378&quot;, &quot;C11378 (Ubiquinone-10)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=117,267,4	href="/dbget-bin/www_bget?C14819"	title="C14819 (Fe3+)" onmouseover="popupTimer(&quot;C14819&quot;, &quot;C14819 (Fe3+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=119,454,4	href="/dbget-bin/www_bget?C14818"	title="C14818 (Fe2+)" onmouseover="popupTimer(&quot;C14818&quot;, &quot;C14818 (Fe2+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=571,391,4	href="/dbget-bin/www_bget?C21478"	title="C21478 (Erastin)" onmouseover="popupTimer(&quot;C21478&quot;, &quot;C21478 (Erastin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=441,279,4	href="/dbget-bin/www_bget?C14819"	title="C14819 (Fe3+)" onmouseover="popupTimer(&quot;C14819&quot;, &quot;C14819 (Fe3+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=441,343,4	href="/dbget-bin/www_bget?C14818"	title="C14818 (Fe2+)" onmouseover="popupTimer(&quot;C14818&quot;, &quot;C14818 (Fe2+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=259,349,4	href="/dbget-bin/www_bget?C14819"	title="C14819 (Fe3+)" onmouseover="popupTimer(&quot;C14819&quot;, &quot;C14819 (Fe3+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=571,204,4	href="/dbget-bin/www_bget?C00127"	title="C00127 (Glutathione disulfide)" onmouseover="popupTimer(&quot;C00127&quot;, &quot;C00127 (Glutathione disulfide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=441,453,4	href="/dbget-bin/www_bget?C14818"	title="C14818 (Fe2+)" onmouseover="popupTimer(&quot;C14818&quot;, &quot;C14818 (Fe2+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=336,454,4	href="/dbget-bin/www_bget?C14818"	title="C14818 (Fe2+)" onmouseover="popupTimer(&quot;C14818&quot;, &quot;C14818 (Fe2+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=441,531,4	href="/dbget-bin/www_bget?C14819"	title="C14819 (Fe3+)" onmouseover="popupTimer(&quot;C14819&quot;, &quot;C14819 (Fe3+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=707,508,4	href="/dbget-bin/www_bget?C14819"	title="C14819 (Fe3+)" onmouseover="popupTimer(&quot;C14819&quot;, &quot;C14819 (Fe3+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=119,483,4	href="/dbget-bin/www_bget?C14818"	title="C14818 (Fe2+)" onmouseover="popupTimer(&quot;C14818&quot;, &quot;C14818 (Fe2+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=119,545,4	href="/dbget-bin/www_bget?C14819"	title="C14819 (Fe3+)" onmouseover="popupTimer(&quot;C14819&quot;, &quot;C14819 (Fe3+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=276,531,4	href="/dbget-bin/www_bget?C00032"	title="C00032 (Heme)" onmouseover="popupTimer(&quot;C00032&quot;, &quot;C00032 (Heme)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=117,146,4	href="/dbget-bin/www_bget?D08524"	title="D08524 (Sorafenib (USAN/INN))" onmouseover="popupTimer(&quot;D08524&quot;, &quot;D08524 (Sorafenib (USAN/INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=117,172,4	href="/dbget-bin/www_bget?D00448"	title="D00448 (Sulfasalazine (USP/INN))" onmouseover="popupTimer(&quot;D00448&quot;, &quot;D00448 (Sulfasalazine (USP/INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1001,390,4	href="/dbget-bin/www_bget?C16844+C00027"	title="C16844 (Hydroxyl radical), C00027 (Hydrogen peroxide)" onmouseover="popupTimer(&quot;C16844&quot;, &quot;C16844 (Hydroxyl radical), C00027 (Hydrogen peroxide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=822,202,4	href="/dbget-bin/www_bget?C21480+C21481"	title="C21480 (1-Octadecanoyl-2-(5Z,8Z,11Z,14Z-eicosatetraenoyl)-sn-glycero-3-phosphoethanolamine), C21481 (1-Octadecanoyl-2-(7Z,10Z,13Z,16Z-docosatetraenoyl)-sn-glycero-3-phosphoethanolamine)" onmouseover="popupTimer(&quot;C21480&quot;, &quot;C21480 (1-Octadecanoyl-2-(5Z,8Z,11Z,14Z-eicosatetraenoyl)-sn-glycero-3-phosphoethanolamine), C21481 (1-Octadecanoyl-2-(7Z,10Z,13Z,16Z-docosatetraenoyl)-sn-glycero-3-phosphoethanolamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=932,202,4	href="/dbget-bin/www_bget?C02249+C16170"	title="C02249 (Arachidonyl-CoA), C16170 ((7Z,10Z,13Z,16Z)-Docosatetraenoyl-CoA)" onmouseover="popupTimer(&quot;C02249&quot;, &quot;C02249 (Arachidonyl-CoA), C16170 ((7Z,10Z,13Z,16Z)-Docosatetraenoyl-CoA)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1047,224,4	href="/dbget-bin/www_bget?C00219+C16527"	title="C00219 (Arachidonate), C16527 (7,10,13,16-Docosatetraenoic acid)" onmouseover="popupTimer(&quot;C00219&quot;, &quot;C00219 (Arachidonate), C16527 (7,10,13,16-Docosatetraenoic acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1047,181,4	href="/dbget-bin/www_bget?C00010"	title="C00010 (CoA)" onmouseover="popupTimer(&quot;C00010&quot;, &quot;C00010 (CoA)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=633,150,4	href="/dbget-bin/www_bget?C21479"	title="C21479 (RSL3)" onmouseover="popupTimer(&quot;C21479&quot;, &quot;C21479 (RSL3)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=117,159,4	href="/dbget-bin/www_bget?C00025"	title="C00025 (L-Glutamate)" onmouseover="popupTimer(&quot;C00025&quot;, &quot;C00025 (L-Glutamate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=775,162,4	href="/dbget-bin/www_bget?C02477"	title="C02477 (alpha-Tocopherol)" onmouseover="popupTimer(&quot;C02477&quot;, &quot;C02477 (alpha-Tocopherol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=887,231,4	href="/dbget-bin/www_bget?C21484"	title="C21484 (1-Octadecanoyl-sn-glycero-3-phosphoethanolamine)" onmouseover="popupTimer(&quot;C21484&quot;, &quot;C21484 (1-Octadecanoyl-sn-glycero-3-phosphoethanolamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=697,261,4	href="/dbget-bin/www_bget?C00129"	title="C00129 (Isopentenyl diphosphate)" onmouseover="popupTimer(&quot;C00129&quot;, &quot;C00129 (Isopentenyl diphosphate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=732,416,4	href="/dbget-bin/www_bget?C14818"	title="C14818 (Fe2+)" onmouseover="popupTimer(&quot;C14818&quot;, &quot;C14818 (Fe2+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=712,202,4	href="/dbget-bin/www_bget?C21483"	title="C21483 (1-Octadecanoyl-2-(15S-hydroperoxy-5Z,8Z,11Z,13E-eicosatetraenoyl)-sn-glycero-3-phosphoethanolamine)" onmouseover="popupTimer(&quot;C21483&quot;, &quot;C21483 (1-Octadecanoyl-2-(15S-hydroperoxy-5Z,8Z,11Z,13E-eicosatetraenoyl)-sn-glycero-3-phosphoethanolamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=711,150,4	href="/dbget-bin/www_bget?C21482"	title="C21482 (1-Octadecanoyl-2-(15S-hydroxy-5Z,8Z,11Z,13E-eicosatetraenoyl)-sn-glycero-3-phosphoethanolamine)" onmouseover="popupTimer(&quot;C21482&quot;, &quot;C21482 (1-Octadecanoyl-2-(15S-hydroxy-5Z,8Z,11Z,13E-eicosatetraenoyl)-sn-glycero-3-phosphoethanolamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=176,184,222,201	href="/dbget-bin/www_bget?rno:310392"	title="310392 (Slc7a11)" />
+<area shape=rect	coords=247,222,293,239	href="/dbget-bin/www_bget?rno:24842"	title="24842 (Tp53)" />
+<area shape=rect	coords=610,169,656,186	href="/dbget-bin/www_bget?rno:29328"	title="29328 (Gpx4)" />
+<area shape=rect	coords=638,370,684,387	href="/dbget-bin/www_bget?rno:83531+rno:83532"	title="83531 (Vdac2), 83532 (Vdac3)" />
+<area shape=rect	coords=383,133,429,150	href="/dbget-bin/www_bget?rno:25283+rno:29739"	title="25283 (Gclc), 29739 (Gclm)" />
+<area shape=rect	coords=176,167,222,184	href="/dbget-bin/www_bget?rno:50567"	title="50567 (Slc3a2)" />
+<area shape=rect	coords=177,259,223,276	href="/dbget-bin/www_bget?rno:64678"	title="64678 (Tfrc)" />
+<area shape=rect	coords=131,259,177,276	href="/dbget-bin/www_bget?rno:24825"	title="24825 (Tf)" />
+<area shape=rect	coords=97,345,143,362	href="/dbget-bin/www_bget?rno:24268"	title="24268 (Cp)" />
+<area shape=rect	coords=418,231,464,248	href="/dbget-bin/www_bget?rno:64678"	title="64678 (Tfrc)" />
+<area shape=rect	coords=418,248,464,265	href="/dbget-bin/www_bget?rno:24825"	title="24825 (Tf)" />
+<area shape=rect	coords=364,300,410,317	href="/dbget-bin/www_bget?rno:170824"	title="170824 (Steap3)" />
+<area shape=rect	coords=235,301,281,318	href="/dbget-bin/www_bget?rno:64678"	title="64678 (Tfrc)" />
+<area shape=rect	coords=235,318,281,335	href="/dbget-bin/www_bget?rno:24825"	title="24825 (Tf)" />
+<area shape=rect	coords=495,133,541,150	href="/dbget-bin/www_bget?rno:25458"	title="25458 (Gss)" />
+<area shape=rect	coords=444,481,490,498	href="/dbget-bin/www_bget?rno:363005+rno:500242"	title="363005 (Pcbp2), 500242 (Pcbp1)" />
+<area shape=rect	coords=176,445,222,462	href="/dbget-bin/www_bget?rno:108348131+rno:170840"	title="108348131 (NEWGENE_620180), 170840 (Slc40a1)" />
+<area shape=rect	coords=313,420,359,437	href="/dbget-bin/www_bget?rno:363005"	title="363005 (Pcbp2)" />
+<area shape=rect	coords=417,545,463,562	href="/dbget-bin/www_bget?rno:100360087+rno:25319+rno:29292"	title="100360087, 25319 (Fth1), 29292 (Ftl1)" />
+<area shape=rect	coords=530,534,576,551	href="/dbget-bin/www_bget?rno:312647+rno:365601"	title="312647 (Atg7), 365601 (Atg5)" />
+<area shape=rect	coords=684,522,730,539	href="/dbget-bin/www_bget?rno:100360087+rno:25319+rno:29292"	title="100360087, 25319 (Fth1), 29292 (Ftl1)" />
+<area shape=rect	coords=456,364,502,381	href="/dbget-bin/www_bget?rno:295455+rno:306009"	title="295455 (Slc39a8), 306009 (Slc39a14)" />
+<area shape=rect	coords=376,364,422,381	href="/dbget-bin/www_bget?rno:25715"	title="25715 (Slc11a2)" />
+<area shape=rect	coords=530,511,576,528	href="/dbget-bin/www_bget?rno:362245+rno:64862"	title="362245 (Map1lc3a), 64862 (Map1lc3b)" />
+<area shape=rect	coords=638,522,684,539	href="/dbget-bin/www_bget?rno:619385"	title="619385 (Ncoa4)" />
+<area shape=rect	coords=839,141,885,158	href="/dbget-bin/www_bget?rno:302642+rno:360547"	title="302642 (Sat1), 360547 (Sat2)" />
+<area shape=rect	coords=176,474,222,491	href="/dbget-bin/www_bget?rno:295455+rno:306009"	title="295455 (Slc39a8), 306009 (Slc39a14)" />
+<area shape=rect	coords=176,511,222,528	href="/dbget-bin/www_bget?rno:24686"	title="24686 (Prnp)" />
+<area shape=rect	coords=288,511,334,528	href="/dbget-bin/www_bget?rno:24451"	title="24451 (Hmox1)" />
+<area shape=rect	coords=638,394,684,411	href="/dbget-bin/www_bget?rno:66021"	title="66021 (Cybb)" />
+<area shape=rect	coords=968,182,1014,199	href="/dbget-bin/www_bget?rno:113976+rno:114024+rno:117243+rno:25288+rno:94340"	title="113976 (Acsl4), 114024 (Acsl3), 117243 (Acsl6), 25288 (Acsl1), 94340 (Acsl5)" />
+<area shape=rect	coords=859,182,905,199	href="/dbget-bin/www_bget?rno:362434"	title="362434 (Lpcat3)" />
+<area shape=rect	coords=752,182,798,199	href="/dbget-bin/www_bget?rno:81639"	title="81639 (Alox15)" />
+<area shape=rect	coords=941,141,987,158	href="/dbget-bin/www_bget?rno:24842"	title="24842 (Tp53)" />
+<area shape=rect	coords=746,407,792,424	href="/dbget-bin/www_bget?rno:291470"	title="291470 (Ftmt)" />
+<area shape=rect	coords=40,45,145,70	href="/dbget-bin/www_bget?rno04216"	title="rno04216: Ferroptosis" onmouseover="popupTimer(&quot;rno04216&quot;, &quot;rno04216: Ferroptosis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=379,176,505,198	href="/kegg-bin/show_pathway?rno00480"	title="rno00480: Glutathione metabolism" onmouseover="popupTimer(&quot;rno00480&quot;, &quot;rno00480: Glutathione metabolism&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=577,277,685,306	href="/kegg-bin/show_pathway?rno00900"	title="rno00900: Terpenoid backbone biosynthesis" onmouseover="popupTimer(&quot;rno00900&quot;, &quot;rno00900: Terpenoid backbone biosynthesis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,415 @@
+<html>
+<!---
+ENTRY       rno05150
+DEFINITION  Staphylococcus aureus infection - Rattus norvegicus (rat)
+--->
+<head>
+<title>
+KEGG PATHWAY: Staphylococcus aureus infection - Rattus norvegicus (rat)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(obj){
+  var form = document.forms["form2"];
+  var idx = obj.selectedIndex;
+  var value = obj.options[idx].value;
+	
+  if(value == "1.0_T01003")
+  {
+    form.scale.value = "1.0";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.70_T01003")
+  {
+    form.scale.value = "0.70";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.35_T01003")
+  {
+    form.scale.value = "0.35";
+    form.orgs.value  = "T01003";
+  }
+  else
+	{
+    form.scale.value = value;
+		form.orgs.value  = '';
+    if(form.image)
+    {
+		form.image.value  = '';
+    }
+		form.map.value = "rno05150";
+	}
+
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Staphylococcus aureus infection - Rattus norvegicus (rat)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=05150&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map05150.keg&query=rno&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+rno05150">Pathway entry</a>
+
+| <a href="https://www.kegg.jp/kegg-bin/download?entry=rno05150&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Staphylococcus aureus can cause multiple forms of infections ranging from superficial skin infections to food poisoning and life-threatening infections. The organism has several ways to divert the effectiveness of the immune system: secreting immune modulating proteins that inhibit complement activation and neutrophil chemotaxis or lysis, modulating the sensitivity to cationic antimicrobial peptides (such as defensin) by increasing the positive net charge of its cytoplasmic membrane, and expression of superantigens that prevent development of a normal immune response or cause an emetic response when ingested.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="rno.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno" selected>Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="oro">Odobenus rosmarus divergens (Pacific walrus)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="oor">Orcinus orca (killer whale)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="tmu">Trichechus manatus latirostris (Florida manatee)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+<option value="sau">Staphylococcus aureus subsp. aureus N315 (MRSA/VSSA)</option>
+<option value="sav">Staphylococcus aureus subsp. aureus Mu50 (MRSA/VISA)</option>
+<option value="saw">Staphylococcus aureus subsp. aureus Mu3 (MRSA/hetero-VISA)</option>
+<option value="sah">Staphylococcus aureus subsp. aureus JH1 (MRSA/VSSA)</option>
+<option value="saj">Staphylococcus aureus subsp. aureus JH9 (MRSA/VISA)</option>
+<option value="sam">Staphylococcus aureus subsp. aureus MW2 (CA-MRSA)</option>
+<option value="sas">Staphylococcus aureus subsp. aureus MSSA476 (MSSA)</option>
+<option value="sar">Staphylococcus aureus subsp. aureus MRSA252 (MRSA)</option>
+<option value="sac">Staphylococcus aureus subsp. aureus COL (MRSA)</option>
+<option value="sax">Staphylococcus aureus subsp. aureus USA300_TCH1516 (CA-MRSA)</option>
+<option value="saa">Staphylococcus aureus subsp. aureus USA300_FPR3757 (CA-MRSA)</option>
+<option value="sao">Staphylococcus aureus subsp. aureus NCTC8325</option>
+<option value="sae">Staphylococcus aureus subsp. aureus Newman</option>
+<option value="sad">Staphylococcus aureus subsp. aureus ED98</option>
+<option value="suu">Staphylococcus aureus subsp. aureus M013 (CA-MRSA)</option>
+<option value="suv">Staphylococcus aureus subsp. aureus VC40</option>
+<option value="sue">Staphylococcus aureus subsp. aureus ED133</option>
+<option value="suj">Staphylococcus aureus subsp. aureus JKD6159 (CA-MRSA)</option>
+<option value="suk">Staphylococcus aureus subsp. aureus JKD6008 (MRSA/VISA)</option>
+<option value="suc">Staphylococcus aureus subsp. aureus ECT-R 2</option>
+<option value="sut">Staphylococcus aureus subsp. aureus T0131 (MRSA)</option>
+<option value="suq">Staphylococcus aureus subsp. aureus TCH60</option>
+<option value="suz">Staphylococcus aureus subsp. aureus 11819-97 (CA-MRSA)</option>
+<option value="sud">Staphylococcus aureus subsp. aureus 71193 (MSSA)</option>
+<option value="sux">Staphylococcus aureus subsp. aureus HO 5096 0412 (MRSA)</option>
+<option value="suw">Staphylococcus aureus subsp. aureus TW20 (MRSA)</option>
+<option value="sug">Staphylococcus aureus subsp. aureus ST398 (MRSA)</option>
+<option value="suf">Staphylococcus aureus subsp. aureus LGA251 (MRSA)</option>
+<option value="saua">Staphylococcus aureus subsp. aureus 55/2053</option>
+<option value="saue">Staphylococcus aureus subsp. aureus 6850 (MSSA)</option>
+<option value="saun">Staphylococcus aureus subsp. aureus CN1 (CA-MRSA)</option>
+<option value="saus">Staphylococcus aureus subsp. aureus SA40 (CA-MRSA)</option>
+<option value="sauu">Staphylococcus aureus subsp. aureus SA957 (CA-MRSA)</option>
+<option value="saug">Staphylococcus aureus subsp. aureus SA268 (CA-MRSA)</option>
+<option value="sauz">Staphylococcus aureus subsp. aureus Z172 (MRSA/VISA)</option>
+<option value="saut">Staphylococcus aureus subsp. aureus ST228/10388 (MRSA)</option>
+<option value="sauj">Staphylococcus aureus subsp. aureus ST228/10497 (MRSA)</option>
+<option value="sauk">Staphylococcus aureus subsp. aureus ST228/15532 (MRSA)</option>
+<option value="sauq">Staphylococcus aureus subsp. aureus ST228/16035 (MRSA)</option>
+<option value="sauv">Staphylococcus aureus subsp. aureus ST228/18412 (MRSA)</option>
+<option value="sauw">Staphylococcus aureus subsp. aureus ST228/16125 (MRSA)</option>
+<option value="saux">Staphylococcus aureus subsp. aureus ST228/18341 (MRSA)</option>
+<option value="sauy">Staphylococcus aureus subsp. aureus ST228/18583 (MRSA)</option>
+<option value="sauf">Staphylococcus aureus subsp. aureus FDAARGOS_5</option>
+<option value="sab">Staphylococcus aureus RF122</option>
+<option value="suy">Staphylococcus aureus 04-02981 (MRSA)</option>
+<option value="saub">Staphylococcus aureus 08BA02176 (LA-MRSA)</option>
+<option value="saum">Staphylococcus aureus M1 (MRSA)</option>
+<option value="sauc">Staphylococcus aureus CA-347 (MRSA)</option>
+<option value="saur">Staphylococcus aureus Bmb9393 (MRSA)</option>
+<option value="saui">Staphylococcus aureus USA300-ISMMS1 (MRSA)</option>
+<option value="saud">Staphylococcus aureus 502A</option>
+<option value="sams">Staphylococcus aureus MS4</option>
+</select>
+<input type="hidden" name="mapno" value="05150" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="select_scale" onChange="resize_map(this)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="rno05150" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="orgs">
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/rno/rno05150.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=712,576,4	href="/dbget-bin/www_bget?C11596"	title="C11596 (FMLP)" onmouseover="popupTimer(&quot;C11596&quot;, &quot;C11596 (FMLP)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=379,1094,4	href="/dbget-bin/www_bget?C20898"	title="C20898 (Lipoteichoic acid)" onmouseover="popupTimer(&quot;C20898&quot;, &quot;C20898 (Lipoteichoic acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=461,743,4	href="/dbget-bin/www_bget?C16059+C16060+C16061+C16062"	title="C16059 (Defensin beta-1), C16060 (Defensin beta-2), C16061 (Defensin beta-3), C16062 (Defensin beta-4)" onmouseover="popupTimer(&quot;C16059&quot;, &quot;C16059 (Defensin beta-1), C16060 (Defensin beta-2), C16061 (Defensin beta-3), C16062 (Defensin beta-4)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=461,770,4	href="/dbget-bin/www_bget?C16054+C16055+C16056+C16057+C16058"	title="C16054 (Defensin alpha-1), C16055 (Defensin alpha-2), C16056 (Defensin alpha-3), C16057 (Defensin alpha-4), C16058 (Defensin alpha-5)" onmouseover="popupTimer(&quot;C16054&quot;, &quot;C16054 (Defensin alpha-1), C16055 (Defensin alpha-2), C16056 (Defensin alpha-3), C16057 (Defensin alpha-4), C16058 (Defensin alpha-5)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=461,796,4	href="/dbget-bin/www_bget?C18313"	title="C18313 (LL-37)" onmouseover="popupTimer(&quot;C18313&quot;, &quot;C18313 (LL-37)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=517,155,563,172	href="/dbget-bin/www_bget?rno:54249"	title="54249 (Cfd)" />
+<area shape=rect	coords=433,168,479,185	href="/dbget-bin/www_bget?rno:24232"	title="24232 (C3)" />
+<area shape=rect	coords=433,151,479,168	href="/dbget-bin/www_bget?rno:294257"	title="294257 (Cfb)" />
+<area shape=rect	coords=814,409,860,426	href="/dbget-bin/www_bget?rno:362119"	title="362119 (C5)" />
+<area shape=rect	coords=416,302,462,319	href="/dbget-bin/www_bget?rno:192262"	title="192262 (C1s)" />
+<area shape=rect	coords=416,285,462,302	href="/dbget-bin/www_bget?rno:312705"	title="312705 (C1r)" />
+<area shape=rect	coords=370,294,416,311	href="/dbget-bin/www_bget?rno:29687+rno:298566+rno:362634"	title="29687 (C1qb), 298566 (C1qa), 362634 (C1qc)" />
+<area shape=rect	coords=517,270,563,287	href="/dbget-bin/www_bget?rno:24233"	title="24233 (C4a)" />
+<area shape=rect	coords=517,253,563,270	href="/dbget-bin/www_bget?rno:24231"	title="24231 (C2)" />
+<area shape=rect	coords=353,236,399,253	href="/dbget-bin/www_bget?rno:100911854+rno:24548+rno:64668"	title="100911854, 24548 (Mbl1), 64668 (Mbl2)" />
+<area shape=rect	coords=415,236,461,253	href="/dbget-bin/www_bget?rno:64023+rno:64459"	title="64023 (Masp1), 64459 (Masp2)" />
+<area shape=rect	coords=814,641,860,658	href="/dbget-bin/www_bget?rno:113959"	title="113959 (C5ar1)" />
+<area shape=rect	coords=760,641,806,658	href="/dbget-bin/www_bget?rno:292409"	title="292409 (Fpr1)" />
+<area shape=rect	coords=504,334,550,351	href="/dbget-bin/www_bget?rno:85253"	title="85253 (Plg)" />
+<area shape=rect	coords=616,524,662,541	href="/dbget-bin/www_bget?rno:691714"	title="691714 (RGD1565478)" />
+<area shape=rect	coords=302,334,348,351	href="/dbget-bin/www_bget?rno:691714"	title="691714 (RGD1565478)" />
+<area shape=rect	coords=641,367,687,384	href="/dbget-bin/www_bget?rno:79126"	title="79126 (Cfi)" />
+<area shape=rect	coords=616,502,662,519	href="/dbget-bin/www_bget?rno:24367"	title="24367 (Fgg)" />
+<area shape=rect	coords=658,641,704,658	href="/dbget-bin/www_bget?rno:365183"	title="365183 (Fcar)" />
+<area shape=rect	coords=605,641,651,658	href="/dbget-bin/www_bget?rno:100911825+rno:116591+rno:289211+rno:295279+rno:304966+rno:498276"	title="100911825, 116591 (Fcgr2a), 289211 (Fcgr2b), 295279 (Fcgr1a), 304966 (Fcgr3a), 498276" />
+<area shape=rect	coords=207,1016,253,1033	href="/dbget-bin/www_bget?rno:291755"	title="291755 (Dsg1)" />
+<area shape=rect	coords=458,1003,504,1020	href="/dbget-bin/www_bget?rno:100911800+rno:108348072+rno:108348139+rno:24984+rno:24986+rno:294269+rno:294270+rno:294273+rno:294274+rno:309621+rno:309622+rno:365542+rno:688090"	title="100911800, 108348072, 108348139, 24984 (RT1-DOa), 24986 (RT1-Ha), 294269 (RT1-Da), 294270 (RT1-Db1), 294273 (RT1-DMb), 294274 (RT1-DMa), 309621 (RT1-Ba), 309622 (RT1-Bb), 365542 (RT1-DOb), 688090 (Bb)" />
+<area shape=rect	coords=459,964,505,981	href="/dbget-bin/www_bget?rno:100362949+rno:688340"	title="100362949 (TRAV14S2), 688340" />
+<area shape=rect	coords=473,102,519,119	href="/dbget-bin/www_bget?rno:155012"	title="155012 (Cfh)" />
+<area shape=rect	coords=865,641,911,658	href="/dbget-bin/www_bget?rno:84007"	title="84007 (C3ar1)" />
+<area shape=rect	coords=162,206,208,223	href="/dbget-bin/www_bget?rno:450225"	title="450225 (Krt10)" />
+<area shape=rect	coords=162,228,208,245	href="/dbget-bin/www_bget?rno:24367"	title="24367 (Fgg)" />
+<area shape=rect	coords=459,1060,505,1077	href="/dbget-bin/www_bget?rno:691714"	title="691714 (RGD1565478)" />
+<area shape=rect	coords=1024,748,1070,765	href="/dbget-bin/www_bget?rno:25464"	title="25464 (Icam1)" />
+<area shape=rect	coords=902,756,948,773	href="/dbget-bin/www_bget?rno:309684"	title="309684 (Itgb2)" />
+<area shape=rect	coords=1024,791,1070,808	href="/dbget-bin/www_bget?rno:25651"	title="25651 (Selp)" />
+<area shape=rect	coords=902,791,948,808	href="/dbget-bin/www_bget?rno:363930"	title="363930 (Selplg)" />
+<area shape=rect	coords=902,739,948,756	href="/dbget-bin/www_bget?rno:25021+rno:308995"	title="25021 (Itgam), 308995 (Itgal)" />
+<area shape=rect	coords=459,1085,505,1102	href="/dbget-bin/www_bget?rno:58949"	title="58949 (Ptafr)" />
+<area shape=rect	coords=638,1085,684,1102	href="/dbget-bin/www_bget?rno:25325"	title="25325 (Il10)" />
+<area shape=rect	coords=709,641,755,658	href="/dbget-bin/www_bget?rno:292419+rno:681706+rno:690198+rno:690230"	title="292419 (Fpr-rs3), 681706 (Fpr2l), 690198 (Fpr-rs4), 690230 (Fpr-rs6)" />
+<area shape=rect	coords=40,45,340,70	href="/dbget-bin/www_bget?rno05150"	title="rno05150: Staphylococcus aureus infection" onmouseover="popupTimer(&quot;rno05150&quot;, &quot;rno05150: Staphylococcus aureus infection&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=240,96,366,130	href="/kegg-bin/show_pathway?rno04610"	title="rno04610: Complement and coagulation cascades" onmouseover="popupTimer(&quot;rno04610&quot;, &quot;rno04610: Complement and coagulation cascades&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=589,955,715,989	href="/kegg-bin/show_pathway?rno04660"	title="rno04660: T cell receptor signaling pathway" onmouseover="popupTimer(&quot;rno04660&quot;, &quot;rno04660: T cell receptor signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=589,1027,715,1061	href="/kegg-bin/show_pathway?rno04662"	title="rno04662: B cell receptor signaling pathway" onmouseover="popupTimer(&quot;rno04662&quot;, &quot;rno04662: B cell receptor signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,393 @@
+<html>
+<!---
+ENTRY       rno04728
+DEFINITION  Dopaminergic synapse - Rattus norvegicus (rat)
+--->
+<head>
+<title>
+KEGG PATHWAY: Dopaminergic synapse - Rattus norvegicus (rat)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(obj){
+  var form = document.forms["form2"];
+  var idx = obj.selectedIndex;
+  var value = obj.options[idx].value;
+	
+  if(value == "1.0_T01003")
+  {
+    form.scale.value = "1.0";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.70_T01003")
+  {
+    form.scale.value = "0.70";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.35_T01003")
+  {
+    form.scale.value = "0.35";
+    form.orgs.value  = "T01003";
+  }
+  else
+	{
+    form.scale.value = value;
+		form.orgs.value  = '';
+    if(form.image)
+    {
+		form.image.value  = '';
+    }
+		form.map.value = "rno04728";
+	}
+
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Dopaminergic synapse - Rattus norvegicus (rat)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=04728&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map04728.keg&query=rno&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+rno04728">Pathway entry</a>
+
+| <a href="https://www.kegg.jp/kegg-bin/download?entry=rno04728&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Dopamine (DA) is an important and prototypical slow neurotransmitter in the mammalian brain, where it controls a variety of functions including locomotor activity, motivation and reward, learning and memory, and endocrine regulation. Once released from presynaptic axonal terminals, DA interacts with at least five receptor subtypes in the central nervous system (CNS), which have been divided into two groups: the D1-like receptors (D1Rs), comprising D1 and D5 receptors, both positively coupled to adenylyl cyclase and cAMP production, and the D2-like receptors (D2Rs), comprising D2, D3, and D4 receptors, whose activation results in inhibition of adenylyl cyclase and suppression of cAMP production. In addition, D1Rs and D2Rs modulate intracellular Ca2+ levels and a number of Ca2+ -dependent intracellular signaling processes. Through diverse cAMP- and Ca2+-dependent and - independent mechanisms, DA influences neuronal activity, synaptic plasticity, and behavior. Presynaptically localized D2Rs regulate synthesis and release of DA as the main autoreceptor of the dopaminergic system.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="rno.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno" selected>Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="oro">Odobenus rosmarus divergens (Pacific walrus)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="oor">Orcinus orca (killer whale)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="tmu">Trichechus manatus latirostris (Florida manatee)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="04728" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="select_scale" onChange="resize_map(this)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="rno04728" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="orgs">
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/rno/rno04728.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=719,159,4	href="/dbget-bin/www_bget?C03758"	title="C03758 (Dopamine)" onmouseover="popupTimer(&quot;C03758&quot;, &quot;C03758 (Dopamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=123,549,4	href="/dbget-bin/www_bget?C00355"	title="C00355 (3,4-Dihydroxy-L-phenylalanine)" onmouseover="popupTimer(&quot;C00355&quot;, &quot;C00355 (3,4-Dihydroxy-L-phenylalanine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=196,549,4	href="/dbget-bin/www_bget?C03758"	title="C03758 (Dopamine)" onmouseover="popupTimer(&quot;C03758&quot;, &quot;C03758 (Dopamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=452,473,4	href="/dbget-bin/www_bget?C03758"	title="C03758 (Dopamine)" onmouseover="popupTimer(&quot;C03758&quot;, &quot;C03758 (Dopamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1016,535,4	href="/dbget-bin/www_bget?C00575"	title="C00575 (3',5'-Cyclic AMP)" onmouseover="popupTimer(&quot;C00575&quot;, &quot;C00575 (3',5'-Cyclic AMP)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=992,447,4	href="/dbget-bin/www_bget?C01245"	title="C01245 (D-myo-Inositol 1,4,5-trisphosphate)" onmouseover="popupTimer(&quot;C01245&quot;, &quot;C01245 (D-myo-Inositol 1,4,5-trisphosphate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1043,490,4	href="/dbget-bin/www_bget?C00165"	title="C00165 (Diacylglycerol)" onmouseover="popupTimer(&quot;C00165&quot;, &quot;C00165 (Diacylglycerol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1042,456,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=644,588,4	href="/dbget-bin/www_bget?C03758"	title="C03758 (Dopamine)" onmouseover="popupTimer(&quot;C03758&quot;, &quot;C03758 (Dopamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=677,779,4	href="/dbget-bin/www_bget?C03758"	title="C03758 (Dopamine)" onmouseover="popupTimer(&quot;C03758&quot;, &quot;C03758 (Dopamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=666,492,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=122,438,4	href="/dbget-bin/www_bget?C00082"	title="C00082 (L-Tyrosine)" onmouseover="popupTimer(&quot;C00082&quot;, &quot;C00082 (L-Tyrosine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=561,780,4	href="/dbget-bin/www_bget?C03758"	title="C03758 (Dopamine)" onmouseover="popupTimer(&quot;C03758&quot;, &quot;C03758 (Dopamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=422,769,4	href="/dbget-bin/www_bget?C05587"	title="C05587 (3-Methoxytyramine)" onmouseover="popupTimer(&quot;C05587&quot;, &quot;C05587 (3-Methoxytyramine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=422,787,4	href="/dbget-bin/www_bget?C05582"	title="C05582 (Homovanillate)" onmouseover="popupTimer(&quot;C05582&quot;, &quot;C05582 (Homovanillate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=506,109,4	href="/dbget-bin/www_bget?C05582"	title="C05582 (Homovanillate)" onmouseover="popupTimer(&quot;C05582&quot;, &quot;C05582 (Homovanillate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=619,106,4	href="/dbget-bin/www_bget?C01161"	title="C01161 (3,4-Dihydroxyphenylacetate)" onmouseover="popupTimer(&quot;C01161&quot;, &quot;C01161 (3,4-Dihydroxyphenylacetate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=615,157,4	href="/dbget-bin/www_bget?C05587"	title="C05587 (3-Methoxytyramine)" onmouseover="popupTimer(&quot;C05587&quot;, &quot;C05587 (3-Methoxytyramine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=801,723,4	href="/dbget-bin/www_bget?C00238"	title="C00238 (Potassium cation)" onmouseover="popupTimer(&quot;C00238&quot;, &quot;C00238 (Potassium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=716,686,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=711,605,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=709,658,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=730,526,776,543	href="/dbget-bin/www_bget?rno:25195"	title="25195 (Drd5)" />
+<area shape=rect	coords=693,210,739,227	href="/dbget-bin/www_bget?rno:24898"	title="24898 (Slc6a3)" />
+<area shape=rect	coords=220,541,266,558	href="/dbget-bin/www_bget?rno:25549+rno:25693"	title="25549 (Slc18a2), 25693 (Slc18a1)" />
+<area shape=rect	coords=824,526,870,543	href="/dbget-bin/www_bget?rno:24611+rno:24896"	title="24611 (Gnal), 24896 (Gnas)" />
+<area shape=rect	coords=936,526,982,543	href="/dbget-bin/www_bget?rno:64532"	title="64532 (Adcy5)" />
+<area shape=rect	coords=1058,526,1104,543	href="/dbget-bin/www_bget?rno:25636+rno:293508"	title="25636 (Prkaca), 293508 (Prkacb)" />
+<area shape=rect	coords=824,465,870,482	href="/dbget-bin/www_bget?rno:81666"	title="81666 (Gnaq)" />
+<area shape=rect	coords=902,465,948,482	href="/dbget-bin/www_bget?rno:24654+rno:25031+rno:29322+rno:85240"	title="24654 (Plcb1), 25031 (Plcb4), 29322 (Plcb3), 85240 (Plcb2)" />
+<area shape=rect	coords=1020,413,1066,430	href="/dbget-bin/www_bget?rno:25262+rno:25679+rno:81678"	title="25262 (Itpr1), 25679 (Itpr3), 81678 (Itpr2)" />
+<area shape=rect	coords=1136,481,1182,498	href="/dbget-bin/www_bget?rno:24680+rno:24681+rno:25023"	title="24680 (Prkca), 24681 (Prkcg), 25023 (Prkcb)" />
+<area shape=rect	coords=132,561,178,578	href="/dbget-bin/www_bget?rno:24311"	title="24311 (Ddc)" />
+<area shape=rect	coords=660,100,706,117	href="/dbget-bin/www_bget?rno:25750+rno:29253"	title="25750 (Maob), 29253 (Maoa)" />
+<area shape=rect	coords=601,772,647,789	href="/dbget-bin/www_bget?rno:24898"	title="24898 (Slc6a3)" />
+<area shape=rect	coords=601,484,647,501	href="/dbget-bin/www_bget?rno:25398+rno:257648"	title="25398 (Cacna1a), 257648 (Cacna1b)" />
+<area shape=rect	coords=730,793,776,810	href="/dbget-bin/www_bget?rno:24318"	title="24318 (Drd2)" />
+<area shape=rect	coords=840,753,886,770	href="/dbget-bin/www_bget?rno:100912034+rno:108349548+rno:114117+rno:114118+rno:114119+rno:114120+rno:24400+rno:245986+rno:25643+rno:25686+rno:294962+rno:50664+rno:58979+rno:60449+rno:64199+rno:680149+rno:685451+rno:685513+rno:690825+rno:79218+rno:80850+rno:81664+rno:81667+rno:83579"	title="100912034, 108349548, 114117 (Gng3), 114118 (Gng4), 114119 (Gng10), 114120 (Gng12), 24400 (Gnb1), 245986 (Gng8), 25643 (Gnai3), 25686 (Gnai1), 294962 (Gnb4), 50664 (Gnao1), 58979 (Gng7), 60449 (Gnb3), 64199 (Gng11), 680149 (Gngt1), 685451 (Gng13), 685513, 690825 (Gngt2), 79218 (Gng5), 80850 (Gng2), 81664 (Gnai2), 81667 (Gnb2), 83579 (Gnb5)" />
+<area shape=rect	coords=922,796,968,813	href="/dbget-bin/www_bget?rno:24185+rno:25233+rno:29414"	title="24185 (Akt1), 25233 (Akt2), 29414 (Akt3)" />
+<area shape=rect	coords=993,796,1039,813	href="/dbget-bin/www_bget?rno:50686+rno:84027"	title="50686 (Gsk3a), 84027 (Gsk3b)" />
+<area shape=rect	coords=1135,513,1181,530	href="/dbget-bin/www_bget?rno:310616+rno:314638+rno:362165+rno:362339+rno:406169+rno:500131+rno:79255+rno:81646+rno:81647"	title="310616 (Creb3l4), 314638 (Creb3l3), 362165 (Creb3l1), 362339 (Creb3l2), 406169 (Atf6b), 500131 (Creb5), 79255 (Atf4), 81646 (Creb1), 81647 (Atf2)" />
+<area shape=rect	coords=1135,580,1181,597	href="/dbget-bin/www_bget?rno:360616"	title="360616 (Ppp1r1b)" />
+<area shape=rect	coords=1135,544,1181,561	href="/dbget-bin/www_bget?rno:116554+rno:25272+rno:29513+rno:50658+rno:60352+rno:689314+rno:81649"	title="116554 (Mapk8), 25272 (Mapk10), 29513 (Mapk13), 50658 (Mapk9), 60352 (Mapk12), 689314 (Mapk11), 81649 (Mapk14)" />
+<area shape=rect	coords=133,457,179,474	href="/dbget-bin/www_bget?rno:25085"	title="25085 (Th)" />
+<area shape=rect	coords=730,465,776,482	href="/dbget-bin/www_bget?rno:24316"	title="24316 (Drd1)" />
+<area shape=rect	coords=730,753,776,770	href="/dbget-bin/www_bget?rno:25432+rno:29238"	title="25432 (Drd4), 29238 (Drd3)" />
+<area shape=rect	coords=481,756,527,773	href="/dbget-bin/www_bget?rno:25750+rno:29253"	title="25750 (Maob), 29253 (Maoa)" />
+<area shape=rect	coords=481,783,527,800	href="/dbget-bin/www_bget?rno:24267+rno:308868"	title="24267 (Comt), 308868 (Lrtomt)" />
+<area shape=rect	coords=1240,544,1286,561	href="/dbget-bin/www_bget?rno:314322"	title="314322 (Fos)" />
+<area shape=rect	coords=443,309,489,326	href="/dbget-bin/www_bget?rno:24318"	title="24318 (Drd2)" />
+<area shape=rect	coords=647,161,693,178	href="/dbget-bin/www_bget?rno:24267+rno:308868"	title="24267 (Comt), 308868 (Lrtomt)" />
+<area shape=rect	coords=548,84,594,101	href="/dbget-bin/www_bget?rno:24267+rno:308868"	title="24267 (Comt), 308868 (Lrtomt)" />
+<area shape=rect	coords=521,144,567,161	href="/dbget-bin/www_bget?rno:25750+rno:29253"	title="25750 (Maob), 29253 (Maoa)" />
+<area shape=rect	coords=1230,449,1276,466	href="/dbget-bin/www_bget?rno:171378+rno:24674+rno:24675"	title="171378 (Ppp3cc), 24674 (Ppp3ca), 24675 (Ppp3cb)" />
+<area shape=rect	coords=1230,416,1276,433	href="/dbget-bin/www_bget?rno:103693838+rno:171140+rno:24245+rno:24246+rno:25400"	title="103693838 (NEWGENE_621802), 171140 (Camk2g), 24245 (Camk2b), 24246 (Camk2d), 25400 (Camk2a)" />
+<area shape=rect	coords=840,787,886,804	href="/dbget-bin/www_bget?rno:25388"	title="25388 (Arrb2)" />
+<area shape=rect	coords=840,804,886,821	href="/dbget-bin/www_bget?rno:103694903+rno:117104+rno:117256+rno:117281+rno:246255+rno:24672+rno:24673+rno:299147+rno:309179+rno:312754+rno:315648+rno:362739+rno:363122+rno:363193+rno:60660+rno:682033+rno:691318"	title="103694903, 117104 (Ppp2r2a), 117256 (Ppp2r2c), 117281 (Ppp2r1a), 246255 (Ppp2r2d), 24672 (Ppp2ca), 24673 (Ppp2cb), 299147 (Ppp2r5e), 309179 (Ppp2r5b), 312754 (Ppp2r5a), 315648 (Ppp2r1b), 362739 (Ppp2r3c), 363122 (Ppp2r3a), 363193 (Ppp2r5d), 60660 (Ppp2r2b), 682033 (Ppp2r3b), 691318 (Ppp2r5c)" />
+<area shape=rect	coords=1058,579,1104,596	href="/dbget-bin/www_bget?rno:24668+rno:24669+rno:25594"	title="24668 (Ppp1ca), 24669 (Ppp1cc), 25594 (Ppp1cb)" />
+<area shape=rect	coords=601,712,647,729	href="/dbget-bin/www_bget?rno:24318"	title="24318 (Drd2)" />
+<area shape=rect	coords=730,681,776,698	href="/dbget-bin/www_bget?rno:25398+rno:257648"	title="25398 (Cacna1a), 257648 (Cacna1b)" />
+<area shape=rect	coords=730,716,776,733	href="/dbget-bin/www_bget?rno:116560+rno:25743+rno:29713+rno:50599"	title="116560 (Kcnj9), 25743 (Kcnj6), 29713 (Kcnj5), 50599 (Kcnj3)" />
+<area shape=rect	coords=730,598,776,615	href="/dbget-bin/www_bget?rno:81574"	title="81574 (Scn1a)" />
+<area shape=rect	coords=1136,432,1182,449	href="/dbget-bin/www_bget?rno:24242+rno:24244+rno:307100+rno:364774+rno:50663+rno:691455"	title="24242 (Calm1), 24244 (Calm3), 307100 (Calml3), 364774 (Calml5), 50663 (Calm2), 691455 (Calml4)" />
+<area shape=rect	coords=730,649,776,666	href="/dbget-bin/www_bget?rno:24239+rno:29716"	title="24239 (Cacna1c), 29716 (Cacna1d)" />
+<area shape=rect	coords=1096,747,1142,764	href="/dbget-bin/www_bget?rno:117550+rno:311024+rno:314906"	title="117550 (Kif5b), 311024 (Kif5c), 314906 (Kif5a)" />
+<area shape=rect	coords=1096,778,1142,795	href="/dbget-bin/www_bget?rno:60447"	title="60447 (Clock)" />
+<area shape=rect	coords=1096,795,1142,812	href="/dbget-bin/www_bget?rno:29657"	title="29657 (Arntl)" />
+<area shape=rect	coords=1096,730,1142,747	href="/dbget-bin/www_bget?rno:29627+rno:29628+rno:29629+rno:50592"	title="29627 (Gria2), 29628 (Gria3), 29629 (Gria4), 50592 (Gria1)" />
+<area shape=rect	coords=1096,693,1142,710	href="/dbget-bin/www_bget?rno:24409+rno:24410"	title="24409 (Grin2a), 24410 (Grin2b)" />
+<area shape=rect	coords=823,429,869,446	href="/dbget-bin/www_bget?rno:192349"	title="192349 (Caly)" />
+<area shape=rect	coords=40,45,252,70	href="/dbget-bin/www_bget?rno04728"	title="rno04728: Dopaminergic synapse" onmouseover="popupTimer(&quot;rno04728&quot;, &quot;rno04728: Dopaminergic synapse&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=149,657,241,691	href="/kegg-bin/show_pathway?rno05012"	title="rno05012: Parkinson's disease" onmouseover="popupTimer(&quot;rno05012&quot;, &quot;rno05012: Parkinson's disease&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=140,493,232,527	href="/kegg-bin/show_pathway?rno00350"	title="rno00350: Tyrosine metabolism" onmouseover="popupTimer(&quot;rno00350&quot;, &quot;rno00350: Tyrosine metabolism&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=385,541,477,575	href="/kegg-bin/show_pathway?rno04721"	title="rno04721: Synaptic vesicle cycle" onmouseover="popupTimer(&quot;rno04721&quot;, &quot;rno04721: Synaptic vesicle cycle&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=871,380,979,414	href="/kegg-bin/show_pathway?rno04020"	title="rno04020: Calcium signaling pathway" onmouseover="popupTimer(&quot;rno04020&quot;, &quot;rno04020: Calcium signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1175,692,1267,726	href="/kegg-bin/show_pathway?rno04724"	title="rno04724: Glutamatergic synapse" onmouseover="popupTimer(&quot;rno04724&quot;, &quot;rno04724: Glutamatergic synapse&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

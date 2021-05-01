@@ -1,0 +1,435 @@
+<html>
+<!---
+ENTRY       hsa04976
+DEFINITION  Bile secretion - Homo sapiens (human)
+--->
+<head>
+<title>
+KEGG PATHWAY: Bile secretion - Homo sapiens (human)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Bile secretion - Homo sapiens (human)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=04976&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map04976.keg&query=hsa&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+hsa04976">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=hsa04976&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Bile is a vital secretion, essential for digestion and absorption of fats and fat-soluble vitamins in the small intestine. Moreover, bile is an important route of elimination for excess cholesterol and many waste product, bilirubin, drugs and toxic compounds. Bile secretion depends on the function of membrane transport systems in hepatocytes and cholangiocytes and on the structural and functional integrity of the biliary tree. The hepatocytes generate the so-called primary bile in their canaliculi.  Cholangiocytes modify the canalicular bile by secretory and reabsorptive processes as bile passes through the bile ducts. The main solutes in bile are bile acids, which stimulate bile secretion osmotically, as well as facilitate the intestinal absorption of dietary lipids by their detergent properties. Bile acids are also important signalling molecules. Through the activation of nuclear receptors, they regulate their own synthesis and transport rates.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="hsa.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa" selected>Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="04976" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="hsa04976" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/hsa/hsa04976.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=244,757,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=359,765,4	href="/dbget-bin/www_bget?C00080"	title="C00080 (H+)" onmouseover="popupTimer(&quot;C00080&quot;, &quot;C00080 (H+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=697,720,4	href="/dbget-bin/www_bget?C00698"	title="C00698 (Cl-)" onmouseover="popupTimer(&quot;C00698&quot;, &quot;C00698 (Cl-)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=608,729,4	href="/dbget-bin/www_bget?C00288"	title="C00288 (HCO3-)" onmouseover="popupTimer(&quot;C00288&quot;, &quot;C00288 (HCO3-)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=483,788,4	href="/dbget-bin/www_bget?C01353"	title="C01353 (Carbonic acid)" onmouseover="popupTimer(&quot;C01353&quot;, &quot;C01353 (Carbonic acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=505,825,4	href="/dbget-bin/www_bget?C00001"	title="C00001 (H2O)" onmouseover="popupTimer(&quot;C00001&quot;, &quot;C00001 (H2O)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=461,825,4	href="/dbget-bin/www_bget?C00011"	title="C00011 (CO2)" onmouseover="popupTimer(&quot;C00011&quot;, &quot;C00011 (CO2)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=244,794,4	href="/dbget-bin/www_bget?C00238"	title="C00238 (Potassium cation)" onmouseover="popupTimer(&quot;C00238&quot;, &quot;C00238 (Potassium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=359,802,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=870,253,4	href="/dbget-bin/www_bget?C00288"	title="C00288 (HCO3-)" onmouseover="popupTimer(&quot;C00288&quot;, &quot;C00288 (HCO3-)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=168,306,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=601,692,4	href="/dbget-bin/www_bget?C00698"	title="C00698 (Cl-)" onmouseover="popupTimer(&quot;C00698&quot;, &quot;C00698 (Cl-)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=227,661,4	href="/dbget-bin/www_bget?C13523"	title="C13523 (Secretin)" onmouseover="popupTimer(&quot;C13523&quot;, &quot;C13523 (Secretin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=521,661,4	href="/dbget-bin/www_bget?C00575"	title="C00575 (3',5'-Cyclic AMP)" onmouseover="popupTimer(&quot;C00575&quot;, &quot;C00575 (3',5'-Cyclic AMP)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1000,41,4	href="/dbget-bin/www_bget?C00011"	title="C00011 (CO2)" onmouseover="popupTimer(&quot;C00011&quot;, &quot;C00011 (CO2)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=244,825,4	href="/dbget-bin/www_bget?C00011"	title="C00011 (CO2)" onmouseover="popupTimer(&quot;C00011&quot;, &quot;C00011 (CO2)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=244,720,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=244,730,4	href="/dbget-bin/www_bget?C00288"	title="C00288 (HCO3-)" onmouseover="popupTimer(&quot;C00288&quot;, &quot;C00288 (HCO3-)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=612,40,4	href="/dbget-bin/www_bget?C00001"	title="C00001 (H2O)" onmouseover="popupTimer(&quot;C00001&quot;, &quot;C00001 (H2O)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=464,172,4	href="/dbget-bin/www_bget?C00187"	title="C00187 (Cholesterol)" onmouseover="popupTimer(&quot;C00187&quot;, &quot;C00187 (Cholesterol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=465,267,4	href="/dbget-bin/www_bget?C00695+C02528+C05122+C01921+C05465+C05466+C04483+C03990"	title="C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C04483 (Deoxycholic acid), C03990 (Lithocholic acid)" onmouseover="popupTimer(&quot;C00695&quot;, &quot;C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C04483 (Deoxycholic acid), C03990 (Lithocholic acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=770,664,4	href="/dbget-bin/www_bget?C05122+C01921+C05465+C05466"	title="C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate)" onmouseover="popupTimer(&quot;C05122&quot;, &quot;C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=770,674,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1126,688,4	href="/dbget-bin/www_bget?C05122+C01921+C00486+C05503+C01576+C11245+C00504+D07987+C01937+C16643+C16578"	title="C05122 (Taurocholate), C01921 (Glycocholate), C00486 (Bilirubin), C05503 (Estradiol-17beta 3-glucuronide), C01576 (Etoposide), C11245 (Glucuronosyletoposide), C00504 (Folate), C01921 (Glycocholate), D07987 (Folinic acid calcium salt pentahydrate), C01937 (Methotrexate), C16643 (Morphine-3-glucuronide), C16578 (Morphine-6-glucuronide), C05122 (Taurocholate)" onmouseover="popupTimer(&quot;C05122&quot;, &quot;C05122 (Taurocholate), C01921 (Glycocholate), C00486 (Bilirubin), C05503 (Estradiol-17beta 3-glucuronide), C01576 (Etoposide), C11245 (Glucuronosyletoposide), C00504 (Folate), C01921 (Glycocholate), D07987 (Folinic acid calcium salt pentahydrate), C01937 (Methotrexate), C16643 (Morphine-3-glucuronide), C16578 (Morphine-6-glucuronide), C05122 (Taurocholate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1126,770,4	href="/dbget-bin/www_bget?C00051"	title="C00051 (Glutathione)" onmouseover="popupTimer(&quot;C00051&quot;, &quot;C00051 (Glutathione)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1126,780,4	href="/dbget-bin/www_bget?C11277+D01421+C06880+C06890+C00695+C00575+C00942+C04555+C05503+C00504+D00331+D00340+D08086+D07986+C02165+C02166+D04931+D00142+C00584+C00639+C05122+D06074+C05963+C11158+C00366+C07210"	title="C11277 (Adefovir), D01421 (Sodium p-aminophippurate (JAN)), C06880 (Cefazolin), C06890 (Ceftizoxime), C00695 (Cholic acid), C00575 (3',5'-Cyclic AMP), C00942 (3',5'-Cyclic GMP), C04555 (Dehydroepiandrosterone sulfate), C05503 (Estradiol-17beta 3-glucuronide), C00504 (Folate), D00331 (Furosemide (JP16/USP/INN)), D00340 (Hydrochlorothiazide (JP16/USP/INN)), D08086 (Irinotecan (INN)), D07986 (Folinic acid (BAN)), C02165 (Leukotriene B4), C02166 (Leukotriene C4), D04931 (Mercaptopurine (INN)), D00142 (Methotrexate (JP16/USP/INN)), C00584 (Prostaglandin E2), C00639 (Prostaglandin F2alpha), C05122 (Taurocholate), D06074 (Tenofovir (USAN)), C05963 (Thromboxane B2), C11158 (Topotecan), C00366 (Urate), C07210 (Zidovudine)" onmouseover="popupTimer(&quot;C11277&quot;, &quot;C11277 (Adefovir), D01421 (Sodium p-aminophippurate (JAN)), C06880 (Cefazolin), C06890 (Ceftizoxime), C00695 (Cholic acid), C00575 (3',5'-Cyclic AMP), C00942 (3',5'-Cyclic GMP), C04555 (Dehydroepiandrosterone sulfate), C05503 (Estradiol-17beta 3-glucuronide), C00504 (Folate), D00331 (Furosemide (JP16/USP/INN)), D00340 (Hydrochlorothiazide (JP16/USP/INN)), D08086 (Irinotecan (INN)), D07986 (Folinic acid (BAN)), C02165 (Leukotriene B4), C02166 (Leukotriene C4), D04931 (Mercaptopurine (INN)), D00142 (Methotrexate (JP16/USP/INN)), C00584 (Prostaglandin E2), C00639 (Prostaglandin F2alpha), C05122 (Taurocholate), D06074 (Tenofovir (USAN)), C05963 (Thromboxane B2), C11158 (Topotecan), C00366 (Urate), C07210 (Zidovudine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=168,316,4	href="/dbget-bin/www_bget?C00695+C02528+C05122+C01921+C05465+C05466"	title="C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate)" onmouseover="popupTimer(&quot;C00695&quot;, &quot;C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=168,358,4	href="/dbget-bin/www_bget?C00695+C05122+C01921+D01421+C01405+D00224+D00247+C00575+C04555+C02538+C07649+C00026+D00142+C07394+C00584+C00639+C09955+C00805+C06570+C07185+C07210+C05551+C00318+C06880+C11754+D00295+C00735+D00318+C01937+C02380+C01844+D08492+C00366+C07184"	title="C00695 (Cholic acid), C05122 (Taurocholate), C01921 (Glycocholate), D01421 (Sodium p-aminophippurate (JAN)), C01405 (Aspirin), D00224 (Allopurinol (JP16/USP/INN)), D00247 (Bumetanide (JP16/USP/INN)), C00575 (3',5'-Cyclic AMP), C04555 (Dehydroepiandrosterone sulfate), C02538 (Estrone 3-sulfate), C07649 (5-FU), C00026 (2-Oxoglutarate), D00142 (Methotrexate (JP16/USP/INN)), C07394 (Paclitaxel), C00584 (Prostaglandin E2), C00639 (Prostaglandin F2alpha), C09955 (Ochratoxin A), C00805 (Salicylate), C06570 (Tetracycline), C07185 (Valproic acid), C07210 (Zidovudine), C05551 (Penicillin G), C00318 (L-Carnitine), C06880 (Cefazolin), C11754 (Cephaloridine), C00695 (Cholic acid), D00295 (Cimetidine (JP16/USP/INN)), C00735 (Cortisol), D00318 (Famotidine (JP16/USP/INN)), C07649 (5-FU), C01921 (Glycocholate), C01937 (Methotrexate), C02380 (6-Mercaptopurine), C01844 (Pravastatin), D08492 (Rosuvastatin (INN)), C05122 (Taurocholate), C00366 (Urate), C07184 (Valacyclovir), C07210 (Zidovudine)" onmouseover="popupTimer(&quot;C00695&quot;, &quot;C00695 (Cholic acid), C05122 (Taurocholate), C01921 (Glycocholate), D01421 (Sodium p-aminophippurate (JAN)), C01405 (Aspirin), D00224 (Allopurinol (JP16/USP/INN)), D00247 (Bumetanide (JP16/USP/INN)), C00575 (3',5'-Cyclic AMP), C04555 (Dehydroepiandrosterone sulfate), C02538 (Estrone 3-sulfate), C07649 (5-FU), C00026 (2-Oxoglutarate), D00142 (Methotrexate (JP16/USP/INN)), C07394 (Paclitaxel), C00584 (Prostaglandin E2), C00639 (Prostaglandin F2alpha), C09955 (Ochratoxin A), C00805 (Salicylate), C06570 (Tetracycline), C07185 (Valproic acid), C07210 (Zidovudine), C05551 (Penicillin G), C00318 (L-Carnitine), C06880 (Cefazolin), C11754 (Cephaloridine), C00695 (Cholic acid), D00295 (Cimetidine (JP16/USP/INN)), C00735 (Cortisol), D00318 (Famotidine (JP16/USP/INN)), C07649 (5-FU), C01921 (Glycocholate), C01937 (Methotrexate), C02380 (6-Mercaptopurine), C01844 (Pravastatin), D08492 (Rosuvastatin (INN)), C05122 (Taurocholate), C00366 (Urate), C07184 (Valacyclovir), C07210 (Zidovudine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=770,729,4	href="/dbget-bin/www_bget?C00031"	title="C00031 (D-Glucose)" onmouseover="popupTimer(&quot;C00031&quot;, &quot;C00031 (D-Glucose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=770,740,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1126,812,4	href="/dbget-bin/www_bget?C00031"	title="C00031 (D-Glucose)" onmouseover="popupTimer(&quot;C00031&quot;, &quot;C00031 (D-Glucose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=612,228,4	href="/dbget-bin/www_bget?C00001"	title="C00001 (H2O)" onmouseover="popupTimer(&quot;C00001&quot;, &quot;C00001 (H2O)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1202,158,4	href="/dbget-bin/www_bget?C00080"	title="C00080 (H+)" onmouseover="popupTimer(&quot;C00080&quot;, &quot;C00080 (H+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1309,167,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1201,502,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1309,512,4	href="/dbget-bin/www_bget?C00238"	title="C00238 (Potassium cation)" onmouseover="popupTimer(&quot;C00238&quot;, &quot;C00238 (Potassium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=168,408,4	href="/dbget-bin/www_bget?C07512+C11310+C01996+C06810+D00295+C00114+C03758+D00318+D00333+C07065+C07151+C02918+C06526+D00422+C00780+C00750+C00315+C07207"	title="C07512 (Tetraethylammonium), C11310 (1-Methyl-4-phenylpyridinium), C01996 (Acetylcholine), C06810 (Acyclovir), D00295 (Cimetidine (JP16/USP/INN)), C00114 (Choline), C03758 (Dopamine), D00318 (Famotidine (JP16/USP/INN)), D00333 (Ganciclovir (JAN/USP/INN)), C07065 (Lamivudine), C07151 (Metformin), C02918 (1-Methylnicotinamide), C06526 (Quinine), D00422 (Ranitidine (USAN/INN)), C00780 (Serotonin), C00750 (Spermine), C00315 (Spermidine), C07207 (Zalcitabine)" onmouseover="popupTimer(&quot;C07512&quot;, &quot;C07512 (Tetraethylammonium), C11310 (1-Methyl-4-phenylpyridinium), C01996 (Acetylcholine), C06810 (Acyclovir), D00295 (Cimetidine (JP16/USP/INN)), C00114 (Choline), C03758 (Dopamine), D00318 (Famotidine (JP16/USP/INN)), D00333 (Ganciclovir (JAN/USP/INN)), C07065 (Lamivudine), C07151 (Metformin), C02918 (1-Methylnicotinamide), C06526 (Quinine), D00422 (Ranitidine (USAN/INN)), C00780 (Serotonin), C00750 (Spermine), C00315 (Spermidine), C07207 (Zalcitabine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1201,269,4	href="/dbget-bin/www_bget?C05122+C01921+C00486+C05503+C01576+C11245+C00504+D07987+C01937+C16643+C16578"	title="C05122 (Taurocholate), C01921 (Glycocholate), C00486 (Bilirubin), C05503 (Estradiol-17beta 3-glucuronide), C01576 (Etoposide), C11245 (Glucuronosyletoposide), C00504 (Folate), C01921 (Glycocholate), D07987 (Folinic acid calcium salt pentahydrate), C01937 (Methotrexate), C16643 (Morphine-3-glucuronide), C16578 (Morphine-6-glucuronide), C05122 (Taurocholate)" onmouseover="popupTimer(&quot;C05122&quot;, &quot;C05122 (Taurocholate), C01921 (Glycocholate), C00486 (Bilirubin), C05503 (Estradiol-17beta 3-glucuronide), C01576 (Etoposide), C11245 (Glucuronosyletoposide), C00504 (Folate), C01921 (Glycocholate), D07987 (Folinic acid calcium salt pentahydrate), C01937 (Methotrexate), C16643 (Morphine-3-glucuronide), C16578 (Morphine-6-glucuronide), C05122 (Taurocholate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1201,332,4	href="/dbget-bin/www_bget?C00051"	title="C00051 (Glutathione)" onmouseover="popupTimer(&quot;C00051&quot;, &quot;C00051 (Glutathione)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1201,322,4	href="/dbget-bin/www_bget?C05122+C01921+C05465+C05466+C11277+D01421+C06880+C06890+C00695+C00575+C00942+C04555+C05503+C00504+D00331+D00340+D08086+D07986+C02165+C02166+D04931+D00142+C00584+C00639+D06074+C05963+C11158+C00366+C07210"	title="C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C11277 (Adefovir), D01421 (Sodium p-aminophippurate (JAN)), C06880 (Cefazolin), C06890 (Ceftizoxime), C00695 (Cholic acid), C00575 (3',5'-Cyclic AMP), C00942 (3',5'-Cyclic GMP), C04555 (Dehydroepiandrosterone sulfate), C05503 (Estradiol-17beta 3-glucuronide), C00504 (Folate), D00331 (Furosemide (JP16/USP/INN)), D00340 (Hydrochlorothiazide (JP16/USP/INN)), D08086 (Irinotecan (INN)), D07986 (Folinic acid (BAN)), C02165 (Leukotriene B4), C02166 (Leukotriene C4), D04931 (Mercaptopurine (INN)), D00142 (Methotrexate (JP16/USP/INN)), C00584 (Prostaglandin E2), C00639 (Prostaglandin F2alpha), C05122 (Taurocholate), D06074 (Tenofovir (USAN)), C05963 (Thromboxane B2), C11158 (Topotecan), C00366 (Urate), C07210 (Zidovudine)" onmouseover="popupTimer(&quot;C05122&quot;, &quot;C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C11277 (Adefovir), D01421 (Sodium p-aminophippurate (JAN)), C06880 (Cefazolin), C06890 (Ceftizoxime), C00695 (Cholic acid), C00575 (3',5'-Cyclic AMP), C00942 (3',5'-Cyclic GMP), C04555 (Dehydroepiandrosterone sulfate), C05503 (Estradiol-17beta 3-glucuronide), C00504 (Folate), D00331 (Furosemide (JP16/USP/INN)), D00340 (Hydrochlorothiazide (JP16/USP/INN)), D08086 (Irinotecan (INN)), D07986 (Folinic acid (BAN)), C02165 (Leukotriene B4), C02166 (Leukotriene C4), D04931 (Mercaptopurine (INN)), D00142 (Methotrexate (JP16/USP/INN)), C00584 (Prostaglandin E2), C00639 (Prostaglandin F2alpha), C05122 (Taurocholate), D06074 (Tenofovir (USAN)), C05963 (Thromboxane B2), C11158 (Topotecan), C00366 (Urate), C07210 (Zidovudine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=879,379,4	href="/dbget-bin/www_bget?C00865"	title="C00865 (Phospholipid)" onmouseover="popupTimer(&quot;C00865&quot;, &quot;C00865 (Phospholipid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=584,347,4	href="/dbget-bin/www_bget?C05122+C01921+C05465+C05466"	title="C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate)" onmouseover="popupTimer(&quot;C05122&quot;, &quot;C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=591,384,4	href="/dbget-bin/www_bget?C05122+C01921+C05465+C05466+C06804+D01421+C03033+C11587+C05503+C07051+C02166+C01937+C16643+C09955+C07240+C12560+C03642+C07201"	title="C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C06804 (Acetaminophen), D01421 (Sodium p-aminophippurate (JAN)), C03033 (beta-D-Glucuronoside), C11587 (BQ 123), C05503 (Estradiol-17beta 3-glucuronide), C07051 (Indinavir), C02166 (Leukotriene C4), C01937 (Methotrexate), C16643 (Morphine-3-glucuronide), C09955 (Ochratoxin A), C07240 (Ritonavir), C12560 (Saquinavir mesylate), C03642 (Taurolithocholate sulfate), C07201 (Vinblastine)" onmouseover="popupTimer(&quot;C05122&quot;, &quot;C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C06804 (Acetaminophen), D01421 (Sodium p-aminophippurate (JAN)), C03033 (beta-D-Glucuronoside), C11587 (BQ 123), C05503 (Estradiol-17beta 3-glucuronide), C07051 (Indinavir), C02166 (Leukotriene C4), C01937 (Methotrexate), C16643 (Morphine-3-glucuronide), C09955 (Ochratoxin A), C07240 (Ritonavir), C12560 (Saquinavir mesylate), C03642 (Taurolithocholate sulfate), C07201 (Vinblastine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1126,634,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1126,646,4	href="/dbget-bin/www_bget?C05122+C01921+C05465+C05466"	title="C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate)" onmouseover="popupTimer(&quot;C05122&quot;, &quot;C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=765,244,4	href="/dbget-bin/www_bget?C00698"	title="C00698 (Cl-)" onmouseover="popupTimer(&quot;C00698&quot;, &quot;C00698 (Cl-)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=770,792,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=875,782,4	href="/dbget-bin/www_bget?C00080"	title="C00080 (H+)" onmouseover="popupTimer(&quot;C00080&quot;, &quot;C00080 (H+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1030,305,4	href="/dbget-bin/www_bget?C00695+C02528+C05122+C01921+C05465+C05466+C04483+C03990"	title="C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C04483 (Deoxycholic acid), C03990 (Lithocholic acid)" onmouseover="popupTimer(&quot;C00695&quot;, &quot;C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C04483 (Deoxycholic acid), C03990 (Lithocholic acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1028,206,4	href="/dbget-bin/www_bget?C01353"	title="C01353 (Carbonic acid)" onmouseover="popupTimer(&quot;C01353&quot;, &quot;C01353 (Carbonic acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1000,134,4	href="/dbget-bin/www_bget?C00011"	title="C00011 (CO2)" onmouseover="popupTimer(&quot;C00011&quot;, &quot;C00011 (CO2)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1053,134,4	href="/dbget-bin/www_bget?C00001"	title="C00001 (H2O)" onmouseover="popupTimer(&quot;C00001&quot;, &quot;C00001 (H2O)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1201,387,4	href="/dbget-bin/www_bget?C00695+C02528+C05122+C01921+C05465+C05466"	title="C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate)" onmouseover="popupTimer(&quot;C00695&quot;, &quot;C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=277,250,4	href="/dbget-bin/www_bget?C00695+C02528+C05122+C01921+C05465+C05466+C00288+C00051"	title="C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C00288 (HCO3-), C00051 (Glutathione)" onmouseover="popupTimer(&quot;C00695&quot;, &quot;C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C00288 (HCO3-), C00051 (Glutathione)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=168,242,4	href="/dbget-bin/www_bget?C00695+C02528+C05122+C01921+C05465+C05466+C11363+C11587+C04555+C02538+C06999+C07660+C01937+C05371+C01443+C00584+D08492+D00429+C01829+C02465+C05551+C00486+D07538+D07626+C07966+C05503+C07014+D08086+C02166+D05246+C08439+C01844+C06688+C05963+D00400+C16114+C06956+C11231+C07394"	title="C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C11363 (Sulfobromophthalein), C11587 (BQ 123), C00695 (Cholic acid), C04555 (Dehydroepiandrosterone sulfate), C02538 (Estrone 3-sulfate), C06999 (Fexofenadine), C01921 (Glycocholate), C07660 (Levofloxacin), C01937 (Methotrexate), C05371 (Microcystin LR), C01443 (Ouabain), C00584 (Prostaglandin E2), D08492 (Rosuvastatin (INN)), D00429 (Saquinavir (JAN/USP/INN)), C05122 (Taurocholate), C01829 (Thyroxine), C02465 (Triiodothyronine), C05551 (Penicillin G), C00486 (Bilirubin), D07538 (Bosentan (INN)), D07626 (Caspofungin (INN)), C07966 (Cerivastatin), C05503 (Estradiol-17beta 3-glucuronide), C07014 (Fluvastatin), D08086 (Irinotecan (INN)), C02166 (Leukotriene C4), C05371 (Microcystin LR), D05246 (Olmesartan (USAN/INN)), C08439 (Phalloidin), C01844 (Pravastatin), C06688 (Rifampicin), C05963 (Thromboxane B2), D00400 (Valsartan (JP16/USAN/INN)), C16114 (Cholecystokinin-8), C06956 (Digoxin), C11231 (Docetaxel anhydrous), C06999 (Fexofenadine), C01443 (Ouabain), C07394 (Paclitaxel)" onmouseover="popupTimer(&quot;C00695&quot;, &quot;C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C11363 (Sulfobromophthalein), C11587 (BQ 123), C00695 (Cholic acid), C04555 (Dehydroepiandrosterone sulfate), C02538 (Estrone 3-sulfate), C06999 (Fexofenadine), C01921 (Glycocholate), C07660 (Levofloxacin), C01937 (Methotrexate), C05371 (Microcystin LR), C01443 (Ouabain), C00584 (Prostaglandin E2), D08492 (Rosuvastatin (INN)), D00429 (Saquinavir (JAN/USP/INN)), C05122 (Taurocholate), C01829 (Thyroxine), C02465 (Triiodothyronine), C05551 (Penicillin G), C00486 (Bilirubin), D07538 (Bosentan (INN)), D07626 (Caspofungin (INN)), C07966 (Cerivastatin), C05503 (Estradiol-17beta 3-glucuronide), C07014 (Fluvastatin), D08086 (Irinotecan (INN)), C02166 (Leukotriene C4), C05371 (Microcystin LR), D05246 (Olmesartan (USAN/INN)), C08439 (Phalloidin), C01844 (Pravastatin), C06688 (Rifampicin), C05963 (Thromboxane B2), D00400 (Valsartan (JP16/USAN/INN)), C16114 (Cholecystokinin-8), C06956 (Digoxin), C11231 (Docetaxel anhydrous), C06999 (Fexofenadine), C01443 (Ouabain), C07394 (Paclitaxel)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=590,288,4	href="/dbget-bin/www_bget?C00187"	title="C00187 (Cholesterol)" onmouseover="popupTimer(&quot;C00187&quot;, &quot;C00187 (Cholesterol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=244,856,4	href="/dbget-bin/www_bget?C00001"	title="C00001 (H2O)" onmouseover="popupTimer(&quot;C00001&quot;, &quot;C00001 (H2O)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=607,856,4	href="/dbget-bin/www_bget?C00001"	title="C00001 (H2O)" onmouseover="popupTimer(&quot;C00001&quot;, &quot;C00001 (H2O)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=168,179,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=168,189,4	href="/dbget-bin/www_bget?C05122+C01921+C05465+C05466"	title="C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate)" onmouseover="popupTimer(&quot;C05122&quot;, &quot;C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=607,431,4	href="/dbget-bin/www_bget?C02538+C08357+D07776+D01264+D03899+D01275+D07901+D02214+D08224+D02166+D03130+D08618+D01061+D08086+D00142+D02115+D00240+D00353+D01862+D00186+D02216+D00453+D08291+D00439"	title="C02538 (Estrone 3-sulfate), C08357 (Estradiol-17beta 3-sulfate), D07776 (Daunorubicin (INN)), D01264 (Daunorubicin hydrochloride (JP16/USP)), D03899 (Doxorubicin (USAN/INN)), D01275 (Doxorubicin hydrochloride (JP16/USP)), D07901 (Epirubicin (INN)), D02214 (Epirubicin hydrochloride (JP16/USAN)), D08224 (Mitoxantrone (INN)), D02166 (Mitoxantrone hydrochloride (JAN/USP)), D03130 (Bisantrene hydrochloride (USAN)), D08618 (Topotecan (BAN)), D01061 (Irinotecan hydrochloride hydrate (JAN)), D08086 (Irinotecan (INN)), D00142 (Methotrexate (JP16/USP/INN)), D02115 (Methotrexate sodium), D00240 (Aztreonam (JP16/USP/INN)), D00353 (Lamivudine (JAN/USP/INN)), D01862 (Pitavastatin calcium (JAN)), D00186 (Ciprofloxacin (JAN/USP/INN)), D02216 (Ciprofloxacin hydrochloride (JAN/USP)), D00453 (Ofloxacin (JP16/USP/INN)), D08291 (Ofloxacin hydrochloride), D00439 (Nitrofurantoin (JAN/USP/INN))" onmouseover="popupTimer(&quot;C02538&quot;, &quot;C02538 (Estrone 3-sulfate), C08357 (Estradiol-17beta 3-sulfate), D07776 (Daunorubicin (INN)), D01264 (Daunorubicin hydrochloride (JP16/USP)), D03899 (Doxorubicin (USAN/INN)), D01275 (Doxorubicin hydrochloride (JP16/USP)), D07901 (Epirubicin (INN)), D02214 (Epirubicin hydrochloride (JP16/USAN)), D08224 (Mitoxantrone (INN)), D02166 (Mitoxantrone hydrochloride (JAN/USP)), D03130 (Bisantrene hydrochloride (USAN)), D08618 (Topotecan (BAN)), D01061 (Irinotecan hydrochloride hydrate (JAN)), D08086 (Irinotecan (INN)), D00142 (Methotrexate (JP16/USP/INN)), D02115 (Methotrexate sodium), D00240 (Aztreonam (JP16/USP/INN)), D00353 (Lamivudine (JAN/USP/INN)), D01862 (Pitavastatin calcium (JAN)), D00186 (Ciprofloxacin (JAN/USP/INN)), D02216 (Ciprofloxacin hydrochloride (JAN/USP)), D00453 (Ofloxacin (JP16/USP/INN)), D08291 (Ofloxacin hydrochloride), D00439 (Nitrofurantoin (JAN/USP/INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=279,367,4	href="/dbget-bin/www_bget?C00695+C02528+C05122+C01921+C05465+C05466+C00288+C00051"	title="C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C00288 (HCO3-), C00051 (Glutathione)" onmouseover="popupTimer(&quot;C00695&quot;, &quot;C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C00288 (HCO3-), C00051 (Glutathione)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=599,639,4	href="/dbget-bin/www_bget?D00214+D07448+D07661+D00570+D00184+D07776+D00298+D07845+D07866+D01745+D03899+D07907+D00140+D00125+D07958+D08066+D03833+D00804+D08108+D08144+D08146+D00359+D08259+D00456+D08306+D00491+D00512+D08411+D08458+D00427+D00429+D00590+D00521+D00201+D06050+D08618+D00767+D02356+D08675+D08679"	title="D00214 (Actinomycin D (JP16)), D07448 (Amitriptyline (INN)), D07661 (Cerivastatin (INN)), D00570 (Colchicine (JP16/USP)), D00184 (Ciclosporin (JP16)), D07776 (Daunorubicin (INN)), D00298 (Digoxin (JP16/USP)), D07845 (Diltiazem (INN)), D07866 (Docetaxel (JAN/INN)), D01745 (Domperidone (JP16/USAN/INN)), D03899 (Doxorubicin (USAN/INN)), D07907 (Erlotinib (INN)), D00140 (Erythromycin (JP16/USP/INN)), D00125 (Etoposide (JP16/USP/INN)), D07958 (Fexofenadine (INN)), D08066 (Imatinib (INN)), D03833 (Indinavir (USAN)), D00804 (Ivermectin (JAN/USAN/INN)), D08108 (Lapatinib (INN)), D08144 (Loperamide (INN)), D08146 (Losartan (INN)), D00359 (Lovastatin (USP/INN)), D08259 (Nelfinavir (INN)), D00456 (Ondansetron (JAN/USP/INN)), D08306 (Oseltamivir (INN)), D00491 (Paclitaxel (JAN/USP/INN)), D00512 (Phenytoin (JP16/USP/INN)), D08411 (Prazosin (INN)), D08458 (Quinidine (BAN)), D00427 (Ritonavir (JAN/USAN/INN)), D00429 (Saquinavir (JAN/USP/INN)), D00590 (Sparfloxacin (JAN/USAN/INN)), D00521 (Terfenadine (JAN/USAN/INN)), D00201 (Tetracycline (JAN/USP/INN)), D06050 (Technetium Tc 99m tetrofosmin (USP)), D08618 (Topotecan (BAN)), D00767 (Vecuronium bromide (JAN/USAN/INN)), D02356 (Verapamil (USAN/INN)), D08675 (Vinblastine (INN)), D08679 (Vincristine (INN))" onmouseover="popupTimer(&quot;D00214&quot;, &quot;D00214 (Actinomycin D (JP16)), D07448 (Amitriptyline (INN)), D07661 (Cerivastatin (INN)), D00570 (Colchicine (JP16/USP)), D00184 (Ciclosporin (JP16)), D07776 (Daunorubicin (INN)), D00298 (Digoxin (JP16/USP)), D07845 (Diltiazem (INN)), D07866 (Docetaxel (JAN/INN)), D01745 (Domperidone (JP16/USAN/INN)), D03899 (Doxorubicin (USAN/INN)), D07907 (Erlotinib (INN)), D00140 (Erythromycin (JP16/USP/INN)), D00125 (Etoposide (JP16/USP/INN)), D07958 (Fexofenadine (INN)), D08066 (Imatinib (INN)), D03833 (Indinavir (USAN)), D00804 (Ivermectin (JAN/USAN/INN)), D08108 (Lapatinib (INN)), D08144 (Loperamide (INN)), D08146 (Losartan (INN)), D00359 (Lovastatin (USP/INN)), D08259 (Nelfinavir (INN)), D00456 (Ondansetron (JAN/USP/INN)), D08306 (Oseltamivir (INN)), D00491 (Paclitaxel (JAN/USP/INN)), D00512 (Phenytoin (JP16/USP/INN)), D08411 (Prazosin (INN)), D08458 (Quinidine (BAN)), D00427 (Ritonavir (JAN/USAN/INN)), D00429 (Saquinavir (JAN/USP/INN)), D00590 (Sparfloxacin (JAN/USAN/INN)), D00521 (Terfenadine (JAN/USAN/INN)), D00201 (Tetracycline (JAN/USP/INN)), D06050 (Technetium Tc 99m tetrofosmin (USP)), D08618 (Topotecan (BAN)), D00767 (Vecuronium bromide (JAN/USAN/INN)), D02356 (Verapamil (USAN/INN)), D08675 (Vinblastine (INN)), D08679 (Vincristine (INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=771,851,4	href="/dbget-bin/www_bget?C00001"	title="C00001 (H2O)" onmouseover="popupTimer(&quot;C00001&quot;, &quot;C00001 (H2O)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1126,851,4	href="/dbget-bin/www_bget?C00001"	title="C00001 (H2O)" onmouseover="popupTimer(&quot;C00001&quot;, &quot;C00001 (H2O)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=726,43,4	href="/dbget-bin/www_bget?C00001"	title="C00001 (H2O)" onmouseover="popupTimer(&quot;C00001&quot;, &quot;C00001 (H2O)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1126,730,4	href="/dbget-bin/www_bget?C05122+C01921+C05465+C05466"	title="C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate)" onmouseover="popupTimer(&quot;C05122&quot;, &quot;C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1309,209,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1309,219,4	href="/dbget-bin/www_bget?C00288"	title="C00288 (HCO3-)" onmouseover="popupTimer(&quot;C00288&quot;, &quot;C00288 (HCO3-)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=124,568,4	href="/dbget-bin/www_bget?C00695+C02528+C05122+C01921+C05465+C05466+C04483+C03990"	title="C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C04483 (Deoxycholic acid), C03990 (Lithocholic acid)" onmouseover="popupTimer(&quot;C00695&quot;, &quot;C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C04483 (Deoxycholic acid), C03990 (Lithocholic acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=126,905,4	href="/dbget-bin/www_bget?C00695+C02528+C05122+C01921+C05465+C05466+C04483+C03990"	title="C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C04483 (Deoxycholic acid), C03990 (Lithocholic acid)" onmouseover="popupTimer(&quot;C00695&quot;, &quot;C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C04483 (Deoxycholic acid), C03990 (Lithocholic acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=722,882,4	href="/dbget-bin/www_bget?C00865"	title="C00865 (Phospholipid)" onmouseover="popupTimer(&quot;C00865&quot;, &quot;C00865 (Phospholipid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=722,909,4	href="/dbget-bin/www_bget?C00695+C02528+C05122+C01921+C05465+C05466+C04483+C03990"	title="C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C04483 (Deoxycholic acid), C03990 (Lithocholic acid)" onmouseover="popupTimer(&quot;C00695&quot;, &quot;C00695 (Cholic acid), C02528 (Chenodeoxycholate), C05122 (Taurocholate), C01921 (Glycocholate), C05465 (Taurochenodeoxycholate), C05466 (Glycochenodeoxycholate), C04483 (Deoxycholic acid), C03990 (Lithocholic acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=750,882,4	href="/dbget-bin/www_bget?C00187"	title="C00187 (Cholesterol)" onmouseover="popupTimer(&quot;C00187&quot;, &quot;C00187 (Cholesterol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=751,909,4	href="/dbget-bin/www_bget?C06804+D01421+C03033+C11587+C05503+C07051+C02166+C01937+C16643+C09955+C07240+C12560+C03642+C07201"	title="C06804 (Acetaminophen), D01421 (Sodium p-aminophippurate (JAN)), C03033 (beta-D-Glucuronoside), C11587 (BQ 123), C05503 (Estradiol-17beta 3-glucuronide), C07051 (Indinavir), C02166 (Leukotriene C4), C01937 (Methotrexate), C16643 (Morphine-3-glucuronide), C09955 (Ochratoxin A), C07240 (Ritonavir), C12560 (Saquinavir mesylate), C03642 (Taurolithocholate sulfate), C07201 (Vinblastine)" onmouseover="popupTimer(&quot;C06804&quot;, &quot;C06804 (Acetaminophen), D01421 (Sodium p-aminophippurate (JAN)), C03033 (beta-D-Glucuronoside), C11587 (BQ 123), C05503 (Estradiol-17beta 3-glucuronide), C07051 (Indinavir), C02166 (Leukotriene C4), C01937 (Methotrexate), C16643 (Morphine-3-glucuronide), C09955 (Ochratoxin A), C07240 (Ritonavir), C12560 (Saquinavir mesylate), C03642 (Taurolithocholate sulfate), C07201 (Vinblastine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=737,43,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1201,460,4	href="/dbget-bin/www_bget?C00238"	title="C00238 (Potassium cation)" onmouseover="popupTimer(&quot;C00238&quot;, &quot;C00238 (Potassium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=493,140,4	href="/dbget-bin/www_bget?C02530"	title="C02530 (Cholesterol ester)" onmouseover="popupTimer(&quot;C02530&quot;, &quot;C02530 (Cholesterol ester)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=562,139,4	href="/dbget-bin/www_bget?C02530"	title="C02530 (Cholesterol ester)" onmouseover="popupTimer(&quot;C02530&quot;, &quot;C02530 (Cholesterol ester)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=424,134,4	href="/dbget-bin/www_bget?C00024"	title="C00024 (Acetyl-CoA)" onmouseover="popupTimer(&quot;C00024&quot;, &quot;C00024 (Acetyl-CoA)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=893,307,4	href="/dbget-bin/www_bget?D00214+D07448+D07661+D00570+D00184+D07776+D00298+D07845+D07866+D01745+D03899+D07907+D00140+D00125+D07958+D08066+D03833+D00804+D08108+D08144+D08146+D00359+D08259+D00456+D08306+D00491+D00512+D08411+D08458+D00427+D00429+D00590+D00521+D00201+D06050+D08618+D00767+D02356+D08675+D08679"	title="D00214 (Actinomycin D (JP16)), D07448 (Amitriptyline (INN)), D07661 (Cerivastatin (INN)), D00570 (Colchicine (JP16/USP)), D00184 (Ciclosporin (JP16)), D07776 (Daunorubicin (INN)), D00298 (Digoxin (JP16/USP)), D07845 (Diltiazem (INN)), D07866 (Docetaxel (JAN/INN)), D01745 (Domperidone (JP16/USAN/INN)), D03899 (Doxorubicin (USAN/INN)), D07907 (Erlotinib (INN)), D00140 (Erythromycin (JP16/USP/INN)), D00125 (Etoposide (JP16/USP/INN)), D07958 (Fexofenadine (INN)), D08066 (Imatinib (INN)), D03833 (Indinavir (USAN)), D00804 (Ivermectin (JAN/USAN/INN)), D08108 (Lapatinib (INN)), D08144 (Loperamide (INN)), D08146 (Losartan (INN)), D00359 (Lovastatin (USP/INN)), D08259 (Nelfinavir (INN)), D00456 (Ondansetron (JAN/USP/INN)), D08306 (Oseltamivir (INN)), D00491 (Paclitaxel (JAN/USP/INN)), D00512 (Phenytoin (JP16/USP/INN)), D08411 (Prazosin (INN)), D08458 (Quinidine (BAN)), D00427 (Ritonavir (JAN/USAN/INN)), D00429 (Saquinavir (JAN/USP/INN)), D00590 (Sparfloxacin (JAN/USAN/INN)), D00521 (Terfenadine (JAN/USAN/INN)), D00201 (Tetracycline (JAN/USP/INN)), D06050 (Technetium Tc 99m tetrofosmin (USP)), D08618 (Topotecan (BAN)), D00767 (Vecuronium bromide (JAN/USAN/INN)), D02356 (Verapamil (USAN/INN)), D08675 (Vinblastine (INN)), D08679 (Vincristine (INN))" onmouseover="popupTimer(&quot;D00214&quot;, &quot;D00214 (Actinomycin D (JP16)), D07448 (Amitriptyline (INN)), D07661 (Cerivastatin (INN)), D00570 (Colchicine (JP16/USP)), D00184 (Ciclosporin (JP16)), D07776 (Daunorubicin (INN)), D00298 (Digoxin (JP16/USP)), D07845 (Diltiazem (INN)), D07866 (Docetaxel (JAN/INN)), D01745 (Domperidone (JP16/USAN/INN)), D03899 (Doxorubicin (USAN/INN)), D07907 (Erlotinib (INN)), D00140 (Erythromycin (JP16/USP/INN)), D00125 (Etoposide (JP16/USP/INN)), D07958 (Fexofenadine (INN)), D08066 (Imatinib (INN)), D03833 (Indinavir (USAN)), D00804 (Ivermectin (JAN/USAN/INN)), D08108 (Lapatinib (INN)), D08144 (Loperamide (INN)), D08146 (Losartan (INN)), D00359 (Lovastatin (USP/INN)), D08259 (Nelfinavir (INN)), D00456 (Ondansetron (JAN/USP/INN)), D08306 (Oseltamivir (INN)), D00491 (Paclitaxel (JAN/USP/INN)), D00512 (Phenytoin (JP16/USP/INN)), D08411 (Prazosin (INN)), D08458 (Quinidine (BAN)), D00427 (Ritonavir (JAN/USAN/INN)), D00429 (Saquinavir (JAN/USP/INN)), D00590 (Sparfloxacin (JAN/USAN/INN)), D00521 (Terfenadine (JAN/USAN/INN)), D00201 (Tetracycline (JAN/USP/INN)), D06050 (Technetium Tc 99m tetrofosmin (USP)), D08618 (Topotecan (BAN)), D00767 (Vecuronium bromide (JAN/USAN/INN)), D02356 (Verapamil (USAN/INN)), D08675 (Vinblastine (INN)), D08679 (Vincristine (INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=589,82,635,99	href="/dbget-bin/www_bget?hsa:366"	title="366 (AQP9)" />
+<area shape=rect	coords=274,752,320,769	href="/dbget-bin/www_bget?hsa:6548"	title="6548 (SLC9A1)" />
+<area shape=rect	coords=628,716,674,733	href="/dbget-bin/www_bget?hsa:6522"	title="6522 (SLC4A2)" />
+<area shape=rect	coords=274,789,320,806	href="/dbget-bin/www_bget?hsa:23439+hsa:476+hsa:477+hsa:478+hsa:480+hsa:481+hsa:482+hsa:483+hsa:486"	title="23439 (ATP1B4), 476 (ATP1A1), 477 (ATP1A2), 478 (ATP1A3), 480 (ATP1A4), 481 (ATP1B1), 482 (ATP1B2), 483 (ATP1B3), 486 (FXYD2)" />
+<area shape=rect	coords=628,684,674,701	href="/dbget-bin/www_bget?hsa:1080"	title="1080 (CFTR)" />
+<area shape=rect	coords=274,653,320,670	href="/dbget-bin/www_bget?hsa:6344"	title="6344 (SCTR)" />
+<area shape=rect	coords=491,800,537,817	href="/dbget-bin/www_bget?hsa:760"	title="760 (CA2)" />
+<area shape=rect	coords=274,716,320,733	href="/dbget-bin/www_bget?hsa:8671"	title="8671 (SLC4A4)" />
+<area shape=rect	coords=355,653,401,670	href="/dbget-bin/www_bget?hsa:2778"	title="2778 (GNAS)" />
+<area shape=rect	coords=436,653,482,670	href="/dbget-bin/www_bget?hsa:107+hsa:108+hsa:109+hsa:111+hsa:112+hsa:113+hsa:114+hsa:115+hsa:196883"	title="107 (ADCY1), 108 (ADCY2), 109 (ADCY3), 111 (ADCY5), 112 (ADCY6), 113 (ADCY7), 114 (ADCY8), 115 (ADCY9), 196883 (ADCY4)" />
+<area shape=rect	coords=561,653,607,670	href="/dbget-bin/www_bget?hsa:5566+hsa:5567+hsa:5568"	title="5566 (PRKACA), 5567 (PRKACB), 5568 (PRKACG)" />
+<area shape=rect	coords=198,238,244,255	href="/dbget-bin/www_bget?hsa:10599+hsa:28234+hsa:338821+hsa:6579"	title="10599 (SLCO1B1), 28234 (SLCO1B3), 338821 (SLCO1B7), 6579 (SLCO1A2)" />
+<area shape=rect	coords=198,174,244,191	href="/dbget-bin/www_bget?hsa:2052"	title="2052 (EPHX1)" />
+<area shape=rect	coords=198,302,244,319	href="/dbget-bin/www_bget?hsa:6554"	title="6554 (SLC10A1)" />
+<area shape=rect	coords=613,338,659,355	href="/dbget-bin/www_bget?hsa:8647"	title="8647 (ABCB11)" />
+<area shape=rect	coords=619,375,665,392	href="/dbget-bin/www_bget?hsa:1244"	title="1244 (ABCC2)" />
+<area shape=rect	coords=1232,319,1278,336	href="/dbget-bin/www_bget?hsa:10257"	title="10257 (ABCC4)" />
+<area shape=rect	coords=1232,262,1278,279	href="/dbget-bin/www_bget?hsa:8714"	title="8714 (ABCC3)" />
+<area shape=rect	coords=413,217,459,234	href="/dbget-bin/www_bget?hsa:1581"	title="1581 (CYP7A1)" />
+<area shape=rect	coords=442,302,488,319	href="/dbget-bin/www_bget?hsa:9971"	title="9971 (NR1H4)" />
+<area shape=rect	coords=615,271,661,288	href="/dbget-bin/www_bget?hsa:64240"	title="64240 (ABCG5)" />
+<area shape=rect	coords=615,288,661,305	href="/dbget-bin/www_bget?hsa:64241"	title="64241 (ABCG8)" />
+<area shape=rect	coords=1232,498,1278,515	href="/dbget-bin/www_bget?hsa:23439+hsa:476+hsa:477+hsa:478+hsa:480+hsa:481+hsa:482+hsa:483+hsa:486"	title="23439 (ATP1B4), 476 (ATP1A1), 477 (ATP1A2), 478 (ATP1A3), 480 (ATP1A4), 481 (ATP1B1), 482 (ATP1B2), 483 (ATP1B3), 486 (FXYD2)" />
+<area shape=rect	coords=198,354,244,371	href="/dbget-bin/www_bget?hsa:10864+hsa:9376"	title="10864 (SLC22A7), 9376 (SLC22A8)" />
+<area shape=rect	coords=198,400,244,417	href="/dbget-bin/www_bget?hsa:6580"	title="6580 (SLC22A1)" />
+<area shape=rect	coords=800,661,846,678	href="/dbget-bin/www_bget?hsa:6555"	title="6555 (SLC10A2)" />
+<area shape=rect	coords=1157,679,1203,696	href="/dbget-bin/www_bget?hsa:8714"	title="8714 (ABCC3)" />
+<area shape=rect	coords=1157,766,1203,783	href="/dbget-bin/www_bget?hsa:10257"	title="10257 (ABCC4)" />
+<area shape=rect	coords=810,371,856,388	href="/dbget-bin/www_bget?hsa:5244"	title="5244 (ABCB4)" />
+<area shape=rect	coords=817,298,863,315	href="/dbget-bin/www_bget?hsa:5243"	title="5243 (ABCB1)" />
+<area shape=rect	coords=800,726,846,743	href="/dbget-bin/www_bget?hsa:6523"	title="6523 (SLC5A1)" />
+<area shape=rect	coords=1157,803,1203,820	href="/dbget-bin/www_bget?hsa:6513"	title="6513 (SLC2A1)" />
+<area shape=rect	coords=637,221,683,238	href="/dbget-bin/www_bget?hsa:343"	title="343 (AQP8)" />
+<area shape=rect	coords=1232,155,1278,172	href="/dbget-bin/www_bget?hsa:6548"	title="6548 (SLC9A1)" />
+<area shape=rect	coords=384,326,430,343	href="/dbget-bin/www_bget?hsa:8431"	title="8431 (NR0B2)" />
+<area shape=rect	coords=1157,631,1203,648	href="/dbget-bin/www_bget?hsa:6555"	title="6555 (SLC10A2)" />
+<area shape=rect	coords=797,239,843,256	href="/dbget-bin/www_bget?hsa:6522"	title="6522 (SLC4A2)" />
+<area shape=rect	coords=473,514,519,531	href="/dbget-bin/www_bget?hsa:1576"	title="1576 (CYP3A4)" />
+<area shape=rect	coords=447,472,493,489	href="/dbget-bin/www_bget?hsa:7363"	title="7363 (UGT2B4)" />
+<area shape=rect	coords=499,472,545,489	href="/dbget-bin/www_bget?hsa:6822"	title="6822 (SULT2A1)" />
+<area shape=rect	coords=448,493,494,510	href="/dbget-bin/www_bget?hsa:10998"	title="10998 (SLC27A5)" />
+<area shape=rect	coords=499,493,545,510	href="/dbget-bin/www_bget?hsa:570"	title="570 (BAAT)" />
+<area shape=rect	coords=800,779,846,796	href="/dbget-bin/www_bget?hsa:6550"	title="6550 (SLC9A3)" />
+<area shape=rect	coords=1232,371,1278,388	href="/dbget-bin/www_bget?hsa:200931"	title="200931 (SLC51A)" />
+<area shape=rect	coords=1232,388,1278,405	href="/dbget-bin/www_bget?hsa:123264"	title="123264 (SLC51B)" />
+<area shape=rect	coords=1008,336,1054,353	href="/dbget-bin/www_bget?hsa:9971"	title="9971 (NR1H4)" />
+<area shape=rect	coords=976,164,1022,181	href="/dbget-bin/www_bget?hsa:760"	title="760 (CA2)" />
+<area shape=rect	coords=274,848,320,865	href="/dbget-bin/www_bget?hsa:361"	title="361 (AQP4)" />
+<area shape=rect	coords=628,847,674,864	href="/dbget-bin/www_bget?hsa:358"	title="358 (AQP1)" />
+<area shape=rect	coords=641,423,687,440	href="/dbget-bin/www_bget?hsa:9429"	title="9429 (ABCG2)" />
+<area shape=rect	coords=628,631,674,648	href="/dbget-bin/www_bget?hsa:5243"	title="5243 (ABCB1)" />
+<area shape=rect	coords=800,844,846,861	href="/dbget-bin/www_bget?hsa:358"	title="358 (AQP1)" />
+<area shape=rect	coords=1157,842,1203,859	href="/dbget-bin/www_bget?hsa:361"	title="361 (AQP4)" />
+<area shape=rect	coords=1157,713,1203,730	href="/dbget-bin/www_bget?hsa:200931"	title="200931 (SLC51A)" />
+<area shape=rect	coords=1157,730,1203,747	href="/dbget-bin/www_bget?hsa:123264"	title="123264 (SLC51B)" />
+<area shape=rect	coords=1232,205,1278,222	href="/dbget-bin/www_bget?hsa:57835"	title="57835 (SLC4A5)" />
+<area shape=rect	coords=1232,452,1278,469	href="/dbget-bin/www_bget?hsa:3781"	title="3781 (KCNN2)" />
+<area shape=rect	coords=485,334,531,351	href="/dbget-bin/www_bget?hsa:6256"	title="6256 (RXRA)" />
+<area shape=rect	coords=1051,363,1097,380	href="/dbget-bin/www_bget?hsa:6256"	title="6256 (RXRA)" />
+<area shape=rect	coords=512,82,558,99	href="/dbget-bin/www_bget?hsa:949"	title="949 (SCARB1)" />
+<area shape=rect	coords=442,82,488,99	href="/dbget-bin/www_bget?hsa:3949"	title="3949 (LDLR)" />
+<area shape=rect	coords=386,148,432,165	href="/dbget-bin/www_bget?hsa:3156"	title="3156 (HMGCR)" />
+<area shape=rect	coords=528,151,574,168	href="/dbget-bin/www_bget?hsa:57552"	title="57552 (NCEH1)" />
+<area shape=rect	coords=40,45,188,70	href="/dbget-bin/www_bget?hsa04976"	title="hsa04976: Bile secretion" onmouseover="popupTimer(&quot;hsa04976&quot;, &quot;hsa04976: Bile secretion&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=797,144,912,169	href="/kegg-bin/show_pathway?hsa04530"	title="hsa04530: Tight junction" onmouseover="popupTimer(&quot;hsa04530&quot;, &quot;hsa04530: Tight junction&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=346,178,457,212	href="/kegg-bin/show_pathway?hsa00120"	title="hsa00120: Primary bile acid biosynthesis" onmouseover="popupTimer(&quot;hsa00120&quot;, &quot;hsa00120: Primary bile acid biosynthesis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=317,947,428,981	href="/kegg-bin/show_pathway?ko00121"	title="ko00121: Secondary bile acid biosynthesis" onmouseover="popupTimer(&quot;ko00121&quot;, &quot;ko00121: Secondary bile acid biosynthesis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=520,946,631,980	href="/kegg-bin/show_pathway?hsa04975"	title="hsa04975: Fat digestion and absorption" onmouseover="popupTimer(&quot;hsa04975&quot;, &quot;hsa04975: Fat digestion and absorption&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=376,36,468,61	href="/kegg-bin/show_pathway?hsa04144"	title="hsa04144: Endocytosis" onmouseover="popupTimer(&quot;hsa04144&quot;, &quot;hsa04144: Endocytosis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

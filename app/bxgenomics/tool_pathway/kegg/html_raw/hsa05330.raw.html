@@ -1,0 +1,323 @@
+<html>
+<!---
+ENTRY       hsa05330
+DEFINITION  Allograft rejection - Homo sapiens (human)
+--->
+<head>
+<title>
+KEGG PATHWAY: Allograft rejection - Homo sapiens (human)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Allograft rejection - Homo sapiens (human)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=05330&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map05330.keg&query=hsa&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+hsa05330">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=hsa05330&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Allograft rejection is the consequence of the recipient's alloimmune response to nonself antigens expressed by donor tissues. After transplantation of organ allografts, there are two pathways of antigen presentation. In the direct pathway, recipient T cells react to intact allogeneic MHC molecules expressed on the surface of donor cells. This pathway would activate host CD4 or CD8 T cells. In contrast, donor MHC molecules (and all other proteins) shed from the graft can be taken up by host APCs and presented to recipient T cells in the context of self-MHC molecules - the indirect pathway. Such presentation activates predominantly CD4 T cells. A direct cytotoxic T-cell attack on graft cells can be made only by T cells that recognize the graft MHC molecules directly. Nontheless, T cells with indirect allospecificity can contribute to graft rejection by activating macrophages, which cause tissue injury and fibrosis, and are also likely to be important in the development of an alloantibody response to graft.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="hsa.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa" selected>Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="05330" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="hsa05330" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/hsa/hsa05330.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=979,342,4	href="/dbget-bin/www_bget?C00533"	title="C00533 (Nitric oxide)" onmouseover="popupTimer(&quot;C00533&quot;, &quot;C00533 (Nitric oxide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=178,486,224,503	href="/dbget-bin/www_bget?hsa:3105+hsa:3106+hsa:3107+hsa:3108+hsa:3109+hsa:3111+hsa:3112+hsa:3113+hsa:3115+hsa:3117+hsa:3118+hsa:3119+hsa:3122+hsa:3123+hsa:3125+hsa:3126+hsa:3127+hsa:3133+hsa:3134+hsa:3135"	title="3105 (HLA-A), 3106 (HLA-B), 3107 (HLA-C), 3108 (HLA-DMA), 3109 (HLA-DMB), 3111 (HLA-DOA), 3112 (HLA-DOB), 3113 (HLA-DPA1), 3115 (HLA-DPB1), 3117 (HLA-DQA1), 3118 (HLA-DQA2), 3119 (HLA-DQB1), 3122 (HLA-DRA), 3123 (HLA-DRB1), 3125 (HLA-DRB3), 3126 (HLA-DRB4), 3127 (HLA-DRB5), 3133 (HLA-E), 3134 (HLA-F), 3135 (HLA-G)" />
+<area shape=rect	coords=630,209,676,226	href="/dbget-bin/www_bget?hsa:3558"	title="3558 (IL2)" />
+<area shape=rect	coords=374,517,420,534	href="/dbget-bin/www_bget?hsa:3108+hsa:3109+hsa:3111+hsa:3112+hsa:3113+hsa:3115+hsa:3117+hsa:3118+hsa:3119+hsa:3122+hsa:3123+hsa:3125+hsa:3126+hsa:3127"	title="3108 (HLA-DMA), 3109 (HLA-DMB), 3111 (HLA-DOA), 3112 (HLA-DOB), 3113 (HLA-DPA1), 3115 (HLA-DPB1), 3117 (HLA-DQA1), 3118 (HLA-DQA2), 3119 (HLA-DQB1), 3122 (HLA-DRA), 3123 (HLA-DRB1), 3125 (HLA-DRB3), 3126 (HLA-DRB4), 3127 (HLA-DRB5)" />
+<area shape=rect	coords=374,316,420,333	href="/dbget-bin/www_bget?hsa:3108+hsa:3109+hsa:3111+hsa:3112+hsa:3113+hsa:3115+hsa:3117+hsa:3118+hsa:3119+hsa:3122+hsa:3123+hsa:3125+hsa:3126+hsa:3127"	title="3108 (HLA-DMA), 3109 (HLA-DMB), 3111 (HLA-DOA), 3112 (HLA-DOB), 3113 (HLA-DPA1), 3115 (HLA-DPB1), 3117 (HLA-DQA1), 3118 (HLA-DQA2), 3119 (HLA-DQB1), 3122 (HLA-DRA), 3123 (HLA-DRB1), 3125 (HLA-DRB3), 3126 (HLA-DRB4), 3127 (HLA-DRB5)" />
+<area shape=rect	coords=709,515,755,532	href="/dbget-bin/www_bget?hsa:959"	title="959 (CD40LG)" />
+<area shape=rect	coords=793,515,839,532	href="/dbget-bin/www_bget?hsa:958"	title="958 (CD40)" />
+<area shape=rect	coords=793,540,839,557	href="/dbget-bin/www_bget?hsa:3108+hsa:3109+hsa:3111+hsa:3112+hsa:3113+hsa:3115+hsa:3117+hsa:3118+hsa:3119+hsa:3122+hsa:3123+hsa:3125+hsa:3126+hsa:3127"	title="3108 (HLA-DMA), 3109 (HLA-DMB), 3111 (HLA-DOA), 3112 (HLA-DOB), 3113 (HLA-DPA1), 3115 (HLA-DPB1), 3117 (HLA-DQA1), 3118 (HLA-DQA2), 3119 (HLA-DQB1), 3122 (HLA-DRA), 3123 (HLA-DRB1), 3125 (HLA-DRB3), 3126 (HLA-DRB4), 3127 (HLA-DRB5)" />
+<area shape=rect	coords=833,489,879,506	href="/dbget-bin/www_bget?hsa:102723407"	title="102723407 (IGH)" />
+<area shape=rect	coords=1000,153,1046,170	href="/dbget-bin/www_bget?hsa:355"	title="355 (FAS)" />
+<area shape=rect	coords=923,153,969,170	href="/dbget-bin/www_bget?hsa:356"	title="356 (FASLG)" />
+<area shape=rect	coords=1000,125,1046,142	href="/dbget-bin/www_bget?hsa:3105+hsa:3106+hsa:3107+hsa:3133+hsa:3134+hsa:3135"	title="3105 (HLA-A), 3106 (HLA-B), 3107 (HLA-C), 3133 (HLA-E), 3134 (HLA-F), 3135 (HLA-G)" />
+<area shape=rect	coords=960,220,1006,237	href="/dbget-bin/www_bget?hsa:3002"	title="3002 (GZMB)" />
+<area shape=rect	coords=960,195,1006,212	href="/dbget-bin/www_bget?hsa:5551"	title="5551 (PRF1)" />
+<area shape=rect	coords=937,530,983,547	href="/dbget-bin/www_bget?hsa:102723407"	title="102723407 (IGH)" />
+<area shape=rect	coords=755,439,801,456	href="/dbget-bin/www_bget?hsa:3565"	title="3565 (IL4)" />
+<area shape=rect	coords=755,460,801,477	href="/dbget-bin/www_bget?hsa:3567"	title="3567 (IL5)" />
+<area shape=rect	coords=374,338,420,355	href="/dbget-bin/www_bget?hsa:941+hsa:942"	title="941 (CD80), 942 (CD86)" />
+<area shape=rect	coords=454,339,500,356	href="/dbget-bin/www_bget?hsa:940"	title="940 (CD28)" />
+<area shape=rect	coords=455,540,501,557	href="/dbget-bin/www_bget?hsa:940"	title="940 (CD28)" />
+<area shape=rect	coords=755,482,801,499	href="/dbget-bin/www_bget?hsa:3586"	title="3586 (IL10)" />
+<area shape=rect	coords=375,131,421,148	href="/dbget-bin/www_bget?hsa:3105+hsa:3106+hsa:3107+hsa:3133+hsa:3134+hsa:3135"	title="3105 (HLA-A), 3106 (HLA-B), 3107 (HLA-C), 3133 (HLA-E), 3134 (HLA-F), 3135 (HLA-G)" />
+<area shape=rect	coords=755,379,801,396	href="/dbget-bin/www_bget?hsa:3458"	title="3458 (IFNG)" />
+<area shape=rect	coords=375,153,421,170	href="/dbget-bin/www_bget?hsa:941+hsa:942"	title="941 (CD80), 942 (CD86)" />
+<area shape=rect	coords=455,154,501,171	href="/dbget-bin/www_bget?hsa:940"	title="940 (CD28)" />
+<area shape=rect	coords=793,323,839,340	href="/dbget-bin/www_bget?hsa:958"	title="958 (CD40)" />
+<area shape=rect	coords=709,323,755,340	href="/dbget-bin/www_bget?hsa:959"	title="959 (CD40LG)" />
+<area shape=rect	coords=956,310,1002,327	href="/dbget-bin/www_bget?hsa:7124"	title="7124 (TNF)" />
+<area shape=rect	coords=416,192,462,209	href="/dbget-bin/www_bget?hsa:3592+hsa:3593"	title="3592 (IL12A), 3593 (IL12B)" />
+<area shape=rect	coords=374,540,420,557	href="/dbget-bin/www_bget?hsa:941+hsa:942"	title="941 (CD80), 942 (CD86)" />
+<area shape=rect	coords=1007,530,1053,547	href="/dbget-bin/www_bget?hsa:3105+hsa:3106+hsa:3107+hsa:3108+hsa:3109+hsa:3111+hsa:3112+hsa:3113+hsa:3115+hsa:3117+hsa:3118+hsa:3119+hsa:3122+hsa:3123+hsa:3125+hsa:3126+hsa:3127+hsa:3133+hsa:3134+hsa:3135"	title="3105 (HLA-A), 3106 (HLA-B), 3107 (HLA-C), 3108 (HLA-DMA), 3109 (HLA-DMB), 3111 (HLA-DOA), 3112 (HLA-DOB), 3113 (HLA-DPA1), 3115 (HLA-DPB1), 3117 (HLA-DQA1), 3118 (HLA-DQA2), 3119 (HLA-DQB1), 3122 (HLA-DRA), 3123 (HLA-DRB1), 3125 (HLA-DRB3), 3126 (HLA-DRB4), 3127 (HLA-DRB5), 3133 (HLA-E), 3134 (HLA-F), 3135 (HLA-G)" />
+<area shape=rect	coords=470,230,583,264	href="/kegg-bin/show_pathway?hsa04660"	title="hsa04660: T cell receptor signaling pathway" onmouseover="popupTimer(&quot;hsa04660&quot;, &quot;hsa04660: T cell receptor signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=152,565,264,599	href="/kegg-bin/show_pathway?hsa04612"	title="hsa04612: Antigen processing and presentation" onmouseover="popupTimer(&quot;hsa04612&quot;, &quot;hsa04612: Antigen processing and presentation&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=377,409,490,443	href="/kegg-bin/show_pathway?hsa04514"	title="hsa04514: Cell adhesion molecules (CAMs)" onmouseover="popupTimer(&quot;hsa04514&quot;, &quot;hsa04514: Cell adhesion molecules (CAMs)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=722,608,834,642	href="/kegg-bin/show_pathway?hsa04662"	title="hsa04662: B cell receptor signaling pathway" onmouseover="popupTimer(&quot;hsa04662&quot;, &quot;hsa04662: B cell receptor signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=40,45,229,70	href="/dbget-bin/www_bget?hsa05330"	title="hsa05330: Allograft rejection" onmouseover="popupTimer(&quot;hsa05330&quot;, &quot;hsa05330: Allograft rejection&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1037,207,1149,232	href="/kegg-bin/show_pathway?hsa04210"	title="hsa04210: Apoptosis" onmouseover="popupTimer(&quot;hsa04210&quot;, &quot;hsa04210: Apoptosis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=899,609,1011,643	href="/kegg-bin/show_pathway?hsa04610"	title="hsa04610: Complement and coagulation cascades" onmouseover="popupTimer(&quot;hsa04610&quot;, &quot;hsa04610: Complement and coagulation cascades&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

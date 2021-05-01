@@ -1,0 +1,342 @@
+<html>
+<!---
+ENTRY       hsa01524
+DEFINITION  Platinum drug resistance - Homo sapiens (human)
+--->
+<head>
+<title>
+KEGG PATHWAY: Platinum drug resistance - Homo sapiens (human)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Platinum drug resistance - Homo sapiens (human)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=01524&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map01524.keg&query=hsa&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+hsa01524">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=hsa01524&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Platinum-based drugs cisplatin, carboplatin and oxaliplatin are widely used in the therapy of solid malignancies, including testicular, ovarian, head and neck, colorectal, bladder and lung cancers. The mechanism of action of Platinum-based drugs involves covalent binding to purine DNA bases, which primarily leads to cellular apoptosis. Their clinical success is, however, limited due to severe side effects and intrinsic or acquired resistance to the treatment. Platinum resistance could arise from decreased drug influx, increased drug efflux, intracellular detoxification by glutathione, etc., decreased binding (e.g., due to high intracellular pH), increased DNA repair, decreased mismatch repair, defective apoptosis, and altered oncogene expression.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="hsa.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa" selected>Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="01524" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="hsa01524" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/hsa/hsa01524.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=145,213,4	href="/dbget-bin/www_bget?D00275"	title="D00275 (Cisplatin (JP17/USP/INN))" onmouseover="popupTimer(&quot;D00275&quot;, &quot;D00275 (Cisplatin (JP17/USP/INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=145,246,4	href="/dbget-bin/www_bget?D01790"	title="D01790 (Oxaliplatin (JAN/USAN/INN))" onmouseover="popupTimer(&quot;D01790&quot;, &quot;D01790 (Oxaliplatin (JAN/USAN/INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=145,279,4	href="/dbget-bin/www_bget?D01363"	title="D01363 (Carboplatin (JP17/USP/INN))" onmouseover="popupTimer(&quot;D01363&quot;, &quot;D01363 (Carboplatin (JP17/USP/INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1174,495,1220,512	href="/dbget-bin/www_bget?hsa:472"	title="472 (ATM)" />
+<area shape=rect	coords=1174,542,1220,559	href="/dbget-bin/www_bget?hsa:7157"	title="7157 (TP53)" />
+<area shape=rect	coords=469,884,515,901	href="/dbget-bin/www_bget?hsa:596"	title="596 (BCL2)" />
+<area shape=rect	coords=908,598,954,615	href="/dbget-bin/www_bget?hsa:842"	title="842 (CASP9)" />
+<area shape=rect	coords=794,523,840,540	href="/dbget-bin/www_bget?hsa:836"	title="836 (CASP3)" />
+<area shape=rect	coords=396,801,442,818	href="/dbget-bin/www_bget?hsa:572"	title="572 (BAD)" />
+<area shape=rect	coords=683,568,729,585	href="/dbget-bin/www_bget?hsa:329+hsa:330+hsa:331+hsa:332"	title="329 (BIRC2), 330 (BIRC3), 331 (XIAP), 332 (BIRC5)" />
+<area shape=rect	coords=769,888,815,905	href="/dbget-bin/www_bget?hsa:317"	title="317 (APAF1)" />
+<area shape=rect	coords=769,855,815,872	href="/dbget-bin/www_bget?hsa:54205"	title="54205 (CYCS)" />
+<area shape=rect	coords=586,679,632,696	href="/dbget-bin/www_bget?hsa:637"	title="637 (BID)" />
+<area shape=rect	coords=591,523,637,540	href="/dbget-bin/www_bget?hsa:841"	title="841 (CASP8)" />
+<area shape=rect	coords=387,523,433,540	href="/dbget-bin/www_bget?hsa:8772"	title="8772 (FADD)" />
+<area shape=rect	coords=221,523,267,540	href="/dbget-bin/www_bget?hsa:355"	title="355 (FAS)" />
+<area shape=rect	coords=131,523,177,540	href="/dbget-bin/www_bget?hsa:356"	title="356 (FASLG)" />
+<area shape=rect	coords=1342,553,1388,570	href="/dbget-bin/www_bget?hsa:581"	title="581 (BAX)" />
+<area shape=rect	coords=1396,553,1442,570	href="/dbget-bin/www_bget?hsa:578"	title="578 (BAK1)" />
+<area shape=rect	coords=1452,531,1498,548	href="/dbget-bin/www_bget?hsa:5366"	title="5366 (PMAIP1)" />
+<area shape=rect	coords=1452,553,1498,570	href="/dbget-bin/www_bget?hsa:27113"	title="27113 (BBC3)" />
+<area shape=rect	coords=1342,522,1388,539	href="/dbget-bin/www_bget?hsa:355"	title="355 (FAS)" />
+<area shape=rect	coords=527,765,573,782	href="/dbget-bin/www_bget?hsa:581"	title="581 (BAX)" />
+<area shape=rect	coords=646,765,692,782	href="/dbget-bin/www_bget?hsa:578"	title="578 (BAK1)" />
+<area shape=rect	coords=469,861,515,878	href="/dbget-bin/www_bget?hsa:598"	title="598 (BCL2L1)" />
+<area shape=rect	coords=638,973,684,990	href="/dbget-bin/www_bget?hsa:27113"	title="27113 (BBC3)" />
+<area shape=rect	coords=579,973,625,990	href="/dbget-bin/www_bget?hsa:5366"	title="5366 (PMAIP1)" />
+<area shape=rect	coords=221,214,267,231	href="/dbget-bin/www_bget?hsa:1317"	title="1317 (SLC31A1)" />
+<area shape=rect	coords=221,338,267,355	href="/dbget-bin/www_bget?hsa:538+hsa:540"	title="538 (ATP7A), 540 (ATP7B)" />
+<area shape=rect	coords=221,376,267,393	href="/dbget-bin/www_bget?hsa:1244"	title="1244 (ABCC2)" />
+<area shape=rect	coords=610,318,656,335	href="/dbget-bin/www_bget?hsa:119391+hsa:221357+hsa:2938+hsa:2939+hsa:2940+hsa:2941+hsa:2944+hsa:2946+hsa:2947+hsa:2948+hsa:2949+hsa:2950+hsa:2952+hsa:2953+hsa:4257+hsa:4258+hsa:4259+hsa:653689+hsa:9446"	title="119391 (GSTO2), 221357 (GSTA5), 2938 (GSTA1), 2939 (GSTA2), 2940 (GSTA3), 2941 (GSTA4), 2944 (GSTM1), 2946 (GSTM2), 2947 (GSTM3), 2948 (GSTM4), 2949 (GSTM5), 2950 (GSTP1), 2952 (GSTT1), 2953 (GSTT2), 4257 (MGST1), 4258 (MGST2), 4259 (MGST3), 653689 (GSTT2B), 9446 (GSTO1)" />
+<area shape=rect	coords=1336,131,1382,148	href="/dbget-bin/www_bget?hsa:4292"	title="4292 (MLH1)" />
+<area shape=rect	coords=1208,261,1254,278	href="/dbget-bin/www_bget?hsa:7507"	title="7507 (XPA)" />
+<area shape=rect	coords=1261,276,1307,293	href="/dbget-bin/www_bget?hsa:2067"	title="2067 (ERCC1)" />
+<area shape=rect	coords=1322,289,1368,306	href="/dbget-bin/www_bget?hsa:7153+hsa:7155"	title="7153 (TOP2A), 7155 (TOP2B)" />
+<area shape=rect	coords=1374,295,1420,312	href="/dbget-bin/www_bget?hsa:672"	title="672 (BRCA1)" />
+<area shape=rect	coords=1304,110,1350,127	href="/dbget-bin/www_bget?hsa:4436"	title="4436 (MSH2)" />
+<area shape=rect	coords=1358,110,1404,127	href="/dbget-bin/www_bget?hsa:2956+hsa:4437"	title="2956 (MSH6), 4437 (MSH3)" />
+<area shape=rect	coords=220,609,266,626	href="/dbget-bin/www_bget?hsa:2064"	title="2064 (ERBB2)" />
+<area shape=rect	coords=304,609,350,626	href="/dbget-bin/www_bget?hsa:5290+hsa:5291+hsa:5293+hsa:5295+hsa:5296+hsa:8503"	title="5290 (PIK3CA), 5291 (PIK3CB), 5293 (PIK3CD), 5295 (PIK3R1), 5296 (PIK3R2), 8503 (PIK3R3)" />
+<area shape=rect	coords=388,609,434,626	href="/dbget-bin/www_bget?hsa:5170"	title="5170 (PDPK1)" />
+<area shape=rect	coords=472,609,518,626	href="/dbget-bin/www_bget?hsa:10000+hsa:207+hsa:208"	title="10000 (AKT3), 207 (AKT1), 208 (AKT2)" />
+<area shape=rect	coords=327,728,373,745	href="/dbget-bin/www_bget?hsa:5594+hsa:5595"	title="5594 (MAPK1), 5595 (MAPK3)" />
+<area shape=rect	coords=794,375,840,392	href="/dbget-bin/www_bget?hsa:538+hsa:540"	title="538 (ATP7A), 540 (ATP7B)" />
+<area shape=rect	coords=1263,421,1309,438	href="/dbget-bin/www_bget?hsa:1029"	title="1029 (CDKN2A)" />
+<area shape=rect	coords=1260,472,1306,489	href="/dbget-bin/www_bget?hsa:4193"	title="4193 (MDM2)" />
+<area shape=rect	coords=680,649,726,666	href="/dbget-bin/www_bget?hsa:1026"	title="1026 (CDKN1A)" />
+<area shape=rect	coords=1203,129,1249,146	href="/dbget-bin/www_bget?hsa:5429"	title="5429 (POLH)" />
+<area shape=rect	coords=1226,152,1272,169	href="/dbget-bin/www_bget?hsa:5980"	title="5980 (REV3L)" />
+<area shape=rect	coords=792,649,838,666	href="/dbget-bin/www_bget?hsa:4217"	title="4217 (MAP3K5)" />
+<area shape=rect	coords=1196,602,1320,636	href="/kegg-bin/show_pathway?hsa04115"	title="hsa04115: p53 signaling pathway" onmouseover="popupTimer(&quot;hsa04115&quot;, &quot;hsa04115: p53 signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=40,45,292,70	href="/dbget-bin/www_bget?hsa01524"	title="hsa01524: Platinum drug resistance" onmouseover="popupTimer(&quot;hsa01524&quot;, &quot;hsa01524: Platinum drug resistance&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=329,635,453,669	href="/kegg-bin/show_pathway?hsa04012"	title="hsa04012: ErbB signaling pathway" onmouseover="popupTimer(&quot;hsa04012&quot;, &quot;hsa04012: ErbB signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=824,550,916,575	href="/kegg-bin/show_pathway?hsa04210"	title="hsa04210: Apoptosis" onmouseover="popupTimer(&quot;hsa04210&quot;, &quot;hsa04210: Apoptosis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1429,341,1553,375	href="/kegg-bin/show_pathway?hsa03420"	title="hsa03420: Nucleotide excision repair" onmouseover="popupTimer(&quot;hsa03420&quot;, &quot;hsa03420: Nucleotide excision repair&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1415,105,1526,130	href="/kegg-bin/show_pathway?hsa03430"	title="hsa03430: Mismatch repair" onmouseover="popupTimer(&quot;hsa03430&quot;, &quot;hsa03430: Mismatch repair&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=779,779,871,804	href="/kegg-bin/show_pathway?hsa04110"	title="hsa04110: Cell cycle" onmouseover="popupTimer(&quot;hsa04110&quot;, &quot;hsa04110: Cell cycle&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

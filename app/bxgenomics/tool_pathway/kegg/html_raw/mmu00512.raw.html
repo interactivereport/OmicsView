@@ -1,0 +1,447 @@
+<html>
+<!---
+ENTRY       mmu00512
+DEFINITION  Mucin type O-glycan biosynthesis - Mus musculus (mouse)
+--->
+<head>
+<title>
+KEGG PATHWAY: Mucin type O-glycan biosynthesis - Mus musculus (mouse)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Mucin type O-glycan biosynthesis - Mus musculus (mouse)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=00512&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map00512.keg&query=mmu&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+mmu00512">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=mmu00512&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+O-glycans are a class of glycans that modify serine or threonine residues of proteins. Biosynthesis of O-glycans starts from the transfer of N-acetylgalactosamine (GalNAc) to serine or threonine. The first GalNAc may be extended with sugars including galactose, N-acetylglucosamine, fucose, or sialic acid, but not mannose, glucose, or xylose. Depending on the sugars added, there are four common O-glycan core structures, cores 1 through 4, and an additional four, cores 5 though 8. Mucins are highly O-glycosylated glycoproteins ubiquitous in mucous secretions on cell surfaces and in body fluids. Mucin O-glycans can be branched, and many sugars or groups of sugars are antigenic. Important modifications of mucin O-glycans include O-acetylation of sialic acid and O-sulfation of galactose and N-acetylglucosamine.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="ec">Reference pathway (EC)</option>
+<option value="rn">Reference pathway (Reaction)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="mmu.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu" selected>Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+<option value="gga">Gallus gallus (chicken)</option>
+<option value="mgp">Meleagris gallopavo (turkey)</option>
+<option value="cjo">Coturnix japonica (Japanese quail)</option>
+<option value="apla">Anas platyrhynchos (mallard)</option>
+<option value="acyg">Anser cygnoides domesticus (swan goose)</option>
+<option value="tgu">Taeniopygia guttata (zebra finch)</option>
+<option value="gfr">Geospiza fortis (medium ground-finch)</option>
+<option value="fab">Ficedula albicollis (collared flycatcher)</option>
+<option value="phi">Pseudopodoces humilis (Tibetan ground-tit)</option>
+<option value="pmaj">Parus major (Great Tit)</option>
+<option value="ccw">Corvus cornix (hooded crow)</option>
+<option value="fpg">Falco peregrinus (peregrine falcon)</option>
+<option value="fch">Falco cherrug (Saker falcon)</option>
+<option value="clv">Columba livia (rock pigeon)</option>
+<option value="aam">Apteryx australis mantelli (brown kiwi)</option>
+<option value="asn">Alligator sinensis (Chinese alligator)</option>
+<option value="amj">Alligator mississippiensis (American alligator)</option>
+<option value="pss">Pelodiscus sinensis (Chinese soft-shelled turtle)</option>
+<option value="cmy">Chelonia mydas (green sea turtle)</option>
+<option value="cpic">Chrysemys picta (western painted turtle)</option>
+<option value="acs">Anolis carolinensis (green anole)</option>
+<option value="pvt">Pogona vitticeps (central bearded dragon)</option>
+<option value="pbi">Python bivittatus (Burmese python)</option>
+<option value="gja">Gekko japonicus</option>
+<option value="xla">Xenopus laevis (African clawed frog)</option>
+<option value="xtr">Xenopus tropicalis (western clawed frog)</option>
+<option value="npr">Nanorana parkeri</option>
+<option value="dre">Danio rerio (zebrafish)</option>
+<option value="srx">Sinocyclocheilus rhinocerous</option>
+<option value="sanh">Sinocyclocheilus anshuiensis</option>
+<option value="sgh">Sinocyclocheilus grahami</option>
+<option value="ipu">Ictalurus punctatus (channel catfish)</option>
+<option value="amex">Astyanax mexicanus (Mexican tetra)</option>
+<option value="tru">Takifugu rubripes (torafugu)</option>
+<option value="tng">Tetraodon nigroviridis (spotted green pufferfish)</option>
+<option value="lco">Larimichthys crocea (large yellow croaker)</option>
+<option value="ncc">Notothenia coriiceps (black rockcod)</option>
+<option value="mze">Maylandia zebra (zebra mbuna)</option>
+<option value="ola">Oryzias latipes (Japanese medaka)</option>
+<option value="xma">Xiphophorus maculatus (southern platyfish)</option>
+<option value="csem">Cynoglossus semilaevis (tongue sole)</option>
+<option value="lcf">Lates calcarifer (barramundi perch)</option>
+<option value="hcq">Hippocampus comes (tiger tail seahorse)</option>
+<option value="bpec">Boleophthalmus pectinirostris (great blue-spotted mudskipper)</option>
+<option value="sasa">Salmo salar (Atlantic salmon)</option>
+<option value="els">Esox lucius (northern pike)</option>
+<option value="sfm">Scleropages formosus (Asian bonytongue)</option>
+<option value="lcm">Latimeria chalumnae (coelacanth)</option>
+<option value="cmk">Callorhinchus milii (elephant shark)</option>
+<option value="bfo">Branchiostoma floridae (Florida lancelet)</option>
+<option value="cin">Ciona intestinalis (sea squirt)</option>
+<option value="spu">Strongylocentrotus purpuratus (purple sea urchin)</option>
+<option value="aplc">Acanthaster planci (crown-of-thorns starfish)</option>
+<option value="sko">Saccoglossus kowalevskii (acorn worm)</option>
+<option value="dme">Drosophila melanogaster (fruit fly)</option>
+<option value="dpo">Drosophila pseudoobscura pseudoobscura</option>
+<option value="dan">Drosophila ananassae</option>
+<option value="der">Drosophila erecta</option>
+<option value="dpe">Drosophila persimilis</option>
+<option value="dse">Drosophila sechellia</option>
+<option value="dsi">Drosophila simulans</option>
+<option value="dwi">Drosophila willistoni</option>
+<option value="dya">Drosophila yakuba</option>
+<option value="dgr">Drosophila grimshawi</option>
+<option value="dmo">Drosophila mojavensis</option>
+<option value="dvi">Drosophila virilis</option>
+<option value="mde">Musca domestica (house fly)</option>
+<option value="aga">Anopheles gambiae (mosquito)</option>
+<option value="aag">Aedes aegypti (yellow fever mosquito)</option>
+<option value="cqu">Culex quinquefasciatus (southern house mosquito)</option>
+<option value="ame">Apis mellifera (honey bee)</option>
+<option value="bim">Bombus impatiens (common eastern bumble bee)</option>
+<option value="bter">Bombus terrestris (buff-tailed bumblebee)</option>
+<option value="soc">Solenopsis invicta (red fire ant)</option>
+<option value="aec">Acromyrmex echinatior (Panamanian leafcutter ant)</option>
+<option value="acep">Atta cephalotes (leaf cutting ant)</option>
+<option value="pbar">Pogonomyrmex barbatus (red harvester ant)</option>
+<option value="hst">Harpegnathos saltator (Jerdon's jumping ant)</option>
+<option value="cfo">Camponotus floridanus (Florida carpenter ant)</option>
+<option value="lhu">Linepithema humile (Argentine ant)</option>
+<option value="pgc">Pseudomyrmex gracilis</option>
+<option value="nvi">Nasonia vitripennis (jewel wasp)</option>
+<option value="tca">Tribolium castaneum (red flour beetle)</option>
+<option value="dpa">Dendroctonus ponderosae (mountain pine beetle)</option>
+<option value="nvl">Nicrophorus vespilloides</option>
+<option value="bmor">Bombyx mori (domestic silkworm)</option>
+<option value="dpl">Danaus plexippus (monarch butterfly)</option>
+<option value="pxy">Plutella xylostella (diamondback moth)</option>
+<option value="api">Acyrthosiphon pisum (pea aphid)</option>
+<option value="dnx">Diuraphis noxia (Russian wheat aphid)</option>
+<option value="phu">Pediculus humanus corporis (human body louse)</option>
+<option value="fcd">Folsomia candida</option>
+<option value="dpx">Daphnia pulex (common water flea)</option>
+<option value="isc">Ixodes scapularis (black-legged tick)</option>
+<option value="tut">Tetranychus urticae (two-spotted spider mite)</option>
+<option value="cel">Caenorhabditis elegans (nematode)</option>
+<option value="cbr">Caenorhabditis briggsae</option>
+<option value="nai">Necator americanus</option>
+<option value="bmy">Brugia malayi (filaria)</option>
+<option value="loa">Loa loa (eye worm)</option>
+<option value="tsp">Trichinella spiralis</option>
+<option value="hro">Helobdella robusta</option>
+<option value="lgi">Lottia gigantea (owl limpet)</option>
+<option value="crg">Crassostrea gigas (Pacific oyster)</option>
+<option value="obi">Octopus bimaculoides</option>
+<option value="lak">Lingula anatina</option>
+<option value="smm">Schistosoma mansoni</option>
+<option value="shx">Schistosoma haematobium</option>
+<option value="ovi">Opisthorchis viverrini</option>
+<option value="nve">Nematostella vectensis (sea anemone)</option>
+<option value="adf">Acropora digitifera (stony coral)</option>
+<option value="hmg">Hydra vulgaris</option>
+<option value="tad">Trichoplax adhaerens</option>
+<option value="aqu">Amphimedon queenslandica (sponge)</option>
+</select>
+<input type="hidden" name="mapno" value="00512" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="mmu00512" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/mmu/mmu00512.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=340,497,4	href="/dbget-bin/www_bget?G00034"	title="G00034" />
+<area shape=circle	coords=340,433,4	href="/dbget-bin/www_bget?G00033"	title="G00033" />
+<area shape=circle	coords=471,370,4	href="/dbget-bin/www_bget?G00032"	title="G00032" />
+<area shape=circle	coords=340,370,4	href="/dbget-bin/www_bget?G00031"	title="G00031" />
+<area shape=circle	coords=340,306,4	href="/dbget-bin/www_bget?G00030"	title="G00030" />
+<area shape=circle	coords=471,242,4	href="/dbget-bin/www_bget?G00029"	title="G00029" />
+<area shape=circle	coords=340,242,4	href="/dbget-bin/www_bget?G00028"	title="G00028" />
+<area shape=circle	coords=601,116,4	href="/dbget-bin/www_bget?G00027"	title="G00027" />
+<area shape=circle	coords=471,116,4	href="/dbget-bin/www_bget?G00026"	title="G00026" />
+<area shape=circle	coords=471,179,4	href="/dbget-bin/www_bget?G00025"	title="G00025" />
+<area shape=circle	coords=206,242,4	href="/dbget-bin/www_bget?G00023"	title="G00023 (Tn antigen)" onmouseover="popupTimer(&quot;G00023&quot;, &quot;G00023 (Tn antigen)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=204,116,4	href="/dbget-bin/www_bget?G00035"	title="G00035 (Sialyl-Tn antigen)" onmouseover="popupTimer(&quot;G00035&quot;, &quot;G00035 (Sialyl-Tn antigen)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=75,242,4	href="/dbget-bin/www_bget?C02189"	title="C02189 ([Protein]-L-serine)" onmouseover="popupTimer(&quot;C02189&quot;, &quot;C02189 ([Protein]-L-serine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=96,207,4	href="/dbget-bin/www_bget?G10611"	title="G10611 (UDP-N-acetyl-D-galactosamine)" onmouseover="popupTimer(&quot;G10611&quot;, &quot;G10611 (UDP-N-acetyl-D-galactosamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=340,179,4	href="/dbget-bin/www_bget?G00024"	title="G00024 (T antigen)" onmouseover="popupTimer(&quot;G00024&quot;, &quot;G00024 (T antigen)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=379,231,425,248	href="/dbget-bin/www_bget?mmu:72077"	title="72077 (Gcnt3)" />
+<area shape=rect	coords=244,350,290,367	href="/dbget-bin/www_bget?mmu:14537"	title="14537 (Gcnt1)" />
+<area shape=rect	coords=379,362,425,379	href="/dbget-bin/www_bget?mmu:56336"	title="56336 (B4galt5)" />
+<area shape=rect	coords=512,106,558,123	href="/dbget-bin/www_bget?mmu:20445"	title="20445 (St6galnac1)" />
+<area shape=rect	coords=181,144,227,161	href="/dbget-bin/www_bget?mmu:20445"	title="20445 (St6galnac1)" />
+<area shape=rect	coords=379,107,425,124	href="/dbget-bin/www_bget?mmu:20442+mmu:20444"	title="20442 (St3gal1), 20444 (St3gal2)" />
+<area shape=rect	coords=244,231,290,248	href="/dbget-bin/www_bget?mmu:272411"	title="272411 (B3gnt6)" />
+<area shape=rect	coords=126,234,172,251	href="/dbget-bin/www_bget?mmu:108148+mmu:108150+mmu:108760+mmu:14423+mmu:14425+mmu:14426+mmu:171212+mmu:207839+mmu:212996+mmu:230145+mmu:231050+mmu:233733+mmu:241391+mmu:270049+mmu:271786+mmu:67909+mmu:71685+mmu:78754"	title="108148 (Galnt2), 108150 (Galnt7), 108760 (Galnt16), 14423 (Galnt1), 14425 (Galnt3), 14426 (Galnt4), 171212 (Galnt10), 207839 (Galnt6), 212996 (Wbscr17), 230145 (Galnt12), 231050 (Galnt11), 233733 (Galnt18), 241391 (Galnt5), 270049 (Galntl6), 271786 (Galnt13), 67909 (Galntl5), 71685 (Galnt14), 78754 (Galnt15)" />
+<area shape=rect	coords=244,171,290,188	href="/dbget-bin/www_bget?mmu:59048+mmu:94192"	title="59048 (C1galt1c1), 94192 (C1galt1)" />
+<area shape=rect	coords=379,171,425,188	href="/dbget-bin/www_bget?mmu:14537+mmu:218476+mmu:72077"	title="14537 (Gcnt1), 218476 (Gcnt4), 72077 (Gcnt3)" />
+<area shape=poly	coords=417,858,437,858,437,862,417,862	href="/dbget-bin/www_bget?mmu:56336"	title="56336 (B4galt5)" />
+<area shape=poly	coords=133,676,153,676,153,680,133,680	href="/dbget-bin/www_bget?mmu:20445"	title="20445 (St6galnac1)" />
+<area shape=poly	coords=134,790,154,790,154,794,134,794	href="/dbget-bin/www_bget?mmu:20442+mmu:20444"	title="20442 (St3gal1), 20444 (St3gal2)" />
+<area shape=poly	coords=435,744,445,734,449,734,439,744	href="/dbget-bin/www_bget?mmu:272411"	title="272411 (B3gnt6)" />
+<area shape=poly	coords=500,985,520,985,520,989,500,989	href="/dbget-bin/www_bget?mmu:108148+mmu:108150+mmu:108760+mmu:14423+mmu:14425+mmu:14426+mmu:171212+mmu:207839+mmu:212996+mmu:230145+mmu:231050+mmu:233733+mmu:241391+mmu:270049+mmu:271786+mmu:67909+mmu:71685+mmu:78754"	title="108148 (Galnt2), 108150 (Galnt7), 108760 (Galnt16), 14423 (Galnt1), 14425 (Galnt3), 14426 (Galnt4), 171212 (Galnt10), 207839 (Galnt6), 212996 (Wbscr17), 230145 (Galnt12), 231050 (Galnt11), 233733 (Galnt18), 241391 (Galnt5), 270049 (Galntl6), 271786 (Galnt13), 67909 (Galntl5), 71685 (Galnt14), 78754 (Galnt15)" />
+<area shape=poly	coords=518,928,538,928,538,932,518,932	href="/dbget-bin/www_bget?mmu:108148+mmu:108150+mmu:108760+mmu:14423+mmu:14425+mmu:14426+mmu:171212+mmu:207839+mmu:212996+mmu:230145+mmu:231050+mmu:233733+mmu:241391+mmu:270049+mmu:271786+mmu:67909+mmu:71685+mmu:78754"	title="108148 (Galnt2), 108150 (Galnt7), 108760 (Galnt16), 14423 (Galnt1), 14425 (Galnt3), 14426 (Galnt4), 171212 (Galnt10), 207839 (Galnt6), 212996 (Wbscr17), 230145 (Galnt12), 231050 (Galnt11), 233733 (Galnt18), 241391 (Galnt5), 270049 (Galntl6), 271786 (Galnt13), 67909 (Galntl5), 71685 (Galnt14), 78754 (Galnt15)" />
+<area shape=poly	coords=498,858,518,858,518,862,498,862	href="/dbget-bin/www_bget?mmu:14537"	title="14537 (Gcnt1)" />
+<area shape=poly	coords=579,858,599,858,599,862,579,862	href="/dbget-bin/www_bget?mmu:108148+mmu:108150+mmu:108760+mmu:14423+mmu:14425+mmu:14426+mmu:171212+mmu:207839+mmu:212996+mmu:230145+mmu:231050+mmu:233733+mmu:241391+mmu:270049+mmu:271786+mmu:67909+mmu:71685+mmu:78754"	title="108148 (Galnt2), 108150 (Galnt7), 108760 (Galnt16), 14423 (Galnt1), 14425 (Galnt3), 14426 (Galnt4), 171212 (Galnt10), 207839 (Galnt6), 212996 (Wbscr17), 230145 (Galnt12), 231050 (Galnt11), 233733 (Galnt18), 241391 (Galnt5), 270049 (Galntl6), 271786 (Galnt13), 67909 (Galntl5), 71685 (Galnt14), 78754 (Galnt15)" />
+<area shape=poly	coords=519,799,539,799,539,803,519,803	href="/dbget-bin/www_bget?mmu:108148+mmu:108150+mmu:108760+mmu:14423+mmu:14425+mmu:14426+mmu:171212+mmu:207839+mmu:212996+mmu:230145+mmu:231050+mmu:233733+mmu:241391+mmu:270049+mmu:271786+mmu:67909+mmu:71685+mmu:78754"	title="108148 (Galnt2), 108150 (Galnt7), 108760 (Galnt16), 14423 (Galnt1), 14425 (Galnt3), 14426 (Galnt4), 171212 (Galnt10), 207839 (Galnt6), 212996 (Wbscr17), 230145 (Galnt12), 231050 (Galnt11), 233733 (Galnt18), 241391 (Galnt5), 270049 (Galntl6), 271786 (Galnt13), 67909 (Galntl5), 71685 (Galnt14), 78754 (Galnt15)" />
+<area shape=poly	coords=436,711,446,721,450,721,440,711	href="/dbget-bin/www_bget?mmu:72077"	title="72077 (Gcnt3)" />
+<area shape=poly	coords=508,724,528,724,528,728,508,728	href="/dbget-bin/www_bget?mmu:108148+mmu:108150+mmu:108760+mmu:14423+mmu:14425+mmu:14426+mmu:171212+mmu:207839+mmu:212996+mmu:230145+mmu:231050+mmu:233733+mmu:241391+mmu:270049+mmu:271786+mmu:67909+mmu:71685+mmu:78754"	title="108148 (Galnt2), 108150 (Galnt7), 108760 (Galnt16), 14423 (Galnt1), 14425 (Galnt3), 14426 (Galnt4), 171212 (Galnt10), 207839 (Galnt6), 212996 (Wbscr17), 230145 (Galnt12), 231050 (Galnt11), 233733 (Galnt18), 241391 (Galnt5), 270049 (Galntl6), 271786 (Galnt13), 67909 (Galntl5), 71685 (Galnt14), 78754 (Galnt15)" />
+<area shape=poly	coords=434,641,444,631,448,631,438,641	href="/dbget-bin/www_bget?mmu:59048+mmu:94192"	title="59048 (C1galt1c1), 94192 (C1galt1)" />
+<area shape=poly	coords=435,608,445,618,449,618,439,608	href="/dbget-bin/www_bget?mmu:14537+mmu:218476+mmu:72077"	title="14537 (Gcnt1), 218476 (Gcnt4), 72077 (Gcnt3)" />
+<area shape=poly	coords=507,621,527,621,527,625,507,625	href="/dbget-bin/www_bget?mmu:108148+mmu:108150+mmu:108760+mmu:14423+mmu:14425+mmu:14426+mmu:171212+mmu:207839+mmu:212996+mmu:230145+mmu:231050+mmu:233733+mmu:241391+mmu:270049+mmu:271786+mmu:67909+mmu:71685+mmu:78754"	title="108148 (Galnt2), 108150 (Galnt7), 108760 (Galnt16), 14423 (Galnt1), 14425 (Galnt3), 14426 (Galnt4), 171212 (Galnt10), 207839 (Galnt6), 212996 (Wbscr17), 230145 (Galnt12), 231050 (Galnt11), 233733 (Galnt18), 241391 (Galnt5), 270049 (Galntl6), 271786 (Galnt13), 67909 (Galntl5), 71685 (Galnt14), 78754 (Galnt15)" />
+<area shape=poly	coords=192,791,202,781,206,781,196,791	href="/dbget-bin/www_bget?mmu:59048+mmu:94192"	title="59048 (C1galt1c1), 94192 (C1galt1)" />
+<area shape=poly	coords=193,758,203,768,207,768,197,758	href="/dbget-bin/www_bget?mmu:20445"	title="20445 (St6galnac1)" />
+<area shape=poly	coords=265,771,285,771,285,775,265,775	href="/dbget-bin/www_bget?mmu:108148+mmu:108150+mmu:108760+mmu:14423+mmu:14425+mmu:14426+mmu:171212+mmu:207839+mmu:212996+mmu:230145+mmu:231050+mmu:233733+mmu:241391+mmu:270049+mmu:271786+mmu:67909+mmu:71685+mmu:78754"	title="108148 (Galnt2), 108150 (Galnt7), 108760 (Galnt16), 14423 (Galnt1), 14425 (Galnt3), 14426 (Galnt4), 171212 (Galnt10), 207839 (Galnt6), 212996 (Wbscr17), 230145 (Galnt12), 231050 (Galnt11), 233733 (Galnt18), 241391 (Galnt5), 270049 (Galntl6), 271786 (Galnt13), 67909 (Galntl5), 71685 (Galnt14), 78754 (Galnt15)" />
+<area shape=poly	coords=215,676,235,676,235,680,215,680	href="/dbget-bin/www_bget?mmu:108148+mmu:108150+mmu:108760+mmu:14423+mmu:14425+mmu:14426+mmu:171212+mmu:207839+mmu:212996+mmu:230145+mmu:231050+mmu:233733+mmu:241391+mmu:270049+mmu:271786+mmu:67909+mmu:71685+mmu:78754"	title="108148 (Galnt2), 108150 (Galnt7), 108760 (Galnt16), 14423 (Galnt1), 14425 (Galnt3), 14426 (Galnt4), 171212 (Galnt10), 207839 (Galnt6), 212996 (Wbscr17), 230145 (Galnt12), 231050 (Galnt11), 233733 (Galnt18), 241391 (Galnt5), 270049 (Galntl6), 271786 (Galnt13), 67909 (Galntl5), 71685 (Galnt14), 78754 (Galnt15)" />
+<area shape=poly	coords=131,602,151,602,151,606,131,606	href="/dbget-bin/www_bget?mmu:108148+mmu:108150+mmu:108760+mmu:14423+mmu:14425+mmu:14426+mmu:171212+mmu:207839+mmu:212996+mmu:230145+mmu:231050+mmu:233733+mmu:241391+mmu:270049+mmu:271786+mmu:67909+mmu:71685+mmu:78754"	title="108148 (Galnt2), 108150 (Galnt7), 108760 (Galnt16), 14423 (Galnt1), 14425 (Galnt3), 14426 (Galnt4), 171212 (Galnt10), 207839 (Galnt6), 212996 (Wbscr17), 230145 (Galnt12), 231050 (Galnt11), 233733 (Galnt18), 241391 (Galnt5), 270049 (Galntl6), 271786 (Galnt13), 67909 (Galntl5), 71685 (Galnt14), 78754 (Galnt15)" />
+<area shape=rect	coords=558,163,650,197	href="/kegg-bin/show_pathway?mmu00533"	title="mmu00533: Glycosaminoglycan biosynthesis - keratan sulfate" onmouseover="popupTimer(&quot;mmu00533&quot;, &quot;mmu00533: Glycosaminoglycan biosynthesis - keratan sulfate&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=40,45,339,70	href="/dbget-bin/www_bget?mmu00512"	title="mmu00512: Mucin type O-glycan biosynthesis" onmouseover="popupTimer(&quot;mmu00512&quot;, &quot;mmu00512: Mucin type O-glycan biosynthesis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

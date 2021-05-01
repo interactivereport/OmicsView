@@ -1,0 +1,488 @@
+<html>
+<!---
+ENTRY       rno05204
+DEFINITION  Chemical carcinogenesis - Rattus norvegicus (rat)
+--->
+<head>
+<title>
+KEGG PATHWAY: Chemical carcinogenesis - Rattus norvegicus (rat)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(obj){
+  var form = document.forms["form2"];
+  var idx = obj.selectedIndex;
+  var value = obj.options[idx].value;
+	
+  if(value == "1.0_T01003")
+  {
+    form.scale.value = "1.0";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.70_T01003")
+  {
+    form.scale.value = "0.70";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.35_T01003")
+  {
+    form.scale.value = "0.35";
+    form.orgs.value  = "T01003";
+  }
+  else
+	{
+    form.scale.value = value;
+		form.orgs.value  = '';
+    if(form.image)
+    {
+		form.image.value  = '';
+    }
+		form.map.value = "rno05204";
+	}
+
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Chemical carcinogenesis - Rattus norvegicus (rat)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=05204&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map05204.keg&query=rno&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+rno05204">Pathway entry</a>
+
+| <a href="https://www.kegg.jp/kegg-bin/download?entry=rno05204&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+It has been estimated that exposure to environmental chemical carcinogens may contribute significantly to the causation of a sizable fraction, perhaps a majority, of human cancers. Human carcinogens act through a variety of genotoxic and non-genotoxic mechanisms. Genotoxic carcinogens can attack biological macromolecules such as DNA and RNA either directly or indirectly through metabolism, resulting in the formation of adducts with these macromolecules. If DNA adducts escape cellular repair mechanisms and persist, they may lead to miscoding, resulting in permanent mutations. Non-genotoxic carcinogens act by the mechanisms such as induction of inflammation, immunosuppression, formation of reactive oxygen species, activation of receptors, and epigenetic silencing. Together, these genotoxic and non-genotoxic mechanisms can alter signal-transduction pathways that finally result in hypermutability, genomic instability, loss of proliferation control, and resistance to apoptosis - some of the characteristic features of cancer cells.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="rno.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno" selected>Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="oro">Odobenus rosmarus divergens (Pacific walrus)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="oor">Orcinus orca (killer whale)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="tmu">Trichechus manatus latirostris (Florida manatee)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="05204" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="select_scale" onChange="resize_map(this)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="rno05204" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="orgs">
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/rno/rno05204.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=1090,1888,4	href="/dbget-bin/www_bget?C14869"	title="C14869 (Trichloroethanol glucuronide)" onmouseover="popupTimer(&quot;C14869&quot;, &quot;C14869 (Trichloroethanol glucuronide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=880,1847,4	href="/dbget-bin/www_bget?C06899"	title="C06899 (Chloral hydrate)" onmouseover="popupTimer(&quot;C06899&quot;, &quot;C06899 (Chloral hydrate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=983,1888,4	href="/dbget-bin/www_bget?C07490"	title="C07490 (Trichloroethanol)" onmouseover="popupTimer(&quot;C07490&quot;, &quot;C07490 (Trichloroethanol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=983,1807,4	href="/dbget-bin/www_bget?C11150"	title="C11150 (Trichloroacetate)" onmouseover="popupTimer(&quot;C11150&quot;, &quot;C11150 (Trichloroacetate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=983,1763,4	href="/dbget-bin/www_bget?C11149"	title="C11149 (Dichloroacetate)" onmouseover="popupTimer(&quot;C11149&quot;, &quot;C11149 (Dichloroacetate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=855,1763,4	href="/dbget-bin/www_bget?C14867"	title="C14867 (Dichloroacetyl chloride)" onmouseover="popupTimer(&quot;C14867&quot;, &quot;C14867 (Dichloroacetyl chloride)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=788,1847,4	href="/dbget-bin/www_bget?C14866"	title="C14866 (Chloral)" onmouseover="popupTimer(&quot;C14866&quot;, &quot;C14866 (Chloral)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=765,1931,4	href="/dbget-bin/www_bget?C14868"	title="C14868 (S-(1,2-Dichlorovinyl)glutathione)" onmouseover="popupTimer(&quot;C14868&quot;, &quot;C14868 (S-(1,2-Dichlorovinyl)glutathione)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=788,1763,4	href="/dbget-bin/www_bget?C11148"	title="C11148 (TCE epoxide)" onmouseover="popupTimer(&quot;C11148&quot;, &quot;C11148 (TCE epoxide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=310,1178,4	href="/dbget-bin/www_bget?C19586"	title="C19586 (Aflatoxin B1-exo-8,9-epoxide)" onmouseover="popupTimer(&quot;C19586&quot;, &quot;C19586 (Aflatoxin B1-exo-8,9-epoxide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=466,481,4	href="/dbget-bin/www_bget?C14853"	title="C14853 (Benzo[a]pyrene-7,8-dihydrodiol-9,10-oxide)" onmouseover="popupTimer(&quot;C14853&quot;, &quot;C14853 (Benzo[a]pyrene-7,8-dihydrodiol-9,10-oxide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=402,431,4	href="/dbget-bin/www_bget?C14854"	title="C14854 (9-Hydroxybenzo[a]pyrene-4,5-oxide)" onmouseover="popupTimer(&quot;C14854&quot;, &quot;C14854 (9-Hydroxybenzo[a]pyrene-4,5-oxide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=356,546,4	href="/dbget-bin/www_bget?C14856"	title="C14856 (7,8-Dihydro-7-hydroxy-8-S-glutathionyl-benzo[a]pyrene)" onmouseover="popupTimer(&quot;C14856&quot;, &quot;C14856 (7,8-Dihydro-7-hydroxy-8-S-glutathionyl-benzo[a]pyrene)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=304,547,4	href="/dbget-bin/www_bget?C14855"	title="C14855 (4,5-Dihydro-4-hydroxy-5-S-glutathionyl-benzo[a]pyrene)" onmouseover="popupTimer(&quot;C14855&quot;, &quot;C14855 (4,5-Dihydro-4-hydroxy-5-S-glutathionyl-benzo[a]pyrene)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=356,481,4	href="/dbget-bin/www_bget?C14852"	title="C14852 (Benzo[a]pyrene-7,8-diol)" onmouseover="popupTimer(&quot;C14852&quot;, &quot;C14852 (Benzo[a]pyrene-7,8-diol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=73,481,4	href="/dbget-bin/www_bget?C07535"	title="C07535 (Benzo[a]pyrene)" onmouseover="popupTimer(&quot;C07535&quot;, &quot;C07535 (Benzo[a]pyrene)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=204,495,4	href="/dbget-bin/www_bget?C14851"	title="C14851 (Benzo[a]pyrene-4,5-oxide)" onmouseover="popupTimer(&quot;C14851&quot;, &quot;C14851 (Benzo[a]pyrene-4,5-oxide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=204,481,4	href="/dbget-bin/www_bget?C14850"	title="C14850 (Benzo[a]pyrene-7,8-oxide)" onmouseover="popupTimer(&quot;C14850&quot;, &quot;C14850 (Benzo[a]pyrene-7,8-oxide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=204,467,4	href="/dbget-bin/www_bget?C14849"	title="C14849 (Benzo[a]pyrene-9,10-oxide)" onmouseover="popupTimer(&quot;C14849&quot;, &quot;C14849 (Benzo[a]pyrene-9,10-oxide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=305,431,4	href="/dbget-bin/www_bget?C14556"	title="C14556 (9-Hydroxybenzo[a]pyrene)" onmouseover="popupTimer(&quot;C14556&quot;, &quot;C14556 (9-Hydroxybenzo[a]pyrene)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=828,578,4	href="/dbget-bin/www_bget?C19561"	title="C19561 (7-Hydroxymethyl-12-methylbenz[a]anthracene)" onmouseover="popupTimer(&quot;C19561&quot;, &quot;C19561 (7-Hydroxymethyl-12-methylbenz[a]anthracene)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=794,525,4	href="/dbget-bin/www_bget?C19489"	title="C19489 (1a,11b-Dihydro-4,9-dimethylbenz[a]anthra[3,4-b]oxirene)" onmouseover="popupTimer(&quot;C19489&quot;, &quot;C19489 (1a,11b-Dihydro-4,9-dimethylbenz[a]anthra[3,4-b]oxirene)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=908,525,4	href="/dbget-bin/www_bget?C19490"	title="C19490 (trans-3,4-Dihydro-3,4-dihydroxy-7,12-dimethylbenz[a]anthracene)" onmouseover="popupTimer(&quot;C19490&quot;, &quot;C19490 (trans-3,4-Dihydro-3,4-dihydroxy-7,12-dimethylbenz[a]anthracene)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1022,525,4	href="/dbget-bin/www_bget?C19559"	title="C19559 ((1aalpha,2beta,3alpha,11calpha)-1a,2,3,11c-Tetrahydro-6,11-dimethylbenzo[6,7]phenanthro[3,4-b]oxirene-2,3-diol)" onmouseover="popupTimer(&quot;C19559&quot;, &quot;C19559 ((1aalpha,2beta,3alpha,11calpha)-1a,2,3,11c-Tetrahydro-6,11-dimethylbenzo[6,7]phenanthro[3,4-b]oxirene-2,3-diol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=967,578,4	href="/dbget-bin/www_bget?C19562"	title="C19562 (7-Hydroxymethyl-12-methylbenz[a]anthracene sulfate)" onmouseover="popupTimer(&quot;C19562&quot;, &quot;C19562 (7-Hydroxymethyl-12-methylbenz[a]anthracene sulfate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=690,578,4	href="/dbget-bin/www_bget?C19488"	title="C19488 (7,12-Dimethylbenz[a]anthracene)" onmouseover="popupTimer(&quot;C19488&quot;, &quot;C19488 (7,12-Dimethylbenz[a]anthracene)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=170,1455,4	href="/dbget-bin/www_bget?C16453"	title="C16453 (4-(N-Nitrosomethylamino)-1-(3-pyridyl)-1-butanone)" onmouseover="popupTimer(&quot;C16453&quot;, &quot;C16453 (4-(N-Nitrosomethylamino)-1-(3-pyridyl)-1-butanone)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=308,1455,4	href="/dbget-bin/www_bget?C19566"	title="C19566 (4-Hydroxy-4-(methylnitrosoamino)-1-(3-pyridinyl)-1-butanone)" onmouseover="popupTimer(&quot;C19566&quot;, &quot;C19566 (4-Hydroxy-4-(methylnitrosoamino)-1-(3-pyridinyl)-1-butanone)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=427,1455,4	href="/dbget-bin/www_bget?C19567"	title="C19567 (4-Oxo-1-(3-pyridyl)-1-butanone)" onmouseover="popupTimer(&quot;C19567&quot;, &quot;C19567 (4-Oxo-1-(3-pyridyl)-1-butanone)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=384,1498,4	href="/dbget-bin/www_bget?C19568"	title="C19568 (N-Nitrosomethanamine)" onmouseover="popupTimer(&quot;C19568&quot;, &quot;C19568 (N-Nitrosomethanamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=312,1332,4	href="/dbget-bin/www_bget?C19563"	title="C19563 (4-[(Hydroxymethyl)nitrosoamino]-1-(3-pyridinyl)-1-butanone)" onmouseover="popupTimer(&quot;C19563&quot;, &quot;C19563 (4-[(Hydroxymethyl)nitrosoamino]-1-(3-pyridinyl)-1-butanone)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=428,1332,4	href="/dbget-bin/www_bget?C19564"	title="C19564 (4-(Nitrosoamino)-1-(3-pyridinyl)-1-butanone)" onmouseover="popupTimer(&quot;C19564&quot;, &quot;C19564 (4-(Nitrosoamino)-1-(3-pyridinyl)-1-butanone)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=541,1332,4	href="/dbget-bin/www_bget?C19565"	title="C19565 (4-Hydroxy-1-(3-pyridinyl)-1-butanone)" onmouseover="popupTimer(&quot;C19565&quot;, &quot;C19565 (4-Hydroxy-1-(3-pyridinyl)-1-butanone)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=541,1456,4	href="/dbget-bin/www_bget?C19569"	title="C19569 (3-Succinoylpyridine)" onmouseover="popupTimer(&quot;C19569&quot;, &quot;C19569 (3-Succinoylpyridine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=170,1542,4	href="/dbget-bin/www_bget?C19574"	title="C19574 (4-(Methylnitrosamino)-1-(3-pyridyl)-1-butanol)" onmouseover="popupTimer(&quot;C19574&quot;, &quot;C19574 (4-(Methylnitrosamino)-1-(3-pyridyl)-1-butanol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=307,1542,4	href="/dbget-bin/www_bget?C19577"	title="C19577 (1-(Methylnitrosoamino)-4-(3-pyridinyl)-1,4-butanediol)" onmouseover="popupTimer(&quot;C19577&quot;, &quot;C19577 (1-(Methylnitrosoamino)-4-(3-pyridinyl)-1,4-butanediol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=427,1542,4	href="/dbget-bin/www_bget?C19578"	title="C19578 (5-(3-Pyridyl)-2-hydroxytetrahydrofuran)" onmouseover="popupTimer(&quot;C19578&quot;, &quot;C19578 (5-(3-Pyridyl)-2-hydroxytetrahydrofuran)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=307,1629,4	href="/dbget-bin/www_bget?C19580"	title="C19580 (alpha-[3-[(Hydroxymethyl)nitrosoamino]propyl]-3-pyridinemethanol)" onmouseover="popupTimer(&quot;C19580&quot;, &quot;C19580 (alpha-[3-[(Hydroxymethyl)nitrosoamino]propyl]-3-pyridinemethanol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=427,1629,4	href="/dbget-bin/www_bget?C19581"	title="C19581 (alpha-[3-(Nitrosoamino)propyl]-3-pyridinemethanol)" onmouseover="popupTimer(&quot;C19581&quot;, &quot;C19581 (alpha-[3-(Nitrosoamino)propyl]-3-pyridinemethanol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=540,1629,4	href="/dbget-bin/www_bget?C19582"	title="C19582 (1-(3-Pyridinyl)-1,4-butanediol)" onmouseover="popupTimer(&quot;C19582&quot;, &quot;C19582 (1-(3-Pyridinyl)-1,4-butanediol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=540,1542,4	href="/dbget-bin/www_bget?C19579"	title="C19579 (gamma-Hydroxy-3-pyridinebutanoate)" onmouseover="popupTimer(&quot;C19579&quot;, &quot;C19579 (gamma-Hydroxy-3-pyridinebutanoate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=277,1371,4	href="/dbget-bin/www_bget?C19602"	title="C19602 (4-(Methylnitrosamino)-1-(1-oxido-3-pyridinyl)-1-butanone)" onmouseover="popupTimer(&quot;C19602&quot;, &quot;C19602 (4-(Methylnitrosamino)-1-(1-oxido-3-pyridinyl)-1-butanone)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=276,1591,4	href="/dbget-bin/www_bget?C19603"	title="C19603 (4-(Methylnitrosamino)-1-(3-pyridyl-N-oxide)-1-butanol)" onmouseover="popupTimer(&quot;C19603&quot;, &quot;C19603 (4-(Methylnitrosamino)-1-(3-pyridyl-N-oxide)-1-butanol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=268,1683,4	href="/dbget-bin/www_bget?C19605"	title="C19605 (4-(Methylnitrosamino)-1-(3-pyridyl)-1-butanol glucuronide)" onmouseover="popupTimer(&quot;C19605&quot;, &quot;C19605 (4-(Methylnitrosamino)-1-(3-pyridyl)-1-butanol glucuronide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=268,1696,4	href="/dbget-bin/www_bget?C19606"	title="C19606 (NNAL-N-glucuronide)" onmouseover="popupTimer(&quot;C19606&quot;, &quot;C19606 (NNAL-N-glucuronide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=173,1178,4	href="/dbget-bin/www_bget?C06800"	title="C06800 (Aflatoxin B1)" onmouseover="popupTimer(&quot;C06800&quot;, &quot;C06800 (Aflatoxin B1)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=657,1847,4	href="/dbget-bin/www_bget?C06790"	title="C06790 (Trichloroethene)" onmouseover="popupTimer(&quot;C06790&quot;, &quot;C06790 (Trichloroethene)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=866,705,4	href="/dbget-bin/www_bget?C07122"	title="C07122 (Melphalan)" onmouseover="popupTimer(&quot;C07122&quot;, &quot;C07122 (Melphalan)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=866,753,4	href="/dbget-bin/www_bget?C07641"	title="C07641 (Thiotepa)" onmouseover="popupTimer(&quot;C07641&quot;, &quot;C07641 (Thiotepa)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=100,213,4	href="/dbget-bin/www_bget?C10998"	title="C10998 (4-Aminobiphenyl)" onmouseover="popupTimer(&quot;C10998&quot;, &quot;C10998 (4-Aminobiphenyl)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=248,161,4	href="/dbget-bin/www_bget?C20285"	title="C20285 (4-Acetylaminobiphenyl)" onmouseover="popupTimer(&quot;C20285&quot;, &quot;C20285 (4-Acetylaminobiphenyl)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=248,214,4	href="/dbget-bin/www_bget?C03622"	title="C03622 (N-Hydroxy-4-aminobiphenyl)" onmouseover="popupTimer(&quot;C03622&quot;, &quot;C03622 (N-Hydroxy-4-aminobiphenyl)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=378,214,4	href="/dbget-bin/www_bget?C03621"	title="C03621 (N-Acetoxy-4-aminobiphenyl)" onmouseover="popupTimer(&quot;C03621&quot;, &quot;C03621 (N-Acetoxy-4-aminobiphenyl)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=688,143,4	href="/dbget-bin/www_bget?C16038"	title="C16038 (2-Amino-1-methyl-6-phenylimidazo[4,5-b]pyridine)" onmouseover="popupTimer(&quot;C16038&quot;, &quot;C16038 (2-Amino-1-methyl-6-phenylimidazo[4,5-b]pyridine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=812,144,4	href="/dbget-bin/www_bget?C20286"	title="C20286 (2-Hydroxyamino-1-methyl-6-phenylimidazo[4,5-b]pyridine)" onmouseover="popupTimer(&quot;C20286&quot;, &quot;C20286 (2-Hydroxyamino-1-methyl-6-phenylimidazo[4,5-b]pyridine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=936,145,4	href="/dbget-bin/www_bget?C20287"	title="C20287 (2-Acetoxyamino-1-methyl-6-phenylimidazo[4,5-b]pyridine)" onmouseover="popupTimer(&quot;C20287&quot;, &quot;C20287 (2-Acetoxyamino-1-methyl-6-phenylimidazo[4,5-b]pyridine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=937,187,4	href="/dbget-bin/www_bget?C20288"	title="C20288 (N-Sulfonyloxy-PhIP)" onmouseover="popupTimer(&quot;C20288&quot;, &quot;C20288 (N-Sulfonyloxy-PhIP)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=687,260,4	href="/dbget-bin/www_bget?C19180"	title="C19180 (2-Amino-3-methylimidazo[4,5-f]quinoline)" onmouseover="popupTimer(&quot;C19180&quot;, &quot;C19180 (2-Amino-3-methylimidazo[4,5-f]quinoline)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=937,260,4	href="/dbget-bin/www_bget?C20290"	title="C20290 (N-Acetoxy-IQ)" onmouseover="popupTimer(&quot;C20290&quot;, &quot;C20290 (N-Acetoxy-IQ)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=812,260,4	href="/dbget-bin/www_bget?C20289"	title="C20289 (N-Hydroxy-IQ)" onmouseover="popupTimer(&quot;C20289&quot;, &quot;C20289 (N-Hydroxy-IQ)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=690,326,4	href="/dbget-bin/www_bget?C19255"	title="C19255 (MeIQx)" onmouseover="popupTimer(&quot;C19255&quot;, &quot;C19255 (MeIQx)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=934,327,4	href="/dbget-bin/www_bget?C20293"	title="C20293 (N-Acetoxy-MeIQx)" onmouseover="popupTimer(&quot;C20293&quot;, &quot;C20293 (N-Acetoxy-MeIQx)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=812,327,4	href="/dbget-bin/www_bget?C20291"	title="C20291 (N-Hydroxy-MeIQx)" onmouseover="popupTimer(&quot;C20291&quot;, &quot;C20291 (N-Hydroxy-MeIQx)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=111,757,4	href="/dbget-bin/www_bget?C19525"	title="C19525 (Sudan I)" onmouseover="popupTimer(&quot;C19525&quot;, &quot;C19525 (Sudan I)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=252,682,4	href="/dbget-bin/www_bget?C20284"	title="C20284 (Benzenediazonium)" onmouseover="popupTimer(&quot;C20284&quot;, &quot;C20284 (Benzenediazonium)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=276,709,4	href="/dbget-bin/www_bget?C03012"	title="C03012 (Naphthalene-1,2-diol)" onmouseover="popupTimer(&quot;C03012&quot;, &quot;C03012 (Naphthalene-1,2-diol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=401,710,4	href="/dbget-bin/www_bget?C14783"	title="C14783 (1,2-Naphthoquinone)" onmouseover="popupTimer(&quot;C14783&quot;, &quot;C14783 (1,2-Naphthoquinone)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=276,758,4	href="/dbget-bin/www_bget?C20281"	title="C20281 (1-(4-Hydroxyphenylazo)-2-naphthol)" onmouseover="popupTimer(&quot;C20281&quot;, &quot;C20281 (1-(4-Hydroxyphenylazo)-2-naphthol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=401,759,4	href="/dbget-bin/www_bget?C20283"	title="C20283 (1-(3,4-Dihydroxyphenylazo)-2-naphthol)" onmouseover="popupTimer(&quot;C20283&quot;, &quot;C20283 (1-(3,4-Dihydroxyphenylazo)-2-naphthol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=276,814,4	href="/dbget-bin/www_bget?C20280"	title="C20280 (1-Phenylazo-2,6-dihydroxynaphthalene)" onmouseover="popupTimer(&quot;C20280&quot;, &quot;C20280 (1-Phenylazo-2,6-dihydroxynaphthalene)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=403,814,4	href="/dbget-bin/www_bget?C20282"	title="C20282 (1-(4-Hydroxyphenylazo)-naphthalene-2,6-diol)" onmouseover="popupTimer(&quot;C20282&quot;, &quot;C20282 (1-(4-Hydroxyphenylazo)-naphthalene-2,6-diol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=125,971,4	href="/dbget-bin/www_bget?C19161"	title="C19161 (Chromium (VI))" onmouseover="popupTimer(&quot;C19161&quot;, &quot;C19161 (Chromium (VI))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=184,971,4	href="/dbget-bin/www_bget?C20294"	title="C20294 (Chromium (V))" onmouseover="popupTimer(&quot;C20294&quot;, &quot;C20294 (Chromium (V))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=245,971,4	href="/dbget-bin/www_bget?C20295"	title="C20295 (Chromium (IV))" onmouseover="popupTimer(&quot;C20295&quot;, &quot;C20295 (Chromium (IV))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=307,971,4	href="/dbget-bin/www_bget?C19368"	title="C19368 (Chromium (III))" onmouseover="popupTimer(&quot;C19368&quot;, &quot;C19368 (Chromium (III))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=137,1043,4	href="/dbget-bin/www_bget?C16844"	title="C16844 (Hydroxyl radical)" onmouseover="popupTimer(&quot;C16844&quot;, &quot;C16844 (Hydroxyl radical)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=196,1044,4	href="/dbget-bin/www_bget?C16844"	title="C16844 (Hydroxyl radical)" onmouseover="popupTimer(&quot;C16844&quot;, &quot;C16844 (Hydroxyl radical)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=258,1044,4	href="/dbget-bin/www_bget?C16844"	title="C16844 (Hydroxyl radical)" onmouseover="popupTimer(&quot;C16844&quot;, &quot;C16844 (Hydroxyl radical)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=690,992,4	href="/dbget-bin/www_bget?C20296"	title="C20296 (Arsenic (V))" onmouseover="popupTimer(&quot;C20296&quot;, &quot;C20296 (Arsenic (V))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=784,994,4	href="/dbget-bin/www_bget?C20298"	title="C20298 (Arsenic (III))" onmouseover="popupTimer(&quot;C20298&quot;, &quot;C20298 (Arsenic (III))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=718,1064,4	href="/dbget-bin/www_bget?C16844"	title="C16844 (Hydroxyl radical)" onmouseover="popupTimer(&quot;C16844&quot;, &quot;C16844 (Hydroxyl radical)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=884,983,4	href="/dbget-bin/www_bget?C14527"	title="C14527 (Methyl methacrylate)" onmouseover="popupTimer(&quot;C14527&quot;, &quot;C14527 (Methyl methacrylate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=884,1008,4	href="/dbget-bin/www_bget?C20300"	title="C20300 (Dimethylarsinous acid)" onmouseover="popupTimer(&quot;C20300&quot;, &quot;C20300 (Dimethylarsinous acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=765,1594,4	href="/dbget-bin/www_bget?C14704"	title="C14704 (N-Nitrosodimethylamine)" onmouseover="popupTimer(&quot;C14704&quot;, &quot;C14704 (N-Nitrosodimethylamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=877,1594,4	href="/dbget-bin/www_bget?C20301"	title="C20301 (alpha-Hydroxy-NDMA)" onmouseover="popupTimer(&quot;C20301&quot;, &quot;C20301 (alpha-Hydroxy-NDMA)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=942,1594,4	href="/dbget-bin/www_bget?C19568"	title="C19568 (N-Nitrosomethanamine)" onmouseover="popupTimer(&quot;C19568&quot;, &quot;C19568 (N-Nitrosomethanamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1007,1594,4	href="/dbget-bin/www_bget?C20306"	title="C20306 (Methyldiazohydroxide)" onmouseover="popupTimer(&quot;C20306&quot;, &quot;C20306 (Methyldiazohydroxide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1071,1594,4	href="/dbget-bin/www_bget?C20302"	title="C20302 (Methyldiazonium ion)" onmouseover="popupTimer(&quot;C20302&quot;, &quot;C20302 (Methyldiazonium ion)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=128,1789,4	href="/dbget-bin/www_bget?C06548"	title="C06548 (Ethylene oxide)" onmouseover="popupTimer(&quot;C06548&quot;, &quot;C06548 (Ethylene oxide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=127,1880,4	href="/dbget-bin/www_bget?C06793"	title="C06793 (Vinyl chloride)" onmouseover="popupTimer(&quot;C06793&quot;, &quot;C06793 (Vinyl chloride)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=241,1882,4	href="/dbget-bin/www_bget?C20303"	title="C20303 (Chloroethylene oxide)" onmouseover="popupTimer(&quot;C20303&quot;, &quot;C20303 (Chloroethylene oxide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=151,2101,4	href="/dbget-bin/www_bget?C06752"	title="C06752 (1,2-Dichloroethane)" onmouseover="popupTimer(&quot;C06752&quot;, &quot;C06752 (1,2-Dichloroethane)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=266,2053,4	href="/dbget-bin/www_bget?C20304"	title="C20304 (S-(2-Chloroethyl)glutathione)" onmouseover="popupTimer(&quot;C20304&quot;, &quot;C20304 (S-(2-Chloroethyl)glutathione)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=266,2011,4	href="/dbget-bin/www_bget?C06547"	title="C06547 (Ethylene)" onmouseover="popupTimer(&quot;C06547&quot;, &quot;C06547 (Ethylene)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=381,2053,4	href="/dbget-bin/www_bget?C14874"	title="C14874 (Glutathione episulfonium ion)" onmouseover="popupTimer(&quot;C14874&quot;, &quot;C14874 (Glutathione episulfonium ion)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=275,2101,4	href="/dbget-bin/www_bget?C20305"	title="C20305 (1,2-Dichloroethanol)" onmouseover="popupTimer(&quot;C20305&quot;, &quot;C20305 (1,2-Dichloroethanol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=378,2101,4	href="/dbget-bin/www_bget?C06754"	title="C06754 (Chloroacetaldehyde)" onmouseover="popupTimer(&quot;C06754&quot;, &quot;C06754 (Chloroacetaldehyde)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=851,2053,4	href="/dbget-bin/www_bget?C19164"	title="C19164 (Sulfur mustard)" onmouseover="popupTimer(&quot;C19164&quot;, &quot;C19164 (Sulfur mustard)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=247,308,4	href="/dbget-bin/www_bget?C20319"	title="C20319 (Hydronitroxide radical)" onmouseover="popupTimer(&quot;C20319&quot;, &quot;C20319 (Hydronitroxide radical)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=377,309,4	href="/dbget-bin/www_bget?C20316"	title="C20316 (4-Nitrosobiphenyl)" onmouseover="popupTimer(&quot;C20316&quot;, &quot;C20316 (4-Nitrosobiphenyl)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=317,263,4	href="/dbget-bin/www_bget?C00027"	title="C00027 (Hydrogen peroxide)" onmouseover="popupTimer(&quot;C00027&quot;, &quot;C00027 (Hydrogen peroxide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=856,1932,4	href="/dbget-bin/www_bget?C20317"	title="C20317 (S-(1,2-Dichlorovinyl)-L-cysteine)" onmouseover="popupTimer(&quot;C20317&quot;, &quot;C20317 (S-(1,2-Dichlorovinyl)-L-cysteine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=948,1933,4	href="/dbget-bin/www_bget?C20318"	title="C20318 (S-(1,2-Dichlorovinyl)thiol)" onmouseover="popupTimer(&quot;C20318&quot;, &quot;C20318 (S-(1,2-Dichlorovinyl)thiol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=163,1070,4	href="/dbget-bin/www_bget?C00027"	title="C00027 (Hydrogen peroxide)" onmouseover="popupTimer(&quot;C00027&quot;, &quot;C00027 (Hydrogen peroxide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=222,1070,4	href="/dbget-bin/www_bget?C00027"	title="C00027 (Hydrogen peroxide)" onmouseover="popupTimer(&quot;C00027&quot;, &quot;C00027 (Hydrogen peroxide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=285,1070,4	href="/dbget-bin/www_bget?C00027"	title="C00027 (Hydrogen peroxide)" onmouseover="popupTimer(&quot;C00027&quot;, &quot;C00027 (Hydrogen peroxide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=753,1074,4	href="/dbget-bin/www_bget?C00027"	title="C00027 (Hydrogen peroxide)" onmouseover="popupTimer(&quot;C00027&quot;, &quot;C00027 (Hydrogen peroxide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=701,1838,747,1855	href="/dbget-bin/www_bget?rno:108348266+rno:171518+rno:171521+rno:24296+rno:24297+rno:24300+rno:25011+rno:25086+rno:286953+rno:292728+rno:29277+rno:29295+rno:29298+rno:293989+rno:361523+rno:499353+rno:685222+rno:83790"	title="108348266, 171518 (Cyp2c22), 171521 (Cyp2c13), 24296 (Cyp1a1), 24297 (Cyp1a2), 24300 (Cyp2b1), 25011 (Cyp2c12), 25086 (Cyp2e1), 286953 (Cyp2b3), 292728 (Cyp2b21), 29277 (Cyp2c11), 29295 (Cyp2b12), 29298 (Cyp2c7), 293989 (Cyp2c6v1), 361523 (Cyp2b2), 499353 (Cyp2c24), 685222 (Cyp2b15), 83790 (Cyp2c23)" />
+<area shape=rect	coords=1015,1880,1061,1897	href="/dbget-bin/www_bget?rno:113992+rno:154516+rno:24861+rno:24862+rno:266685+rno:286954+rno:286989+rno:289533+rno:29623+rno:301595+rno:305264+rno:396527+rno:396551+rno:396552+rno:501907+rno:574523+rno:63867+rno:83808"	title="113992 (Ugt1a6), 154516 (Ugt1a7c), 24861 (Ugt1a1), 24862 (Ugt2b), 266685 (Ugt2b17), 286954 (Ugt2b1), 286989 (Ugt2b7), 289533 (Ugt2a3), 29623 (Ugt2b37), 301595 (Ugt1a8), 305264 (Ugt2b10), 396527 (Ugt1a2), 396551 (Ugt1a3), 396552 (Ugt1a9), 501907 (RGD1559459), 574523 (Ugt1a5), 63867 (Ugt2a1), 83808 (Ugt2b35)" />
+<area shape=rect	coords=905,1801,951,1818	href="/dbget-bin/www_bget?rno:25375+rno:266603+rno:309147+rno:688778+rno:688800"	title="25375 (Aldh3a1), 266603 (Aldh1a3), 309147 (Aldh3b1), 688778, 688800 (Aldh3b2)" />
+<area shape=rect	coords=905,1880,951,1897	href="/dbget-bin/www_bget?rno:100145871+rno:171178+rno:24172+rno:29646+rno:310903"	title="100145871 (Adh5), 171178 (Adh7), 24172 (Adh1), 29646 (Adh4), 310903 (Adh6)" />
+<area shape=rect	coords=685,1925,731,1942	href="/dbget-bin/www_bget?rno:103690044+rno:108348061+rno:108348148+rno:114846+rno:171341+rno:24421+rno:24422+rno:24423+rno:24424+rno:24426+rno:25260+rno:289197+rno:29487+rno:295037+rno:297029+rno:300850+rno:309465+rno:363205+rno:494499+rno:494500+rno:499688+rno:499689+rno:501110+rno:57298+rno:58962+rno:64352+rno:686922+rno:81869"	title="103690044, 108348061, 108348148 (NEWGENE_620381), 114846 (Gsto1), 171341 (Mgst1), 24421 (Gsta1), 24422 (Gsta2), 24423 (Gstm1), 24424 (Gstm2), 24426 (Gstp1), 25260 (Gstt1), 289197 (Mgst3), 29487 (Gstt2), 295037 (Mgst2), 297029 (Gstk1), 300850 (Gsta4), 309465 (Gsto2), 363205 (RGD1562107), 494499 (Gsta5), 494500 (Gsta3), 499688 (Gstm6), 499689 (Gstm4), 501110 (Gsta6), 57298 (Gstm3), 58962 (Hpgds), 64352 (Gstm5), 686922 (Gstt4), 81869 (Gstm7)" />
+<area shape=rect	coords=213,1170,259,1187	href="/dbget-bin/www_bget?rno:24297"	title="24297 (Cyp1a2)" />
+<area shape=rect	coords=383,472,429,489	href="/dbget-bin/www_bget?rno:24296+rno:25426"	title="24296 (Cyp1a1), 25426 (Cyp1b1)" />
+<area shape=rect	coords=325,423,371,440	href="/dbget-bin/www_bget?rno:24296+rno:25426"	title="24296 (Cyp1a1), 25426 (Cyp1b1)" />
+<area shape=rect	coords=108,473,154,490	href="/dbget-bin/www_bget?rno:171518+rno:171521+rno:24296+rno:25011+rno:25426+rno:29277+rno:29298+rno:293989+rno:499353+rno:83790"	title="171518 (Cyp2c22), 171521 (Cyp2c13), 24296 (Cyp1a1), 25011 (Cyp2c12), 25426 (Cyp1b1), 29277 (Cyp2c11), 29298 (Cyp2c7), 293989 (Cyp2c6v1), 499353 (Cyp2c24), 83790 (Cyp2c23)" />
+<area shape=rect	coords=334,500,380,517	href="/dbget-bin/www_bget?rno:103690044+rno:108348061+rno:108348148+rno:114846+rno:171341+rno:24421+rno:24422+rno:24423+rno:24424+rno:24426+rno:25260+rno:289197+rno:29487+rno:295037+rno:297029+rno:300850+rno:309465+rno:363205+rno:494499+rno:494500+rno:499688+rno:499689+rno:501110+rno:57298+rno:58962+rno:64352+rno:686922+rno:81869"	title="103690044, 108348061, 108348148 (NEWGENE_620381), 114846 (Gsto1), 171341 (Mgst1), 24421 (Gsta1), 24422 (Gsta2), 24423 (Gstm1), 24424 (Gstm2), 24426 (Gstp1), 25260 (Gstt1), 289197 (Mgst3), 29487 (Gstt2), 295037 (Mgst2), 297029 (Gstk1), 300850 (Gsta4), 309465 (Gsto2), 363205 (RGD1562107), 494499 (Gsta5), 494500 (Gsta3), 499688 (Gstm6), 499689 (Gstm4), 501110 (Gsta6), 57298 (Gstm3), 58962 (Hpgds), 64352 (Gstm5), 686922 (Gstt4), 81869 (Gstm7)" />
+<area shape=rect	coords=228,538,274,555	href="/dbget-bin/www_bget?rno:103690044+rno:108348061+rno:108348148+rno:114846+rno:171341+rno:24421+rno:24422+rno:24423+rno:24424+rno:24426+rno:25260+rno:289197+rno:29487+rno:295037+rno:297029+rno:300850+rno:309465+rno:363205+rno:494499+rno:494500+rno:499688+rno:499689+rno:501110+rno:57298+rno:58962+rno:64352+rno:686922+rno:81869"	title="103690044, 108348061, 108348148 (NEWGENE_620381), 114846 (Gsto1), 171341 (Mgst1), 24421 (Gsta1), 24422 (Gsta2), 24423 (Gstm1), 24424 (Gstm2), 24426 (Gstp1), 25260 (Gstt1), 289197 (Mgst3), 29487 (Gstt2), 295037 (Mgst2), 297029 (Gstk1), 300850 (Gsta4), 309465 (Gsto2), 363205 (RGD1562107), 494499 (Gsta5), 494500 (Gsta3), 499688 (Gstm6), 499689 (Gstm4), 501110 (Gsta6), 57298 (Gstm3), 58962 (Hpgds), 64352 (Gstm5), 686922 (Gstt4), 81869 (Gstm7)" />
+<area shape=rect	coords=277,473,323,490	href="/dbget-bin/www_bget?rno:25315"	title="25315 (Ephx1)" />
+<area shape=rect	coords=713,517,759,534	href="/dbget-bin/www_bget?rno:24296+rno:25426"	title="24296 (Cyp1a1), 25426 (Cyp1b1)" />
+<area shape=rect	coords=819,517,865,534	href="/dbget-bin/www_bget?rno:25315"	title="25315 (Ephx1)" />
+<area shape=rect	coords=869,570,915,587	href="/dbget-bin/www_bget?rno:24912"	title="24912 (Sult2a1)" />
+<area shape=rect	coords=713,570,759,587	href="/dbget-bin/www_bget?rno:24296+rno:25426"	title="24296 (Cyp1a1), 25426 (Cyp1b1)" />
+<area shape=rect	coords=938,516,984,533	href="/dbget-bin/www_bget?rno:24296+rno:25426"	title="24296 (Cyp1a1), 25426 (Cyp1b1)" />
+<area shape=rect	coords=172,1478,218,1495	href="/dbget-bin/www_bget?rno:25116"	title="25116 (Hsd11b1)" />
+<area shape=rect	coords=147,1497,193,1514	href="/dbget-bin/www_bget?rno:102556347+rno:29224"	title="102556347, 29224 (Cbr1)" />
+<area shape=rect	coords=190,1682,236,1699	href="/dbget-bin/www_bget?rno:113992+rno:154516+rno:24861+rno:24862+rno:266685+rno:286954+rno:286989+rno:289533+rno:29623+rno:301595+rno:305264+rno:396527+rno:396551+rno:396552+rno:501907+rno:574523+rno:63867+rno:83808"	title="113992 (Ugt1a6), 154516 (Ugt1a7c), 24861 (Ugt1a1), 24862 (Ugt2b), 266685 (Ugt2b17), 286954 (Ugt2b1), 286989 (Ugt2b7), 289533 (Ugt2a3), 29623 (Ugt2b37), 301595 (Ugt1a8), 305264 (Ugt2b10), 396527 (Ugt1a2), 396551 (Ugt1a3), 396552 (Ugt1a9), 501907 (RGD1559459), 574523 (Ugt1a5), 63867 (Ugt2a1), 83808 (Ugt2b35)" />
+<area shape=rect	coords=701,1755,747,1772	href="/dbget-bin/www_bget?rno:108348266+rno:171518+rno:171521+rno:24296+rno:24297+rno:24300+rno:25011+rno:25086+rno:286953+rno:292728+rno:29277+rno:29295+rno:29298+rno:293989+rno:361523+rno:499353+rno:685222+rno:83790"	title="108348266, 171518 (Cyp2c22), 171521 (Cyp2c13), 24296 (Cyp1a1), 24297 (Cyp1a2), 24300 (Cyp2b1), 25011 (Cyp2c12), 25086 (Cyp2e1), 286953 (Cyp2b3), 292728 (Cyp2b21), 29277 (Cyp2c11), 29295 (Cyp2b12), 29298 (Cyp2c7), 293989 (Cyp2c6v1), 361523 (Cyp2b2), 499353 (Cyp2c24), 685222 (Cyp2b15), 83790 (Cyp2c23)" />
+<area shape=rect	coords=161,153,207,170	href="/dbget-bin/www_bget?rno:116632"	title="116632 (Nat2)" />
+<area shape=rect	coords=161,206,207,223	href="/dbget-bin/www_bget?rno:24297"	title="24297 (Cyp1a2)" />
+<area shape=rect	coords=293,206,339,223	href="/dbget-bin/www_bget?rno:116631"	title="116631 (Nat1)" />
+<area shape=rect	coords=732,136,778,153	href="/dbget-bin/www_bget?rno:24297"	title="24297 (Cyp1a2)" />
+<area shape=rect	coords=848,137,894,154	href="/dbget-bin/www_bget?rno:116632"	title="116632 (Nat2)" />
+<area shape=rect	coords=848,179,894,196	href="/dbget-bin/www_bget?rno:83783"	title="83783 (Sult1a1)" />
+<area shape=rect	coords=735,251,781,268	href="/dbget-bin/www_bget?rno:24297"	title="24297 (Cyp1a2)" />
+<area shape=rect	coords=735,317,781,334	href="/dbget-bin/www_bget?rno:24297"	title="24297 (Cyp1a2)" />
+<area shape=rect	coords=848,317,894,334	href="/dbget-bin/www_bget?rno:116632"	title="116632 (Nat2)" />
+<area shape=rect	coords=160,702,206,719	href="/dbget-bin/www_bget?rno:100910877+rno:170509+rno:171352+rno:24296+rno:252931+rno:25642+rno:266682"	title="100910877, 170509 (Cyp3a62), 171352 (Cyp3a9), 24296 (Cyp1a1), 252931 (Cyp3a18), 25642 (Cyp3a23/3a1), 266682 (Cyp3a2)" />
+<area shape=rect	coords=160,751,206,768	href="/dbget-bin/www_bget?rno:100910877+rno:170509+rno:171352+rno:24296+rno:252931+rno:25642+rno:266682"	title="100910877, 170509 (Cyp3a62), 171352 (Cyp3a9), 24296 (Cyp1a1), 252931 (Cyp3a18), 25642 (Cyp3a23/3a1), 266682 (Cyp3a2)" />
+<area shape=rect	coords=160,805,206,822	href="/dbget-bin/www_bget?rno:100910877+rno:170509+rno:171352+rno:24296+rno:252931+rno:25642+rno:266682"	title="100910877, 170509 (Cyp3a62), 171352 (Cyp3a9), 24296 (Cyp1a1), 252931 (Cyp3a18), 25642 (Cyp3a23/3a1), 266682 (Cyp3a2)" />
+<area shape=rect	coords=800,1588,846,1605	href="/dbget-bin/www_bget?rno:25086"	title="25086 (Cyp2e1)" />
+<area shape=rect	coords=167,1873,213,1890	href="/dbget-bin/www_bget?rno:25086"	title="25086 (Cyp2e1)" />
+<area shape=rect	coords=180,2045,226,2062	href="/dbget-bin/www_bget?rno:103690044+rno:108348061+rno:108348148+rno:114846+rno:171341+rno:24421+rno:24422+rno:24423+rno:24424+rno:24426+rno:25260+rno:289197+rno:29487+rno:295037+rno:297029+rno:300850+rno:309465+rno:363205+rno:494499+rno:494500+rno:499688+rno:499689+rno:501110+rno:57298+rno:58962+rno:64352+rno:686922+rno:81869"	title="103690044, 108348061, 108348148 (NEWGENE_620381), 114846 (Gsto1), 171341 (Mgst1), 24421 (Gsta1), 24422 (Gsta2), 24423 (Gstm1), 24424 (Gstm2), 24426 (Gstp1), 25260 (Gstt1), 289197 (Mgst3), 29487 (Gstt2), 295037 (Mgst2), 297029 (Gstk1), 300850 (Gsta4), 309465 (Gsto2), 363205 (RGD1562107), 494499 (Gsta5), 494500 (Gsta3), 499688 (Gstm6), 499689 (Gstm4), 501110 (Gsta6), 57298 (Gstm3), 58962 (Hpgds), 64352 (Gstm5), 686922 (Gstt4), 81869 (Gstm7)" />
+<area shape=rect	coords=190,2092,236,2109	href="/dbget-bin/www_bget?rno:25086"	title="25086 (Cyp2e1)" />
+<area shape=rect	coords=295,857,341,874	href="/dbget-bin/www_bget?rno:29527"	title="29527 (Ptgs2)" />
+<area shape=rect	coords=848,250,894,267	href="/dbget-bin/www_bget?rno:116631+rno:116632+rno:290681"	title="116631 (Nat1), 116632 (Nat2), 290681 (Nat3)" />
+<area shape=rect	coords=870,1924,916,1941	href="/dbget-bin/www_bget?rno:311844+rno:541589"	title="311844 (Kyat1), 541589 (Kyat3)" />
+<area shape=rect	coords=116,595,162,612	href="/dbget-bin/www_bget?rno:25242"	title="25242 (Arnt)" />
+<area shape=rect	coords=315,1390,361,1407	href="/dbget-bin/www_bget?rno:25302"	title="25302 (Chrna7)" />
+<area shape=rect	coords=40,45,277,70	href="/dbget-bin/www_bget?rno05204"	title="rno05204: Chemical carcinogenesis" onmouseover="popupTimer(&quot;rno05204&quot;, &quot;rno05204: Chemical carcinogenesis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1062,775,1166,809	href="/kegg-bin/show_pathway?rno05221"	title="rno05221: Acute myeloid leukemia" onmouseover="popupTimer(&quot;rno05221&quot;, &quot;rno05221: Acute myeloid leukemia&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=612,790,716,815	href="/kegg-bin/show_pathway?rno05219"	title="rno05219: Bladder cancer" onmouseover="popupTimer(&quot;rno05219&quot;, &quot;rno05219: Bladder cancer&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=509,275,613,300	href="/kegg-bin/show_pathway?rno05219"	title="rno05219: Bladder cancer" onmouseover="popupTimer(&quot;rno05219&quot;, &quot;rno05219: Bladder cancer&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1153,120,1257,145	href="/kegg-bin/show_pathway?rno05215"	title="rno05215: Prostate cancer" onmouseover="popupTimer(&quot;rno05215&quot;, &quot;rno05215: Prostate cancer&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1152,190,1256,215	href="/kegg-bin/show_pathway?rno05210"	title="rno05210: Colorectal cancer" onmouseover="popupTimer(&quot;rno05210&quot;, &quot;rno05210: Colorectal cancer&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=727,403,855,428	href="/kegg-bin/show_pathway?rno05217"	title="rno05217: Basal cell carcinoma" onmouseover="popupTimer(&quot;rno05217&quot;, &quot;rno05217: Basal cell carcinoma&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=862,402,986,427	href="/kegg-bin/show_pathway?rno05218"	title="rno05218: Melanoma" onmouseover="popupTimer(&quot;rno05218&quot;, &quot;rno05218: Melanoma&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1133,965,1276,990	href="/kegg-bin/show_pathway?rno05217"	title="rno05217: Basal cell carcinoma" onmouseover="popupTimer(&quot;rno05217&quot;, &quot;rno05217: Basal cell carcinoma&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1134,997,1277,1022	href="/kegg-bin/show_pathway?rno05218"	title="rno05218: Melanoma" onmouseover="popupTimer(&quot;rno05218&quot;, &quot;rno05218: Melanoma&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=737,435,850,469	href="/kegg-bin/show_pathway?rno05223"	title="rno05223: Non-small cell lung cancer" onmouseover="popupTimer(&quot;rno05223&quot;, &quot;rno05223: Non-small cell lung cancer&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=869,435,982,469	href="/kegg-bin/show_pathway?rno05222"	title="rno05222: Small cell lung cancer" onmouseover="popupTimer(&quot;rno05222&quot;, &quot;rno05222: Small cell lung cancer&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=413,989,526,1023	href="/kegg-bin/show_pathway?rno05223"	title="rno05223: Non-small cell lung cancer" onmouseover="popupTimer(&quot;rno05223&quot;, &quot;rno05223: Non-small cell lung cancer&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=534,989,647,1023	href="/kegg-bin/show_pathway?rno05222"	title="rno05222: Small cell lung cancer" onmouseover="popupTimer(&quot;rno05222&quot;, &quot;rno05222: Small cell lung cancer&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=686,1168,799,1202	href="/kegg-bin/show_pathway?rno05223"	title="rno05223: Non-small cell lung cancer" onmouseover="popupTimer(&quot;rno05223&quot;, &quot;rno05223: Non-small cell lung cancer&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=808,1168,921,1202	href="/kegg-bin/show_pathway?rno05222"	title="rno05222: Small cell lung cancer" onmouseover="popupTimer(&quot;rno05222&quot;, &quot;rno05222: Small cell lung cancer&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=786,1439,899,1473	href="/kegg-bin/show_pathway?rno05223"	title="rno05223: Non-small cell lung cancer" onmouseover="popupTimer(&quot;rno05223&quot;, &quot;rno05223: Non-small cell lung cancer&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=908,1439,1021,1473	href="/kegg-bin/show_pathway?rno05222"	title="rno05222: Small cell lung cancer" onmouseover="popupTimer(&quot;rno05222&quot;, &quot;rno05222: Small cell lung cancer&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=611,2097,724,2131	href="/kegg-bin/show_pathway?rno05223"	title="rno05223: Non-small cell lung cancer" onmouseover="popupTimer(&quot;rno05223&quot;, &quot;rno05223: Non-small cell lung cancer&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=733,2097,846,2131	href="/kegg-bin/show_pathway?rno05222"	title="rno05222: Small cell lung cancer" onmouseover="popupTimer(&quot;rno05222&quot;, &quot;rno05222: Small cell lung cancer&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=499,1772,603,1806	href="/kegg-bin/show_pathway?rno05221"	title="rno05221: Acute myeloid leukemia" onmouseover="popupTimer(&quot;rno05221&quot;, &quot;rno05221: Acute myeloid leukemia&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=829,1274,987,1308	href="/kegg-bin/show_pathway?rno00980"	title="rno00980: Metabolism of xenobiotics by cytochrome P450" onmouseover="popupTimer(&quot;rno00980&quot;, &quot;rno00980: Metabolism of xenobiotics by cytochrome P450&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

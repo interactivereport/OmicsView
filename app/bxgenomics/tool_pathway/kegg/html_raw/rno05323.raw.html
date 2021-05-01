@@ -1,0 +1,375 @@
+<html>
+<!---
+ENTRY       rno05323
+DEFINITION  Rheumatoid arthritis - Rattus norvegicus (rat)
+--->
+<head>
+<title>
+KEGG PATHWAY: Rheumatoid arthritis - Rattus norvegicus (rat)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(obj){
+  var form = document.forms["form2"];
+  var idx = obj.selectedIndex;
+  var value = obj.options[idx].value;
+	
+  if(value == "1.0_T01003")
+  {
+    form.scale.value = "1.0";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.70_T01003")
+  {
+    form.scale.value = "0.70";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.35_T01003")
+  {
+    form.scale.value = "0.35";
+    form.orgs.value  = "T01003";
+  }
+  else
+	{
+    form.scale.value = value;
+		form.orgs.value  = '';
+    if(form.image)
+    {
+		form.image.value  = '';
+    }
+		form.map.value = "rno05323";
+	}
+
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Rheumatoid arthritis - Rattus norvegicus (rat)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=05323&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map05323.keg&query=rno&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+rno05323">Pathway entry</a>
+
+| <a href="https://www.kegg.jp/kegg-bin/download?entry=rno05323&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Rheumatoid arthritis (RA) is a chronic autoimmune joint disease where persistent inflammation affects bone remodeling leading to progressive bone destruction. In RA, abnormal activation of the immune system elevates pro-inflammatory cytokines and chemokines levels, which can promote synovial angiogenesis and leukocyte infiltration. The synovium forms a hyperplastic pannus with infiltrated macrophage-like and fibroblast-like synoviocytes and invades joints by secreting proteinases and inducing osteoclast differentiation.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="rno.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno" selected>Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="oro">Odobenus rosmarus divergens (Pacific walrus)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="oor">Orcinus orca (killer whale)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="tmu">Trichechus manatus latirostris (Florida manatee)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="05323" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="select_scale" onChange="resize_map(this)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="rno05323" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="orgs">
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/rno/rno05323.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=596,697,4	href="/dbget-bin/www_bget?C05443"	title="C05443 (Vitamin D3)" onmouseover="popupTimer(&quot;C05443&quot;, &quot;C05443 (Vitamin D3)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=613,692,4	href="/dbget-bin/www_bget?C16051"	title="C16051 (Parathyroid hormone)" onmouseover="popupTimer(&quot;C16051&quot;, &quot;C16051 (Parathyroid hormone)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=816,571,4	href="/dbget-bin/www_bget?C00584"	title="C00584 (Prostaglandin E2)" onmouseover="popupTimer(&quot;C00584&quot;, &quot;C00584 (Prostaglandin E2)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1005,766,4	href="/dbget-bin/www_bget?C00080"	title="C00080 (H+)" onmouseover="popupTimer(&quot;C00080&quot;, &quot;C00080 (H+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=826,628,872,645	href="/dbget-bin/www_bget?rno:103689974+rno:117516"	title="103689974, 117516 (Tnfsf11)" />
+<area shape=rect	coords=945,628,991,645	href="/dbget-bin/www_bget?rno:498206"	title="498206 (Tnfrsf11a)" />
+<area shape=rect	coords=828,475,874,492	href="/dbget-bin/www_bget?rno:103689974+rno:117516"	title="103689974, 117516 (Tnfsf11)" />
+<area shape=rect	coords=578,617,624,634	href="/dbget-bin/www_bget?rno:301289"	title="301289 (Il17a)" />
+<area shape=rect	coords=572,513,618,530	href="/dbget-bin/www_bget?rno:24493+rno:24494"	title="24493 (Il1a), 24494 (Il1b)" />
+<area shape=rect	coords=596,494,642,511	href="/dbget-bin/www_bget?rno:103694380+rno:24835"	title="103694380, 24835 (Tnf)" />
+<area shape=rect	coords=572,532,618,549	href="/dbget-bin/www_bget?rno:24498"	title="24498 (Il6)" />
+<area shape=rect	coords=218,638,264,655	href="/dbget-bin/www_bget?rno:155140"	title="155140 (Il23a)" />
+<area shape=rect	coords=218,618,264,635	href="/dbget-bin/www_bget?rno:24498"	title="24498 (Il6)" />
+<area shape=rect	coords=218,556,264,573	href="/dbget-bin/www_bget?rno:25717+rno:59086+rno:81809"	title="25717 (Tgfb3), 59086 (Tgfb1), 81809 (Tgfb2)" />
+<area shape=rect	coords=721,361,767,378	href="/dbget-bin/www_bget?rno:103694381+rno:361795"	title="103694381, 361795 (Ltb)" />
+<area shape=rect	coords=620,513,666,530	href="/dbget-bin/www_bget?rno:171040"	title="171040 (Il11)" />
+<area shape=rect	coords=733,556,779,573	href="/dbget-bin/www_bget?rno:78965"	title="78965 (Csf1)" />
+<area shape=rect	coords=358,193,404,210	href="/dbget-bin/www_bget?rno:25712"	title="25712 (Ifng)" />
+<area shape=rect	coords=1145,401,1191,418	href="/dbget-bin/www_bget?rno:116630"	title="116630 (Csf2)" />
+<area shape=rect	coords=1145,421,1191,438	href="/dbget-bin/www_bget?rno:24498"	title="24498 (Il6)" />
+<area shape=rect	coords=1145,441,1191,458	href="/dbget-bin/www_bget?rno:24494"	title="24494 (Il1b)" />
+<area shape=rect	coords=1145,660,1191,677	href="/dbget-bin/www_bget?rno:171045+rno:300338+rno:300339"	title="171045 (Mmp3), 300338 (Mmp1b), 300339 (Mmp1)" />
+<area shape=rect	coords=1145,680,1191,697	href="/dbget-bin/www_bget?rno:25697"	title="25697 (Ctsl)" />
+<area shape=rect	coords=401,348,447,365	href="/dbget-bin/www_bget?rno:25670"	title="25670 (Il15)" />
+<area shape=rect	coords=721,283,767,300	href="/dbget-bin/www_bget?rno:691714"	title="691714 (RGD1565478)" />
+<area shape=rect	coords=183,313,229,330	href="/dbget-bin/www_bget?rno:100911800+rno:108348072+rno:108348139+rno:24984+rno:24986+rno:294269+rno:294270+rno:294273+rno:294274+rno:309621+rno:309622+rno:365542+rno:688090"	title="100911800, 108348072, 108348139, 24984 (RT1-DOa), 24986 (RT1-Ha), 294269 (RT1-Da), 294270 (RT1-Db1), 294273 (RT1-DMb), 294274 (RT1-DMa), 309621 (RT1-Ba), 309622 (RT1-Bb), 365542 (RT1-DOb), 688090 (Bb)" />
+<area shape=rect	coords=303,313,349,330	href="/dbget-bin/www_bget?rno:100362949+rno:688340"	title="100362949 (TRAV14S2), 688340" />
+<area shape=rect	coords=982,723,1028,740	href="/dbget-bin/www_bget?rno:116455+rno:116664+rno:117596+rno:170667+rno:289407+rno:291969+rno:293650+rno:296981+rno:297566+rno:29757+rno:297797+rno:297932+rno:298103+rno:298451+rno:299159+rno:299971+rno:312488+rno:362802+rno:366545+rno:368044+rno:436582+rno:685232+rno:83615+rno:94170"	title="116455 (Atp6v0a2), 116664 (Atp6v1f), 117596 (Atp6v1b2), 170667 (Atp6v0c), 289407 (Atp6v1g3), 291969 (Atp6v0d1), 293650 (Tcirg1), 296981 (Atp6v0a4), 297566 (Atp6v1e1), 29757 (Atp6v0a1), 297797 (Atp6v1h), 297932 (Atp6v0d2), 298103 (Atp6v1g1), 298451 (Atp6v0b), 299159 (Atp6v1d), 299971 (Atp6v1c1), 312488 (Atp6v1b1), 362802 (Atp6v1c2), 366545 (Atp6v1e2), 368044 (Atp6v1g2), 436582 (Atp6v0e2), 685232 (Atp6v1a), 83615 (Atp6ap1), 94170 (Atp6v0e1)" />
+<area shape=rect	coords=1038,753,1084,770	href="/dbget-bin/www_bget?rno:29175"	title="29175 (Ctsk)" />
+<area shape=rect	coords=1038,773,1084,790	href="/dbget-bin/www_bget?rno:100911394+rno:25732"	title="100911394, 25732 (Acp5)" />
+<area shape=rect	coords=502,334,548,351	href="/dbget-bin/www_bget?rno:287437"	title="287437 (Tnfsf13)" />
+<area shape=rect	coords=502,354,548,371	href="/dbget-bin/www_bget?rno:498666"	title="498666 (Tnfsf13b)" />
+<area shape=rect	coords=340,345,386,362	href="/dbget-bin/www_bget?rno:308995+rno:309684"	title="308995 (Itgal), 309684 (Itgb2)" />
+<area shape=rect	coords=340,375,386,392	href="/dbget-bin/www_bget?rno:25464"	title="25464 (Icam1)" />
+<area shape=rect	coords=183,275,229,292	href="/dbget-bin/www_bget?rno:25408+rno:56822"	title="25408 (Cd80), 56822 (Cd86)" />
+<area shape=rect	coords=303,275,349,292	href="/dbget-bin/www_bget?rno:25660"	title="25660 (Cd28)" />
+<area shape=rect	coords=1013,225,1059,242	href="/dbget-bin/www_bget?rno:54251"	title="54251 (Flt1)" />
+<area shape=rect	coords=620,532,666,549	href="/dbget-bin/www_bget?rno:29197"	title="29197 (Il18)" />
+<area shape=rect	coords=951,225,997,242	href="/dbget-bin/www_bget?rno:83785"	title="83785 (Vegfa)" />
+<area shape=rect	coords=937,296,983,313	href="/dbget-bin/www_bget?rno:24772"	title="24772 (Cxcl12)" />
+<area shape=rect	coords=797,177,843,194	href="/dbget-bin/www_bget?rno:25542"	title="25542 (Ccl3)" />
+<area shape=rect	coords=845,177,891,194	href="/dbget-bin/www_bget?rno:60665"	title="60665 (Cxcl6)" />
+<area shape=rect	coords=402,215,448,232	href="/dbget-bin/www_bget?rno:103689974+rno:117516"	title="103689974, 117516 (Tnfsf11)" />
+<area shape=rect	coords=797,196,843,213	href="/dbget-bin/www_bget?rno:29538"	title="29538 (Ccl20)" />
+<area shape=rect	coords=708,450,754,467	href="/dbget-bin/www_bget?rno:29260+rno:310553"	title="29260 (Tlr4), 310553 (Tlr2)" />
+<area shape=rect	coords=785,450,831,467	href="/dbget-bin/www_bget?rno:24516+rno:314322"	title="24516 (Jun), 314322 (Fos)" />
+<area shape=rect	coords=1145,461,1191,478	href="/dbget-bin/www_bget?rno:81780"	title="81780 (Ccl5)" />
+<area shape=rect	coords=1013,206,1059,223	href="/dbget-bin/www_bget?rno:89804"	title="89804 (Tek)" />
+<area shape=rect	coords=951,206,997,223	href="/dbget-bin/www_bget?rno:89807"	title="89807 (Angpt1)" />
+<area shape=rect	coords=797,158,843,175	href="/dbget-bin/www_bget?rno:24770+rno:287562"	title="24770 (Ccl2), 287562 (Ccl12)" />
+<area shape=rect	coords=303,294,349,311	href="/dbget-bin/www_bget?rno:63835"	title="63835 (Ctla4)" />
+<area shape=rect	coords=40,45,241,70	href="/dbget-bin/www_bget?rno05323"	title="rno05323: Rheumatoid arthritis" onmouseover="popupTimer(&quot;rno05323&quot;, &quot;rno05323: Rheumatoid arthritis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=865,650,945,684	href="/kegg-bin/show_pathway?rno04380"	title="rno04380: Osteoclast differentiation" onmouseover="popupTimer(&quot;rno04380&quot;, &quot;rno04380: Osteoclast differentiation&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=214,335,305,369	href="/kegg-bin/show_pathway?rno04660"	title="rno04660: T cell receptor signaling pathway" onmouseover="popupTimer(&quot;rno04660&quot;, &quot;rno04660: T cell receptor signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1159,158,1268,183	href="/kegg-bin/show_pathway?rno04670"	title="rno04670: Leukocyte transendothelial migration" onmouseover="popupTimer(&quot;rno04670&quot;, &quot;rno04670: Leukocyte transendothelial migration&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1009,248,1141,273	href="/kegg-bin/show_pathway?rno04370"	title="rno04370: VEGF signaling pathway" onmouseover="popupTimer(&quot;rno04370&quot;, &quot;rno04370: VEGF signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=626,405,718,439	href="/kegg-bin/show_pathway?rno04620"	title="rno04620: Toll-like receptor signaling pathway" onmouseover="popupTimer(&quot;rno04620&quot;, &quot;rno04620: Toll-like receptor signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=316,540,407,574	href="/kegg-bin/show_pathway?rno04659"	title="rno04659: Th17 cell differentiation" onmouseover="popupTimer(&quot;rno04659&quot;, &quot;rno04659: Th17 cell differentiation&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

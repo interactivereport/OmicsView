@@ -1,0 +1,351 @@
+<html>
+<!---
+ENTRY       mmu01523
+DEFINITION  Antifolate resistance - Mus musculus (mouse)
+--->
+<head>
+<title>
+KEGG PATHWAY: Antifolate resistance - Mus musculus (mouse)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Antifolate resistance - Mus musculus (mouse)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=01523&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map01523.keg&query=mmu&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+mmu01523">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=mmu01523&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Since the 1940s, antifolates have played a pivotal role in drug treatment of malignant, microbial, parasitic and chronic inflammatory diseases. The molecular basis of the anti-proliferative activity of antifolates relies on inhibition of key enzymes in folate metabolism, which results in disruption of purine and thymidylate biosynthesis, inhibition of DNA replication and cell death. The anti-inflammatory properties of antifolate have been most strongly related to its ability to block the release of pro-inflammatory cytokines such as tumour necrosis factor (TNF)-alpha or interleukin (IL)-1beta. Cells may develop resistance to an antifolate drug by virtue of impaired drug transport into cells, augmented drug export, impaired activation of antifolates through polyglutamylation, augmented hydrolysis of antifolate polyglutamates, increased expression and mutation of target enzymes, and the augmentation of cellular tetrahydrofolate-cofactor pools in cells.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="mmu.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu" selected>Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="01523" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="mmu01523" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/mmu/mmu01523.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=545,410,4	href="/dbget-bin/www_bget?D00142+D05589+D04766+D01064+D07472+D05400+D03942+D02527"	title="D00142 (Methotrexate (JP17/USP/INN)), D05589 (Pralatrexate (JAN/USAN/INN)), D04766 (Lometrexol sodium (USAN)), D01064 (Raltitrexed (JAN/USAN/INN)), D07472 (Pemetrexed (INN)), D05400 (Pelitrexol (USAN/INN)), D03942 (Edatrexate (USAN/INN)), D02527 (Aminopterin sodium (INN))" onmouseover="popupTimer(&quot;D00142&quot;, &quot;D00142 (Methotrexate (JP17/USP/INN)), D05589 (Pralatrexate (JAN/USAN/INN)), D04766 (Lometrexol sodium (USAN)), D01064 (Raltitrexed (JAN/USAN/INN)), D07472 (Pemetrexed (INN)), D05400 (Pelitrexol (USAN/INN)), D03942 (Edatrexate (USAN/INN)), D02527 (Aminopterin sodium (INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=219,326,4	href="/dbget-bin/www_bget?D00142"	title="D00142 (Methotrexate (JP17/USP/INN))" onmouseover="popupTimer(&quot;D00142&quot;, &quot;D00142 (Methotrexate (JP17/USP/INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=181,464,4	href="/dbget-bin/www_bget?D07472"	title="D07472 (Pemetrexed (INN))" onmouseover="popupTimer(&quot;D07472&quot;, &quot;D07472 (Pemetrexed (INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=219,358,4	href="/dbget-bin/www_bget?D05589"	title="D05589 (Pralatrexate (JAN/USAN/INN))" onmouseover="popupTimer(&quot;D05589&quot;, &quot;D05589 (Pralatrexate (JAN/USAN/INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=181,396,4	href="/dbget-bin/www_bget?D04766"	title="D04766 (Lometrexol sodium (USAN))" onmouseover="popupTimer(&quot;D04766&quot;, &quot;D04766 (Lometrexol sodium (USAN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=269,396,4	href="/dbget-bin/www_bget?C21280"	title="C21280 (AG 2034)" onmouseover="popupTimer(&quot;C21280&quot;, &quot;C21280 (AG 2034)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=269,430,4	href="/dbget-bin/www_bget?C11374"	title="C11374 (GW1843)" onmouseover="popupTimer(&quot;C11374&quot;, &quot;C11374 (GW1843)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=246,138,4	href="/dbget-bin/www_bget?C21279"	title="C21279 (BGC 945)" onmouseover="popupTimer(&quot;C21279&quot;, &quot;C21279 (BGC 945)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=246,279,4	href="/dbget-bin/www_bget?D06238"	title="D06238 (Trimetrexate (USAN/INN))" onmouseover="popupTimer(&quot;D06238&quot;, &quot;D06238 (Trimetrexate (USAN/INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=642,522,4	href="/dbget-bin/www_bget?D00142+D05589+D04766+D01064+D07472+D03942+D02527"	title="D00142 (Methotrexate (JP17/USP/INN)), D05589 (Pralatrexate (JAN/USAN/INN)), D04766 (Lometrexol sodium (USAN)), D01064 (Raltitrexed (JAN/USAN/INN)), D07472 (Pemetrexed (INN)), D03942 (Edatrexate (USAN/INN)), D02527 (Aminopterin sodium (INN))" onmouseover="popupTimer(&quot;D00142&quot;, &quot;D00142 (Methotrexate (JP17/USP/INN)), D05589 (Pralatrexate (JAN/USAN/INN)), D04766 (Lometrexol sodium (USAN)), D01064 (Raltitrexed (JAN/USAN/INN)), D07472 (Pemetrexed (INN)), D03942 (Edatrexate (USAN/INN)), D02527 (Aminopterin sodium (INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1101,380,4	href="/dbget-bin/www_bget?C00101"	title="C00101 (Tetrahydrofolate)" onmouseover="popupTimer(&quot;C00101&quot;, &quot;C00101 (Tetrahydrofolate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1198,257,4	href="/dbget-bin/www_bget?C00143"	title="C00143 (5,10-Methylenetetrahydrofolate)" onmouseover="popupTimer(&quot;C00143&quot;, &quot;C00143 (5,10-Methylenetetrahydrofolate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1036,123,4	href="/dbget-bin/www_bget?C00364"	title="C00364 (dTMP)" onmouseover="popupTimer(&quot;C00364&quot;, &quot;C00364 (dTMP)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1025,267,4	href="/dbget-bin/www_bget?C00415"	title="C00415 (Dihydrofolate)" onmouseover="popupTimer(&quot;C00415&quot;, &quot;C00415 (Dihydrofolate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1188,136,4	href="/dbget-bin/www_bget?C00365"	title="C00365 (dUMP)" onmouseover="popupTimer(&quot;C00365&quot;, &quot;C00365 (dUMP)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1191,671,4	href="/dbget-bin/www_bget?C00020"	title="C00020 (AMP)" onmouseover="popupTimer(&quot;C00020&quot;, &quot;C00020 (AMP)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=935,267,4	href="/dbget-bin/www_bget?C00504"	title="C00504 (Folate)" onmouseover="popupTimer(&quot;C00504&quot;, &quot;C00504 (Folate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1100,438,4	href="/dbget-bin/www_bget?C00234"	title="C00234 (10-Formyltetrahydrofolate)" onmouseover="popupTimer(&quot;C00234&quot;, &quot;C00234 (10-Formyltetrahydrofolate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1131,438,4	href="/dbget-bin/www_bget?C00119"	title="C00119 (5-Phospho-alpha-D-ribose 1-diphosphate)" onmouseover="popupTimer(&quot;C00119&quot;, &quot;C00119 (5-Phospho-alpha-D-ribose 1-diphosphate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1131,691,4	href="/dbget-bin/www_bget?C00130"	title="C00130 (IMP)" onmouseover="popupTimer(&quot;C00130&quot;, &quot;C00130 (IMP)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1100,535,4	href="/dbget-bin/www_bget?C00101"	title="C00101 (Tetrahydrofolate)" onmouseover="popupTimer(&quot;C00101&quot;, &quot;C00101 (Tetrahydrofolate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1100,574,4	href="/dbget-bin/www_bget?C00234"	title="C00234 (10-Formyltetrahydrofolate)" onmouseover="popupTimer(&quot;C00234&quot;, &quot;C00234 (10-Formyltetrahydrofolate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1100,691,4	href="/dbget-bin/www_bget?C00101"	title="C00101 (Tetrahydrofolate)" onmouseover="popupTimer(&quot;C00101&quot;, &quot;C00101 (Tetrahydrofolate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1191,708,4	href="/dbget-bin/www_bget?C00144"	title="C00144 (GMP)" onmouseover="popupTimer(&quot;C00144&quot;, &quot;C00144 (GMP)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1284,295,4	href="/dbget-bin/www_bget?C00440"	title="C00440 (5-Methyltetrahydrofolate)" onmouseover="popupTimer(&quot;C00440&quot;, &quot;C00440 (5-Methyltetrahydrofolate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1301,356,4	href="/dbget-bin/www_bget?C00155"	title="C00155 (L-Homocysteine)" onmouseover="popupTimer(&quot;C00155&quot;, &quot;C00155 (L-Homocysteine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1193,445,4	href="/dbget-bin/www_bget?C00073"	title="C00073 (L-Methionine)" onmouseover="popupTimer(&quot;C00073&quot;, &quot;C00073 (L-Methionine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=181,430,4	href="/dbget-bin/www_bget?D01064"	title="D01064 (Raltitrexed (JAN/USAN/INN))" onmouseover="popupTimer(&quot;D01064&quot;, &quot;D01064 (Raltitrexed (JAN/USAN/INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=269,464,4	href="/dbget-bin/www_bget?D05400"	title="D05400 (Pelitrexol (USAN/INN))" onmouseover="popupTimer(&quot;D05400&quot;, &quot;D05400 (Pelitrexol (USAN/INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=254,515,4	href="/dbget-bin/www_bget?D02527"	title="D02527 (Aminopterin sodium (INN))" onmouseover="popupTimer(&quot;D02527&quot;, &quot;D02527 (Aminopterin sodium (INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=181,498,4	href="/dbget-bin/www_bget?D03942"	title="D03942 (Edatrexate (USAN/INN))" onmouseover="popupTimer(&quot;D03942&quot;, &quot;D03942 (Edatrexate (USAN/INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=246,236,4	href="/dbget-bin/www_bget?D05999"	title="D05999 (Talotrexin ammonium (USAN))" onmouseover="popupTimer(&quot;D05999&quot;, &quot;D05999 (Talotrexin ammonium (USAN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=246,183,4	href="/dbget-bin/www_bget?D10803"	title="D10803 (Plevitrexed (INN))" onmouseover="popupTimer(&quot;D10803&quot;, &quot;D10803 (Plevitrexed (INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=269,564,4	href="/dbget-bin/www_bget?D07472"	title="D07472 (Pemetrexed (INN))" onmouseover="popupTimer(&quot;D07472&quot;, &quot;D07472 (Pemetrexed (INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=549,686,4	href="/dbget-bin/www_bget?D05999+D06238+D00142+D05589+D04766+D01064+D07472+D05400+D03942+D02527"	title="D05999 (Talotrexin ammonium (USAN)), D06238 (Trimetrexate (USAN/INN)), D00142 (Methotrexate (JP17/USP/INN)), D05589 (Pralatrexate (JAN/USAN/INN)), D04766 (Lometrexol sodium (USAN)), D01064 (Raltitrexed (JAN/USAN/INN)), D07472 (Pemetrexed (INN)), D05400 (Pelitrexol (USAN/INN)), D03942 (Edatrexate (USAN/INN)), D02527 (Aminopterin sodium (INN))" onmouseover="popupTimer(&quot;D05999&quot;, &quot;D05999 (Talotrexin ammonium (USAN)), D06238 (Trimetrexate (USAN/INN)), D00142 (Methotrexate (JP17/USP/INN)), D05589 (Pralatrexate (JAN/USAN/INN)), D04766 (Lometrexol sodium (USAN)), D01064 (Raltitrexed (JAN/USAN/INN)), D07472 (Pemetrexed (INN)), D05400 (Pelitrexol (USAN/INN)), D03942 (Edatrexate (USAN/INN)), D02527 (Aminopterin sodium (INN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=379,130,425,147	href="/dbget-bin/www_bget?mmu:14275+mmu:14276+mmu:64931"	title="14275 (Folr1), 14276 (Folr2), 64931 (Izumo1r)" />
+<area shape=rect	coords=379,402,425,419	href="/dbget-bin/www_bget?mmu:20509"	title="20509 (Slc19a1)" />
+<area shape=rect	coords=379,600,425,617	href="/dbget-bin/www_bget?mmu:17250"	title="17250 (Abcc1)" />
+<area shape=rect	coords=379,635,425,652	href="/dbget-bin/www_bget?mmu:12780"	title="12780 (Abcc2)" />
+<area shape=rect	coords=379,668,425,685	href="/dbget-bin/www_bget?mmu:76408"	title="76408 (Abcc3)" />
+<area shape=rect	coords=379,700,425,717	href="/dbget-bin/www_bget?mmu:239273"	title="239273 (Abcc4)" />
+<area shape=rect	coords=379,732,425,749	href="/dbget-bin/www_bget?mmu:27416"	title="27416 (Abcc5)" />
+<area shape=rect	coords=1104,480,1150,497	href="/dbget-bin/www_bget?mmu:14450"	title="14450 (Gart)" />
+<area shape=rect	coords=687,389,733,406	href="/dbget-bin/www_bget?mmu:14287"	title="14287 (Fpgs)" />
+<area shape=rect	coords=617,481,663,498	href="/dbget-bin/www_bget?mmu:52466"	title="52466 (Slc46a1)" />
+<area shape=rect	coords=685,528,731,545	href="/dbget-bin/www_bget?mmu:14590"	title="14590 (Ggh)" />
+<area shape=rect	coords=1089,178,1135,195	href="/dbget-bin/www_bget?mmu:22171"	title="22171 (Tyms)" />
+<area shape=rect	coords=1016,316,1062,333	href="/dbget-bin/www_bget?mmu:13361"	title="13361 (Dhfr)" />
+<area shape=rect	coords=1104,605,1150,622	href="/dbget-bin/www_bget?mmu:108147"	title="108147 (Atic)" />
+<area shape=rect	coords=379,230,425,247	href="/dbget-bin/www_bget?mmu:20509"	title="20509 (Slc19a1)" />
+<area shape=rect	coords=379,176,425,193	href="/dbget-bin/www_bget?mmu:20509"	title="20509 (Slc19a1)" />
+<area shape=rect	coords=379,777,425,794	href="/dbget-bin/www_bget?mmu:26357"	title="26357 (Abcg2)" />
+<area shape=rect	coords=379,557,425,574	href="/dbget-bin/www_bget?mmu:52466"	title="52466 (Slc46a1)" />
+<area shape=rect	coords=922,769,968,786	href="/dbget-bin/www_bget?mmu:12675+mmu:16150+mmu:16151"	title="12675 (Chuk), 16150 (Ikbkb), 16151 (Ikbkg)" />
+<area shape=rect	coords=1006,769,1052,786	href="/dbget-bin/www_bget?mmu:18033+mmu:19697"	title="18033 (Nfkb1), 19697 (Rela)" />
+<area shape=rect	coords=1190,779,1236,796	href="/dbget-bin/www_bget?mmu:16193"	title="16193 (Il6)" />
+<area shape=rect	coords=1135,779,1181,796	href="/dbget-bin/www_bget?mmu:16176"	title="16176 (Il1b)" />
+<area shape=rect	coords=1135,757,1181,774	href="/dbget-bin/www_bget?mmu:21926"	title="21926 (Tnf)" />
+<area shape=rect	coords=1159,324,1205,341	href="/dbget-bin/www_bget?mmu:108037+mmu:20425"	title="108037 (Shmt2), 20425 (Shmt1)" />
+<area shape=rect	coords=1209,365,1255,382	href="/dbget-bin/www_bget?mmu:11684+mmu:11685"	title="11684 (Alox12), 11685 (Alox12e)" />
+<area shape=rect	coords=1219,269,1265,286	href="/dbget-bin/www_bget?mmu:17769"	title="17769 (Mthfr)" />
+<area shape=rect	coords=40,45,259,70	href="/dbget-bin/www_bget?mmu01523"	title="mmu01523: Antifolate resistance" onmouseover="popupTimer(&quot;mmu01523&quot;, &quot;mmu01523: Antifolate resistance&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1151,565,1278,590	href="/kegg-bin/show_pathway?mmu00230"	title="mmu00230: Purine metabolism" onmouseover="popupTimer(&quot;mmu00230&quot;, &quot;mmu00230: Purine metabolism&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1187,189,1309,223	href="/kegg-bin/show_pathway?mmu00670"	title="mmu00670: One carbon pool by folate" onmouseover="popupTimer(&quot;mmu00670&quot;, &quot;mmu00670: One carbon pool by folate&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=547,90,650,115	href="/kegg-bin/show_pathway?mmu04144"	title="mmu04144: Endocytosis" onmouseover="popupTimer(&quot;mmu04144&quot;, &quot;mmu04144: Endocytosis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=969,725,1091,759	href="/kegg-bin/show_pathway?mmu04064"	title="mmu04064: NF-kappa B signaling pathway" onmouseover="popupTimer(&quot;mmu04064&quot;, &quot;mmu04064: NF-kappa B signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

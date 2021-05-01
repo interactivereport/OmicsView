@@ -1,0 +1,366 @@
+<html>
+<!---
+ENTRY       hsa04974
+DEFINITION  Protein digestion and absorption - Homo sapiens (human)
+--->
+<head>
+<title>
+KEGG PATHWAY: Protein digestion and absorption - Homo sapiens (human)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Protein digestion and absorption - Homo sapiens (human)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=04974&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map04974.keg&query=hsa&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+hsa04974">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=hsa04974&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Protein is a dietary component essential for nutritional homeostasis in humans. Normally, ingested protein undergoes a complex series of degradative processes following the action of gastric, pancreatic and small intestinal enzymes. The result of this proteolytic activity is a mixture of amino acids and small peptides. Amino acids (AAs) are transported into the enterocyte (intestinal epithelial cell) by a variety of AA transporters that are specific for cationic (basic) AA, neutral AA, and anionic (acidic) AA. Small peptides are absorbed into enterocytes by the PEPT1 transporter. Inside enterocytes peptides are hydrolyzed, and the resulting amino acids are released together with those absorbed by AA transporters into blood via multiple, basolateral, AA transporters. Hydrolysis-resistant peptides, however, are transported out of the cells by a basolateral peptide transporter that has not been identified molecularly.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="hsa.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa" selected>Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="04974" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="hsa04974" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/hsa/hsa04974.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=1080,312,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=478,504,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=453,509,4	href="/dbget-bin/www_bget?C00025+C00049"	title="C00025 (L-Glutamate), C00049 (L-Aspartate)" onmouseover="popupTimer(&quot;C00025&quot;, &quot;C00025 (L-Glutamate), C00049 (L-Aspartate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1075,641,4	href="/dbget-bin/www_bget?C00037+C00041+C00183+C00123+C00073+C00407+C00079+C00078+C00065+C00188+C00152+C00064"	title="C00037 (Glycine), C00041 (L-Alanine), C00183 (L-Valine), C00123 (L-Leucine), C00073 (L-Methionine), C00407 (L-Isoleucine), C00079 (L-Phenylalanine), C00078 (L-Tryptophan), C00065 (L-Serine), C00188 (L-Threonine), C00152 (L-Asparagine), C00064 (L-Glutamine)" onmouseover="popupTimer(&quot;C00037&quot;, &quot;C00037 (Glycine), C00041 (L-Alanine), C00183 (L-Valine), C00123 (L-Leucine), C00073 (L-Methionine), C00407 (L-Isoleucine), C00079 (L-Phenylalanine), C00078 (L-Tryptophan), C00065 (L-Serine), C00188 (L-Threonine), C00152 (L-Asparagine), C00064 (L-Glutamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=479,765,4	href="/dbget-bin/www_bget?C00062+C00047+C16138+C00491"	title="C00062 (L-Arginine), C00047 (L-Lysine), C16138 (L-Pyrrolysine), C00491 (L-Cystine)" onmouseover="popupTimer(&quot;C00062&quot;, &quot;C00062 (L-Arginine), C00047 (L-Lysine), C16138 (L-Pyrrolysine), C00491 (L-Cystine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1104,771,4	href="/dbget-bin/www_bget?C00047+C00062+C00135"	title="C00047 (L-Lysine), C00062 (L-Arginine), C00135 (L-Histidine)" onmouseover="popupTimer(&quot;C00047&quot;, &quot;C00047 (L-Lysine), C00062 (L-Arginine), C00135 (L-Histidine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1070,450,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1071,460,4	href="/dbget-bin/www_bget?C00037+C00148+C00041+C00065+C00097+C00064+C00152+C00135+C00073"	title="C00037 (Glycine), C00148 (L-Proline), C00041 (L-Alanine), C00065 (L-Serine), C00097 (L-Cysteine), C00064 (L-Glutamine), C00152 (L-Asparagine), C00135 (L-Histidine), C00073 (L-Methionine)" onmouseover="popupTimer(&quot;C00037&quot;, &quot;C00037 (Glycine), C00148 (L-Proline), C00041 (L-Alanine), C00065 (L-Serine), C00097 (L-Cysteine), C00064 (L-Glutamine), C00152 (L-Asparagine), C00135 (L-Histidine), C00073 (L-Methionine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=779,642,4	href="/dbget-bin/www_bget?C00037+C00041+C00183+C00123+C00073+C00407+C00148+C00079+C00078+C00065+C00188+C00152+C00064"	title="C00037 (Glycine), C00041 (L-Alanine), C00183 (L-Valine), C00123 (L-Leucine), C00073 (L-Methionine), C00407 (L-Isoleucine), C00148 (L-Proline), C00079 (L-Phenylalanine), C00078 (L-Tryptophan), C00065 (L-Serine), C00188 (L-Threonine), C00152 (L-Asparagine), C00064 (L-Glutamine)" onmouseover="popupTimer(&quot;C00037&quot;, &quot;C00037 (Glycine), C00041 (L-Alanine), C00183 (L-Valine), C00123 (L-Leucine), C00073 (L-Methionine), C00407 (L-Isoleucine), C00148 (L-Proline), C00079 (L-Phenylalanine), C00078 (L-Tryptophan), C00065 (L-Serine), C00188 (L-Threonine), C00152 (L-Asparagine), C00064 (L-Glutamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=769,699,4	href="/dbget-bin/www_bget?C00097"	title="C00097 (L-Cysteine)" onmouseover="popupTimer(&quot;C00097&quot;, &quot;C00097 (L-Cysteine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=456,639,4	href="/dbget-bin/www_bget?C00037+C00041+C00183+C00123+C00073+C00407+C00148+C00079+C00078+C00065+C00188+C00152+C00064"	title="C00037 (Glycine), C00041 (L-Alanine), C00183 (L-Valine), C00123 (L-Leucine), C00073 (L-Methionine), C00407 (L-Isoleucine), C00148 (L-Proline), C00079 (L-Phenylalanine), C00078 (L-Tryptophan), C00065 (L-Serine), C00188 (L-Threonine), C00152 (L-Asparagine), C00064 (L-Glutamine)" onmouseover="popupTimer(&quot;C00037&quot;, &quot;C00037 (Glycine), C00041 (L-Alanine), C00183 (L-Valine), C00123 (L-Leucine), C00073 (L-Methionine), C00407 (L-Isoleucine), C00148 (L-Proline), C00079 (L-Phenylalanine), C00078 (L-Tryptophan), C00065 (L-Serine), C00188 (L-Threonine), C00152 (L-Asparagine), C00064 (L-Glutamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=478,631,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=480,379,4	href="/dbget-bin/www_bget?C00080"	title="C00080 (H+)" onmouseover="popupTimer(&quot;C00080&quot;, &quot;C00080 (H+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=597,515,4	href="/dbget-bin/www_bget?C00238"	title="C00238 (Potassium cation)" onmouseover="popupTimer(&quot;C00238&quot;, &quot;C00238 (Potassium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=562,311,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=689,320,4	href="/dbget-bin/www_bget?C00080"	title="C00080 (H+)" onmouseover="popupTimer(&quot;C00080&quot;, &quot;C00080 (H+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1074,303,4	href="/dbget-bin/www_bget?C00238"	title="C00238 (Potassium cation)" onmouseover="popupTimer(&quot;C00238&quot;, &quot;C00238 (Potassium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=954,267,4	href="/dbget-bin/www_bget?C00238"	title="C00238 (Potassium cation)" onmouseover="popupTimer(&quot;C00238&quot;, &quot;C00238 (Potassium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=868,506,4	href="/dbget-bin/www_bget?C00049+C00025+C00082+C00097"	title="C00049 (L-Aspartate), C00025 (L-Glutamate), C00082 (L-Tyrosine), C00097 (L-Cysteine)" onmouseover="popupTimer(&quot;C00049&quot;, &quot;C00049 (L-Aspartate), C00025 (L-Glutamate), C00082 (L-Tyrosine), C00097 (L-Cysteine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=927,763,4	href="/dbget-bin/www_bget?C00064+C00073+C00123"	title="C00064 (L-Glutamine), C00073 (L-Methionine), C00123 (L-Leucine)" onmouseover="popupTimer(&quot;C00064&quot;, &quot;C00064 (L-Glutamine), C00073 (L-Methionine), C00123 (L-Leucine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=806,448,4	href="/dbget-bin/www_bget?C00037+C00041+C00183+C00123+C00073+C00407+C00148+C00079+C00078+C00065+C00188+C00152+C00064+C00062+C00135+C00047+C00049+C00025+C00082+C00097"	title="C00037 (Glycine), C00041 (L-Alanine), C00183 (L-Valine), C00123 (L-Leucine), C00073 (L-Methionine), C00407 (L-Isoleucine), C00148 (L-Proline), C00079 (L-Phenylalanine), C00078 (L-Tryptophan), C00065 (L-Serine), C00188 (L-Threonine), C00152 (L-Asparagine), C00064 (L-Glutamine), C00062 (L-Arginine), C00135 (L-Histidine), C00047 (L-Lysine), C00049 (L-Aspartate), C00025 (L-Glutamate), C00082 (L-Tyrosine), C00097 (L-Cysteine)" onmouseover="popupTimer(&quot;C00037&quot;, &quot;C00037 (Glycine), C00041 (L-Alanine), C00183 (L-Valine), C00123 (L-Leucine), C00073 (L-Methionine), C00407 (L-Isoleucine), C00148 (L-Proline), C00079 (L-Phenylalanine), C00078 (L-Tryptophan), C00065 (L-Serine), C00188 (L-Threonine), C00152 (L-Asparagine), C00064 (L-Glutamine), C00062 (L-Arginine), C00135 (L-Histidine), C00047 (L-Lysine), C00049 (L-Aspartate), C00025 (L-Glutamate), C00082 (L-Tyrosine), C00097 (L-Cysteine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=574,695,4	href="/dbget-bin/www_bget?C00148+C00037+C00099"	title="C00148 (L-Proline), C00037 (Glycine), C00099 (beta-Alanine)" onmouseover="popupTimer(&quot;C00148&quot;, &quot;C00148 (L-Proline), C00037 (Glycine), C00099 (beta-Alanine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=547,702,4	href="/dbget-bin/www_bget?C00080"	title="C00080 (H+)" onmouseover="popupTimer(&quot;C00080&quot;, &quot;C00080 (H+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=805,771,4	href="/dbget-bin/www_bget?C00062+C00047+C00135"	title="C00062 (L-Arginine), C00047 (L-Lysine), C00135 (L-Histidine)" onmouseover="popupTimer(&quot;C00062&quot;, &quot;C00062 (L-Arginine), C00047 (L-Lysine), C00135 (L-Histidine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1075,574,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=951,583,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=140,749,4	href="/dbget-bin/www_bget?C00246"	title="C00246 (Butanoic acid)" onmouseover="popupTimer(&quot;C00246&quot;, &quot;C00246 (Butanoic acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=211,749,4	href="/dbget-bin/www_bget?C00163"	title="C00163 (Propanoate)" onmouseover="popupTimer(&quot;C00163&quot;, &quot;C00163 (Propanoate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=275,749,4	href="/dbget-bin/www_bget?C00033"	title="C00033 (Acetate)" onmouseover="popupTimer(&quot;C00033&quot;, &quot;C00033 (Acetate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=142,811,4	href="/dbget-bin/www_bget?C02632"	title="C02632 (2-Methylpropanoate)" onmouseover="popupTimer(&quot;C02632&quot;, &quot;C02632 (2-Methylpropanoate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=188,790,4	href="/dbget-bin/www_bget?C08262"	title="C08262 (3-Methylbutanoic acid)" onmouseover="popupTimer(&quot;C08262&quot;, &quot;C08262 (3-Methylbutanoic acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=236,809,4	href="/dbget-bin/www_bget?C18319"	title="C18319 (2-Methylbutyrate)" onmouseover="popupTimer(&quot;C18319&quot;, &quot;C18319 (2-Methylbutyrate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=272,790,4	href="/dbget-bin/www_bget?C05996"	title="C05996 (Branched chain fatty acid)" onmouseover="popupTimer(&quot;C05996&quot;, &quot;C05996 (Branched chain fatty acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=336,750,4	href="/dbget-bin/www_bget?C00011"	title="C00011 (CO2)" onmouseover="popupTimer(&quot;C00011&quot;, &quot;C00011 (CO2)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=336,771,4	href="/dbget-bin/www_bget?C00282"	title="C00282 (Hydrogen)" onmouseover="popupTimer(&quot;C00282&quot;, &quot;C00282 (Hydrogen)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=336,792,4	href="/dbget-bin/www_bget?C01438"	title="C01438 (Methane)" onmouseover="popupTimer(&quot;C01438&quot;, &quot;C01438 (Methane)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=336,813,4	href="/dbget-bin/www_bget?C00014"	title="C00014 (Ammonia)" onmouseover="popupTimer(&quot;C00014&quot;, &quot;C00014 (Ammonia)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=336,834,4	href="/dbget-bin/www_bget?C00483+C00388+C01746+C01672+C00134"	title="C00483 (Tyramine), C00388 (Histamine), C01746 (Piperidine), C01672 (Cadaverine), C00134 (Putrescine)" onmouseover="popupTimer(&quot;C00483&quot;, &quot;C00483 (Tyramine), C00388 (Histamine), C01746 (Piperidine), C01672 (Cadaverine), C00134 (Putrescine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=336,855,4	href="/dbget-bin/www_bget?C00146+C01468"	title="C00146 (Phenol), C01468 (4-Cresol)" onmouseover="popupTimer(&quot;C00146&quot;, &quot;C00146 (Phenol), C01468 (4-Cresol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=336,895,4	href="/dbget-bin/www_bget?C00463"	title="C00463 (Indole)" onmouseover="popupTimer(&quot;C00463&quot;, &quot;C00463 (Indole)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1074,699,4	href="/dbget-bin/www_bget?C00079+C00082+C00078"	title="C00079 (L-Phenylalanine), C00082 (L-Tyrosine), C00078 (L-Tryptophan)" onmouseover="popupTimer(&quot;C00079&quot;, &quot;C00079 (L-Phenylalanine), C00082 (L-Tyrosine), C00078 (L-Tryptophan)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=213,241,4	href="/dbget-bin/www_bget?C01327"	title="C01327 (Hydrochloric acid)" onmouseover="popupTimer(&quot;C01327&quot;, &quot;C01327 (Hydrochloric acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=674,574,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=694,567,4	href="/dbget-bin/www_bget?C00041+C00065+C00097+C00188+C00064"	title="C00041 (L-Alanine), C00065 (L-Serine), C00097 (L-Cysteine), C00188 (L-Threonine), C00064 (L-Glutamine)" onmouseover="popupTimer(&quot;C00041&quot;, &quot;C00041 (L-Alanine), C00065 (L-Serine), C00097 (L-Cysteine), C00188 (L-Threonine), C00064 (L-Glutamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=942,648,4	href="/dbget-bin/www_bget?C00037+C00041+C00183+C00123+C00073+C00407+C00079+C00078+C00065+C00188+C00152+C00064"	title="C00037 (Glycine), C00041 (L-Alanine), C00183 (L-Valine), C00123 (L-Leucine), C00073 (L-Methionine), C00407 (L-Isoleucine), C00079 (L-Phenylalanine), C00078 (L-Tryptophan), C00065 (L-Serine), C00188 (L-Threonine), C00152 (L-Asparagine), C00064 (L-Glutamine)" onmouseover="popupTimer(&quot;C00037&quot;, &quot;C00037 (Glycine), C00041 (L-Alanine), C00183 (L-Valine), C00123 (L-Leucine), C00073 (L-Methionine), C00407 (L-Isoleucine), C00079 (L-Phenylalanine), C00078 (L-Tryptophan), C00065 (L-Serine), C00188 (L-Threonine), C00152 (L-Asparagine), C00064 (L-Glutamine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1057,776,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=511,502,557,519	href="/dbget-bin/www_bget?hsa:6505"	title="6505 (SLC1A1)" />
+<area shape=rect	coords=512,757,558,774	href="/dbget-bin/www_bget?hsa:11136"	title="11136 (SLC7A9)" />
+<area shape=rect	coords=984,635,1030,652	href="/dbget-bin/www_bget?hsa:23428"	title="23428 (SLC7A8)" />
+<area shape=rect	coords=984,447,1030,464	href="/dbget-bin/www_bget?hsa:54407"	title="54407 (SLC38A2)" />
+<area shape=rect	coords=984,761,1030,778	href="/dbget-bin/www_bget?hsa:9056"	title="9056 (SLC7A7)" />
+<area shape=rect	coords=510,374,556,391	href="/dbget-bin/www_bget?hsa:6564"	title="6564 (SLC15A1)" />
+<area shape=rect	coords=510,628,556,645	href="/dbget-bin/www_bget?hsa:340024"	title="340024 (SLC6A19)" />
+<area shape=rect	coords=598,561,644,578	href="/dbget-bin/www_bget?hsa:6510"	title="6510 (SLC1A5)" />
+<area shape=rect	coords=136,352,182,369	href="/dbget-bin/www_bget?hsa:5644+hsa:5645+hsa:5646"	title="5644 (PRSS1), 5645 (PRSS2), 5646 (PRSS3)" />
+<area shape=rect	coords=485,740,531,757	href="/dbget-bin/www_bget?hsa:6519"	title="6519 (SLC3A1)" />
+<area shape=rect	coords=984,299,1031,316	href="/dbget-bin/www_bget?hsa:23439+hsa:476+hsa:477+hsa:478+hsa:480+hsa:481+hsa:482+hsa:483+hsa:486"	title="23439 (ATP1B4), 476 (ATP1A1), 477 (ATP1A2), 478 (ATP1A3), 480 (ATP1A4), 481 (ATP1B1), 482 (ATP1B2), 483 (ATP1B3), 486 (FXYD2)" />
+<area shape=rect	coords=984,744,1030,761	href="/dbget-bin/www_bget?hsa:6520"	title="6520 (SLC3A2)" />
+<area shape=rect	coords=984,618,1030,635	href="/dbget-bin/www_bget?hsa:6520"	title="6520 (SLC3A2)" />
+<area shape=rect	coords=191,352,237,369	href="/dbget-bin/www_bget?hsa:1504"	title="1504 (CTRB1)" />
+<area shape=rect	coords=246,352,292,369	href="/dbget-bin/www_bget?hsa:1506"	title="1506 (CTRL)" />
+<area shape=rect	coords=136,379,182,396	href="/dbget-bin/www_bget?hsa:10136+hsa:23436+hsa:51032+hsa:63036"	title="10136 (CELA3A), 23436 (CELA3B), 51032 (CELA2B), 63036 (CELA2A)" />
+<area shape=rect	coords=136,405,182,422	href="/dbget-bin/www_bget?hsa:1357+hsa:1358+hsa:1359"	title="1357 (CPA1), 1358 (CPA2), 1359 (CPA3)" />
+<area shape=rect	coords=191,405,237,422	href="/dbget-bin/www_bget?hsa:1360+hsa:1361"	title="1360 (CPB1), 1361 (CPB2)" />
+<area shape=rect	coords=189,266,235,283	href="/dbget-bin/www_bget?hsa:5222+hsa:643834+hsa:643847"	title="5222 (PGA5), 643834 (PGA3), 643847 (PGA4)" />
+<area shape=rect	coords=596,307,642,324	href="/dbget-bin/www_bget?hsa:6550"	title="6550 (SLC9A3)" />
+<area shape=rect	coords=984,259,1030,276	href="/dbget-bin/www_bget?hsa:10008+hsa:3769+hsa:3783+hsa:3784+hsa:8645"	title="10008 (KCNE3), 3769 (KCNJ13), 3783 (KCNN4), 3784 (KCNQ1), 8645 (KCNK5)" />
+<area shape=rect	coords=599,690,645,707	href="/dbget-bin/www_bget?hsa:206358"	title="206358 (SLC36A1)" />
+<area shape=rect	coords=984,570,1030,587	href="/dbget-bin/www_bget?hsa:6543+hsa:6546+hsa:6547"	title="6543 (SLC8A2), 6546 (SLC8A1), 6547 (SLC8A3)" />
+<area shape=rect	coords=597,437,643,454	href="/dbget-bin/www_bget?hsa:1803+hsa:4224+hsa:4225+hsa:4311+hsa:5547+hsa:59272+hsa:7512"	title="1803 (DPP4), 4224 (MEP1A), 4225 (MEP1B), 4311 (MME), 5547 (PRCP), 59272 (ACE2), 7512 (XPNPEP2)" />
+<area shape=rect	coords=111,582,157,599	href="/dbget-bin/www_bget?hsa:2006"	title="2006 (ELN)" />
+<area shape=rect	coords=111,606,157,623	href="/dbget-bin/www_bget?hsa:1277+hsa:1278+hsa:1280+hsa:1281+hsa:1282+hsa:1284+hsa:1285+hsa:1286+hsa:1287+hsa:1288+hsa:1289+hsa:1290+hsa:1291+hsa:1292+hsa:1293+hsa:1294+hsa:1297+hsa:1298+hsa:1299+hsa:1300+hsa:1301+hsa:1302+hsa:1303+hsa:1305+hsa:1306+hsa:1308+hsa:131873+hsa:169044+hsa:255631+hsa:256076+hsa:50509+hsa:7373+hsa:80781+hsa:81578+hsa:85301"	title="1277 (COL1A1), 1278 (COL1A2), 1280 (COL2A1), 1281 (COL3A1), 1282 (COL4A1), 1284 (COL4A2), 1285 (COL4A3), 1286 (COL4A4), 1287 (COL4A5), 1288 (COL4A6), 1289 (COL5A1), 1290 (COL5A2), 1291 (COL6A1), 1292 (COL6A2), 1293 (COL6A3), 1294 (COL7A1), 1297 (COL9A1), 1298 (COL9A2), 1299 (COL9A3), 1300 (COL10A1), 1301 (COL11A1), 1302 (COL11A2), 1303 (COL12A1), 1305 (COL13A1), 1306 (COL15A1), 1308 (COL17A1), 131873 (COL6A6), 169044 (COL22A1), 255631 (COL24A1), 256076 (COL6A5), 50509 (COL5A3), 7373 (COL14A1), 80781 (COL18A1), 81578 (COL21A1), 85301 (COL27A1)" />
+<area shape=rect	coords=984,690,1030,707	href="/dbget-bin/www_bget?hsa:117247"	title="117247 (SLC16A10)" />
+<area shape=rect	coords=40,45,350,70	href="/dbget-bin/www_bget?hsa04974"	title="hsa04974: Protein digestion and absorption" onmouseover="popupTimer(&quot;hsa04974&quot;, &quot;hsa04974: Protein digestion and absorption&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=624,100,739,125	href="/kegg-bin/show_pathway?hsa04530"	title="hsa04530: Tight junction" onmouseover="popupTimer(&quot;hsa04530&quot;, &quot;hsa04530: Tight junction&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=155,300,279,325	href="/kegg-bin/show_pathway?hsa04972"	title="hsa04972: Pancreatic secretion" onmouseover="popupTimer(&quot;hsa04972&quot;, &quot;hsa04972: Pancreatic secretion&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=156,192,280,217	href="/kegg-bin/show_pathway?hsa04971"	title="hsa04971: Gastric acid secretion" onmouseover="popupTimer(&quot;hsa04971&quot;, &quot;hsa04971: Gastric acid secretion&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=267,652,393,677	href="/kegg-bin/show_pathway?ko00350"	title="ko00350: Tyrosine metabolism" onmouseover="popupTimer(&quot;ko00350&quot;, &quot;ko00350: Tyrosine metabolism&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=42,662,168,696	href="/kegg-bin/show_pathway?ko00280"	title="ko00280: Valine, leucine and isoleucine degradation" onmouseover="popupTimer(&quot;ko00280&quot;, &quot;ko00280: Valine, leucine and isoleucine degradation&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=267,682,393,707	href="/kegg-bin/show_pathway?ko00380"	title="ko00380: Tryptophan metabolism" onmouseover="popupTimer(&quot;ko00380&quot;, &quot;ko00380: Tryptophan metabolism&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=853,523,979,557	href="/kegg-bin/show_pathway?hsa00250"	title="hsa00250: Alanine, aspartate and glutamate metabolism" onmouseover="popupTimer(&quot;hsa00250&quot;, &quot;hsa00250: Alanine, aspartate and glutamate metabolism&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

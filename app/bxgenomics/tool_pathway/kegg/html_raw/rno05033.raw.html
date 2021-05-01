@@ -1,0 +1,388 @@
+<html>
+<!---
+ENTRY       rno05033
+DEFINITION  Nicotine addiction - Rattus norvegicus (rat)
+--->
+<head>
+<title>
+KEGG PATHWAY: Nicotine addiction - Rattus norvegicus (rat)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(obj){
+  var form = document.forms["form2"];
+  var idx = obj.selectedIndex;
+  var value = obj.options[idx].value;
+	
+  if(value == "1.0_T01003")
+  {
+    form.scale.value = "1.0";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.70_T01003")
+  {
+    form.scale.value = "0.70";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.35_T01003")
+  {
+    form.scale.value = "0.35";
+    form.orgs.value  = "T01003";
+  }
+  else
+	{
+    form.scale.value = value;
+		form.orgs.value  = '';
+    if(form.image)
+    {
+		form.image.value  = '';
+    }
+		form.map.value = "rno05033";
+	}
+
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Nicotine addiction - Rattus norvegicus (rat)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=05033&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map05033.keg&query=rno&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+rno05033">Pathway entry</a>
+
+| <a href="https://www.kegg.jp/kegg-bin/download?entry=rno05033&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Nicotine is one of the main psychoactive ingredients in tobacco that contributes to the harmful tobacco smoking habit. A common feature of addictive drugs, including nicotine, is that they increase dopamine (DA) release in the nucleus accumbens (NAc). The principal dopaminergic projections to NAc arise from neurons in the ventral tegmental area (VTA). In the VTA, alpha6- and alpha4beta2-containing nAChRs (alpha6*-AChRs and alpha4beta2*-AChRs, respectively) are located on GABAergic terminals and provide inhibitory inputs onto DAergic neuons, while alpha7*-nAChRs are located on glutamatergic terminals and activation of these receptors enhances glutamate release and increases excitability of DAergic neurons. Nicotine acts as an agonist to activate and desensitize these nicotinic acetylcholine receptors (nAChRs). After a short exposure to nicotine, alpha6*- and alpha4beta2*- nAChRs on GABAergic afferents are desensitized, decreasing GABA release and decreasing local inhibition of DA neurons. But the alpha7*-nAChRs on glutamatergic afferents remain active and enhance glutamate excitation of the DA neurons, leading to increased DA release in the NAc -and so facilitate the reinforcing effects of nicotine.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="rno.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno" selected>Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="oro">Odobenus rosmarus divergens (Pacific walrus)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="oor">Orcinus orca (killer whale)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="tmu">Trichechus manatus latirostris (Florida manatee)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="05033" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="select_scale" onChange="resize_map(this)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="rno05033" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="orgs">
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/rno/rno05033.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=445,607,4	href="/dbget-bin/www_bget?C00334"	title="C00334 (4-Aminobutanoate)" onmouseover="popupTimer(&quot;C00334&quot;, &quot;C00334 (4-Aminobutanoate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=484,512,4	href="/dbget-bin/www_bget?C01330+C00076"	title="C01330 (Sodium cation), C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation), C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=484,548,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=481,688,4	href="/dbget-bin/www_bget?C01330+C00076"	title="C01330 (Sodium cation), C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation), C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=482,657,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=480,873,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1119,867,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=439,971,4	href="/dbget-bin/www_bget?C00025"	title="C00025 (L-Glutamate)" onmouseover="popupTimer(&quot;C00025&quot;, &quot;C00025 (L-Glutamate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1075,971,4	href="/dbget-bin/www_bget?C00025"	title="C00025 (L-Glutamate)" onmouseover="popupTimer(&quot;C00025&quot;, &quot;C00025 (L-Glutamate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=489,481,4	href="/dbget-bin/www_bget?C01996"	title="C01996 (Acetylcholine)" onmouseover="popupTimer(&quot;C01996&quot;, &quot;C01996 (Acetylcholine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=492,719,4	href="/dbget-bin/www_bget?C01996"	title="C01996 (Acetylcholine)" onmouseover="popupTimer(&quot;C01996&quot;, &quot;C01996 (Acetylcholine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=488,841,4	href="/dbget-bin/www_bget?C01996"	title="C01996 (Acetylcholine)" onmouseover="popupTimer(&quot;C01996&quot;, &quot;C01996 (Acetylcholine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1135,842,4	href="/dbget-bin/www_bget?C01996"	title="C01996 (Acetylcholine)" onmouseover="popupTimer(&quot;C01996&quot;, &quot;C01996 (Acetylcholine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1115,471,4	href="/dbget-bin/www_bget?C00745"	title="C00745 (Nicotine)" onmouseover="popupTimer(&quot;C00745&quot;, &quot;C00745 (Nicotine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1119,717,4	href="/dbget-bin/www_bget?C00745"	title="C00745 (Nicotine)" onmouseover="popupTimer(&quot;C00745&quot;, &quot;C00745 (Nicotine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1144,773,4	href="/dbget-bin/www_bget?C00745"	title="C00745 (Nicotine)" onmouseover="popupTimer(&quot;C00745&quot;, &quot;C00745 (Nicotine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1126,814,4	href="/dbget-bin/www_bget?C00745"	title="C00745 (Nicotine)" onmouseover="popupTimer(&quot;C00745&quot;, &quot;C00745 (Nicotine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=597,567,4	href="/dbget-bin/www_bget?C00698"	title="C00698 (Cl-)" onmouseover="popupTimer(&quot;C00698&quot;, &quot;C00698 (Cl-)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=597,931,4	href="/dbget-bin/www_bget?C01330+C00076"	title="C01330 (Sodium cation), C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation), C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=597,1008,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1240,924,4	href="/dbget-bin/www_bget?C01330+C00076"	title="C01330 (Sodium cation), C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation), C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1235,1000,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=596,806,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=496,778,4	href="/dbget-bin/www_bget?C01996"	title="C01996 (Acetylcholine)" onmouseover="popupTimer(&quot;C01996&quot;, &quot;C01996 (Acetylcholine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1117,524,4	href="/dbget-bin/www_bget?C01996"	title="C01996 (Acetylcholine)" onmouseover="popupTimer(&quot;C01996&quot;, &quot;C01996 (Acetylcholine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1126,667,4	href="/dbget-bin/www_bget?C01996"	title="C01996 (Acetylcholine)" onmouseover="popupTimer(&quot;C01996&quot;, &quot;C01996 (Acetylcholine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1148,1033,4	href="/dbget-bin/www_bget?C01996"	title="C01996 (Acetylcholine)" onmouseover="popupTimer(&quot;C01996&quot;, &quot;C01996 (Acetylcholine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=498,1038,4	href="/dbget-bin/www_bget?C01996"	title="C01996 (Acetylcholine)" onmouseover="popupTimer(&quot;C01996&quot;, &quot;C01996 (Acetylcholine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=596,1066,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1236,1067,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1115,1042,4	href="/dbget-bin/www_bget?C00745"	title="C00745 (Nicotine)" onmouseover="popupTimer(&quot;C00745&quot;, &quot;C00745 (Nicotine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1138,482,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1142,701,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=198,599,4	href="/dbget-bin/www_bget?C00334"	title="C00334 (4-Aminobutanoate)" onmouseover="popupTimer(&quot;C00334&quot;, &quot;C00334 (4-Aminobutanoate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=171,974,4	href="/dbget-bin/www_bget?C00025"	title="C00025 (L-Glutamate)" onmouseover="popupTimer(&quot;C00025&quot;, &quot;C00025 (L-Glutamate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=845,601,4	href="/dbget-bin/www_bget?C00334"	title="C00334 (4-Aminobutanoate)" onmouseover="popupTimer(&quot;C00334&quot;, &quot;C00334 (4-Aminobutanoate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=810,974,4	href="/dbget-bin/www_bget?C00025"	title="C00025 (L-Glutamate)" onmouseover="popupTimer(&quot;C00025&quot;, &quot;C00025 (L-Glutamate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=480,914,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1120,909,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=418,502,464,519	href="/dbget-bin/www_bget?rno:81721"	title="81721 (Chrna6)" />
+<area shape=rect	coords=418,540,464,557	href="/dbget-bin/www_bget?rno:25398+rno:257648"	title="25398 (Cacna1a), 257648 (Cacna1b)" />
+<area shape=rect	coords=418,647,464,664	href="/dbget-bin/www_bget?rno:25398+rno:257648"	title="25398 (Cacna1a), 257648 (Cacna1b)" />
+<area shape=rect	coords=1056,490,1102,507	href="/dbget-bin/www_bget?rno:81721"	title="81721 (Chrna6)" />
+<area shape=rect	coords=1056,539,1102,556	href="/dbget-bin/www_bget?rno:25398+rno:257648"	title="25398 (Cacna1a), 257648 (Cacna1b)" />
+<area shape=rect	coords=1056,644,1102,661	href="/dbget-bin/www_bget?rno:25398+rno:257648"	title="25398 (Cacna1a), 257648 (Cacna1b)" />
+<area shape=rect	coords=1056,685,1102,702	href="/dbget-bin/www_bget?rno:25590+rno:54239"	title="25590 (Chrna4), 54239 (Chrnb2)" />
+<area shape=rect	coords=418,864,464,881	href="/dbget-bin/www_bget?rno:25302"	title="25302 (Chrna7)" />
+<area shape=rect	coords=1056,859,1102,876	href="/dbget-bin/www_bget?rno:25302"	title="25302 (Chrna7)" />
+<area shape=rect	coords=418,678,464,695	href="/dbget-bin/www_bget?rno:25590+rno:54239"	title="25590 (Chrna4), 54239 (Chrnb2)" />
+<area shape=rect	coords=526,558,572,575	href="/dbget-bin/www_bget?rno:140674+rno:140675+rno:192258+rno:24922+rno:24947+rno:25450+rno:25451+rno:289606+rno:29689+rno:29694+rno:29695+rno:29705+rno:29707+rno:29708+rno:29709+rno:65187+rno:65191+rno:79211+rno:81658"	title="140674 (Gabrg1), 140675 (Gabra4), 192258 (Gabrr3), 24922 (Gabrb3), 24947 (Gabra3), 25450 (Gabrb1), 25451 (Gabrb2), 289606 (Gabra2), 29689 (Gabrd), 29694 (Gabrr1), 29695 (Gabrr2), 29705 (Gabra1), 29707 (Gabra5), 29708 (Gabra6), 29709 (Gabrg2), 65187 (Gabrq), 65191 (Gabre), 79211 (Gabrg3), 81658 (Gabrp)" />
+<area shape=rect	coords=1165,562,1211,579	href="/dbget-bin/www_bget?rno:140674+rno:140675+rno:192258+rno:24922+rno:24947+rno:25450+rno:25451+rno:289606+rno:29689+rno:29694+rno:29695+rno:29705+rno:29707+rno:29708+rno:29709+rno:65187+rno:65191+rno:79211+rno:81658"	title="140674 (Gabrg1), 140675 (Gabra4), 192258 (Gabrr3), 24922 (Gabrb3), 24947 (Gabra3), 25450 (Gabrb1), 25451 (Gabrb2), 289606 (Gabra2), 29689 (Gabrd), 29694 (Gabrr1), 29695 (Gabrr2), 29705 (Gabra1), 29707 (Gabra5), 29708 (Gabra6), 29709 (Gabrg2), 65187 (Gabrq), 65191 (Gabre), 79211 (Gabrg3), 81658 (Gabrp)" />
+<area shape=rect	coords=526,924,572,941	href="/dbget-bin/www_bget?rno:170796+rno:191573+rno:24408+rno:24409+rno:24410+rno:24411+rno:24412"	title="170796 (Grin3b), 191573 (Grin3a), 24408 (Grin1), 24409 (Grin2a), 24410 (Grin2b), 24411 (Grin2c), 24412 (Grin2d)" />
+<area shape=rect	coords=525,1000,571,1017	href="/dbget-bin/www_bget?rno:29627+rno:29628+rno:29629+rno:50592"	title="29627 (Gria2), 29628 (Gria3), 29629 (Gria4), 50592 (Gria1)" />
+<area shape=rect	coords=1165,993,1211,1010	href="/dbget-bin/www_bget?rno:29627+rno:29628+rno:29629+rno:50592"	title="29627 (Gria2), 29628 (Gria3), 29629 (Gria4), 50592 (Gria1)" />
+<area shape=rect	coords=1165,914,1211,931	href="/dbget-bin/www_bget?rno:170796+rno:191573+rno:24408+rno:24409+rno:24410+rno:24411+rno:24412"	title="170796 (Grin3b), 191573 (Grin3a), 24408 (Grin1), 24409 (Grin2a), 24410 (Grin2b), 24411 (Grin2c), 24412 (Grin2d)" />
+<area shape=rect	coords=526,798,572,815	href="/dbget-bin/www_bget?rno:25590+rno:54239"	title="25590 (Chrna4), 54239 (Chrnb2)" />
+<area shape=rect	coords=1165,746,1211,763	href="/dbget-bin/www_bget?rno:25590+rno:54239"	title="25590 (Chrna4), 54239 (Chrnb2)" />
+<area shape=rect	coords=525,1057,571,1074	href="/dbget-bin/www_bget?rno:25302"	title="25302 (Chrna7)" />
+<area shape=rect	coords=1165,1057,1211,1074	href="/dbget-bin/www_bget?rno:25302"	title="25302 (Chrna7)" />
+<area shape=rect	coords=218,592,264,609	href="/dbget-bin/www_bget?rno:83612"	title="83612 (Slc32a1)" />
+<area shape=rect	coords=864,594,910,611	href="/dbget-bin/www_bget?rno:83612"	title="83612 (Slc32a1)" />
+<area shape=rect	coords=192,965,238,982	href="/dbget-bin/www_bget?rno:116638+rno:266767+rno:84487"	title="116638 (Slc17a7), 266767 (Slc17a8), 84487 (Slc17a6)" />
+<area shape=rect	coords=832,965,878,982	href="/dbget-bin/www_bget?rno:116638+rno:266767+rno:84487"	title="116638 (Slc17a7), 266767 (Slc17a8), 84487 (Slc17a6)" />
+<area shape=rect	coords=418,906,464,923	href="/dbget-bin/www_bget?rno:25398+rno:257648"	title="25398 (Cacna1a), 257648 (Cacna1b)" />
+<area shape=rect	coords=1056,900,1102,917	href="/dbget-bin/www_bget?rno:25398+rno:257648"	title="25398 (Cacna1a), 257648 (Cacna1b)" />
+<area shape=rect	coords=40,45,222,70	href="/dbget-bin/www_bget?rno05033"	title="rno05033: Nicotine addiction" onmouseover="popupTimer(&quot;rno05033&quot;, &quot;rno05033: Nicotine addiction&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=111,554,220,588	href="/kegg-bin/show_pathway?rno04727"	title="rno04727: GABAergic synapse" onmouseover="popupTimer(&quot;rno04727&quot;, &quot;rno04727: GABAergic synapse&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=110,914,219,948	href="/kegg-bin/show_pathway?rno04724"	title="rno04724: Glutamatergic synapse" onmouseover="popupTimer(&quot;rno04724&quot;, &quot;rno04724: Glutamatergic synapse&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=746,558,855,592	href="/kegg-bin/show_pathway?rno04727"	title="rno04727: GABAergic synapse" onmouseover="popupTimer(&quot;rno04727&quot;, &quot;rno04727: GABAergic synapse&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=747,917,856,951	href="/kegg-bin/show_pathway?rno04724"	title="rno04724: Glutamatergic synapse" onmouseover="popupTimer(&quot;rno04724&quot;, &quot;rno04724: Glutamatergic synapse&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1368,749,1477,783	href="/kegg-bin/show_pathway?rno04728"	title="rno04728: Dopaminergic synapse" onmouseover="popupTimer(&quot;rno04728&quot;, &quot;rno04728: Dopaminergic synapse&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

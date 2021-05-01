@@ -1,0 +1,354 @@
+<html>
+<!---
+ENTRY       hsa05020
+DEFINITION  Prion diseases - Homo sapiens (human)
+--->
+<head>
+<title>
+KEGG PATHWAY: Prion diseases - Homo sapiens (human)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Prion diseases - Homo sapiens (human)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=05020&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map05020.keg&query=hsa&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+hsa05020">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=hsa05020&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Prion diseases, also termed transmissible spongiform encephalopathies (TSEs), are a group of fatal neurodegenerative diseases that affect humans and a number of other animal species. The etiology of these diseases is thought to be associated with the conversion of a normal protein, PrPC, into an infectious, pathogenic form, PrPSc. The conversion is induced by prion infections (for example, variant Creutzfeldt-Jakob disease (vCJD), iatrogenic CJD, Kuru), mutations (familial CJD, Gerstmann-Straussler-Scheinker syndrome, fatal familial insomnia (FFI)) or unknown factors (sporadic CJD (sCJD)), and is thought to occur after PrPC has reached the plasma membrane or is re-internalized for degradation. The PrPSc form shows greater protease resistance than PrPC and accumulates in affected individuals, often in the form of extracellular plaques. Pathways that may lead to neuronal death comprise oxidative stress, regulated activation of complement, ubiquitin-proteasome and endosomal-lysosomal systems, synaptic alterations and dendritic atrophy, corticosteroid response, and endoplasmic reticulum stress. In addition, the conformational transition could lead to the lost of a beneficial activity of the natively folded protein, PrPC.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="hsa.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa" selected>Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="05020" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="hsa05020" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/hsa/hsa05020.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=516,281,4	href="/dbget-bin/www_bget?C00575"	title="C00575 (3',5'-Cyclic AMP)" onmouseover="popupTimer(&quot;C00575&quot;, &quot;C00575 (3',5'-Cyclic AMP)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=429,828,4	href="/dbget-bin/www_bget?C00027"	title="C00027 (Hydrogen peroxide)" onmouseover="popupTimer(&quot;C00027&quot;, &quot;C00027 (Hydrogen peroxide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=464,653,4	href="/dbget-bin/www_bget?C02140"	title="C02140 (Corticosterone)" onmouseover="popupTimer(&quot;C02140&quot;, &quot;C02140 (Corticosterone)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=887,370,933,387	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=263,207,309,224	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=263,444,309,461	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=263,461,309,478	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=263,536,309,553	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=492,457,538,474	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=492,519,538,536	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=664,473,710,490	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=665,506,711,523	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=858,111,904,128	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=1017,111,1063,128	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=857,166,903,183	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=1018,166,1064,183	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=598,99,644,116	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=363,96,409,113	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=161,465,207,482	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=364,146,410,163	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=598,144,644,161	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=263,255,309,272	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=263,322,309,339	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=263,519,309,536	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=263,402,309,419	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=942,556,988,573	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=1001,546,1047,563	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=1010,584,1056,601	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=971,619,1017,636	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=928,589,974,606	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=263,355,309,372	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=446,457,492,474	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=446,519,492,536	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=263,667,309,684	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=263,690,309,707	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=263,713,309,730	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=1052,225,1098,242	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=890,224,936,241	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=138,540,184,557	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=263,160,309,177	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=263,183,309,200	href="/dbget-bin/www_bget?hsa:5621"	title="5621 (PRNP)" />
+<area shape=rect	coords=438,207,484,224	href="/dbget-bin/www_bget?hsa:4684+hsa:4685"	title="4684 (NCAM1), 4685 (NCAM2)" />
+<area shape=rect	coords=489,207,535,224	href="/dbget-bin/www_bget?hsa:3915"	title="3915 (LAMC1)" />
+<area shape=rect	coords=438,273,484,290	href="/dbget-bin/www_bget?hsa:10963"	title="10963 (STIP1)" />
+<area shape=rect	coords=550,273,596,290	href="/dbget-bin/www_bget?hsa:5566+hsa:5567+hsa:5568"	title="5566 (PRKACA), 5567 (PRKACB), 5568 (PRKACG)" />
+<area shape=rect	coords=438,239,484,256	href="/dbget-bin/www_bget?hsa:6647"	title="6647 (SOD1)" />
+<area shape=rect	coords=438,308,484,325	href="/dbget-bin/www_bget?hsa:581"	title="581 (BAX)" />
+<area shape=rect	coords=87,646,133,663	href="/dbget-bin/www_bget?hsa:712+hsa:713+hsa:714"	title="712 (C1QA), 713 (C1QB), 714 (C1QC)" />
+<area shape=rect	coords=438,341,484,358	href="/dbget-bin/www_bget?hsa:2534"	title="2534 (FYN)" />
+<area shape=rect	coords=605,687,651,704	href="/dbget-bin/www_bget?hsa:5604+hsa:5605"	title="5604 (MAP2K1), 5605 (MAP2K2)" />
+<area shape=rect	coords=707,687,753,704	href="/dbget-bin/www_bget?hsa:5594+hsa:5595"	title="5594 (MAPK1), 5595 (MAPK3)" />
+<area shape=rect	coords=827,687,873,704	href="/dbget-bin/www_bget?hsa:2002"	title="2002 (ELK1)" />
+<area shape=rect	coords=707,750,753,767	href="/dbget-bin/www_bget?hsa:1958"	title="1958 (EGR1)" />
+<area shape=rect	coords=707,787,753,804	href="/dbget-bin/www_bget?hsa:6352"	title="6352 (CCL5)" />
+<area shape=rect	coords=167,837,213,854	href="/dbget-bin/www_bget?hsa:3552+hsa:3553"	title="3552 (IL1A), 3553 (IL1B)" />
+<area shape=rect	coords=167,859,213,876	href="/dbget-bin/www_bget?hsa:3569"	title="3569 (IL6)" />
+<area shape=rect	coords=296,758,342,775	href="/dbget-bin/www_bget?hsa:4851"	title="4851 (NOTCH1)" />
+<area shape=rect	coords=1103,298,1149,315	href="/dbget-bin/www_bget?hsa:100506742"	title="100506742 (CASP12)" />
+<area shape=rect	coords=508,652,554,669	href="/dbget-bin/www_bget?hsa:3303"	title="3303 (HSPA1A)" />
+<area shape=rect	coords=298,620,344,637	href="/dbget-bin/www_bget?hsa:727+hsa:729+hsa:730+hsa:731+hsa:732+hsa:733+hsa:735"	title="727 (C5), 729 (C6), 730 (C7), 731 (C8A), 732 (C8B), 733 (C8G), 735 (C9)" />
+<area shape=rect	coords=1011,199,1057,216	href="/dbget-bin/www_bget?hsa:3309"	title="3309 (HSPA5)" />
+<area shape=rect	coords=40,45,181,70	href="/dbget-bin/www_bget?hsa05020"	title="hsa05020: Prion diseases" onmouseover="popupTimer(&quot;hsa05020&quot;, &quot;hsa05020: Prion diseases&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=365,593,481,618	href="/kegg-bin/show_pathway?hsa04144"	title="hsa04144: Endocytosis" onmouseover="popupTimer(&quot;hsa04144&quot;, &quot;hsa04144: Endocytosis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1001,334,1117,359	href="/kegg-bin/show_pathway?hsa03050"	title="hsa03050: Proteasome" onmouseover="popupTimer(&quot;hsa03050&quot;, &quot;hsa03050: Proteasome&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=587,591,703,616	href="/kegg-bin/show_pathway?hsa04142"	title="hsa04142: Lysosome" onmouseover="popupTimer(&quot;hsa04142&quot;, &quot;hsa04142: Lysosome&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=42,710,158,744	href="/kegg-bin/show_pathway?hsa04610"	title="hsa04610: Complement and coagulation cascades" onmouseover="popupTimer(&quot;hsa04610&quot;, &quot;hsa04610: Complement and coagulation cascades&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=717,305,833,330	href="/kegg-bin/show_pathway?hsa04210"	title="hsa04210: Apoptosis" onmouseover="popupTimer(&quot;hsa04210&quot;, &quot;hsa04210: Apoptosis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1025,655,1141,689	href="/kegg-bin/show_pathway?hsa04140"	title="hsa04140: Autophagy" onmouseover="popupTimer(&quot;hsa04140&quot;, &quot;hsa04140: Autophagy&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=440,720,556,754	href="/kegg-bin/show_pathway?hsa04330"	title="hsa04330: Notch signaling pathway" onmouseover="popupTimer(&quot;hsa04330&quot;, &quot;hsa04330: Notch signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

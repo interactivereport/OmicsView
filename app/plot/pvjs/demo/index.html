@@ -1,0 +1,130 @@
+<html>
+<head>
+<style  type="text/css">
+a#wplink {
+text-decoration:none;
+font-family:serif;
+color:black;
+font-size:12px;
+}
+#logolink {
+	float:right;
+	top:-20px;
+	left: -10px;
+	position:relative;
+	z-index:2;
+	opacity: 0.5;
+}
+html, body {
+	width:100%;
+	height:100%;
+}
+#pvjs-widget {
+	top:0;
+	left:0;
+	font-size:12px;
+	width:100%;
+	height:inherit;
+}
+</style>
+
+
+<script type="text/javascript" src="javascript/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="javascript/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="javascript/jquery.layout.min-1.3.0.js"></script>
+<script type="text/javascript" src="javascript/d3.min.js"></script>
+<script type="text/javascript" src="javascript/mithril.min.js"></script>
+<script type="text/javascript" src="javascript/polyfills.bundle.min.js"></script>
+<script type="text/javascript" src="javascript/pvjs.core.min.js"></script>
+<script type="text/javascript" src="javascript/pvjs.custom-element.min.js"></script>
+
+<script>kaavioHighlights = [
+{"selector":"ACSL4","backgroundColor":"url(#solids)","borderColor":"#B0B0B0"},
+{"selector":"ACSL3","backgroundColor":"#B0B0B0","borderColor":"#B0B0B0"},
+{"selector":"ACACA","backgroundColor":"#B0B0B0","borderColor":"#B0B0B0"},
+{"selector":"ECHDC1","backgroundColor":"#B0B0B0","borderColor":"#B0B0B0"},
+{"selector":"PECR","backgroundColor":"#B0B0B0","borderColor":"#B0B0B0"},
+{"selector":"MECR","backgroundColor":"#B0B0B0","borderColor":"#B0B0B0"},
+{"selector":"ACSL6","backgroundColor":"#B0B0B0","borderColor":"#B0B0B0"},
+{"selector":"ECHDC2","backgroundColor":"#B0B0B0","borderColor":"#B0B0B0"},
+{"selector":"ACSL5","backgroundColor":"#B0B0B0","borderColor":"#B0B0B0"},
+{"selector":"DECR1","backgroundColor":"#B0B0B0","borderColor":"#B0B0B0"},
+{"selector":"ACAA2","backgroundColor":"#B0B0B0","borderColor":"#B0B0B0"},
+{"selector":"ACLY","backgroundColor":"#B0B0B0","borderColor":"#B0B0B0"},
+{"selector":"ACSL1","backgroundColor":"#6A03B2","borderColor":"#6A03B2"},
+{"selector":"ECH1","backgroundColor":"#6A03B2","borderColor":"#6A03B2"},
+{"selector":"ACACB","backgroundColor":"#6A03B2","borderColor":"#6A03B2"},
+{"selector":"ECHS1","backgroundColor":"#6A03B2","borderColor":"#6A03B2"},
+{"selector":"PC","backgroundColor":"#6A03B2","borderColor":"#6A03B2"},
+{"selector":"ACAS2","backgroundColor":"#6A03B2","borderColor":"#6A03B2"},
+{"selector":"FASN","backgroundColor":"#6A03B2","borderColor":"#6A03B2"},
+{"selector":"ECHDC3","backgroundColor":"#6A03B2","borderColor":"#6A03B2"},
+{"selector":"HADHSC","backgroundColor":"#6A03B2","borderColor":"#6A03B2"},
+{"selector":"SCD","backgroundColor":"#6A03B2","borderColor":"#6A03B2"},]
+</script>
+
+<title>WikiPathways Pathway Viewer</title>
+</head>
+<body>
+
+
+	<wikipathways-pvjs
+		id="pvjs-widget"
+		src="./gpml_test/Hs_Fatty_Acid_Biosynthesis_WP357_85181.gpml"
+		display-errors="true"
+		display-warnings="true"
+		fit-to-container="true"
+		editor="disabled">'
+			<img src="http://www.wikipathways.org/img_auth.php/7/7c/WP357_85181.png" alt="Diagram for pathway WP357" width="600" height="420" class="thumbimage">
+	</wikipathways-pvjs>
+
+<script>
+checkReady();
+
+function checkReady() {
+  if ($("svg")[0] == null) {
+    setTimeout("checkReady()", 300);
+  } else {
+    /*createGradient($('svg')[0],'solids',[
+	  {offset:'0%', 'stop-color':'#ff0000'},
+	  {offset:'33%','stop-color':'#ff0000'},
+	  {offset:'33%','stop-color':'#00ff00'},
+	  {offset:'67%','stop-color':'#00ff00'},
+	  {offset:'67%','stop-color':'#0000ff'}
+	]);*/
+
+    createGradient($("svg")[0], "solids", [
+      { offset: "0%", "stop-color": "rgb(100,100,100)" },
+      { offset: "33%", "stop-color": "#ff0000" },
+      { offset: "33%", "stop-color": "#00ff00" },
+      { offset: "67%", "stop-color": "#00ff00" },
+      { offset: "67%", "stop-color": "#0000ff" }
+    ]);
+  }
+}
+
+// $('svg path').attr('fill','url(#MyGradient)');
+
+function createGradient(svg, id, stops) {
+  var svgNS = svg.namespaceURI;
+  var grad = document.createElementNS(svgNS, "linearGradient");
+  grad.setAttribute("id", id);
+  for (var i = 0; i < stops.length; i++) {
+    var attrs = stops[i];
+    var stop = document.createElementNS(svgNS, "stop");
+    for (var attr in attrs) {
+      if (attrs.hasOwnProperty(attr)) stop.setAttribute(attr, attrs[attr]);
+    }
+    grad.appendChild(stop);
+  }
+
+  var defs =
+    svg.querySelector("defs") ||
+    svg.insertBefore(document.createElementNS(svgNS, "defs"), svg.firstChild);
+  return defs.appendChild(grad);
+}
+</script>
+
+
+</body>
+</html>

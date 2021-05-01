@@ -1,0 +1,431 @@
+<html>
+<!---
+ENTRY       mmu04110
+DEFINITION  Cell cycle - Mus musculus (mouse)
+--->
+<head>
+<title>
+KEGG PATHWAY: Cell cycle - Mus musculus (mouse)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Cell cycle - Mus musculus (mouse)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=04110&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map04110.keg&query=mmu&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+mmu04110">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=mmu04110&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Mitotic cell cycle progression is accomplished through a reproducible sequence of events, DNA replication (S phase) and mitosis (M phase) separated temporally by gaps known as G1 and G2 phases. Cyclin-dependent kinases (CDKs) are key regulatory enzymes, each consisting of a catalytic CDK subunit and an activating cyclin subunit. CDKs regulate the cell's progression through the phases of the cell cycle by modulating the activity of key substrates. Downstream targets of CDKs include transcription factor E2F and its regulator Rb. Precise activation and inactivation of CDKs at specific points in the cell cycle are required for orderly cell division. Cyclin-CDK inhibitors (CKIs), such as p16Ink4a, p15Ink4b, p27Kip1, and p21Cip1, are involved in the negative regulation of CDK activities, thus providing a pathway through which the cell cycle is negatively regulated.
+ Eukaryotic cells respond to DNA damage by activating signaling pathways that promote cell cycle arrest and DNA repair. In response to DNA damage, the checkpoint kinase ATM phosphorylates and activates Chk2, which in turn directly phosphorylates and activates p53 tumor suppressor protein. p53 and its transcriptional targets play an important role in both G1 and G2 checkpoints. ATR-Chk1-mediated protein degradation of Cdc25A protein phosphatase is also a mechanism conferring intra-S-phase checkpoint activation.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="mmu.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu" selected>Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+<option value="gga">Gallus gallus (chicken)</option>
+<option value="mgp">Meleagris gallopavo (turkey)</option>
+<option value="cjo">Coturnix japonica (Japanese quail)</option>
+<option value="apla">Anas platyrhynchos (mallard)</option>
+<option value="acyg">Anser cygnoides domesticus (swan goose)</option>
+<option value="tgu">Taeniopygia guttata (zebra finch)</option>
+<option value="gfr">Geospiza fortis (medium ground-finch)</option>
+<option value="fab">Ficedula albicollis (collared flycatcher)</option>
+<option value="phi">Pseudopodoces humilis (Tibetan ground-tit)</option>
+<option value="pmaj">Parus major (Great Tit)</option>
+<option value="ccw">Corvus cornix (hooded crow)</option>
+<option value="fpg">Falco peregrinus (peregrine falcon)</option>
+<option value="fch">Falco cherrug (Saker falcon)</option>
+<option value="clv">Columba livia (rock pigeon)</option>
+<option value="aam">Apteryx australis mantelli (brown kiwi)</option>
+<option value="asn">Alligator sinensis (Chinese alligator)</option>
+<option value="amj">Alligator mississippiensis (American alligator)</option>
+<option value="pss">Pelodiscus sinensis (Chinese soft-shelled turtle)</option>
+<option value="cmy">Chelonia mydas (green sea turtle)</option>
+<option value="cpic">Chrysemys picta (western painted turtle)</option>
+<option value="acs">Anolis carolinensis (green anole)</option>
+<option value="pvt">Pogona vitticeps (central bearded dragon)</option>
+<option value="pbi">Python bivittatus (Burmese python)</option>
+<option value="gja">Gekko japonicus</option>
+<option value="xla">Xenopus laevis (African clawed frog)</option>
+<option value="xtr">Xenopus tropicalis (western clawed frog)</option>
+<option value="npr">Nanorana parkeri</option>
+<option value="dre">Danio rerio (zebrafish)</option>
+<option value="srx">Sinocyclocheilus rhinocerous</option>
+<option value="sanh">Sinocyclocheilus anshuiensis</option>
+<option value="sgh">Sinocyclocheilus grahami</option>
+<option value="ipu">Ictalurus punctatus (channel catfish)</option>
+<option value="amex">Astyanax mexicanus (Mexican tetra)</option>
+<option value="tru">Takifugu rubripes (torafugu)</option>
+<option value="tng">Tetraodon nigroviridis (spotted green pufferfish)</option>
+<option value="lco">Larimichthys crocea (large yellow croaker)</option>
+<option value="ncc">Notothenia coriiceps (black rockcod)</option>
+<option value="mze">Maylandia zebra (zebra mbuna)</option>
+<option value="ola">Oryzias latipes (Japanese medaka)</option>
+<option value="xma">Xiphophorus maculatus (southern platyfish)</option>
+<option value="csem">Cynoglossus semilaevis (tongue sole)</option>
+<option value="lcf">Lates calcarifer (barramundi perch)</option>
+<option value="hcq">Hippocampus comes (tiger tail seahorse)</option>
+<option value="bpec">Boleophthalmus pectinirostris (great blue-spotted mudskipper)</option>
+<option value="sasa">Salmo salar (Atlantic salmon)</option>
+<option value="els">Esox lucius (northern pike)</option>
+<option value="sfm">Scleropages formosus (Asian bonytongue)</option>
+<option value="lcm">Latimeria chalumnae (coelacanth)</option>
+<option value="cmk">Callorhinchus milii (elephant shark)</option>
+</select>
+<input type="hidden" name="mapno" value="04110" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="mmu04110" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/mmu/mmu04110.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=rect	coords=509,115,555,132	href="/dbget-bin/www_bget?mmu:12578"	title="12578 (Cdkn2a)" />
+<area shape=rect	coords=896,527,942,544	href="/dbget-bin/www_bget?mmu:56371"	title="56371 (Fzr1)" />
+<area shape=rect	coords=530,547,576,564	href="/dbget-bin/www_bget?mmu:17215+mmu:17216+mmu:17217+mmu:17218+mmu:17219+mmu:17220"	title="17215 (Mcm3), 17216 (Mcm2), 17217 (Mcm4), 17218 (Mcm5), 17219 (Mcm6), 17220 (Mcm7)" />
+<area shape=rect	coords=471,547,517,564	href="/dbget-bin/www_bget?mmu:18392+mmu:18393+mmu:26428+mmu:26429+mmu:50793+mmu:56452"	title="18392 (Orc1), 18393 (Orc2), 26428 (Orc4), 26429 (Orc5), 50793 (Orc3), 56452 (Orc6)" />
+<area shape=rect	coords=896,288,942,305	href="/dbget-bin/www_bget?mmu:17222+mmu:217232+mmu:52206+mmu:52563+mmu:56317+mmu:59008+mmu:66156+mmu:66440+mmu:68999+mmu:69010+mmu:69957+mmu:99152"	title="17222 (Anapc1), 217232 (Cdc27), 52206 (Anapc4), 52563 (Cdc23), 56317 (Anapc7), 59008 (Anapc5), 66156 (Anapc11), 66440 (Cdc26), 68999 (Anapc10), 69010 (Anapc13), 69957 (Cdc16), 99152 (Anapc2)" />
+<area shape=rect	coords=896,510,942,527	href="/dbget-bin/www_bget?mmu:17222+mmu:217232+mmu:52206+mmu:52563+mmu:56317+mmu:59008+mmu:66156+mmu:66440+mmu:68999+mmu:69010+mmu:69957+mmu:99152"	title="17222 (Anapc1), 217232 (Cdc27), 52206 (Anapc4), 52563 (Cdc23), 56317 (Anapc7), 59008 (Anapc5), 66156 (Anapc11), 66440 (Cdc26), 68999 (Anapc10), 69010 (Anapc13), 69957 (Cdc16), 99152 (Anapc2)" />
+<area shape=rect	coords=165,510,211,527	href="/dbget-bin/www_bget?mmu:100043674+mmu:21402+mmu:26965+mmu:56438"	title="100043674 (Rbx1-ps), 21402 (Skp1a), 26965 (Cul1), 56438 (Rbx1)" />
+<area shape=rect	coords=409,182,455,199	href="/dbget-bin/www_bget?mmu:100043674+mmu:21402+mmu:26965+mmu:56438"	title="100043674 (Rbx1-ps), 21402 (Skp1a), 26965 (Cul1), 56438 (Rbx1)" />
+<area shape=rect	coords=100,695,146,712	href="/dbget-bin/www_bget?mmu:56452"	title="56452 (Orc6)" />
+<area shape=rect	coords=54,678,100,695	href="/dbget-bin/www_bget?mmu:50793"	title="50793 (Orc3)" />
+<area shape=rect	coords=54,695,100,712	href="/dbget-bin/www_bget?mmu:26429"	title="26429 (Orc5)" />
+<area shape=rect	coords=100,678,146,695	href="/dbget-bin/www_bget?mmu:26428"	title="26428 (Orc4)" />
+<area shape=rect	coords=100,661,146,678	href="/dbget-bin/www_bget?mmu:18393"	title="18393 (Orc2)" />
+<area shape=rect	coords=54,661,100,678	href="/dbget-bin/www_bget?mmu:18392"	title="18392 (Orc1)" />
+<area shape=rect	coords=222,695,268,712	href="/dbget-bin/www_bget?mmu:17220"	title="17220 (Mcm7)" />
+<area shape=rect	coords=177,695,223,712	href="/dbget-bin/www_bget?mmu:17219"	title="17219 (Mcm6)" />
+<area shape=rect	coords=222,678,268,695	href="/dbget-bin/www_bget?mmu:17218"	title="17218 (Mcm5)" />
+<area shape=rect	coords=177,678,223,695	href="/dbget-bin/www_bget?mmu:17217"	title="17217 (Mcm4)" />
+<area shape=rect	coords=222,661,268,678	href="/dbget-bin/www_bget?mmu:17215"	title="17215 (Mcm3)" />
+<area shape=rect	coords=177,661,223,678	href="/dbget-bin/www_bget?mmu:17216"	title="17216 (Mcm2)" />
+<area shape=rect	coords=757,459,803,476	href="/dbget-bin/www_bget?mmu:12534"	title="12534 (Cdk1)" />
+<area shape=rect	coords=807,289,853,306	href="/dbget-bin/www_bget?mmu:12236"	title="12236 (Bub1b)" />
+<area shape=rect	coords=536,350,582,367	href="/dbget-bin/www_bget?mmu:18538"	title="18538 (Pcna)" />
+<area shape=rect	coords=839,459,885,476	href="/dbget-bin/www_bget?mmu:18817"	title="18817 (Plk1)" />
+<area shape=rect	coords=673,154,719,171	href="/dbget-bin/www_bget?mmu:11920+mmu:245000"	title="11920 (Atm), 245000 (Atr)" />
+<area shape=rect	coords=509,617,555,634	href="/dbget-bin/www_bget?mmu:27214"	title="27214 (Dbf4)" />
+<area shape=rect	coords=807,272,853,289	href="/dbget-bin/www_bget?mmu:56150+mmu:71890"	title="56150 (Mad2l1), 71890 (Mad2l2)" />
+<area shape=rect	coords=746,306,792,323	href="/dbget-bin/www_bget?mmu:12235"	title="12235 (Bub1)" />
+<area shape=rect	coords=807,306,853,323	href="/dbget-bin/www_bget?mmu:12237"	title="12237 (Bub3)" />
+<area shape=rect	coords=896,569,942,586	href="/dbget-bin/www_bget?mmu:218294+mmu:229776"	title="218294 (Cdc14b), 229776 (Cdc14a)" />
+<area shape=rect	coords=827,343,873,360	href="/dbget-bin/www_bget?mmu:22627+mmu:22628+mmu:22629+mmu:22630+mmu:22631+mmu:54401"	title="22627 (Ywhae), 22628 (Ywhag), 22629 (Ywhah), 22630 (Ywhaq), 22631 (Ywhaz), 54401 (Ywhab)" />
+<area shape=rect	coords=615,304,661,321	href="/dbget-bin/www_bget?mmu:55948"	title="55948 (Sfn)" />
+<area shape=rect	coords=673,290,719,307	href="/dbget-bin/www_bget?mmu:12649+mmu:50883"	title="12649 (Chek1), 50883 (Chek2)" />
+<area shape=rect	coords=436,304,482,321	href="/dbget-bin/www_bget?mmu:12575"	title="12575 (Cdkn1a)" />
+<area shape=rect	coords=617,154,663,171	href="/dbget-bin/www_bget?mmu:19090"	title="19090 (Prkdc)" />
+<area shape=rect	coords=509,170,555,187	href="/dbget-bin/www_bget?mmu:17246"	title="17246 (Mdm2)" />
+<area shape=rect	coords=567,141,613,158	href="/dbget-bin/www_bget?mmu:12914+mmu:328572"	title="12914 (Crebbp), 328572 (Ep300)" />
+<area shape=rect	coords=409,199,455,216	href="/dbget-bin/www_bget?mmu:27401"	title="27401 (Skp2)" />
+<area shape=rect	coords=740,519,786,536	href="/dbget-bin/www_bget?mmu:268930"	title="268930 (Pkmyt1)" />
+<area shape=rect	coords=681,519,727,536	href="/dbget-bin/www_bget?mmu:22390+mmu:381759"	title="22390 (Wee1), 381759 (Wee2)" />
+<area shape=rect	coords=896,236,942,253	href="/dbget-bin/www_bget?mmu:30939"	title="30939 (Pttg1)" />
+<area shape=rect	coords=896,189,942,206	href="/dbget-bin/www_bget?mmu:105988"	title="105988 (Espl1)" />
+<area shape=rect	coords=872,108,918,125	href="/dbget-bin/www_bget?mmu:140557+mmu:24061"	title="140557 (Smc1b), 24061 (Smc1a)" />
+<area shape=rect	coords=165,527,211,544	href="/dbget-bin/www_bget?mmu:27401"	title="27401 (Skp2)" />
+<area shape=rect	coords=614,519,660,536	href="/dbget-bin/www_bget?mmu:19645"	title="19645 (Rb1)" />
+<area shape=rect	coords=536,304,582,321	href="/dbget-bin/www_bget?mmu:13197+mmu:17873+mmu:23882"	title="13197 (Gadd45a), 17873 (Gadd45b), 23882 (Gadd45g)" />
+<area shape=rect	coords=481,234,527,251	href="/dbget-bin/www_bget?mmu:19645"	title="19645 (Rb1)" />
+<area shape=rect	coords=567,234,613,251	href="/dbget-bin/www_bget?mmu:22059"	title="22059 (Trp53)" />
+<area shape=rect	coords=384,304,430,321	href="/dbget-bin/www_bget?mmu:12576+mmu:12577"	title="12576 (Cdkn1b), 12577 (Cdkn1c)" />
+<area shape=rect	coords=233,304,279,321	href="/dbget-bin/www_bget?mmu:12579"	title="12579 (Cdkn2b)" />
+<area shape=rect	coords=304,95,350,112	href="/dbget-bin/www_bget?mmu:21803+mmu:21808+mmu:21809"	title="21803 (Tgfb1), 21808 (Tgfb2), 21809 (Tgfb3)" />
+<area shape=rect	coords=304,155,350,172	href="/dbget-bin/www_bget?mmu:17128"	title="17128 (Smad4)" />
+<area shape=rect	coords=304,138,350,155	href="/dbget-bin/www_bget?mmu:17126+mmu:17127"	title="17126 (Smad2), 17127 (Smad3)" />
+<area shape=rect	coords=509,600,555,617	href="/dbget-bin/www_bget?mmu:12545"	title="12545 (Cdc7)" />
+<area shape=rect	coords=896,305,942,322	href="/dbget-bin/www_bget?mmu:107995"	title="107995 (Cdc20)" />
+<area shape=rect	coords=807,393,853,410	href="/dbget-bin/www_bget?mmu:12531+mmu:12532"	title="12531 (Cdc25b), 12532 (Cdc25c)" />
+<area shape=rect	coords=530,519,576,536	href="/dbget-bin/www_bget?mmu:12544"	title="12544 (Cdc45)" />
+<area shape=rect	coords=471,519,517,536	href="/dbget-bin/www_bget?mmu:23834"	title="23834 (Cdc6)" />
+<area shape=rect	coords=591,393,637,410	href="/dbget-bin/www_bget?mmu:12530"	title="12530 (Cdc25a)" />
+<area shape=rect	coords=147,158,193,175	href="/dbget-bin/www_bget?mmu:56637"	title="56637 (Gsk3b)" />
+<area shape=rect	coords=666,459,712,476	href="/dbget-bin/www_bget?mmu:12534"	title="12534 (Cdk1)" />
+<area shape=rect	coords=757,442,803,459	href="/dbget-bin/www_bget?mmu:12442+mmu:209091+mmu:268697"	title="12442 (Ccnb2), 209091 (Ccnb3), 268697 (Ccnb1)" />
+<area shape=rect	coords=666,442,712,459	href="/dbget-bin/www_bget?mmu:12427+mmu:12428"	title="12427 (Ccna1), 12428 (Ccna2)" />
+<area shape=rect	coords=529,459,575,476	href="/dbget-bin/www_bget?mmu:12572"	title="12572 (Cdk7)" />
+<area shape=rect	coords=434,459,480,476	href="/dbget-bin/www_bget?mmu:12566"	title="12566 (Cdk2)" />
+<area shape=rect	coords=312,459,358,476	href="/dbget-bin/www_bget?mmu:12566"	title="12566 (Cdk2)" />
+<area shape=rect	coords=204,459,250,476	href="/dbget-bin/www_bget?mmu:12567+mmu:12571"	title="12567 (Cdk4), 12571 (Cdk6)" />
+<area shape=rect	coords=529,442,575,459	href="/dbget-bin/www_bget?mmu:66671"	title="66671 (Ccnh)" />
+<area shape=rect	coords=434,442,480,459	href="/dbget-bin/www_bget?mmu:12427+mmu:12428"	title="12427 (Ccna1), 12428 (Ccna2)" />
+<area shape=rect	coords=312,442,358,459	href="/dbget-bin/www_bget?mmu:12447+mmu:12448"	title="12447 (Ccne1), 12448 (Ccne2)" />
+<area shape=rect	coords=204,442,250,459	href="/dbget-bin/www_bget?mmu:12443+mmu:12444+mmu:12445"	title="12443 (Ccnd1), 12444 (Ccnd2), 12445 (Ccnd3)" />
+<area shape=rect	coords=807,222,853,239	href="/dbget-bin/www_bget?mmu:17120"	title="17120 (Mad1l1)" />
+<area shape=rect	coords=807,172,853,189	href="/dbget-bin/www_bget?mmu:22137"	title="22137 (Ttk)" />
+<area shape=rect	coords=281,304,327,321	href="/dbget-bin/www_bget?mmu:12580"	title="12580 (Cdkn2c)" />
+<area shape=rect	coords=329,304,375,321	href="/dbget-bin/www_bget?mmu:12581"	title="12581 (Cdkn2d)" />
+<area shape=rect	coords=185,304,231,321	href="/dbget-bin/www_bget?mmu:12578"	title="12578 (Cdkn2a)" />
+<area shape=rect	coords=918,108,964,125	href="/dbget-bin/www_bget?mmu:13006"	title="13006 (Smc3)" />
+<area shape=rect	coords=895,125,941,142	href="/dbget-bin/www_bget?mmu:20842+mmu:20843"	title="20842 (Stag1), 20843 (Stag2)" />
+<area shape=rect	coords=895,142,941,159	href="/dbget-bin/www_bget?mmu:19357"	title="19357 (Rad21)" />
+<area shape=rect	coords=220,121,266,138	href="/dbget-bin/www_bget?mmu:19650"	title="19650 (Rbl1)" />
+<area shape=rect	coords=220,138,266,155	href="/dbget-bin/www_bget?mmu:104394+mmu:13559"	title="104394 (E2f4), 13559 (E2f5)" />
+<area shape=rect	coords=220,210,266,227	href="/dbget-bin/www_bget?mmu:17869"	title="17869 (Myc)" />
+<area shape=rect	coords=220,242,266,259	href="/dbget-bin/www_bget?mmu:22642"	title="22642 (Zbtb17)" />
+<area shape=rect	coords=390,517,436,534	href="/dbget-bin/www_bget?mmu:11350"	title="11350 (Abl1)" />
+<area shape=rect	coords=330,585,376,602	href="/dbget-bin/www_bget?mmu:211586+mmu:21781"	title="211586 (Tfdp2), 21781 (Tfdp1)" />
+<area shape=rect	coords=330,568,376,585	href="/dbget-bin/www_bget?mmu:13555+mmu:13557+mmu:242705"	title="13555 (E2f1), 13557 (E2f3), 242705 (E2f2)" />
+<area shape=rect	coords=390,541,436,558	href="/dbget-bin/www_bget?mmu:15182+mmu:433759"	title="15182 (Hdac2), 433759 (Hdac1)" />
+<area shape=rect	coords=330,527,376,544	href="/dbget-bin/www_bget?mmu:19645"	title="19645 (Rb1)" />
+<area shape=rect	coords=275,527,321,544	href="/dbget-bin/www_bget?mmu:19650+mmu:19651"	title="19650 (Rbl1), 19651 (Rbl2)" />
+<area shape=rect	coords=275,585,321,602	href="/dbget-bin/www_bget?mmu:211586+mmu:21781"	title="211586 (Tfdp2), 21781 (Tfdp1)" />
+<area shape=rect	coords=275,568,321,585	href="/dbget-bin/www_bget?mmu:104394+mmu:13559"	title="104394 (E2f4), 13559 (E2f5)" />
+<area shape=rect	coords=220,155,266,172	href="/dbget-bin/www_bget?mmu:211586+mmu:21781"	title="211586 (Tfdp2), 21781 (Tfdp1)" />
+<area shape=rect	coords=718,230,787,256	href="/kegg-bin/show_pathway?mmu04210"	title="mmu04210: Apoptosis" onmouseover="popupTimer(&quot;mmu04210&quot;, &quot;mmu04210: Apoptosis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=939,363,1015,434	href="/kegg-bin/show_pathway?mmu04120"	title="mmu04120: Ubiquitin mediated proteolysis" onmouseover="popupTimer(&quot;mmu04120&quot;, &quot;mmu04120: Ubiquitin mediated proteolysis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=67,201,123,326	href="/kegg-bin/show_pathway?mmu04010"	title="mmu04010: MAPK signaling pathway" onmouseover="popupTimer(&quot;mmu04010&quot;, &quot;mmu04010: MAPK signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=40,45,155,70	href="/dbget-bin/www_bget?mmu04110"	title="mmu04110: Cell cycle" onmouseover="popupTimer(&quot;mmu04110&quot;, &quot;mmu04110: Cell cycle&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

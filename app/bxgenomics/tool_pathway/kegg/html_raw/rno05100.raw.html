@@ -1,0 +1,524 @@
+<html>
+<!---
+ENTRY       rno05100
+DEFINITION  Bacterial invasion of epithelial cells - Rattus norvegicus (rat)
+--->
+<head>
+<title>
+KEGG PATHWAY: Bacterial invasion of epithelial cells - Rattus norvegicus (rat)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(obj){
+  var form = document.forms["form2"];
+  var idx = obj.selectedIndex;
+  var value = obj.options[idx].value;
+	
+  if(value == "1.0_T01003")
+  {
+    form.scale.value = "1.0";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.70_T01003")
+  {
+    form.scale.value = "0.70";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.35_T01003")
+  {
+    form.scale.value = "0.35";
+    form.orgs.value  = "T01003";
+  }
+  else
+	{
+    form.scale.value = value;
+		form.orgs.value  = '';
+    if(form.image)
+    {
+		form.image.value  = '';
+    }
+		form.map.value = "rno05100";
+	}
+
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Bacterial invasion of epithelial cells - Rattus norvegicus (rat)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=05100&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map05100.keg&query=rno&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+rno05100">Pathway entry</a>
+
+| <a href="https://www.kegg.jp/kegg-bin/download?entry=rno05100&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Many pathogenic bacteria can invade phagocytic and non-phagocytic cells and colonize them intracellularly, then become disseminated to other cells. Invasive bacteria induce their own uptake by non-phagocytic host cells (e.g. epithelial cells) using two mechanisms referred to as zipper model and trigger model. Listeria, Staphylococcus, Streptococcus, and Yersinia are examples of bacteria that enter using the zipper model. These bacteria express proteins on their surfaces that interact with cellular receptors, initiating signalling cascades that result in close apposition of the cellular membrane around the entering bacteria. Shigella and Salmonella are the examples of bacteria entering cells using the trigger model. These bacteria use type III secretion systems to inject protein effectors that interact with the actin cytoskeleton.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="rno.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno" selected>Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="oro">Odobenus rosmarus divergens (Pacific walrus)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="oor">Orcinus orca (killer whale)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="tmu">Trichechus manatus latirostris (Florida manatee)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+<option value="sty">Salmonella enterica subsp. enterica serovar Typhi CT18</option>
+<option value="stt">Salmonella enterica subsp. enterica serovar Typhi Ty2</option>
+<option value="sex">Salmonella enterica subsp. enterica serovar Typhi P-stx-12</option>
+<option value="sent">Salmonella enterica subsp. enterica serovar Typhi Ty21a</option>
+<option value="stm">Salmonella enterica subsp. enterica serovar Typhimurium LT2</option>
+<option value="seo">Salmonella enterica subsp. enterica serovar Typhimurium 14028S</option>
+<option value="sev">Salmonella enterica subsp. enterica serovar Typhimurium D23580</option>
+<option value="sey">Salmonella enterica subsp. enterica serovar Typhimurium SL1344</option>
+<option value="sem">Salmonella enterica subsp. enterica serovar Typhimurium T000240</option>
+<option value="sej">Salmonella enterica subsp. enterica serovar Typhimurium UK-1</option>
+<option value="seb">Salmonella enterica subsp. enterica serovar Typhimurium ST4/74</option>
+<option value="sef">Salmonella enterica subsp. enterica serovar Typhimurium 798</option>
+<option value="setu">Salmonella enterica subsp. enterica serovar Typhimurium U288</option>
+<option value="setc">Salmonella enterica subsp. enterica serovar Typhimurium var. 5- CFSAN001921</option>
+<option value="senr">Salmonella enterica subsp. enterica serovar Typhimurium DT2</option>
+<option value="send">Salmonella enterica subsp. enterica serovar Typhimurium DT104</option>
+<option value="seni">Salmonella enterica subsp. enterica serovar Typhimurium 138736</option>
+<option value="seen">Salmonella enterica subsp. enterica serovar 4,[5],12:i:- str. 08-1736</option>
+<option value="spt">Salmonella enterica subsp. enterica serovar Paratyphi A ATCC9150</option>
+<option value="sek">Salmonella enterica subsp. enterica serovar Paratyphi A AKU12601</option>
+<option value="spq">Salmonella enterica subsp. enterica serovar Paratyphi B</option>
+<option value="sei">Salmonella enterica subsp. enterica serovar Paratyphi C</option>
+<option value="sec">Salmonella enterica subsp. enterica serovar Choleraesuis</option>
+<option value="seh">Salmonella enterica subsp. enterica serovar Heidelberg SL476</option>
+<option value="shb">Salmonella enterica subsp. enterica serovar Heidelberg B182</option>
+<option value="senh">Salmonella enterica subsp. enterica serovar Heidelberg CFSAN002069</option>
+<option value="seeh">Salmonella enterica subsp. enterica serovar Heidelberg 41578</option>
+<option value="see">Salmonella enterica subsp. enterica serovar Newport SL254</option>
+<option value="senn">Salmonella enterica subsp. enterica serovar Newport USMARC-S3124.1</option>
+<option value="sew">Salmonella enterica subsp. enterica serovar Schwarzengrund</option>
+<option value="sea">Salmonella enterica subsp. enterica serovar Agona SL483</option>
+<option value="sens">Salmonella enterica subsp. enterica serovar Agona 24249</option>
+<option value="sed">Salmonella enterica subsp. enterica serovar Dublin</option>
+<option value="seg">Salmonella enterica subsp. enterica serovar Gallinarum 287/91</option>
+<option value="sel">Salmonella enterica subsp. enterica serovar Gallinarum/pullorum RKS5078</option>
+<option value="sega">Salmonella enterica subsp. enterica serovar Gallinarum/pullorum CDC1983-67</option>
+<option value="set">Salmonella enterica subsp. enterica serovar Enteritidis P125109</option>
+<option value="sena">Salmonella enterica subsp. enterica serovar Enteritidis EC20090135</option>
+<option value="seno">Salmonella enterica subsp. enterica serovar Enteritidis EC20090193</option>
+<option value="senv">Salmonella enterica subsp. enterica serovar Enteritidis EC20090332</option>
+<option value="senq">Salmonella enterica subsp. enterica serovar Enteritidis EC20090531</option>
+<option value="senl">Salmonella enterica subsp. enterica serovar Enteritidis OLF-SE1-1019-1</option>
+<option value="senj">Salmonella enterica subsp. enterica serovar Javiana</option>
+<option value="seec">Salmonella enterica subsp. enterica serovar Cubana</option>
+<option value="seeb">Salmonella enterica subsp. enterica serovar Bareilly</option>
+<option value="seep">Salmonella enterica subsp. enterica serovar Pullorum</option>
+<option value="senb">Salmonella enterica subsp. enterica serovar Bovismorbificans</option>
+<option value="sene">Salmonella enterica subsp. enterica serovar Thompson</option>
+<option value="senc">Salmonella enterica subsp. enterica serovar Tennessee</option>
+<option value="ses">Salmonella enterica subsp. arizonae</option>
+<option value="sbg">Salmonella bongori NCTC 12419</option>
+<option value="sbz">Salmonella bongori N268-08</option>
+<option value="sbv">Salmonella bongori serovar 48:z41:--</option>
+<option value="sfl">Shigella flexneri 301 (serotype 2a)</option>
+<option value="sfe">Shigella flexneri 2002017 (serotype Fxv)</option>
+<option value="ssn">Shigella sonnei Ss046</option>
+<option value="sbc">Shigella boydii CDC 3083-94 (serotype 18)</option>
+<option value="sdy">Shigella dysenteriae Sd197</option>
+<option value="sdz">Shigella dysenteriae 1617 (serotype 1)</option>
+<option value="yen">Yersinia enterocolitica subsp. enterocolitica 8081 (serotype 0:8)</option>
+<option value="yel">Yersinia enterocolitica LC20</option>
+<option value="yew">Yersinia enterocolitica WA</option>
+<option value="yal">Yersinia aldovae</option>
+<option value="yru">Yersinia ruckeri YRB</option>
+<option value="yrb">Yersinia ruckeri Big Creek 74 (serotype O2)</option>
+<option value="yma">Yersinia massiliensis</option>
+<option value="sau">Staphylococcus aureus subsp. aureus N315 (MRSA/VSSA)</option>
+<option value="sav">Staphylococcus aureus subsp. aureus Mu50 (MRSA/VISA)</option>
+<option value="saw">Staphylococcus aureus subsp. aureus Mu3 (MRSA/hetero-VISA)</option>
+<option value="sah">Staphylococcus aureus subsp. aureus JH1 (MRSA/VSSA)</option>
+<option value="saj">Staphylococcus aureus subsp. aureus JH9 (MRSA/VISA)</option>
+<option value="sam">Staphylococcus aureus subsp. aureus MW2 (CA-MRSA)</option>
+<option value="sas">Staphylococcus aureus subsp. aureus MSSA476 (MSSA)</option>
+<option value="sac">Staphylococcus aureus subsp. aureus COL (MRSA)</option>
+<option value="sax">Staphylococcus aureus subsp. aureus USA300_TCH1516 (CA-MRSA)</option>
+<option value="saa">Staphylococcus aureus subsp. aureus USA300_FPR3757 (CA-MRSA)</option>
+<option value="sao">Staphylococcus aureus subsp. aureus NCTC8325</option>
+<option value="sae">Staphylococcus aureus subsp. aureus Newman</option>
+<option value="sad">Staphylococcus aureus subsp. aureus ED98</option>
+<option value="suu">Staphylococcus aureus subsp. aureus M013 (CA-MRSA)</option>
+<option value="suv">Staphylococcus aureus subsp. aureus VC40</option>
+<option value="sue">Staphylococcus aureus subsp. aureus ED133</option>
+<option value="suk">Staphylococcus aureus subsp. aureus JKD6008 (MRSA/VISA)</option>
+<option value="suc">Staphylococcus aureus subsp. aureus ECT-R 2</option>
+<option value="suq">Staphylococcus aureus subsp. aureus TCH60</option>
+<option value="suz">Staphylococcus aureus subsp. aureus 11819-97 (CA-MRSA)</option>
+<option value="sud">Staphylococcus aureus subsp. aureus 71193 (MSSA)</option>
+<option value="suw">Staphylococcus aureus subsp. aureus TW20 (MRSA)</option>
+<option value="sug">Staphylococcus aureus subsp. aureus ST398 (MRSA)</option>
+<option value="suf">Staphylococcus aureus subsp. aureus LGA251 (MRSA)</option>
+<option value="saua">Staphylococcus aureus subsp. aureus 55/2053</option>
+<option value="saue">Staphylococcus aureus subsp. aureus 6850 (MSSA)</option>
+<option value="saun">Staphylococcus aureus subsp. aureus CN1 (CA-MRSA)</option>
+<option value="saug">Staphylococcus aureus subsp. aureus SA268 (CA-MRSA)</option>
+<option value="sauz">Staphylococcus aureus subsp. aureus Z172 (MRSA/VISA)</option>
+<option value="sauf">Staphylococcus aureus subsp. aureus FDAARGOS_5</option>
+<option value="suy">Staphylococcus aureus 04-02981 (MRSA)</option>
+<option value="saub">Staphylococcus aureus 08BA02176 (LA-MRSA)</option>
+<option value="sauc">Staphylococcus aureus CA-347 (MRSA)</option>
+<option value="saur">Staphylococcus aureus Bmb9393 (MRSA)</option>
+<option value="saui">Staphylococcus aureus USA300-ISMMS1 (MRSA)</option>
+<option value="saud">Staphylococcus aureus 502A</option>
+<option value="sams">Staphylococcus aureus MS4</option>
+<option value="suh">Staphylococcus argenteus</option>
+<option value="shu">Staphylococcus hyicus</option>
+<option value="sagq">Staphylococcus agnetis</option>
+<option value="lmo">Listeria monocytogenes EGD-e (serotype 1/2a)</option>
+<option value="lmn">Listeria monocytogenes 08-5578 (serotype 1/2a)</option>
+<option value="lmy">Listeria monocytogenes 08-5923 (serotype 1/2a)</option>
+<option value="lmt">Listeria monocytogenes 10403S (serotype 1/2a)</option>
+<option value="lmoc">Listeria monocytogenes SLCC5850 (serotype 1/2a)</option>
+<option value="lmoe">Listeria monocytogenes La111 (serotype 1/2a)</option>
+<option value="lmob">Listeria monocytogenes N53-1 (serotype 1/2a)</option>
+<option value="lmod">Listeria monocytogenes EGD (serotype 1/2a)</option>
+<option value="lmow">Listeria monocytogenes WSLC1001 (serotype 1/2a)</option>
+<option value="lmoq">Listeria monocytogenes 6179 (serotype 1/2a)</option>
+<option value="lmr">Listeria monocytogenes R479a (serotype 1/2a)</option>
+<option value="lmom">Listeria monocytogenes Lm60 (serotype 1/2a)</option>
+<option value="lmf">Listeria monocytogenes F2365 (serotype 4b)</option>
+<option value="lmc">Listeria monocytogenes CLIP 80459 (serotype 4b)</option>
+<option value="lmog">Listeria monocytogenes serotype 4b LL195</option>
+<option value="lmp">Listeria monocytogenes 07PF0776 (serotype 4b)</option>
+<option value="lmol">Listeria monocytogenes L312 (serotype 4b)</option>
+<option value="lmoj">Listeria monocytogenes J1816 (serotype 4b)</option>
+<option value="lmoz">Listeria monocytogenes J1-220 (serotype 4b)</option>
+<option value="lmox">Listeria monocytogenes WSLC1042 (serotype 4b)</option>
+<option value="lmh">Listeria monocytogenes HCC23 (serotype 4a)</option>
+<option value="lmq">Listeria monocytogenes M7 (serotype 4a)</option>
+<option value="lml">Listeria monocytogenes L99 (serotype 4a)</option>
+<option value="lmg">Listeria monocytogenes FSL R2-561</option>
+<option value="lms">Listeria monocytogenes Finland 1998</option>
+<option value="lmj">Listeria monocytogenes J0161</option>
+<option value="lmw">Listeria monocytogenes SLCC2755 (serotype 1/2b)</option>
+<option value="lmx">Listeria monocytogenes SLCC2372 (serotype 1/2c)</option>
+<option value="lmz">Listeria monocytogenes serotype 7 SLCC2482</option>
+<option value="lmon">Listeria monocytogenes SLCC2376 (serotype 4c)</option>
+<option value="lmos">Listeria monocytogenes SLCC7179 (serotype 3a)</option>
+<option value="lmoo">Listeria monocytogenes SLCC2378 (serotype 4e)</option>
+<option value="lmoy">Listeria monocytogenes SLCC2479 (serotype 3c)</option>
+<option value="lmot">Listeria monocytogenes SLCC2540 (serotype 3b)</option>
+<option value="lmoa">Listeria monocytogenes ATCC 19117 (serotype 4d)</option>
+<option value="lmok">Listeria monocytogenes NE dc2014</option>
+<option value="lmv">Listeria monocytogenes CFSAN006122</option>
+<option value="lin">Listeria innocua (serotype 6a)</option>
+<option value="liv">Listeria ivanovii subsp. ivanovii PAM 55</option>
+<option value="lii">Listeria ivanovii subsp. ivanovii WSLC 3010</option>
+<option value="liw">Listeria ivanovii WSLC3009</option>
+<option value="lia">Listeria ivanovii subsp. londoniensis WSLC 30167</option>
+<option value="lio">Listeria ivanovii subsp. londoniensis WSLC 30151</option>
+<option value="lwi">Listeria weihenstephanensis</option>
+<option value="snt">Streptococcus pneumoniae Taiwan19F-14 (serotype 19F)</option>
+<option value="snd">Streptococcus pneumoniae ST556 (serotype 19F)</option>
+<option value="spnn">Streptococcus pneumoniae A026 (serotype 19F)</option>
+<option value="snc">Streptococcus pneumoniae TCH8431/19A (serotype 19A)</option>
+<option value="sni">Streptococcus pneumoniae INV104 (serotype 1)</option>
+<option value="snp">Streptococcus pneumoniae AP200 (serotype 11A)</option>
+</select>
+<input type="hidden" name="mapno" value="05100" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="select_scale" onChange="resize_map(this)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="rno05100" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="orgs">
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/rno/rno05100.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=rect	coords=209,632,255,649	href="/dbget-bin/www_bget?rno:117515+rno:293507+rno:303135+rno:305227+rno:363542+rno:56003+rno:691335+rno:83788"	title="117515 (Sept2), 293507 (Sept1), 303135 (Sept8), 305227 (Sept11), 363542 (Sept12), 56003 (Sept3), 691335 (Sept6), 83788 (Sept9)" />
+<area shape=rect	coords=128,253,174,270	href="/dbget-bin/www_bget?rno:84353"	title="84353 (Ctnnb1)" />
+<area shape=rect	coords=128,270,173,289	href="/dbget-bin/www_bget?rno:297357+rno:307505+rno:361839"	title="297357 (Ctnna2), 307505 (Ctnna1), 361839 (Ctnna3)" />
+<area shape=rect	coords=210,421,256,438	href="/dbget-bin/www_bget?rno:363875"	title="363875 (Rac1)" />
+<area shape=rect	coords=153,200,199,217	href="/dbget-bin/www_bget?rno:83502"	title="83502 (Cdh1)" />
+<area shape=rect	coords=128,287,174,304	href="/dbget-bin/www_bget?rno:688429"	title="688429 (Arhgap10)" />
+<area shape=rect	coords=157,421,203,438	href="/dbget-bin/www_bget?rno:64465"	title="64465 (Cdc42)" />
+<area shape=rect	coords=430,273,476,290	href="/dbget-bin/www_bget?rno:83805"	title="83805 (Src)" />
+<area shape=rect	coords=429,241,475,258	href="/dbget-bin/www_bget?rno:288077+rno:60465"	title="288077 (Hcls1), 60465 (Cttn)" />
+<area shape=rect	coords=490,200,536,217	href="/dbget-bin/www_bget?rno:24511+rno:315346"	title="24511 (Itgb1), 315346 (Itga5)" />
+<area shape=rect	coords=210,518,256,535	href="/dbget-bin/www_bget?rno:288669+rno:296710+rno:297518+rno:301511+rno:360854+rno:54227+rno:81824"	title="288669 (Arpc3), 296710 (Arpc5l), 297518 (Arpc4), 301511 (Arpc2), 360854 (Arpc5), 54227 (Arpc1b), 81824 (Arpc1a)" />
+<area shape=rect	coords=210,566,256,583	href="/dbget-bin/www_bget?rno:100361457+rno:287876+rno:684969+rno:81822"	title="100361457, 287876 (Actg1), 684969 (Potef), 81822 (Actb)" />
+<area shape=rect	coords=211,355,257,372	href="/dbget-bin/www_bget?rno:309081"	title="309081 (Dock1)" />
+<area shape=rect	coords=432,390,478,407	href="/dbget-bin/www_bget?rno:360820"	title="360820 (Pxn)" />
+<area shape=rect	coords=429,305,475,322	href="/dbget-bin/www_bget?rno:25614"	title="25614 (Ptk2)" />
+<area shape=rect	coords=210,304,256,321	href="/dbget-bin/www_bget?rno:100911248+rno:287942+rno:54245"	title="100911248, 287942 (Crkl), 54245 (Crk)" />
+<area shape=rect	coords=278,267,324,284	href="/dbget-bin/www_bget?rno:316258"	title="316258 (Cd2ap)" />
+<area shape=rect	coords=159,326,205,343	href="/dbget-bin/www_bget?rno:170911+rno:25513+rno:29741+rno:366508+rno:60664+rno:85243"	title="170911 (Pik3ca), 25513 (Pik3r1), 29741 (Pik3r2), 366508 (Pik3cd), 60664 (Pik3r3), 85243 (Pik3cb)" />
+<area shape=rect	coords=278,214,324,231	href="/dbget-bin/www_bget?rno:500985"	title="500985 (Cbl)" />
+<area shape=rect	coords=210,200,256,217	href="/dbget-bin/www_bget?rno:24553"	title="24553 (Met)" />
+<area shape=rect	coords=347,241,393,258	href="/dbget-bin/www_bget?rno:140694+rno:171574+rno:25751"	title="140694 (Dnm1), 171574 (Dnm3), 25751 (Dnm2)" />
+<area shape=rect	coords=429,322,475,339	href="/dbget-bin/www_bget?rno:25414"	title="25414 (Bcar1)" />
+<area shape=rect	coords=329,268,375,285	href="/dbget-bin/www_bget?rno:116561+rno:54241+rno:83800"	title="116561 (Cltb), 54241 (Cltc), 83800 (Clta)" />
+<area shape=rect	coords=209,469,255,486	href="/dbget-bin/www_bget?rno:294568+rno:313024"	title="294568 (Wasf1), 313024 (Wasf2)" />
+<area shape=rect	coords=158,469,204,486	href="/dbget-bin/www_bget?rno:317371+rno:682507"	title="317371 (Was), 682507 (Wasl)" />
+<area shape=rect	coords=210,252,256,269	href="/dbget-bin/www_bget?rno:361388"	title="361388 (Gab1)" />
+<area shape=rect	coords=278,241,324,258	href="/dbget-bin/www_bget?rno:114858+rno:314612+rno:679845+rno:85385"	title="114858 (Shc3), 314612 (Shc2), 679845 (Shc4), 85385 (Shc1)" />
+<area shape=rect	coords=490,171,536,188	href="/dbget-bin/www_bget?rno:25661"	title="25661 (Fn1)" />
+<area shape=rect	coords=380,268,426,285	href="/dbget-bin/www_bget?rno:25404+rno:29161+rno:363425"	title="25404 (Cav1), 29161 (Cav3), 363425 (Cav2)" />
+<area shape=rect	coords=494,306,540,323	href="/dbget-bin/www_bget?rno:170922"	title="170922 (Ilk)" />
+<area shape=rect	coords=832,335,878,352	href="/dbget-bin/www_bget?rno:308875"	title="308875 (Rhog)" />
+<area shape=rect	coords=832,297,878,314	href="/dbget-bin/www_bget?rno:310460"	title="310460 (Arhgef26)" />
+<area shape=rect	coords=832,411,878,428	href="/dbget-bin/www_bget?rno:309081"	title="309081 (Dock1)" />
+<area shape=rect	coords=905,411,951,428	href="/dbget-bin/www_bget?rno:100911248+rno:287942+rno:54245"	title="100911248, 287942 (Crkl), 54245 (Crk)" />
+<area shape=rect	coords=760,421,806,438	href="/dbget-bin/www_bget?rno:363875"	title="363875 (Rac1)" />
+<area shape=rect	coords=710,421,756,438	href="/dbget-bin/www_bget?rno:64465"	title="64465 (Cdc42)" />
+<area shape=rect	coords=760,518,806,535	href="/dbget-bin/www_bget?rno:288669+rno:296710+rno:297518+rno:301511+rno:360854+rno:54227+rno:81824"	title="288669 (Arpc3), 296710 (Arpc5l), 297518 (Arpc4), 301511 (Arpc2), 360854 (Arpc5), 54227 (Arpc1b), 81824 (Arpc1a)" />
+<area shape=rect	coords=760,566,806,583	href="/dbget-bin/www_bget?rno:100361457+rno:287876+rno:684969+rno:81822"	title="100361457, 287876 (Actg1), 684969 (Potef), 81822 (Actb)" />
+<area shape=rect	coords=760,469,806,486	href="/dbget-bin/www_bget?rno:294568+rno:313024"	title="294568 (Wasf1), 313024 (Wasf2)" />
+<area shape=rect	coords=710,469,756,486	href="/dbget-bin/www_bget?rno:317371+rno:682507"	title="317371 (Was), 682507 (Wasl)" />
+<area shape=rect	coords=1082,208,1128,225	href="/dbget-bin/www_bget?rno:313702"	title="313702 (Mad2l2)" />
+<area shape=rect	coords=1047,559,1093,576	href="/dbget-bin/www_bget?rno:305679"	title="305679 (Vcl)" />
+<area shape=rect	coords=1020,508,1066,525	href="/dbget-bin/www_bget?rno:117273+rno:297173"	title="117273 (Rhoa), 297173 (RSA-14-44)" />
+<area shape=rect	coords=832,372,878,389	href="/dbget-bin/www_bget?rno:102555457+rno:291962+rno:361251+rno:362271"	title="102555457, 291962 (Elmo3), 361251 (Elmo1), 362271 (Elmo2)" />
+<area shape=rect	coords=40,45,390,70	href="/dbget-bin/www_bget?rno05100"	title="rno05100: Bacterial invasion of epithelial cells" onmouseover="popupTimer(&quot;rno05100&quot;, &quot;rno05100: Bacterial invasion of epithelial cells&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=464,62,556,96	href="/kegg-bin/show_pathway?rno04512"	title="rno04512: ECM-receptor interaction" onmouseover="popupTimer(&quot;rno04512&quot;, &quot;rno04512: ECM-receptor interaction&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=473,497,573,531	href="/kegg-bin/show_pathway?rno04810"	title="rno04810: Regulation of actin cytoskeleton" onmouseover="popupTimer(&quot;rno04810&quot;, &quot;rno04810: Regulation of actin cytoskeleton&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=784,153,876,187	href="/kegg-bin/show_pathway?map03070"	title="map03070: Bacterial secretion system" onmouseover="popupTimer(&quot;map03070&quot;, &quot;map03070: Bacterial secretion system&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=340,200,432,225	href="/kegg-bin/show_pathway?rno04144"	title="rno04144: Endocytosis" onmouseover="popupTimer(&quot;rno04144&quot;, &quot;rno04144: Endocytosis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=293,353,385,378	href="/kegg-bin/show_pathway?rno04510"	title="rno04510: Focal adhesion" onmouseover="popupTimer(&quot;rno04510&quot;, &quot;rno04510: Focal adhesion&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1056,149,1148,174	href="/kegg-bin/show_pathway?rno04110"	title="rno04110: Cell cycle" onmouseover="popupTimer(&quot;rno04110&quot;, &quot;rno04110: Cell cycle&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

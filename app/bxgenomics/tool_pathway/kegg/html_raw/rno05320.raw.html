@@ -1,0 +1,371 @@
+<html>
+<!---
+ENTRY       rno05320
+DEFINITION  Autoimmune thyroid disease - Rattus norvegicus (rat)
+--->
+<head>
+<title>
+KEGG PATHWAY: Autoimmune thyroid disease - Rattus norvegicus (rat)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(obj){
+  var form = document.forms["form2"];
+  var idx = obj.selectedIndex;
+  var value = obj.options[idx].value;
+	
+  if(value == "1.0_T01003")
+  {
+    form.scale.value = "1.0";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.70_T01003")
+  {
+    form.scale.value = "0.70";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.35_T01003")
+  {
+    form.scale.value = "0.35";
+    form.orgs.value  = "T01003";
+  }
+  else
+	{
+    form.scale.value = value;
+		form.orgs.value  = '';
+    if(form.image)
+    {
+		form.image.value  = '';
+    }
+		form.map.value = "rno05320";
+	}
+
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Autoimmune thyroid disease - Rattus norvegicus (rat)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=05320&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map05320.keg&query=rno&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+rno05320">Pathway entry</a>
+
+| <a href="https://www.kegg.jp/kegg-bin/download?entry=rno05320&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+The classification of autoimmune throid disease (AITD) includes Hashimoto's thyroiditis (HT) or chronic autoimmune thyroiditis and its variants, Graves' disease (GD) and autoimmune atrophic thyroiditis or primary myxedema. HT is characterized by the presence of goitre, thyroid autoantibodies against thyroid peroxidase (TPO) and thyroglobulin (Tg) in serum and varying degrees of thyroid dysfunction. During HT, self-reactive CD4+ T lymphocytes (Th) recruit B cells and CD8+ T cells (CTL) into the thyroid. Disease progression leads to the death of thyroid cells and hypothyroidism. Both autoantibodies and thyroid-specific cytotoxic T lymphocytes (CTLs) have been proposed to be responsible for autoimmune thyrocyte depletion. In GD, the TSH-R is the most important autoantigen. Antibodies directed against it mimic the effects of the hormone on thyroid cells, TSH, stimulating autonomous production of thyroxine and triiodothyronine and causing hyperthyroidism. The presence of TSH-R-blocking antibodies that bind the TSH receptor in a similar fashion to the antibodies in patients with Grave's disease but that block rather than activate the receptor explains some cases of atrophic hypothyroidism.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="rno.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno" selected>Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="oro">Odobenus rosmarus divergens (Pacific walrus)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="oor">Orcinus orca (killer whale)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="tmu">Trichechus manatus latirostris (Florida manatee)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="05320" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="select_scale" onChange="resize_map(this)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="rno05320" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="orgs">
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/rno/rno05320.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=212,131,4	href="/dbget-bin/www_bget?C01382"	title="C01382 (Iodine)" onmouseover="popupTimer(&quot;C01382&quot;, &quot;C01382 (Iodine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=260,131,4	href="/dbget-bin/www_bget?D00636"	title="D00636 (Amiodarone hydrochloride (JP17/USAN))" onmouseover="popupTimer(&quot;D00636&quot;, &quot;D00636 (Amiodarone hydrochloride (JP17/USAN))&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1201,572,4	href="/dbget-bin/www_bget?C02465"	title="C02465 (Triiodothyronine)" onmouseover="popupTimer(&quot;C02465&quot;, &quot;C02465 (Triiodothyronine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1201,606,4	href="/dbget-bin/www_bget?C01829"	title="C01829 (Thyroxine)" onmouseover="popupTimer(&quot;C01829&quot;, &quot;C01829 (Thyroxine)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=402,625,448,642	href="/dbget-bin/www_bget?rno:100911800+rno:108348072+rno:108348139+rno:24984+rno:24986+rno:294269+rno:294270+rno:294273+rno:294274+rno:309621+rno:309622+rno:365542+rno:688090"	title="100911800, 108348072, 108348139, 24984 (RT1-DOa), 24986 (RT1-Ha), 294269 (RT1-Da), 294270 (RT1-Db1), 294273 (RT1-DMb), 294274 (RT1-DMa), 309621 (RT1-Ba), 309622 (RT1-Bb), 365542 (RT1-DOb), 688090 (Bb)" />
+<area shape=rect	coords=483,625,529,642	href="/dbget-bin/www_bget?rno:100362949+rno:688340"	title="100362949 (TRAV14S2), 688340" />
+<area shape=rect	coords=702,625,748,642	href="/dbget-bin/www_bget?rno:84349"	title="84349 (Cd40lg)" />
+<area shape=rect	coords=785,625,831,642	href="/dbget-bin/www_bget?rno:171369"	title="171369 (Cd40)" />
+<area shape=rect	coords=702,648,748,665	href="/dbget-bin/www_bget?rno:100362949+rno:688340"	title="100362949 (TRAV14S2), 688340" />
+<area shape=rect	coords=785,648,831,665	href="/dbget-bin/www_bget?rno:100911800+rno:108348072+rno:108348139+rno:24984+rno:24986+rno:294269+rno:294270+rno:294273+rno:294274+rno:309621+rno:309622+rno:365542+rno:688090"	title="100911800, 108348072, 108348139, 24984 (RT1-DOa), 24986 (RT1-Ha), 294269 (RT1-Da), 294270 (RT1-Db1), 294273 (RT1-DMb), 294274 (RT1-DMa), 309621 (RT1-Ba), 309622 (RT1-Bb), 365542 (RT1-DOb), 688090 (Bb)" />
+<area shape=rect	coords=826,594,872,611	href="/dbget-bin/www_bget?rno:691714"	title="691714 (RGD1565478)" />
+<area shape=rect	coords=217,402,263,419	href="/dbget-bin/www_bget?rno:54314"	title="54314 (Tpo)" />
+<area shape=rect	coords=217,430,263,447	href="/dbget-bin/www_bget?rno:24826"	title="24826 (Tg)" />
+<area shape=rect	coords=217,492,263,509	href="/dbget-bin/www_bget?rno:25360"	title="25360 (Tshr)" />
+<area shape=rect	coords=402,258,448,275	href="/dbget-bin/www_bget?rno:100911800+rno:108348072+rno:108348139+rno:24984+rno:24986+rno:294269+rno:294270+rno:294273+rno:294274+rno:309621+rno:309622+rno:365542+rno:688090"	title="100911800, 108348072, 108348139, 24984 (RT1-DOa), 24986 (RT1-Ha), 294269 (RT1-Da), 294270 (RT1-Db1), 294273 (RT1-DMb), 294274 (RT1-DMa), 309621 (RT1-Ba), 309622 (RT1-Bb), 365542 (RT1-DOb), 688090 (Bb)" />
+<area shape=rect	coords=482,258,528,275	href="/dbget-bin/www_bget?rno:100362949+rno:688340"	title="100362949 (TRAV14S2), 688340" />
+<area shape=rect	coords=701,332,747,349	href="/dbget-bin/www_bget?rno:84349"	title="84349 (Cd40lg)" />
+<area shape=rect	coords=785,332,831,349	href="/dbget-bin/www_bget?rno:171369"	title="171369 (Cd40)" />
+<area shape=rect	coords=701,357,747,374	href="/dbget-bin/www_bget?rno:100362949+rno:688340"	title="100362949 (TRAV14S2), 688340" />
+<area shape=rect	coords=785,357,831,374	href="/dbget-bin/www_bget?rno:100911800+rno:108348072+rno:108348139+rno:24984+rno:24986+rno:294269+rno:294270+rno:294273+rno:294274+rno:309621+rno:309622+rno:365542+rno:688090"	title="100911800, 108348072, 108348139, 24984 (RT1-DOa), 24986 (RT1-Ha), 294269 (RT1-Da), 294270 (RT1-Db1), 294273 (RT1-DMb), 294274 (RT1-DMa), 309621 (RT1-Ba), 309622 (RT1-Bb), 365542 (RT1-DOb), 688090 (Bb)" />
+<area shape=rect	coords=826,387,872,404	href="/dbget-bin/www_bget?rno:691714"	title="691714 (RGD1565478)" />
+<area shape=rect	coords=1011,584,1057,601	href="/dbget-bin/www_bget?rno:25360"	title="25360 (Tshr)" />
+<area shape=rect	coords=1008,682,1054,699	href="/dbget-bin/www_bget?rno:25360"	title="25360 (Tshr)" />
+<area shape=rect	coords=1006,196,1052,213	href="/dbget-bin/www_bget?rno:246097"	title="246097 (Fas)" />
+<area shape=rect	coords=939,678,985,695	href="/dbget-bin/www_bget?rno:691714"	title="691714 (RGD1565478)" />
+<area shape=rect	coords=929,196,975,213	href="/dbget-bin/www_bget?rno:25385"	title="25385 (Faslg)" />
+<area shape=rect	coords=929,168,975,185	href="/dbget-bin/www_bget?rno:100362949+rno:688340"	title="100362949 (TRAV14S2), 688340" />
+<area shape=rect	coords=1006,168,1052,185	href="/dbget-bin/www_bget?rno:100188935+rno:102546590+rno:24737+rno:24747+rno:24748+rno:24750+rno:24751+rno:24973+rno:24974+rno:24977+rno:24988+rno:294213+rno:294228+rno:309584+rno:309600+rno:309603+rno:309607+rno:309627+rno:360323+rno:361787+rno:365527+rno:368153+rno:406194+rno:414270+rno:414779+rno:414783+rno:414784+rno:414785+rno:414786+rno:414787+rno:414788+rno:414789+rno:414790+rno:414791+rno:414792+rno:414793+rno:414819+rno:499400+rno:680842"	title="100188935 (RT1-A), 102546590, 24737 (RT1-EC2), 24747 (RT1-M3-1), 24748 (RT1-N1), 24750 (RT1-N3), 24751 (RT1-O1), 24973 (RT1-A1), 24974 (RT1-A2), 24977 (RT1-Cl), 24988 (RT1-M2), 294213 (RT1-M1-4), 294228 (RT1-S3), 309584 (RT1-M4), 309600 (RT1-CE12), 309603 (RT1-CE1), 309607 (RT1-CE5), 309627 (RT1-A3), 360323 (RT1-N2), 361787 (RT1-T24-1), 365527 (RT1-M6-2), 368153 (RT1-CE7), 406194 (RT1-T18), 414270 (RT1-CE14), 414779 (RT1-CE2), 414783 (RT1-CE4), 414784 (RT1-T24-4), 414785 (RT1-M6-1), 414786 (RT1-M1-2), 414787 (RT1-M10-1), 414788 (RT1-T24-3), 414789 (RT1-CE15), 414790 (RT1-CE13), 414791 (RT1-CE11), 414792 (RT1-CE10), 414793 (RT1-CE3), 414819 (RT1-CE16), 499400 (RT1-M5), 680842 (RT1-M1-5)" />
+<area shape=rect	coords=969,259,1015,276	href="/dbget-bin/www_bget?rno:100361468+rno:171528"	title="100361468 (Gzmbl2), 171528 (Gzmb)" />
+<area shape=rect	coords=969,234,1015,251	href="/dbget-bin/www_bget?rno:50669"	title="50669 (Prf1)" />
+<area shape=rect	coords=939,712,985,729	href="/dbget-bin/www_bget?rno:116700+rno:25653"	title="116700 (Cga), 25653 (Tshb)" />
+<area shape=rect	coords=955,328,1001,345	href="/dbget-bin/www_bget?rno:691714"	title="691714 (RGD1565478)" />
+<area shape=rect	coords=939,584,985,601	href="/dbget-bin/www_bget?rno:691714"	title="691714 (RGD1565478)" />
+<area shape=rect	coords=253,179,299,196	href="/dbget-bin/www_bget?rno:63835"	title="63835 (Ctla4)" />
+<area shape=rect	coords=747,254,793,271	href="/dbget-bin/www_bget?rno:287287"	title="287287 (Il4)" />
+<area shape=rect	coords=747,276,793,293	href="/dbget-bin/www_bget?rno:24497"	title="24497 (Il5)" />
+<area shape=rect	coords=747,693,793,710	href="/dbget-bin/www_bget?rno:287287"	title="287287 (Il4)" />
+<area shape=rect	coords=747,720,793,737	href="/dbget-bin/www_bget?rno:24497"	title="24497 (Il5)" />
+<area shape=rect	coords=767,187,813,204	href="/dbget-bin/www_bget?rno:116562"	title="116562 (Il2)" />
+<area shape=rect	coords=306,126,352,143	href="/dbget-bin/www_bget?rno:100912314+rno:298205+rno:298210+rno:298211+rno:298213+rno:690894"	title="100912314, 298205 (Ifna4), 298210 (Ifna1), 298211 (Ifna11), 298213 (Ifna2), 690894 (Ifna5)" />
+<area shape=rect	coords=402,280,448,297	href="/dbget-bin/www_bget?rno:25408+rno:56822"	title="25408 (Cd80), 56822 (Cd86)" />
+<area shape=rect	coords=482,281,528,298	href="/dbget-bin/www_bget?rno:25660"	title="25660 (Cd28)" />
+<area shape=rect	coords=402,648,448,665	href="/dbget-bin/www_bget?rno:56822"	title="56822 (Cd86)" />
+<area shape=rect	coords=483,648,529,665	href="/dbget-bin/www_bget?rno:25660"	title="25660 (Cd28)" />
+<area shape=rect	coords=747,744,793,761	href="/dbget-bin/www_bget?rno:25325"	title="25325 (Il10)" />
+<area shape=rect	coords=747,299,793,316	href="/dbget-bin/www_bget?rno:25325"	title="25325 (Il10)" />
+<area shape=rect	coords=495,369,608,403	href="/kegg-bin/show_pathway?rno04660"	title="rno04660: T cell receptor signaling pathway" onmouseover="popupTimer(&quot;rno04660&quot;, &quot;rno04660: T cell receptor signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=344,369,456,403	href="/kegg-bin/show_pathway?rno04612"	title="rno04612: Antigen processing and presentation" onmouseover="popupTimer(&quot;rno04612&quot;, &quot;rno04612: Antigen processing and presentation&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=414,529,527,563	href="/kegg-bin/show_pathway?rno04514"	title="rno04514: Cell adhesion molecules (CAMs)" onmouseover="popupTimer(&quot;rno04514&quot;, &quot;rno04514: Cell adhesion molecules (CAMs)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=789,483,901,517	href="/kegg-bin/show_pathway?rno04662"	title="rno04662: B cell receptor signaling pathway" onmouseover="popupTimer(&quot;rno04662&quot;, &quot;rno04662: B cell receptor signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=40,45,297,70	href="/dbget-bin/www_bget?rno05320"	title="rno05320: Autoimmune thyroid disease" onmouseover="popupTimer(&quot;rno05320&quot;, &quot;rno05320: Autoimmune thyroid disease&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1161,259,1267,284	href="/kegg-bin/show_pathway?rno04210"	title="rno04210: Apoptosis" onmouseover="popupTimer(&quot;rno04210&quot;, &quot;rno04210: Apoptosis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=922,403,1034,437	href="/kegg-bin/show_pathway?rno04610"	title="rno04610: Complement and coagulation cascades" onmouseover="popupTimer(&quot;rno04610&quot;, &quot;rno04610: Complement and coagulation cascades&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1025,511,1137,545	href="/kegg-bin/show_pathway?rno04918"	title="rno04918: Thyroid hormone synthesis" onmouseover="popupTimer(&quot;rno04918&quot;, &quot;rno04918: Thyroid hormone synthesis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

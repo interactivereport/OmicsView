@@ -1,0 +1,427 @@
+<html>
+<!---
+ENTRY       rno04340
+DEFINITION  Hedgehog signaling pathway - Rattus norvegicus (rat)
+--->
+<head>
+<title>
+KEGG PATHWAY: Hedgehog signaling pathway - Rattus norvegicus (rat)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(obj){
+  var form = document.forms["form2"];
+  var idx = obj.selectedIndex;
+  var value = obj.options[idx].value;
+	
+  if(value == "1.0_T01003")
+  {
+    form.scale.value = "1.0";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.70_T01003")
+  {
+    form.scale.value = "0.70";
+    form.orgs.value  = "T01003";
+  }
+  else if(value == "0.35_T01003")
+  {
+    form.scale.value = "0.35";
+    form.orgs.value  = "T01003";
+  }
+  else
+	{
+    form.scale.value = value;
+		form.orgs.value  = '';
+    if(form.image)
+    {
+		form.image.value  = '';
+    }
+		form.map.value = "rno04340";
+	}
+
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Hedgehog signaling pathway - Rattus norvegicus (rat)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=04340&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map04340.keg&query=rno&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+rno04340">Pathway entry</a>
+
+| <a href="https://www.kegg.jp/kegg-bin/download?entry=rno04340&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+The Hedgehog (Hh) signaling pathway has numerous roles in the control of cell proliferation, tissue patterning, stem cell maintenance and development. The primary cilium is an important center for transduction of the Hedgehog signal in vertebrates. In Hh's absence, the Ptch receptor localizes to the cilium, where it inhibits Smo activation. Gli proteins are phosphorylated by PKA, CKI and GSK3B and partially degraded into truncated Gli repressor form (GliR) that suppresses Hh target gene transcription in the nucleus. In Hh's presence, Ptch disappears from the cilium, and activated Smo contributes to the translocation of the protein complex Gli, Sufu, Kif7 to ciliary tip, where Gli dissociates from the negative regulator Sufu. The production of Gli activator form (GliA) occurs and the increased nuclear accumulation of GliA results in activation transcription of Hh target genes.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="rno.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno" selected>Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="oro">Odobenus rosmarus divergens (Pacific walrus)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="oor">Orcinus orca (killer whale)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="tmu">Trichechus manatus latirostris (Florida manatee)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+<option value="gga">Gallus gallus (chicken)</option>
+<option value="mgp">Meleagris gallopavo (turkey)</option>
+<option value="cjo">Coturnix japonica (Japanese quail)</option>
+<option value="apla">Anas platyrhynchos (mallard)</option>
+<option value="acyg">Anser cygnoides domesticus (swan goose)</option>
+<option value="tgu">Taeniopygia guttata (zebra finch)</option>
+<option value="gfr">Geospiza fortis (medium ground-finch)</option>
+<option value="fab">Ficedula albicollis (collared flycatcher)</option>
+<option value="phi">Pseudopodoces humilis (Tibetan ground-tit)</option>
+<option value="pmaj">Parus major (Great Tit)</option>
+<option value="ccae">Cyanistes caeruleus (blue tit)</option>
+<option value="ccw">Corvus cornix (hooded crow)</option>
+<option value="fpg">Falco peregrinus (peregrine falcon)</option>
+<option value="fch">Falco cherrug (Saker falcon)</option>
+<option value="clv">Columba livia (rock pigeon)</option>
+<option value="egz">Egretta garzetta (little egret)</option>
+<option value="aam">Apteryx australis mantelli (brown kiwi)</option>
+<option value="asn">Alligator sinensis (Chinese alligator)</option>
+<option value="amj">Alligator mississippiensis (American alligator)</option>
+<option value="pss">Pelodiscus sinensis (Chinese soft-shelled turtle)</option>
+<option value="cmy">Chelonia mydas (green sea turtle)</option>
+<option value="cpic">Chrysemys picta (western painted turtle)</option>
+<option value="acs">Anolis carolinensis (green anole)</option>
+<option value="pvt">Pogona vitticeps (central bearded dragon)</option>
+<option value="pbi">Python bivittatus (Burmese python)</option>
+<option value="gja">Gekko japonicus</option>
+<option value="xla">Xenopus laevis (African clawed frog)</option>
+<option value="xtr">Xenopus tropicalis (western clawed frog)</option>
+<option value="npr">Nanorana parkeri</option>
+<option value="dre">Danio rerio (zebrafish)</option>
+<option value="srx">Sinocyclocheilus rhinocerous</option>
+<option value="sanh">Sinocyclocheilus anshuiensis</option>
+<option value="sgh">Sinocyclocheilus grahami</option>
+<option value="ccar">Cyprinus carpio (common carp)</option>
+<option value="ipu">Ictalurus punctatus (channel catfish)</option>
+<option value="amex">Astyanax mexicanus (Mexican tetra)</option>
+<option value="tru">Takifugu rubripes (torafugu)</option>
+<option value="tng">Tetraodon nigroviridis (spotted green pufferfish)</option>
+<option value="lco">Larimichthys crocea (large yellow croaker)</option>
+<option value="ncc">Notothenia coriiceps (black rockcod)</option>
+<option value="mze">Maylandia zebra (zebra mbuna)</option>
+<option value="ola">Oryzias latipes (Japanese medaka)</option>
+<option value="xma">Xiphophorus maculatus (southern platyfish)</option>
+<option value="pret">Poecilia reticulata (guppy)</option>
+<option value="nfu">Nothobranchius furzeri (turquoise killifish)</option>
+<option value="kmr">Kryptolebias marmoratus (mangrove rivulus)</option>
+<option value="csem">Cynoglossus semilaevis (tongue sole)</option>
+<option value="lcf">Lates calcarifer (barramundi perch)</option>
+<option value="sdu">Seriola dumerili (greater amberjack)</option>
+<option value="hcq">Hippocampus comes (tiger tail seahorse)</option>
+<option value="bpec">Boleophthalmus pectinirostris (great blue-spotted mudskipper)</option>
+<option value="malb">Monopterus albus (swamp eel)</option>
+<option value="sasa">Salmo salar (Atlantic salmon)</option>
+<option value="otw">Oncorhynchus tshawytscha (Chinook salmon)</option>
+<option value="els">Esox lucius (northern pike)</option>
+<option value="sfm">Scleropages formosus (Asian bonytongue)</option>
+<option value="lcm">Latimeria chalumnae (coelacanth)</option>
+<option value="cmk">Callorhinchus milii (elephant shark)</option>
+</select>
+<input type="hidden" name="mapno" value="04340" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="select_scale" onChange="resize_map(this)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="rno04340" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="orgs">
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/rno/rno04340.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=255,319,4	href="/dbget-bin/www_bget?C00575"	title="C00575 (3',5'-Cyclic AMP)" onmouseover="popupTimer(&quot;C00575&quot;, &quot;C00575 (3',5'-Cyclic AMP)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=67,352,113,369	href="/dbget-bin/www_bget?rno:25273"	title="25273 (Smo)" />
+<area shape=rect	coords=271,258,317,275	href="/dbget-bin/www_bget?rno:289180"	title="289180 (Gpr161)" />
+<area shape=rect	coords=248,397,294,414	href="/dbget-bin/www_bget?rno:113927+rno:58822+rno:64086+rno:64462+rno:64823+rno:65278"	title="113927 (Csnk1a1), 58822 (Csnk1e), 64086 (Csnk1g1), 64462 (Csnk1d), 64823 (Csnk1g3), 65278 (Csnk1g2)" />
+<area shape=rect	coords=248,416,294,433	href="/dbget-bin/www_bget?rno:84027"	title="84027 (Gsk3b)" />
+<area shape=rect	coords=248,378,294,395	href="/dbget-bin/www_bget?rno:25636+rno:293508"	title="25636 (Prkaca), 293508 (Prkacb)" />
+<area shape=rect	coords=170,380,216,397	href="/dbget-bin/www_bget?rno:140588+rno:140589+rno:304729"	title="140588 (Gli3), 140589 (Gli1), 304729 (Gli2)" />
+<area shape=rect	coords=170,347,216,364	href="/dbget-bin/www_bget?rno:293047"	title="293047 (Kif7)" />
+<area shape=rect	coords=170,550,216,567	href="/dbget-bin/www_bget?rno:140588+rno:140589+rno:304729"	title="140588 (Gli3), 140589 (Gli1), 304729 (Gli2)" />
+<area shape=rect	coords=248,463,294,480	href="/dbget-bin/www_bget?rno:362356"	title="362356 (Cul1)" />
+<area shape=rect	coords=248,480,294,497	href="/dbget-bin/www_bget?rno:303024+rno:361765"	title="303024 (Fbxw11), 361765 (Btrc)" />
+<area shape=rect	coords=72,718,118,735	href="/dbget-bin/www_bget?rno:140588+rno:140589+rno:304729"	title="140588 (Gli3), 140589 (Gli1), 304729 (Gli2)" />
+<area shape=rect	coords=121,718,167,735	href="/dbget-bin/www_bget?rno:89830"	title="89830 (Ptch1)" />
+<area shape=rect	coords=170,718,216,735	href="/dbget-bin/www_bget?rno:291936"	title="291936 (Hhip)" />
+<area shape=rect	coords=117,258,163,275	href="/dbget-bin/www_bget?rno:89830"	title="89830 (Ptch1)" />
+<area shape=rect	coords=67,412,113,429	href="/dbget-bin/www_bget?rno:25273"	title="25273 (Smo)" />
+<area shape=rect	coords=630,302,676,319	href="/dbget-bin/www_bget?rno:25273"	title="25273 (Smo)" />
+<area shape=rect	coords=728,547,774,564	href="/dbget-bin/www_bget?rno:140588+rno:140589+rno:304729"	title="140588 (Gli3), 140589 (Gli1), 304729 (Gli2)" />
+<area shape=rect	coords=710,189,756,206	href="/dbget-bin/www_bget?rno:140588+rno:140589+rno:304729"	title="140588 (Gli3), 140589 (Gli1), 304729 (Gli2)" />
+<area shape=rect	coords=710,155,756,172	href="/dbget-bin/www_bget?rno:293047"	title="293047 (Kif7)" />
+<area shape=rect	coords=710,172,756,189	href="/dbget-bin/www_bget?rno:361769"	title="361769 (Sufu)" />
+<area shape=rect	coords=487,352,533,369	href="/dbget-bin/www_bget?rno:89830"	title="89830 (Ptch1)" />
+<area shape=rect	coords=549,352,595,369	href="/dbget-bin/www_bget?rno:29216+rno:360715+rno:50938+rno:683470"	title="29216 (Lrp2), 360715 (Boc), 50938 (Cdon), 683470 (Gas1)" />
+<area shape=rect	coords=563,487,609,504	href="/dbget-bin/www_bget?rno:303614+rno:690516"	title="303614 (Smurf2), 690516 (Smurf1)" />
+<area shape=rect	coords=487,487,533,504	href="/dbget-bin/www_bget?rno:89830"	title="89830 (Ptch1)" />
+<area shape=rect	coords=487,286,533,303	href="/dbget-bin/www_bget?rno:29499+rno:84380+rno:84399"	title="29499 (Shh), 84380 (Dhh), 84399 (Ihh)" />
+<area shape=rect	coords=630,266,676,283	href="/dbget-bin/www_bget?rno:289711+rno:289712"	title="289711 (Evc2), 289712 (Evc)" />
+<area shape=rect	coords=664,423,710,440	href="/dbget-bin/www_bget?rno:25238+rno:25372"	title="25238 (Adrbk1), 25372 (Adrbk2)" />
+<area shape=rect	coords=664,404,710,421	href="/dbget-bin/www_bget?rno:113927+rno:58822+rno:64086+rno:64462+rno:64823+rno:65278"	title="113927 (Csnk1a1), 58822 (Csnk1e), 64086 (Csnk1g1), 64462 (Csnk1d), 64823 (Csnk1g3), 65278 (Csnk1g2)" />
+<area shape=rect	coords=632,718,678,735	href="/dbget-bin/www_bget?rno:140588+rno:140589+rno:304729"	title="140588 (Gli3), 140589 (Gli1), 304729 (Gli2)" />
+<area shape=rect	coords=681,718,727,735	href="/dbget-bin/www_bget?rno:89830"	title="89830 (Ptch1)" />
+<area shape=rect	coords=730,718,776,735	href="/dbget-bin/www_bget?rno:291936"	title="291936 (Hhip)" />
+<area shape=rect	coords=600,423,646,440	href="/dbget-bin/www_bget?rno:25273"	title="25273 (Smo)" />
+<area shape=rect	coords=783,278,829,295	href="/dbget-bin/www_bget?rno:289180"	title="289180 (Gpr161)" />
+<area shape=rect	coords=674,237,720,254	href="/dbget-bin/www_bget?rno:25387+rno:25388"	title="25387 (Arrb1), 25388 (Arrb2)" />
+<area shape=rect	coords=674,220,720,237	href="/dbget-bin/www_bget?rno:84392"	title="84392 (Kif3a)" />
+<area shape=rect	coords=663,634,709,651	href="/dbget-bin/www_bget?rno:287643+rno:296532"	title="287643 (Spop), 296532 (Spopl)" />
+<area shape=rect	coords=663,617,709,634	href="/dbget-bin/www_bget?rno:301555"	title="301555 (Cul3)" />
+<area shape=rect	coords=797,462,843,479	href="/dbget-bin/www_bget?rno:361769"	title="361769 (Sufu)" />
+<area shape=rect	coords=874,453,920,470	href="/dbget-bin/www_bget?rno:301555"	title="301555 (Cul3)" />
+<area shape=rect	coords=874,470,920,487	href="/dbget-bin/www_bget?rno:287643+rno:296532"	title="287643 (Spop), 296532 (Spopl)" />
+<area shape=rect	coords=797,393,843,410	href="/dbget-bin/www_bget?rno:289180"	title="289180 (Gpr161)" />
+<area shape=rect	coords=599,352,645,369	href="/dbget-bin/www_bget?rno:25273"	title="25273 (Smo)" />
+<area shape=rect	coords=437,352,483,369	href="/dbget-bin/www_bget?rno:291936"	title="291936 (Hhip)" />
+<area shape=rect	coords=693,379,739,396	href="/dbget-bin/www_bget?rno:25636+rno:293508"	title="25636 (Prkaca), 293508 (Prkacb)" />
+<area shape=rect	coords=170,363,216,380	href="/dbget-bin/www_bget?rno:361769"	title="361769 (Sufu)" />
+<area shape=rect	coords=219,718,265,735	href="/dbget-bin/www_bget?rno:58919+rno:64033"	title="58919 (Ccnd1), 64033 (Ccnd2)" />
+<area shape=rect	coords=268,718,314,735	href="/dbget-bin/www_bget?rno:24224"	title="24224 (Bcl2)" />
+<area shape=rect	coords=779,718,825,735	href="/dbget-bin/www_bget?rno:58919+rno:64033"	title="58919 (Ccnd1), 64033 (Ccnd2)" />
+<area shape=rect	coords=828,718,874,735	href="/dbget-bin/www_bget?rno:24224"	title="24224 (Bcl2)" />
+<area shape=rect	coords=40,45,307,70	href="/dbget-bin/www_bget?rno04340"	title="rno04340: Hedgehog signaling pathway" onmouseover="popupTimer(&quot;rno04340&quot;, &quot;rno04340: Hedgehog signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=222,504,336,540	href="/kegg-bin/show_pathway?rno04120"	title="rno04120: Ubiquitin mediated proteolysis" onmouseover="popupTimer(&quot;rno04120&quot;, &quot;rno04120: Ubiquitin mediated proteolysis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

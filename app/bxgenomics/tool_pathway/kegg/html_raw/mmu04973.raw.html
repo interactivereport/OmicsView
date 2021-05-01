@@ -1,0 +1,354 @@
+<html>
+<!---
+ENTRY       mmu04973
+DEFINITION  Carbohydrate digestion and absorption - Mus musculus (mouse)
+--->
+<head>
+<title>
+KEGG PATHWAY: Carbohydrate digestion and absorption - Mus musculus (mouse)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Carbohydrate digestion and absorption - Mus musculus (mouse)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=04973&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map04973.keg&query=mmu&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+mmu04973">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=mmu04973&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Dietary carbohydrate in humans and omnivorous animals is a major nutrient.  The carbohydrates that we ingest vary from the lactose in milk to complex carbohydrates. These carbohydrates are digested to monosaccharides, mostly glucose, galactose and fructose, prior to absorption in the small intestine. Glucose and galactose are initially transported into the enterocyte by SGLT1 located in the apical brush border membrane and then exit through the basolateral membrane by either GLUT2 or exocytosis. In a new model of intestinal glucose absorption, transport by SGLT1 induces rapid insertion and activation of GLUT2 in the brush border membrane by a PKC betaII-dependent mechanism. Moreover, trafficking of apical GLUT2 is rapidly up-regulated by glucose and artificial sweeteners, which act through T1R2 + T1R3/alpha-gustducin to activate PLC-beta2 and PKC-beta II. Fructose is transported separately by the brush border GLUT5 and then released out of the enterocyte into the blood by GLUT2.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="mmu.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu" selected>Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="04973" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="mmu04973" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/mmu/mmu04973.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=691,442,4	href="/dbget-bin/www_bget?C00092"	title="C00092 (D-Glucose 6-phosphate)" onmouseover="popupTimer(&quot;C00092&quot;, &quot;C00092 (D-Glucose 6-phosphate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=809,443,4	href="/dbget-bin/www_bget?C00092"	title="C00092 (D-Glucose 6-phosphate)" onmouseover="popupTimer(&quot;C00092&quot;, &quot;C00092 (D-Glucose 6-phosphate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=919,441,4	href="/dbget-bin/www_bget?C00031"	title="C00031 (D-Glucose)" onmouseover="popupTimer(&quot;C00031&quot;, &quot;C00031 (D-Glucose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=877,519,4	href="/dbget-bin/www_bget?C00031"	title="C00031 (D-Glucose)" onmouseover="popupTimer(&quot;C00031&quot;, &quot;C00031 (D-Glucose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1040,599,4	href="/dbget-bin/www_bget?C00031"	title="C00031 (D-Glucose)" onmouseover="popupTimer(&quot;C00031&quot;, &quot;C00031 (D-Glucose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=389,373,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=389,386,4	href="/dbget-bin/www_bget?C00124+C00031"	title="C00124 (D-Galactose), C00031 (D-Glucose)" onmouseover="popupTimer(&quot;C00124&quot;, &quot;C00124 (D-Galactose), C00031 (D-Glucose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1043,359,4	href="/dbget-bin/www_bget?C00124+C00031"	title="C00124 (D-Galactose), C00031 (D-Glucose)" onmouseover="popupTimer(&quot;C00124&quot;, &quot;C00124 (D-Galactose), C00031 (D-Glucose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=479,567,4	href="/dbget-bin/www_bget?C00095"	title="C00095 (D-Fructose)" onmouseover="popupTimer(&quot;C00095&quot;, &quot;C00095 (D-Fructose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1048,695,4	href="/dbget-bin/www_bget?C00031+C00095"	title="C00031 (D-Glucose), C00095 (D-Fructose)" onmouseover="popupTimer(&quot;C00031&quot;, &quot;C00031 (D-Glucose), C00095 (D-Fructose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=1041,303,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=910,313,4	href="/dbget-bin/www_bget?C00238"	title="C00238 (Potassium cation)" onmouseover="popupTimer(&quot;C00238&quot;, &quot;C00238 (Potassium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=305,183,4	href="/dbget-bin/www_bget?C00243"	title="C00243 (Lactose)" onmouseover="popupTimer(&quot;C00243&quot;, &quot;C00243 (Lactose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=285,315,4	href="/dbget-bin/www_bget?C00124"	title="C00124 (D-Galactose)" onmouseover="popupTimer(&quot;C00124&quot;, &quot;C00124 (D-Galactose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=328,302,4	href="/dbget-bin/www_bget?C00031"	title="C00031 (D-Glucose)" onmouseover="popupTimer(&quot;C00031&quot;, &quot;C00031 (D-Glucose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=356,183,4	href="/dbget-bin/www_bget?C00089"	title="C00089 (Sucrose)" onmouseover="popupTimer(&quot;C00089&quot;, &quot;C00089 (Sucrose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=307,589,4	href="/dbget-bin/www_bget?C00031"	title="C00031 (D-Glucose)" onmouseover="popupTimer(&quot;C00031&quot;, &quot;C00031 (D-Glucose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=222,403,4	href="/dbget-bin/www_bget?C02049"	title="C02049 (Limit dextrin)" onmouseover="popupTimer(&quot;C02049&quot;, &quot;C02049 (Limit dextrin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=150,418,4	href="/dbget-bin/www_bget?C01835"	title="C01835 (Maltotriose)" onmouseover="popupTimer(&quot;C01835&quot;, &quot;C01835 (Maltotriose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=270,388,4	href="/dbget-bin/www_bget?C00208"	title="C00208 (Maltose)" onmouseover="popupTimer(&quot;C00208&quot;, &quot;C00208 (Maltose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=223,183,4	href="/dbget-bin/www_bget?C00369"	title="C00369 (Starch)" onmouseover="popupTimer(&quot;C00369&quot;, &quot;C00369 (Starch)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=469,699,4	href="/dbget-bin/www_bget?C00031"	title="C00031 (D-Glucose)" onmouseover="popupTimer(&quot;C00031&quot;, &quot;C00031 (D-Glucose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=394,635,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=543,635,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=643,567,4	href="/dbget-bin/www_bget?C00095"	title="C00095 (D-Fructose)" onmouseover="popupTimer(&quot;C00095&quot;, &quot;C00095 (D-Fructose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=746,506,4	href="/dbget-bin/www_bget?C05981"	title="C05981 (Phosphatidylinositol-3,4,5-trisphosphate)" onmouseover="popupTimer(&quot;C05981&quot;, &quot;C05981 (Phosphatidylinositol-3,4,5-trisphosphate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=717,768,4	href="/dbget-bin/www_bget?C00165"	title="C00165 (Diacylglycerol)" onmouseover="popupTimer(&quot;C00165&quot;, &quot;C00165 (Diacylglycerol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=371,772,4	href="/dbget-bin/www_bget?C12285+C12284"	title="C12285 (Sucralose), C12284 (Saccharin sodium anhydrous)" onmouseover="popupTimer(&quot;C12285&quot;, &quot;C12285 (Sucralose), C12284 (Saccharin sodium anhydrous)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=74,628,4	href="/dbget-bin/www_bget?C00760"	title="C00760 (Cellulose)" onmouseover="popupTimer(&quot;C00760&quot;, &quot;C00760 (Cellulose)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=148,629,4	href="/dbget-bin/www_bget?C00369"	title="C00369 (Starch)" onmouseover="popupTimer(&quot;C00369&quot;, &quot;C00369 (Starch)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=200,629,4	href="/dbget-bin/www_bget?C00707"	title="C00707 (Xylan)" onmouseover="popupTimer(&quot;C00707&quot;, &quot;C00707 (Xylan)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=128,654,4	href="/dbget-bin/www_bget?C01355"	title="C01355 (Fructan)" onmouseover="popupTimer(&quot;C01355&quot;, &quot;C01355 (Fructan)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=98,827,4	href="/dbget-bin/www_bget?C00246"	title="C00246 (Butanoic acid)" onmouseover="popupTimer(&quot;C00246&quot;, &quot;C00246 (Butanoic acid)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=160,827,4	href="/dbget-bin/www_bget?C00163"	title="C00163 (Propanoate)" onmouseover="popupTimer(&quot;C00163&quot;, &quot;C00163 (Propanoate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=218,828,4	href="/dbget-bin/www_bget?C00033"	title="C00033 (Acetate)" onmouseover="popupTimer(&quot;C00033&quot;, &quot;C00033 (Acetate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=253,629,4	href="/dbget-bin/www_bget?C00714"	title="C00714 (Pectin)" onmouseover="popupTimer(&quot;C00714&quot;, &quot;C00714 (Pectin)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=214,653,4	href="/dbget-bin/www_bget?C08822"	title="C08822 (Gum arabic)" onmouseover="popupTimer(&quot;C08822&quot;, &quot;C08822 (Gum arabic)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=264,828,4	href="/dbget-bin/www_bget?C00011"	title="C00011 (CO2)" onmouseover="popupTimer(&quot;C00011&quot;, &quot;C00011 (CO2)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=264,861,4	href="/dbget-bin/www_bget?C00282"	title="C00282 (Hydrogen)" onmouseover="popupTimer(&quot;C00282&quot;, &quot;C00282 (Hydrogen)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=423,373,469,390	href="/dbget-bin/www_bget?mmu:20537"	title="20537 (Slc5a1)" />
+<area shape=rect	coords=512,559,558,576	href="/dbget-bin/www_bget?mmu:56485"	title="56485 (Slc2a5)" />
+<area shape=rect	coords=953,349,999,366	href="/dbget-bin/www_bget?mmu:20526"	title="20526 (Slc2a2)" />
+<area shape=rect	coords=952,300,998,317	href="/dbget-bin/www_bget?mmu:11928+mmu:11931+mmu:11932+mmu:11933+mmu:11936+mmu:232975+mmu:27222+mmu:67821+mmu:98660"	title="11928 (Atp1a1), 11931 (Atp1b1), 11932 (Atp1b2), 11933 (Atp1b3), 11936 (Fxyd2), 232975 (Atp1a3), 27222 (Atp1a4), 67821 (Atp1b4), 98660 (Atp1a2)" />
+<area shape=rect	coords=724,434,770,451	href="/dbget-bin/www_bget?mmu:14385"	title="14385 (Slc37a4)" />
+<area shape=rect	coords=953,686,999,703	href="/dbget-bin/www_bget?mmu:20526"	title="20526 (Slc2a2)" />
+<area shape=rect	coords=397,239,443,256	href="/dbget-bin/www_bget?mmu:226413"	title="226413 (Lct)" />
+<area shape=rect	coords=402,495,448,512	href="/dbget-bin/www_bget?mmu:69983"	title="69983 (Sis)" />
+<area shape=rect	coords=484,434,530,451	href="/dbget-bin/www_bget?mmu:232714"	title="232714 (Mgam)" />
+<area shape=rect	coords=114,277,160,294	href="/dbget-bin/www_bget?mmu:100043684+mmu:100043686+mmu:100043688+mmu:109959+mmu:11722"	title="100043684 (Amy2a4), 100043686 (Amy2a3), 100043688 (Amy2a2), 109959 (Amy2a5), 11722 (Amy1)" />
+<area shape=rect	coords=513,690,559,707	href="/dbget-bin/www_bget?mmu:20526"	title="20526 (Slc2a2)" />
+<area shape=rect	coords=424,627,470,644	href="/dbget-bin/www_bget?mmu:12289"	title="12289 (Cacna1d)" />
+<area shape=rect	coords=613,645,659,662	href="/dbget-bin/www_bget?mmu:20526"	title="20526 (Slc2a2)" />
+<area shape=rect	coords=697,408,743,425	href="/dbget-bin/www_bget?mmu:15275+mmu:15277+mmu:212032+mmu:216019"	title="15275 (Hk1), 15277 (Hk2), 212032 (Hk3), 216019 (Hkdc1)" />
+<area shape=rect	coords=831,421,877,438	href="/dbget-bin/www_bget?mmu:14377+mmu:14378+mmu:68401"	title="14377 (G6pc), 14378 (G6pc2), 68401 (G6pc3)" />
+<area shape=rect	coords=657,495,703,512	href="/dbget-bin/www_bget?mmu:18706+mmu:18707+mmu:18708+mmu:18709+mmu:18710+mmu:74769"	title="18706 (Pik3ca), 18707 (Pik3cd), 18708 (Pik3r1), 18709 (Pik3r2), 18710 (Pik3r3), 74769 (Pik3cb)" />
+<area shape=rect	coords=770,535,816,552	href="/dbget-bin/www_bget?mmu:11651+mmu:11652+mmu:23797"	title="11651 (Akt1), 11652 (Akt2), 23797 (Akt3)" />
+<area shape=rect	coords=424,750,470,767	href="/dbget-bin/www_bget?mmu:83770"	title="83770 (Tas1r2)" />
+<area shape=rect	coords=424,767,470,784	href="/dbget-bin/www_bget?mmu:83771"	title="83771 (Tas1r3)" />
+<area shape=rect	coords=528,760,574,777	href="/dbget-bin/www_bget?mmu:242851"	title="242851 (Gnat3)" />
+<area shape=rect	coords=620,760,666,777	href="/dbget-bin/www_bget?mmu:18796"	title="18796 (Plcb2)" />
+<area shape=rect	coords=695,711,741,728	href="/dbget-bin/www_bget?mmu:18751"	title="18751 (Prkcb)" />
+<area shape=rect	coords=40,45,406,70	href="/dbget-bin/www_bget?mmu04973"	title="mmu04973: Carbohydrate digestion and absorption" onmouseover="popupTimer(&quot;mmu04973&quot;, &quot;mmu04973: Carbohydrate digestion and absorption&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=83,190,198,215	href="/kegg-bin/show_pathway?mmu04970"	title="mmu04970: Salivary secretion" onmouseover="popupTimer(&quot;mmu04970&quot;, &quot;mmu04970: Salivary secretion&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=542,104,657,129	href="/kegg-bin/show_pathway?mmu04530"	title="mmu04530: Tight junction" onmouseover="popupTimer(&quot;mmu04530&quot;, &quot;mmu04530: Tight junction&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=83,222,198,247	href="/kegg-bin/show_pathway?mmu04972"	title="mmu04972: Pancreatic secretion" onmouseover="popupTimer(&quot;mmu04972&quot;, &quot;mmu04972: Pancreatic secretion&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=546,725,662,750	href="/kegg-bin/show_pathway?mmu04742"	title="mmu04742: Taste transduction" onmouseover="popupTimer(&quot;mmu04742&quot;, &quot;mmu04742: Taste transduction&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=217,696,340,721	href="/kegg-bin/show_pathway?ko00650"	title="ko00650: Butanoate metabolism" onmouseover="popupTimer(&quot;ko00650&quot;, &quot;ko00650: Butanoate metabolism&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=217,726,340,751	href="/kegg-bin/show_pathway?ko00640"	title="ko00640: Propanoate metabolism" onmouseover="popupTimer(&quot;ko00640&quot;, &quot;ko00640: Propanoate metabolism&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=217,756,340,781	href="/kegg-bin/show_pathway?ko00620"	title="ko00620: Pyruvate metabolism" onmouseover="popupTimer(&quot;ko00620&quot;, &quot;ko00620: Pyruvate metabolism&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

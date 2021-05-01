@@ -1,0 +1,498 @@
+<html>
+<!---
+ENTRY       hsa05202
+DEFINITION  Transcriptional misregulation in cancer - Homo sapiens (human)
+--->
+<head>
+<title>
+KEGG PATHWAY: Transcriptional misregulation in cancer - Homo sapiens (human)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Transcriptional misregulation in cancer - Homo sapiens (human)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=05202&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map05202.keg&query=hsa&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+hsa05202">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=hsa05202&format=kgml">Download KGML</a>
+
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="hsa.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa" selected>Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="05202" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="hsa05202" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/hsa/hsa05202.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=rect	coords=1257,273,1303,290	href="/dbget-bin/www_bget?hsa:2130"	title="2130 (EWSR1)" />
+<area shape=rect	coords=1312,273,1358,290	href="/dbget-bin/www_bget?hsa:2313"	title="2313 (FLI1)" />
+<area shape=rect	coords=1257,313,1303,330	href="/dbget-bin/www_bget?hsa:2130"	title="2130 (EWSR1)" />
+<area shape=rect	coords=1312,313,1358,330	href="/dbget-bin/www_bget?hsa:2078"	title="2078 (ERG)" />
+<area shape=rect	coords=1257,360,1303,377	href="/dbget-bin/www_bget?hsa:2130"	title="2130 (EWSR1)" />
+<area shape=rect	coords=1312,360,1358,377	href="/dbget-bin/www_bget?hsa:2115"	title="2115 (ETV1)" />
+<area shape=rect	coords=1257,401,1303,418	href="/dbget-bin/www_bget?hsa:2130"	title="2130 (EWSR1)" />
+<area shape=rect	coords=1312,401,1358,418	href="/dbget-bin/www_bget?hsa:2118"	title="2118 (ETV4)" />
+<area shape=rect	coords=1257,445,1303,462	href="/dbget-bin/www_bget?hsa:2130"	title="2130 (EWSR1)" />
+<area shape=rect	coords=1312,445,1358,462	href="/dbget-bin/www_bget?hsa:54738"	title="54738 (FEV)" />
+<area shape=rect	coords=1257,512,1303,529	href="/dbget-bin/www_bget?hsa:2130"	title="2130 (EWSR1)" />
+<area shape=rect	coords=1312,512,1358,529	href="/dbget-bin/www_bget?hsa:466"	title="466 (ATF1)" />
+<area shape=rect	coords=1257,585,1303,602	href="/dbget-bin/www_bget?hsa:2130"	title="2130 (EWSR1)" />
+<area shape=rect	coords=1312,585,1358,602	href="/dbget-bin/www_bget?hsa:7490"	title="7490 (WT1)" />
+<area shape=rect	coords=1257,670,1303,687	href="/dbget-bin/www_bget?hsa:2130"	title="2130 (EWSR1)" />
+<area shape=rect	coords=1312,670,1358,687	href="/dbget-bin/www_bget?hsa:8013"	title="8013 (NR4A3)" />
+<area shape=rect	coords=1257,756,1303,773	href="/dbget-bin/www_bget?hsa:2521"	title="2521 (FUS)" />
+<area shape=rect	coords=1312,756,1358,773	href="/dbget-bin/www_bget?hsa:1649"	title="1649 (DDIT3)" />
+<area shape=rect	coords=1257,802,1303,819	href="/dbget-bin/www_bget?hsa:2130"	title="2130 (EWSR1)" />
+<area shape=rect	coords=1312,802,1358,819	href="/dbget-bin/www_bget?hsa:1649"	title="1649 (DDIT3)" />
+<area shape=rect	coords=1257,862,1303,879	href="/dbget-bin/www_bget?hsa:5077"	title="5077 (PAX3)" />
+<area shape=rect	coords=1312,862,1358,879	href="/dbget-bin/www_bget?hsa:2308"	title="2308 (FOXO1)" />
+<area shape=rect	coords=1257,909,1303,926	href="/dbget-bin/www_bget?hsa:5081"	title="5081 (PAX7)" />
+<area shape=rect	coords=1312,909,1358,926	href="/dbget-bin/www_bget?hsa:2308"	title="2308 (FOXO1)" />
+<area shape=rect	coords=1257,961,1303,978	href="/dbget-bin/www_bget?hsa:6760"	title="6760 (SS18)" />
+<area shape=rect	coords=1312,961,1358,978	href="/dbget-bin/www_bget?hsa:6756+hsa:6757+hsa:727837"	title="6756 (SSX1), 6757 (SSX2), 727837 (SSX2B)" />
+<area shape=rect	coords=1257,1016,1303,1033	href="/dbget-bin/www_bget?hsa:79058"	title="79058 (ASPSCR1)" />
+<area shape=rect	coords=1312,1016,1358,1033	href="/dbget-bin/www_bget?hsa:7030"	title="7030 (TFE3)" />
+<area shape=rect	coords=1480,288,1526,305	href="/dbget-bin/www_bget?hsa:4609"	title="4609 (MYC)" />
+<area shape=rect	coords=1480,311,1526,328	href="/dbget-bin/www_bget?hsa:3398"	title="3398 (ID2)" />
+<area shape=rect	coords=1480,488,1526,505	href="/dbget-bin/www_bget?hsa:9915"	title="9915 (ARNT2)" />
+<area shape=rect	coords=1480,512,1526,529	href="/dbget-bin/www_bget?hsa:472"	title="472 (ATM)" />
+<area shape=rect	coords=1480,571,1526,588	href="/dbget-bin/www_bget?hsa:5154"	title="5154 (PDGFA)" />
+<area shape=rect	coords=1533,571,1579,588	href="/dbget-bin/www_bget?hsa:3560"	title="3560 (IL2RB)" />
+<area shape=rect	coords=1480,594,1526,611	href="/dbget-bin/www_bget?hsa:8938"	title="8938 (BAIAP3)" />
+<area shape=rect	coords=1480,617,1526,634	href="/dbget-bin/www_bget?hsa:7102"	title="7102 (TSPAN7)" />
+<area shape=rect	coords=1480,640,1526,657	href="/dbget-bin/www_bget?hsa:4291"	title="4291 (MLF1)" />
+<area shape=rect	coords=1480,670,1526,687	href="/dbget-bin/www_bget?hsa:5468"	title="5468 (PPARG)" />
+<area shape=rect	coords=1483,1016,1529,1033	href="/dbget-bin/www_bget?hsa:4233"	title="4233 (MET)" />
+<area shape=rect	coords=1480,862,1526,879	href="/dbget-bin/www_bget?hsa:2321"	title="2321 (FLT1)" />
+<area shape=rect	coords=1483,961,1529,978	href="/dbget-bin/www_bget?hsa:26471"	title="26471 (NUPR1)" />
+<area shape=rect	coords=1480,358,1526,375	href="/dbget-bin/www_bget?hsa:1026"	title="1026 (CDKN1A)" />
+<area shape=rect	coords=1480,404,1526,421	href="/dbget-bin/www_bget?hsa:3486"	title="3486 (IGFBP3)" />
+<area shape=rect	coords=1480,381,1526,398	href="/dbget-bin/www_bget?hsa:7048"	title="7048 (TGFBR2)" />
+<area shape=rect	coords=1480,265,1526,282	href="/dbget-bin/www_bget?hsa:3479"	title="3479 (IGF1)" />
+<area shape=rect	coords=1386,756,1432,773	href="/dbget-bin/www_bget?hsa:1051"	title="1051 (CEBPB)" />
+<area shape=rect	coords=1496,757,1542,774	href="/dbget-bin/www_bget?hsa:3569"	title="3569 (IL6)" />
+<area shape=rect	coords=1387,786,1433,803	href="/dbget-bin/www_bget?hsa:64332"	title="64332 (NFKBIZ)" />
+<area shape=rect	coords=1496,803,1542,820	href="/dbget-bin/www_bget?hsa:3576"	title="3576 (CXCL8)" />
+<area shape=rect	coords=1480,440,1526,457	href="/dbget-bin/www_bget?hsa:3479"	title="3479 (IGF1)" />
+<area shape=rect	coords=708,730,754,747	href="/dbget-bin/www_bget?hsa:7849"	title="7849 (PAX8)" />
+<area shape=rect	coords=763,730,809,747	href="/dbget-bin/www_bget?hsa:5468"	title="5468 (PPARG)" />
+<area shape=rect	coords=708,808,754,825	href="/dbget-bin/www_bget?hsa:5546"	title="5546 (PRCC)" />
+<area shape=rect	coords=763,808,809,825	href="/dbget-bin/www_bget?hsa:7030"	title="7030 (TFE3)" />
+<area shape=rect	coords=708,870,754,887	href="/dbget-bin/www_bget?hsa:7113"	title="7113 (TMPRSS2)" />
+<area shape=rect	coords=763,870,809,887	href="/dbget-bin/www_bget?hsa:2078"	title="2078 (ERG)" />
+<area shape=rect	coords=708,911,754,928	href="/dbget-bin/www_bget?hsa:7113"	title="7113 (TMPRSS2)" />
+<area shape=rect	coords=763,911,809,928	href="/dbget-bin/www_bget?hsa:2115"	title="2115 (ETV1)" />
+<area shape=rect	coords=708,957,754,974	href="/dbget-bin/www_bget?hsa:7113"	title="7113 (TMPRSS2)" />
+<area shape=rect	coords=763,957,809,974	href="/dbget-bin/www_bget?hsa:2118"	title="2118 (ETV4)" />
+<area shape=rect	coords=708,1003,754,1020	href="/dbget-bin/www_bget?hsa:7113"	title="7113 (TMPRSS2)" />
+<area shape=rect	coords=763,1003,809,1020	href="/dbget-bin/www_bget?hsa:2119"	title="2119 (ETV5)" />
+<area shape=rect	coords=708,1046,754,1063	href="/dbget-bin/www_bget?hsa:85414"	title="85414 (SLC45A3)" />
+<area shape=rect	coords=763,1046,809,1063	href="/dbget-bin/www_bget?hsa:2005"	title="2005 (ELK4)" />
+<area shape=rect	coords=708,1083,754,1100	href="/dbget-bin/www_bget?hsa:1655"	title="1655 (DDX5)" />
+<area shape=rect	coords=763,1083,809,1100	href="/dbget-bin/www_bget?hsa:2118"	title="2118 (ETV4)" />
+<area shape=rect	coords=905,858,951,875	href="/dbget-bin/www_bget?hsa:5328"	title="5328 (PLAU)" />
+<area shape=rect	coords=905,880,951,897	href="/dbget-bin/www_bget?hsa:4314+hsa:4318"	title="4314 (MMP3), 4318 (MMP9)" />
+<area shape=rect	coords=956,880,1002,897	href="/dbget-bin/www_bget?hsa:6935"	title="6935 (ZEB1)" />
+<area shape=rect	coords=905,902,951,919	href="/dbget-bin/www_bget?hsa:7850"	title="7850 (IL1R2)" />
+<area shape=rect	coords=905,933,951,950	href="/dbget-bin/www_bget?hsa:6692"	title="6692 (SPINT1)" />
+<area shape=rect	coords=905,995,951,1012	href="/dbget-bin/www_bget?hsa:5328"	title="5328 (PLAU)" />
+<area shape=rect	coords=905,1017,951,1034	href="/dbget-bin/www_bget?hsa:4318"	title="4318 (MMP9)" />
+<area shape=rect	coords=831,708,877,725	href="/dbget-bin/www_bget?hsa:6256+hsa:6257+hsa:6258"	title="6256 (RXRA), 6257 (RXRB), 6258 (RXRG)" />
+<area shape=rect	coords=831,748,877,765	href="/dbget-bin/www_bget?hsa:5468"	title="5468 (PPARG)" />
+<area shape=rect	coords=905,808,951,825	href="/dbget-bin/www_bget?hsa:1026"	title="1026 (CDKN1A)" />
+<area shape=rect	coords=148,338,194,355	href="/dbget-bin/www_bget?hsa:861"	title="861 (RUNX1)" />
+<area shape=rect	coords=203,338,249,355	href="/dbget-bin/www_bget?hsa:862"	title="862 (RUNX1T1)" />
+<area shape=rect	coords=148,435,194,452	href="/dbget-bin/www_bget?hsa:5371"	title="5371 (PML)" />
+<area shape=rect	coords=203,435,249,452	href="/dbget-bin/www_bget?hsa:5914"	title="5914 (RARA)" />
+<area shape=rect	coords=148,526,194,543	href="/dbget-bin/www_bget?hsa:7704"	title="7704 (ZBTB16)" />
+<area shape=rect	coords=203,526,249,543	href="/dbget-bin/www_bget?hsa:5914"	title="5914 (RARA)" />
+<area shape=rect	coords=380,526,426,543	href="/dbget-bin/www_bget?hsa:4609"	title="4609 (MYC)" />
+<area shape=rect	coords=380,438,426,455	href="/dbget-bin/www_bget?hsa:8900"	title="8900 (CCNA1)" />
+<area shape=rect	coords=380,406,426,423	href="/dbget-bin/www_bget?hsa:3728"	title="3728 (JUP)" />
+<area shape=rect	coords=380,470,426,487	href="/dbget-bin/www_bget?hsa:1053"	title="1053 (CEBPE)" />
+<area shape=rect	coords=380,491,426,508	href="/dbget-bin/www_bget?hsa:597"	title="597 (BCL2A1)" />
+<area shape=rect	coords=293,263,339,280	href="/dbget-bin/www_bget?hsa:1050"	title="1050 (CEBPA)" />
+<area shape=rect	coords=401,263,447,280	href="/dbget-bin/www_bget?hsa:8864"	title="8864 (PER2)" />
+<area shape=rect	coords=293,352,339,369	href="/dbget-bin/www_bget?hsa:6688"	title="6688 (SPI1)" />
+<area shape=rect	coords=402,331,448,348	href="/dbget-bin/www_bget?hsa:929"	title="929 (CD14)" />
+<area shape=rect	coords=402,353,448,370	href="/dbget-bin/www_bget?hsa:3684"	title="3684 (ITGAM)" />
+<area shape=rect	coords=402,375,448,392	href="/dbget-bin/www_bget?hsa:2209"	title="2209 (FCGR1A)" />
+<area shape=rect	coords=708,378,754,395	href="/dbget-bin/www_bget?hsa:5966"	title="5966 (REL)" />
+<area shape=rect	coords=890,367,936,384	href="/dbget-bin/www_bget?hsa:597"	title="597 (BCL2A1)" />
+<area shape=rect	coords=943,367,989,384	href="/dbget-bin/www_bget?hsa:330"	title="330 (BIRC3)" />
+<area shape=rect	coords=890,389,936,406	href="/dbget-bin/www_bget?hsa:7185"	title="7185 (TRAF1)" />
+<area shape=rect	coords=943,389,989,406	href="/dbget-bin/www_bget?hsa:598"	title="598 (BCL2L1)" />
+<area shape=rect	coords=890,411,936,428	href="/dbget-bin/www_bget?hsa:942"	title="942 (CD86)" />
+<area shape=rect	coords=943,411,989,428	href="/dbget-bin/www_bget?hsa:958"	title="958 (CD40)" />
+<area shape=rect	coords=148,656,194,673	href="/dbget-bin/www_bget?hsa:6929"	title="6929 (TCF3)" />
+<area shape=rect	coords=203,656,249,673	href="/dbget-bin/www_bget?hsa:5087"	title="5087 (PBX1)" />
+<area shape=rect	coords=148,730,194,747	href="/dbget-bin/www_bget?hsa:2120+hsa:51513"	title="2120 (ETV6), 51513 (ETV7)" />
+<area shape=rect	coords=203,730,249,747	href="/dbget-bin/www_bget?hsa:861"	title="861 (RUNX1)" />
+<area shape=rect	coords=380,656,426,673	href="/dbget-bin/www_bget?hsa:51384"	title="51384 (WNT16)" />
+<area shape=rect	coords=238,777,284,794	href="/dbget-bin/www_bget?hsa:9611"	title="9611 (NCOR1)" />
+<area shape=rect	coords=238,760,284,777	href="/dbget-bin/www_bget?hsa:25942"	title="25942 (SIN3A)" />
+<area shape=rect	coords=148,932,194,949	href="/dbget-bin/www_bget?hsa:4297"	title="4297 (KMT2A)" />
+<area shape=rect	coords=203,932,249,949	href="/dbget-bin/www_bget?hsa:4299"	title="4299 (AFF1)" />
+<area shape=rect	coords=349,816,395,833	href="/dbget-bin/www_bget?hsa:4005"	title="4005 (LMO2)" />
+<area shape=rect	coords=349,838,395,855	href="/dbget-bin/www_bget?hsa:860"	title="860 (RUNX2)" />
+<area shape=rect	coords=349,882,395,899	href="/dbget-bin/www_bget?hsa:3205"	title="3205 (HOXA9)" />
+<area shape=rect	coords=402,882,448,899	href="/dbget-bin/www_bget?hsa:3206"	title="3206 (HOXA10)" />
+<area shape=rect	coords=402,816,448,833	href="/dbget-bin/www_bget?hsa:5090"	title="5090 (PBX3)" />
+<area shape=rect	coords=402,838,448,855	href="/dbget-bin/www_bget?hsa:4086"	title="4086 (SMAD1)" />
+<area shape=rect	coords=402,860,448,877	href="/dbget-bin/www_bget?hsa:4208"	title="4208 (MEF2C)" />
+<area shape=rect	coords=349,860,395,877	href="/dbget-bin/www_bget?hsa:51274"	title="51274 (KLF3)" />
+<area shape=rect	coords=349,922,395,939	href="/dbget-bin/www_bget?hsa:221037"	title="221037 (JMJD1C)" />
+<area shape=rect	coords=349,944,395,961	href="/dbget-bin/www_bget?hsa:7403+hsa:7404"	title="7403 (KDM6A), 7404 (UTY)" />
+<area shape=rect	coords=402,922,448,939	href="/dbget-bin/www_bget?hsa:8091"	title="8091 (HMGA2)" />
+<area shape=rect	coords=402,944,448,961	href="/dbget-bin/www_bget?hsa:8464"	title="8464 (SUPT3H)" />
+<area shape=rect	coords=349,990,395,1007	href="/dbget-bin/www_bget?hsa:8842"	title="8842 (PROM1)" />
+<area shape=rect	coords=349,1012,395,1029	href="/dbget-bin/www_bget?hsa:55589"	title="55589 (BMP2K)" />
+<area shape=rect	coords=402,990,448,1007	href="/dbget-bin/www_bget?hsa:2322"	title="2322 (FLT3)" />
+<area shape=rect	coords=402,1012,448,1029	href="/dbget-bin/www_bget?hsa:3480"	title="3480 (IGF1R)" />
+<area shape=rect	coords=349,1054,395,1071	href="/dbget-bin/www_bget?hsa:1027"	title="1027 (CDKN1B)" />
+<area shape=rect	coords=349,1076,395,1093	href="/dbget-bin/www_bget?hsa:5218"	title="5218 (CDK14)" />
+<area shape=rect	coords=763,514,809,531	href="/dbget-bin/www_bget?hsa:4094"	title="4094 (MAF)" />
+<area shape=rect	coords=905,498,951,515	href="/dbget-bin/www_bget?hsa:894"	title="894 (CCND2)" />
+<area shape=rect	coords=905,528,951,545	href="/dbget-bin/www_bget?hsa:3695"	title="3695 (ITGB7)" />
+<area shape=rect	coords=708,514,754,531	href="/dbget-bin/www_bget?hsa:102723407"	title="102723407 (IGH)" />
+<area shape=rect	coords=708,632,754,649	href="/dbget-bin/www_bget?hsa:5079"	title="5079 (PAX5)" />
+<area shape=rect	coords=763,632,809,649	href="/dbget-bin/www_bget?hsa:102723407"	title="102723407 (IGH)" />
+<area shape=rect	coords=1257,92,1303,109	href="/dbget-bin/www_bget?hsa:4613"	title="4613 (MYCN)" />
+<area shape=rect	coords=1312,92,1358,109	href="/dbget-bin/www_bget?hsa:4149"	title="4149 (MAX)" />
+<area shape=rect	coords=1313,124,1359,141	href="/dbget-bin/www_bget?hsa:6667"	title="6667 (SP1)" />
+<area shape=rect	coords=1313,141,1359,158	href="/dbget-bin/www_bget?hsa:7709"	title="7709 (ZBTB17)" />
+<area shape=rect	coords=1457,42,1503,59	href="/dbget-bin/www_bget?hsa:4193"	title="4193 (MDM2)" />
+<area shape=rect	coords=1457,84,1503,101	href="/dbget-bin/www_bget?hsa:7157"	title="7157 (TP53)" />
+<area shape=rect	coords=1457,105,1503,122	href="/dbget-bin/www_bget?hsa:100532731+hsa:648"	title="100532731 (COMMD3-BMI1), 648 (BMI1)" />
+<area shape=rect	coords=1457,63,1503,80	href="/dbget-bin/www_bget?hsa:5747"	title="5747 (PTK2)" />
+<area shape=rect	coords=1457,136,1503,153	href="/dbget-bin/www_bget?hsa:4914"	title="4914 (NTRK1)" />
+<area shape=rect	coords=1457,157,1503,174	href="/dbget-bin/www_bget?hsa:4804"	title="4804 (NGFR)" />
+<area shape=rect	coords=1257,188,1303,205	href="/dbget-bin/www_bget?hsa:4221"	title="4221 (MEN1)" />
+<area shape=rect	coords=1457,189,1503,206	href="/dbget-bin/www_bget?hsa:1027"	title="1027 (CDKN1B)" />
+<area shape=rect	coords=1257,205,1303,222	href="/dbget-bin/www_bget?hsa:4297"	title="4297 (KMT2A)" />
+<area shape=rect	coords=151,968,197,985	href="/dbget-bin/www_bget?hsa:1025+hsa:904+hsa:905"	title="1025 (CDK9), 904 (CCNT1), 905 (CCNT2)" />
+<area shape=rect	coords=173,995,219,1012	href="/dbget-bin/www_bget?hsa:4298+hsa:4300"	title="4298 (MLLT1), 4300 (MLLT3)" />
+<area shape=rect	coords=206,1026,252,1043	href="/dbget-bin/www_bget?hsa:84444"	title="84444 (DOT1L)" />
+<area shape=rect	coords=402,700,448,717	href="/dbget-bin/www_bget?hsa:3562"	title="3562 (IL3)" />
+<area shape=rect	coords=349,722,395,739	href="/dbget-bin/www_bget?hsa:1437"	title="1437 (CSF2)" />
+<area shape=rect	coords=402,722,448,739	href="/dbget-bin/www_bget?hsa:4353"	title="4353 (MPO)" />
+<area shape=rect	coords=402,744,448,761	href="/dbget-bin/www_bget?hsa:1668"	title="1668 (DEFA3)" />
+<area shape=rect	coords=349,766,395,783	href="/dbget-bin/www_bget?hsa:1991"	title="1991 (ELANE)" />
+<area shape=rect	coords=402,766,448,783	href="/dbget-bin/www_bget?hsa:3002"	title="3002 (GZMB)" />
+<area shape=rect	coords=201,284,247,301	href="/dbget-bin/www_bget?hsa:25942"	title="25942 (SIN3A)" />
+<area shape=rect	coords=201,301,247,318	href="/dbget-bin/www_bget?hsa:9611"	title="9611 (NCOR1)" />
+<area shape=rect	coords=380,558,426,575	href="/dbget-bin/www_bget?hsa:1848"	title="1848 (DUSP6)" />
+<area shape=rect	coords=233,180,279,197	href="/dbget-bin/www_bget?hsa:861"	title="861 (RUNX1)" />
+<area shape=rect	coords=349,171,395,188	href="/dbget-bin/www_bget?hsa:1436"	title="1436 (CSF1R)" />
+<area shape=rect	coords=402,171,448,188	href="/dbget-bin/www_bget?hsa:4353"	title="4353 (MPO)" />
+<area shape=rect	coords=349,193,395,210	href="/dbget-bin/www_bget?hsa:1437"	title="1437 (CSF2)" />
+<area shape=rect	coords=402,193,448,210	href="/dbget-bin/www_bget?hsa:3562"	title="3562 (IL3)" />
+<area shape=rect	coords=293,305,339,322	href="/dbget-bin/www_bget?hsa:6688"	title="6688 (SPI1)" />
+<area shape=rect	coords=402,305,448,322	href="/dbget-bin/www_bget?hsa:1436"	title="1436 (CSF1R)" />
+<area shape=rect	coords=293,225,339,242	href="/dbget-bin/www_bget?hsa:1050"	title="1050 (CEBPA)" />
+<area shape=rect	coords=708,106,754,123	href="/dbget-bin/www_bget?hsa:4297"	title="4297 (KMT2A)" />
+<area shape=rect	coords=763,106,809,123	href="/dbget-bin/www_bget?hsa:4298+hsa:4300"	title="4298 (MLLT1), 4300 (MLLT3)" />
+<area shape=rect	coords=890,88,936,105	href="/dbget-bin/www_bget?hsa:4211"	title="4211 (MEIS1)" />
+<area shape=rect	coords=943,88,989,105	href="/dbget-bin/www_bget?hsa:3205"	title="3205 (HOXA9)" />
+<area shape=rect	coords=890,110,936,127	href="/dbget-bin/www_bget?hsa:3206"	title="3206 (HOXA10)" />
+<area shape=rect	coords=943,110,989,127	href="/dbget-bin/www_bget?hsa:3207"	title="3207 (HOXA11)" />
+<area shape=rect	coords=996,110,1042,127	href="/dbget-bin/www_bget?hsa:6495"	title="6495 (SIX1)" />
+<area shape=rect	coords=890,132,936,149	href="/dbget-bin/www_bget?hsa:51804"	title="51804 (SIX4)" />
+<area shape=rect	coords=943,132,989,149	href="/dbget-bin/www_bget?hsa:2138"	title="2138 (EYA1)" />
+<area shape=rect	coords=996,132,1042,149	href="/dbget-bin/www_bget?hsa:1031"	title="1031 (CDKN2C)" />
+<area shape=rect	coords=890,154,936,171	href="/dbget-bin/www_bget?hsa:3248"	title="3248 (HPGD)" />
+<area shape=rect	coords=943,154,989,171	href="/dbget-bin/www_bget?hsa:2892"	title="2892 (GRIA3)" />
+<area shape=rect	coords=996,154,1042,171	href="/dbget-bin/www_bget?hsa:2530"	title="2530 (FUT8)" />
+<area shape=rect	coords=708,200,754,217	href="/dbget-bin/www_bget?hsa:3195"	title="3195 (TLX1)" />
+<area shape=rect	coords=708,148,754,165	href="/dbget-bin/www_bget?hsa:30012"	title="30012 (TLX3)" />
+<area shape=rect	coords=890,200,936,217	href="/dbget-bin/www_bget?hsa:64919"	title="64919 (BCL11B)" />
+<area shape=rect	coords=708,446,754,463	href="/dbget-bin/www_bget?hsa:604"	title="604 (BCL6)" />
+<area shape=rect	coords=708,555,754,572	href="/dbget-bin/www_bget?hsa:102723407"	title="102723407 (IGH)" />
+<area shape=rect	coords=763,555,809,572	href="/dbget-bin/www_bget?hsa:7468"	title="7468 (NSD2)" />
+<area shape=rect	coords=840,556,886,573	href="/dbget-bin/www_bget?hsa:126961+hsa:3020+hsa:3021+hsa:333932+hsa:440093+hsa:653604+hsa:8290+hsa:8350+hsa:8351+hsa:8352+hsa:8353+hsa:8354+hsa:8355+hsa:8356+hsa:8357+hsa:8358+hsa:8968"	title="126961 (HIST2H3C), 3020 (H3F3A), 3021 (H3F3B), 333932 (HIST2H3A), 440093 (H3F3C), 653604 (HIST2H3D), 8290 (HIST3H3), 8350 (HIST1H3A), 8351 (HIST1H3D), 8352 (HIST1H3C), 8353 (HIST1H3E), 8354 (HIST1H3I), 8355 (HIST1H3G), 8356 (HIST1H3J), 8357 (HIST1H3H), 8358 (HIST1H3B), 8968 (HIST1H3F)" />
+<area shape=rect	coords=905,594,951,611	href="/dbget-bin/www_bget?hsa:894"	title="894 (CCND2)" />
+<area shape=rect	coords=1257,706,1303,723	href="/dbget-bin/www_bget?hsa:8148"	title="8148 (TAF15)" />
+<area shape=rect	coords=1312,706,1358,723	href="/dbget-bin/www_bget?hsa:8013"	title="8013 (NR4A3)" />
+<area shape=rect	coords=956,858,1002,875	href="/dbget-bin/www_bget?hsa:5327"	title="5327 (PLAT)" />
+<area shape=rect	coords=155,293,201,310	href="/dbget-bin/www_bget?hsa:3065+hsa:3066"	title="3065 (HDAC1), 3066 (HDAC2)" />
+<area shape=rect	coords=238,702,284,719	href="/dbget-bin/www_bget?hsa:3065+hsa:3066"	title="3065 (HDAC1), 3066 (HDAC2)" />
+<area shape=rect	coords=1387,803,1433,820	href="/dbget-bin/www_bget?hsa:4790+hsa:5970"	title="4790 (NFKB1), 5970 (RELA)" />
+<area shape=rect	coords=708,268,754,285	href="/dbget-bin/www_bget?hsa:4005"	title="4005 (LMO2)" />
+<area shape=rect	coords=708,285,754,302	href="/dbget-bin/www_bget?hsa:8861"	title="8861 (LDB1)" />
+<area shape=rect	coords=784,281,830,298	href="/dbget-bin/www_bget?hsa:4066"	title="4066 (LYL1)" />
+<area shape=rect	coords=784,298,830,315	href="/dbget-bin/www_bget?hsa:6929"	title="6929 (TCF3)" />
+<area shape=rect	coords=914,274,960,291	href="/dbget-bin/www_bget?hsa:3087"	title="3087 (HHEX)" />
+<area shape=rect	coords=914,302,960,319	href="/dbget-bin/www_bget?hsa:171558"	title="171558 (PTCRA)" />
+<area shape=rect	coords=1257,1083,1303,1100	href="/dbget-bin/www_bget?hsa:7157"	title="7157 (TP53)" />
+<area shape=rect	coords=1483,1061,1529,1078	href="/dbget-bin/www_bget?hsa:1026"	title="1026 (CDKN1A)" />
+<area shape=rect	coords=1535,1061,1581,1078	href="/dbget-bin/www_bget?hsa:10912+hsa:1647+hsa:4616"	title="10912 (GADD45G), 1647 (GADD45A), 4616 (GADD45B)" />
+<area shape=rect	coords=1483,1083,1529,1100	href="/dbget-bin/www_bget?hsa:581"	title="581 (BAX)" />
+<area shape=rect	coords=1535,1083,1581,1100	href="/dbget-bin/www_bget?hsa:578"	title="578 (BAK1)" />
+<area shape=rect	coords=1483,1105,1529,1122	href="/dbget-bin/www_bget?hsa:1643"	title="1643 (DDB2)" />
+<area shape=rect	coords=1535,1105,1581,1122	href="/dbget-bin/www_bget?hsa:51426"	title="51426 (POLK)" />
+<area shape=rect	coords=890,344,936,361	href="/dbget-bin/www_bget?hsa:894"	title="894 (CCND2)" />
+<area shape=rect	coords=1480,536,1526,553	href="/dbget-bin/www_bget?hsa:4286"	title="4286 (MITF)" />
+<area shape=rect	coords=40,45,403,70	href="/dbget-bin/www_bget?hsa05202"	title="hsa05202: Transcriptional misregulation in cancer" onmouseover="popupTimer(&quot;hsa05202&quot;, &quot;hsa05202: Transcriptional misregulation in cancer&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=951,702,1048,727	href="/kegg-bin/show_pathway?hsa05216"	title="hsa05216: Thyroid cancer" onmouseover="popupTimer(&quot;hsa05216&quot;, &quot;hsa05216: Thyroid cancer&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=93,206,230,231	href="/kegg-bin/show_pathway?hsa05221"	title="hsa05221: Acute myeloid leukemia" onmouseover="popupTimer(&quot;hsa05221&quot;, &quot;hsa05221: Acute myeloid leukemia&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1324,1107,1458,1132	href="/kegg-bin/show_pathway?hsa04115"	title="hsa04115: p53 signaling pathway" onmouseover="popupTimer(&quot;hsa04115&quot;, &quot;hsa04115: p53 signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=953,1054,1050,1079	href="/kegg-bin/show_pathway?hsa05215"	title="hsa05215: Prostate cancer" onmouseover="popupTimer(&quot;hsa05215&quot;, &quot;hsa05215: Prostate cancer&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=951,779,1075,804	href="/kegg-bin/show_pathway?hsa05211"	title="hsa05211: Renal cell carcinoma" onmouseover="popupTimer(&quot;hsa05211&quot;, &quot;hsa05211: Renal cell carcinoma&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

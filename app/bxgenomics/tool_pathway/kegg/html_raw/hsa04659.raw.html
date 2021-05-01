@@ -1,0 +1,392 @@
+<html>
+<!---
+ENTRY       hsa04659
+DEFINITION  Th17 cell differentiation - Homo sapiens (human)
+--->
+<head>
+<title>
+KEGG PATHWAY: Th17 cell differentiation - Homo sapiens (human)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Th17 cell differentiation - Homo sapiens (human)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=04659&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map04659.keg&query=hsa&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+hsa04659">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=hsa04659&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Interleukin (IL)-17-producing helper T (Th17) cells serve as a subset of CD4+ T cells involved in epithelial cell- and neutrophil mediated immune responses against extracellular microbes and in the pathogenesis of autoimmune diseases. In vivo, Th17 differentiation requires antigen presentation and co-stimulation, and activation of antigen presenting-cells (APCs) to produce TGF-beta, IL-6, IL-1, IL-23 and IL-21. This initial activation results in the activation and up-regulation of STAT3, ROR(gamma)t and other transcriptional factors in CD4+ T cells, which bind to the promoter regions of the IL-17, IL-21 and IL-22 genes and induce IL-17, IL-21 and IL-22. In contrast,  the differentiation of Th17 cells and their IL-17 expression are negatively regulated by IL-2, Th2 cytokine IL-4, IL-27 and Th1 cytokine IFN-gamma through STAT5, STAT6 and STAT1 activation, respectively. Retinoid acid and the combination of IL-2 and TGF-beta upregulate Foxp3, which also downregulates cytokines like IL-17 and IL-21. The inhibition of Th17 differentiation may serve as a protective strategy to 'fine-tune' the expression IL-17 so it does not cause excessive inflammation. Thus, balanced differentiation of Th cells is crucial for immunity and host protection.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="hsa.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa" selected>Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="04659" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="hsa04659" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/hsa/hsa04659.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=632,514,4	href="/dbget-bin/www_bget?C00165"	title="C00165 (Diacylglycerol)" onmouseover="popupTimer(&quot;C00165&quot;, &quot;C00165 (Diacylglycerol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=710,446,4	href="/dbget-bin/www_bget?C00076"	title="C00076 (Calcium cation)" onmouseover="popupTimer(&quot;C00076&quot;, &quot;C00076 (Calcium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=633,444,4	href="/dbget-bin/www_bget?C01245"	title="C01245 (D-myo-Inositol 1,4,5-trisphosphate)" onmouseover="popupTimer(&quot;C01245&quot;, &quot;C01245 (D-myo-Inositol 1,4,5-trisphosphate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=303,1012,4	href="/dbget-bin/www_bget?C00777"	title="C00777 (Retinoate)" onmouseover="popupTimer(&quot;C00777&quot;, &quot;C00777 (Retinoate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=888,507,934,524	href="/dbget-bin/www_bget?hsa:4792+hsa:4793+hsa:4794"	title="4792 (NFKBIA), 4793 (NFKBIB), 4794 (NFKBIE)" />
+<area shape=rect	coords=888,476,934,493	href="/dbget-bin/www_bget?hsa:4790+hsa:5970"	title="4790 (NFKB1), 5970 (RELA)" />
+<area shape=rect	coords=781,507,827,524	href="/dbget-bin/www_bget?hsa:1147+hsa:3551+hsa:8517"	title="1147 (CHUK), 3551 (IKBKB), 8517 (IKBKG)" />
+<area shape=rect	coords=689,507,735,524	href="/dbget-bin/www_bget?hsa:5588"	title="5588 (PRKCQ)" />
+<area shape=rect	coords=888,438,934,455	href="/dbget-bin/www_bget?hsa:4772+hsa:4773+hsa:4775"	title="4772 (NFATC1), 4773 (NFATC2), 4775 (NFATC3)" />
+<area shape=rect	coords=781,438,827,455	href="/dbget-bin/www_bget?hsa:5530+hsa:5532+hsa:5533+hsa:5534+hsa:5535"	title="5530 (PPP3CA), 5532 (PPP3CB), 5533 (PPP3CC), 5534 (PPP3R1), 5535 (PPP3R2)" />
+<area shape=rect	coords=505,515,551,532	href="/dbget-bin/www_bget?hsa:7535"	title="7535 (ZAP70)" />
+<area shape=rect	coords=689,545,735,562	href="/dbget-bin/www_bget?hsa:5594+hsa:5595"	title="5594 (MAPK1), 5595 (MAPK3)" />
+<area shape=rect	coords=689,582,735,599	href="/dbget-bin/www_bget?hsa:1432+hsa:5600+hsa:5603+hsa:6300"	title="1432 (MAPK14), 5600 (MAPK11), 5603 (MAPK13), 6300 (MAPK12)" />
+<area shape=rect	coords=689,610,735,627	href="/dbget-bin/www_bget?hsa:5599+hsa:5601+hsa:5602"	title="5599 (MAPK8), 5601 (MAPK9), 5602 (MAPK10)" />
+<area shape=rect	coords=889,596,935,613	href="/dbget-bin/www_bget?hsa:3725"	title="3725 (JUN)" />
+<area shape=rect	coords=382,597,428,614	href="/dbget-bin/www_bget?hsa:27040"	title="27040 (LAT)" />
+<area shape=rect	coords=888,545,934,562	href="/dbget-bin/www_bget?hsa:2353"	title="2353 (FOS)" />
+<area shape=rect	coords=517,546,563,563	href="/dbget-bin/www_bget?hsa:5335"	title="5335 (PLCG1)" />
+<area shape=rect	coords=382,435,428,452	href="/dbget-bin/www_bget?hsa:920"	title="920 (CD4)" />
+<area shape=rect	coords=458,435,504,452	href="/dbget-bin/www_bget?hsa:3932"	title="3932 (LCK)" />
+<area shape=rect	coords=280,829,326,846	href="/dbget-bin/www_bget?hsa:3458"	title="3458 (IFNG)" />
+<area shape=rect	coords=382,829,428,846	href="/dbget-bin/www_bget?hsa:3459+hsa:3460"	title="3459 (IFNGR1), 3460 (IFNGR2)" />
+<area shape=rect	coords=689,805,735,822	href="/dbget-bin/www_bget?hsa:6772"	title="6772 (STAT1)" />
+<area shape=rect	coords=280,645,326,662	href="/dbget-bin/www_bget?hsa:3565"	title="3565 (IL4)" />
+<area shape=rect	coords=382,645,428,662	href="/dbget-bin/www_bget?hsa:3561+hsa:3566"	title="3561 (IL2RG), 3566 (IL4R)" />
+<area shape=rect	coords=689,646,735,663	href="/dbget-bin/www_bget?hsa:6778"	title="6778 (STAT6)" />
+<area shape=rect	coords=280,969,326,986	href="/dbget-bin/www_bget?hsa:3558"	title="3558 (IL2)" />
+<area shape=rect	coords=382,969,428,986	href="/dbget-bin/www_bget?hsa:3559+hsa:3560+hsa:3561"	title="3559 (IL2RA), 3560 (IL2RB), 3561 (IL2RG)" />
+<area shape=rect	coords=689,969,735,986	href="/dbget-bin/www_bget?hsa:6776+hsa:6777"	title="6776 (STAT5A), 6777 (STAT5B)" />
+<area shape=rect	coords=149,515,195,532	href="/dbget-bin/www_bget?hsa:3108+hsa:3109+hsa:3111+hsa:3112+hsa:3113+hsa:3115+hsa:3117+hsa:3118+hsa:3119+hsa:3122+hsa:3123+hsa:3125+hsa:3126+hsa:3127"	title="3108 (HLA-DMA), 3109 (HLA-DMB), 3111 (HLA-DOA), 3112 (HLA-DOB), 3113 (HLA-DPA1), 3115 (HLA-DPB1), 3117 (HLA-DQA1), 3118 (HLA-DQA2), 3119 (HLA-DQB1), 3122 (HLA-DRA), 3123 (HLA-DRB1), 3125 (HLA-DRB3), 3126 (HLA-DRB4), 3127 (HLA-DRB5)" />
+<area shape=rect	coords=382,106,428,123	href="/dbget-bin/www_bget?hsa:3554+hsa:3556"	title="3554 (IL1R1), 3556 (IL1RAP)" />
+<area shape=rect	coords=382,186,428,203	href="/dbget-bin/www_bget?hsa:3561+hsa:50615"	title="3561 (IL2RG), 50615 (IL21R)" />
+<area shape=rect	coords=382,219,428,236	href="/dbget-bin/www_bget?hsa:3570+hsa:3572"	title="3570 (IL6R), 3572 (IL6ST)" />
+<area shape=rect	coords=382,259,428,276	href="/dbget-bin/www_bget?hsa:149233+hsa:3594"	title="149233 (IL23R), 3594 (IL12RB1)" />
+<area shape=rect	coords=689,220,735,237	href="/dbget-bin/www_bget?hsa:6774"	title="6774 (STAT3)" />
+<area shape=rect	coords=689,93,735,110	href="/dbget-bin/www_bget?hsa:1432+hsa:5600+hsa:5603+hsa:6300"	title="1432 (MAPK14), 5600 (MAPK11), 5603 (MAPK13), 6300 (MAPK12)" />
+<area shape=rect	coords=689,122,735,139	href="/dbget-bin/www_bget?hsa:2475"	title="2475 (MTOR)" />
+<area shape=rect	coords=382,154,428,171	href="/dbget-bin/www_bget?hsa:7046+hsa:7048"	title="7046 (TGFBR1), 7048 (TGFBR2)" />
+<area shape=rect	coords=280,186,326,203	href="/dbget-bin/www_bget?hsa:59067"	title="59067 (IL21)" />
+<area shape=rect	coords=1188,358,1234,375	href="/dbget-bin/www_bget?hsa:3605"	title="3605 (IL17A)" />
+<area shape=rect	coords=1242,358,1288,375	href="/dbget-bin/www_bget?hsa:112744"	title="112744 (IL17F)" />
+<area shape=rect	coords=1188,381,1234,398	href="/dbget-bin/www_bget?hsa:59067"	title="59067 (IL21)" />
+<area shape=rect	coords=1242,381,1288,398	href="/dbget-bin/www_bget?hsa:50616"	title="50616 (IL22)" />
+<area shape=rect	coords=1212,168,1258,185	href="/dbget-bin/www_bget?hsa:6097"	title="6097 (RORC)" />
+<area shape=rect	coords=1212,192,1258,209	href="/dbget-bin/www_bget?hsa:6095"	title="6095 (RORA)" />
+<area shape=rect	coords=1035,363,1081,380	href="/dbget-bin/www_bget?hsa:6097"	title="6097 (RORC)" />
+<area shape=rect	coords=1212,98,1258,115	href="/dbget-bin/www_bget?hsa:3662"	title="3662 (IRF4)" />
+<area shape=rect	coords=1035,137,1081,154	href="/dbget-bin/www_bget?hsa:3662"	title="3662 (IRF4)" />
+<area shape=rect	coords=1212,271,1258,288	href="/dbget-bin/www_bget?hsa:149233+hsa:3594"	title="149233 (IL23R), 3594 (IL12RB1)" />
+<area shape=rect	coords=1212,805,1258,822	href="/dbget-bin/www_bget?hsa:30009"	title="30009 (TBX21)" />
+<area shape=rect	coords=1035,763,1081,780	href="/dbget-bin/www_bget?hsa:30009"	title="30009 (TBX21)" />
+<area shape=rect	coords=1054,722,1100,739	href="/dbget-bin/www_bget?hsa:861"	title="861 (RUNX1)" />
+<area shape=rect	coords=1212,722,1258,739	href="/dbget-bin/www_bget?hsa:6097"	title="6097 (RORC)" />
+<area shape=rect	coords=1212,646,1258,663	href="/dbget-bin/www_bget?hsa:2625"	title="2625 (GATA3)" />
+<area shape=rect	coords=1054,692,1100,709	href="/dbget-bin/www_bget?hsa:2625"	title="2625 (GATA3)" />
+<area shape=rect	coords=1054,862,1100,879	href="/dbget-bin/www_bget?hsa:6097"	title="6097 (RORC)" />
+<area shape=rect	coords=1035,995,1081,1012	href="/dbget-bin/www_bget?hsa:5914"	title="5914 (RARA)" />
+<area shape=rect	coords=1035,1012,1081,1029	href="/dbget-bin/www_bget?hsa:6256+hsa:6257+hsa:6258"	title="6256 (RXRA), 6257 (RXRB), 6258 (RXRG)" />
+<area shape=rect	coords=1212,969,1258,986	href="/dbget-bin/www_bget?hsa:50943"	title="50943 (FOXP3)" />
+<area shape=rect	coords=1212,850,1258,867	href="/dbget-bin/www_bget?hsa:3605"	title="3605 (IL17A)" />
+<area shape=rect	coords=1264,850,1310,867	href="/dbget-bin/www_bget?hsa:112744"	title="112744 (IL17F)" />
+<area shape=rect	coords=1212,873,1258,890	href="/dbget-bin/www_bget?hsa:59067"	title="59067 (IL21)" />
+<area shape=rect	coords=1264,873,1310,890	href="/dbget-bin/www_bget?hsa:50616"	title="50616 (IL22)" />
+<area shape=rect	coords=280,922,326,939	href="/dbget-bin/www_bget?hsa:7040"	title="7040 (TGFB1)" />
+<area shape=rect	coords=689,920,735,937	href="/dbget-bin/www_bget?hsa:4087+hsa:4088+hsa:4089"	title="4087 (SMAD2), 4088 (SMAD3), 4089 (SMAD4)" />
+<area shape=rect	coords=382,922,428,939	href="/dbget-bin/www_bget?hsa:7046+hsa:7048"	title="7046 (TGFBR1), 7048 (TGFBR2)" />
+<area shape=rect	coords=280,154,326,171	href="/dbget-bin/www_bget?hsa:7040"	title="7040 (TGFB1)" />
+<area shape=rect	coords=689,155,735,172	href="/dbget-bin/www_bget?hsa:4087+hsa:4088+hsa:4089"	title="4087 (SMAD2), 4088 (SMAD3), 4089 (SMAD4)" />
+<area shape=rect	coords=382,756,428,773	href="/dbget-bin/www_bget?hsa:9466"	title="9466 (IL27RA)" />
+<area shape=rect	coords=1035,902,1081,919	href="/dbget-bin/www_bget?hsa:50943"	title="50943 (FOXP3)" />
+<area shape=rect	coords=1092,902,1138,919	href="/dbget-bin/www_bget?hsa:861"	title="861 (RUNX1)" />
+<area shape=rect	coords=280,106,326,123	href="/dbget-bin/www_bget?hsa:3553"	title="3553 (IL1B)" />
+<area shape=rect	coords=280,756,326,773	href="/dbget-bin/www_bget?hsa:53342"	title="53342 (IL17D)" />
+<area shape=rect	coords=280,219,326,236	href="/dbget-bin/www_bget?hsa:3569"	title="3569 (IL6)" />
+<area shape=rect	coords=280,259,326,276	href="/dbget-bin/www_bget?hsa:51561"	title="51561 (IL23A)" />
+<area shape=rect	coords=689,315,735,332	href="/dbget-bin/www_bget?hsa:3320+hsa:3326"	title="3320 (HSP90AA1), 3326 (HSP90AB1)" />
+<area shape=rect	coords=689,332,735,349	href="/dbget-bin/www_bget?hsa:196"	title="196 (AHR)" />
+<area shape=rect	coords=382,468,428,485	href="/dbget-bin/www_bget?hsa:916"	title="916 (CD3E)" />
+<area shape=rect	coords=382,485,428,502	href="/dbget-bin/www_bget?hsa:917"	title="917 (CD3G)" />
+<area shape=rect	coords=382,547,428,564	href="/dbget-bin/www_bget?hsa:915"	title="915 (CD3D)" />
+<area shape=rect	coords=382,564,428,581	href="/dbget-bin/www_bget?hsa:916"	title="916 (CD3E)" />
+<area shape=rect	coords=428,507,474,524	href="/dbget-bin/www_bget?hsa:919"	title="919 (CD247)" />
+<area shape=rect	coords=428,524,474,541	href="/dbget-bin/www_bget?hsa:919"	title="919 (CD247)" />
+<area shape=rect	coords=1035,380,1081,397	href="/dbget-bin/www_bget?hsa:6095"	title="6095 (RORA)" />
+<area shape=rect	coords=1212,245,1258,262	href="/dbget-bin/www_bget?hsa:3091"	title="3091 (HIF1A)" />
+<area shape=rect	coords=1035,205,1081,222	href="/dbget-bin/www_bget?hsa:3091"	title="3091 (HIF1A)" />
+<area shape=rect	coords=428,177,474,194	href="/dbget-bin/www_bget?hsa:3716+hsa:3718"	title="3716 (JAK1), 3718 (JAK3)" />
+<area shape=rect	coords=428,209,474,226	href="/dbget-bin/www_bget?hsa:3716+hsa:3717"	title="3716 (JAK1), 3717 (JAK2)" />
+<area shape=rect	coords=428,244,474,261	href="/dbget-bin/www_bget?hsa:3717"	title="3717 (JAK2)" />
+<area shape=rect	coords=428,271,474,288	href="/dbget-bin/www_bget?hsa:7297"	title="7297 (TYK2)" />
+<area shape=rect	coords=428,656,474,673	href="/dbget-bin/www_bget?hsa:3716+hsa:3718"	title="3716 (JAK1), 3718 (JAK3)" />
+<area shape=rect	coords=428,744,474,761	href="/dbget-bin/www_bget?hsa:3716+hsa:3717"	title="3716 (JAK1), 3717 (JAK2)" />
+<area shape=rect	coords=428,770,474,787	href="/dbget-bin/www_bget?hsa:7297"	title="7297 (TYK2)" />
+<area shape=rect	coords=428,840,474,857	href="/dbget-bin/www_bget?hsa:3716+hsa:3717"	title="3716 (JAK1), 3717 (JAK2)" />
+<area shape=rect	coords=428,980,474,997	href="/dbget-bin/www_bget?hsa:3716+hsa:3718"	title="3716 (JAK1), 3718 (JAK3)" />
+<area shape=rect	coords=249,568,351,602	href="/kegg-bin/show_pathway?hsa04514"	title="hsa04514: Cell adhesion molecules (CAMs)" onmouseover="popupTimer(&quot;hsa04514&quot;, &quot;hsa04514: Cell adhesion molecules (CAMs)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=40,45,274,70	href="/dbget-bin/www_bget?hsa04659"	title="hsa04659: Th17 cell differentiation" onmouseover="popupTimer(&quot;hsa04659&quot;, &quot;hsa04659: Th17 cell differentiation&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=761,562,863,596	href="/kegg-bin/show_pathway?hsa04010"	title="hsa04010: MAPK signaling pathway" onmouseover="popupTimer(&quot;hsa04010&quot;, &quot;hsa04010: MAPK signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=511,428,613,462	href="/kegg-bin/show_pathway?hsa04020"	title="hsa04020: Calcium signaling pathway" onmouseover="popupTimer(&quot;hsa04020&quot;, &quot;hsa04020: Calcium signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=760,465,862,499	href="/kegg-bin/show_pathway?hsa04064"	title="hsa04064: NF-kappa B signaling pathway" onmouseover="popupTimer(&quot;hsa04064&quot;, &quot;hsa04064: NF-kappa B signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=249,479,351,513	href="/kegg-bin/show_pathway?hsa04660"	title="hsa04660: T cell receptor signaling pathway" onmouseover="popupTimer(&quot;hsa04660&quot;, &quot;hsa04660: T cell receptor signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=503,661,605,695	href="/kegg-bin/show_pathway?hsa04630"	title="hsa04630: Jak-STAT signaling pathway" onmouseover="popupTimer(&quot;hsa04630&quot;, &quot;hsa04630: Jak-STAT signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=498,887,600,921	href="/kegg-bin/show_pathway?hsa04350"	title="hsa04350: TGF-beta signaling pathway" onmouseover="popupTimer(&quot;hsa04350&quot;, &quot;hsa04350: TGF-beta signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1327,413,1429,447	href="/kegg-bin/show_pathway?hsa05321"	title="hsa05321: Inflammatory bowel disease (IBD)" onmouseover="popupTimer(&quot;hsa05321&quot;, &quot;hsa05321: Inflammatory bowel disease (IBD)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=1328,452,1430,486	href="/kegg-bin/show_pathway?hsa05323"	title="hsa05323: Rheumatoid arthritis" onmouseover="popupTimer(&quot;hsa05323&quot;, &quot;hsa05323: Rheumatoid arthritis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=43,178,148,212	href="/kegg-bin/show_pathway?hsa04620"	title="hsa04620: Toll-like receptor signaling pathway" onmouseover="popupTimer(&quot;hsa04620&quot;, &quot;hsa04620: Toll-like receptor signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=664,251,766,285	href="/kegg-bin/show_pathway?hsa04066"	title="hsa04066: HIF-1 signaling pathway" onmouseover="popupTimer(&quot;hsa04066&quot;, &quot;hsa04066: HIF-1 signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

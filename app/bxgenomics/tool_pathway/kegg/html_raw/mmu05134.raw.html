@@ -1,0 +1,350 @@
+<html>
+<!---
+ENTRY       mmu05134
+DEFINITION  Legionellosis - Mus musculus (mouse)
+--->
+<head>
+<title>
+KEGG PATHWAY: Legionellosis - Mus musculus (mouse)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Legionellosis - Mus musculus (mouse)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=05134&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map05134.keg&query=mmu&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+mmu05134">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=mmu05134&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Legionellosis is a potentially fatal infectious disease caused by the bacterium Legionella pneumophila and other legionella species. Two distinct clinical and epidemiological syndromes are associated with Legionella species: Legionnaires' disease is the more severe form of the infection, which may involve pneumonia, and Pontiac fever is a milder respiratory illness.
+The pathogenesis of L. pneumophila is derived from its growth within lung macrophages. One of the L. pneumophila's type IV secretion systems, the Dot/Icm secretion system, is of critical importance for its ability to replicate and to cause disease. The Dot/Icm substrates modulate multiple host cell processes and in particular, redirect trafficking of the L. pneumophila phagosome and mediate its conversion into an ER-derived organelle competent for intracellular bacterial replication. L. pneumophila also manipulates host cell death and survival pathways in a way that allows continued intracellular replication.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="mmu.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa">Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu" selected>Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+<option value="lpn">Legionella pneumophila subsp. pneumophila Philadelphia 1</option>
+<option value="lph">Legionella pneumophila subsp. pneumophila HL06041035</option>
+<option value="lpo">Legionella pneumophila subsp. pneumophila Lorraine</option>
+<option value="lpu">Legionella pneumophila subsp. pneumophila LPE509</option>
+<option value="lpm">Legionella pneumophila subsp. pneumophila Thunder Bay</option>
+<option value="lpf">Legionella pneumophila Lens</option>
+<option value="lpp">Legionella pneumophila Paris</option>
+<option value="lpc">Legionella pneumophila Corby</option>
+<option value="lpa">Legionella pneumophila 2300/99 Alcoy</option>
+<option value="lpe">Legionella pneumophila subsp. pneumophila ATCC 43290</option>
+<option value="llo">Legionella longbeachae</option>
+<option value="lfa">Legionella fallonii</option>
+<option value="lha">Legionella hackeliae</option>
+<option value="lok">Legionella oakridgensis</option>
+<option value="lcd">Legionella clemsonensis</option>
+</select>
+<input type="hidden" name="mapno" value="05134" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="mmu05134" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/mmu/mmu05134.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=119,1027,4	href="/dbget-bin/www_bget?C00338"	title="C00338 (Lipopolysaccharide)" onmouseover="popupTimer(&quot;C00338&quot;, &quot;C00338 (Lipopolysaccharide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=634,251,4	href="/dbget-bin/www_bget?C01277"	title="C01277 (1-Phosphatidyl-1D-myo-inositol 4-phosphate)" onmouseover="popupTimer(&quot;C01277&quot;, &quot;C01277 (1-Phosphatidyl-1D-myo-inositol 4-phosphate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=597,984,643,1001	href="/dbget-bin/www_bget?mmu:268973"	title="268973 (Nlrc4)" />
+<area shape=rect	coords=643,984,689,1001	href="/dbget-bin/www_bget?mmu:66824"	title="66824 (Pycard)" />
+<area shape=rect	coords=737,984,783,1001	href="/dbget-bin/www_bget?mmu:12362"	title="12362 (Casp1)" />
+<area shape=rect	coords=896,994,939,1011	href="/dbget-bin/www_bget?mmu:16176"	title="16176 (Il1b)" />
+<area shape=rect	coords=896,973,939,990	href="/dbget-bin/www_bget?mmu:16173"	title="16173 (Il18)" />
+<area shape=rect	coords=597,937,643,954	href="/dbget-bin/www_bget?mmu:17940+mmu:17948+mmu:17951+mmu:17952+mmu:53880"	title="17940 (Naip1), 17948 (Naip2), 17951 (Naip5), 17952 (Naip6), 53880 (Naip7)" />
+<area shape=rect	coords=737,937,783,954	href="/dbget-bin/www_bget?mmu:12369"	title="12369 (Casp7)" />
+<area shape=rect	coords=694,660,740,677	href="/dbget-bin/www_bget?mmu:18033+mmu:19697"	title="18033 (Nfkb1), 19697 (Rela)" />
+<area shape=rect	coords=694,609,740,626	href="/dbget-bin/www_bget?mmu:18035"	title="18035 (Nfkbia)" />
+<area shape=rect	coords=664,505,710,522	href="/dbget-bin/www_bget?mmu:12176"	title="12176 (Bnip3)" />
+<area shape=rect	coords=664,526,710,543	href="/dbget-bin/www_bget?mmu:94044"	title="94044 (Bcl2l13)" />
+<area shape=rect	coords=612,169,658,186	href="/dbget-bin/www_bget?mmu:11840"	title="11840 (Arf1)" />
+<area shape=rect	coords=612,192,658,209	href="/dbget-bin/www_bget?mmu:19324+mmu:76308"	title="19324 (Rab1), 76308 (Rab1b)" />
+<area shape=rect	coords=593,715,639,732	href="/dbget-bin/www_bget?mmu:12747"	title="12747 (Clk1)" />
+<area shape=rect	coords=612,290,658,307	href="/dbget-bin/www_bget?mmu:20333"	title="20333 (Sec22b)" />
+<area shape=rect	coords=612,311,658,328	href="/dbget-bin/www_bget?mmu:20224+mmu:66397"	title="20224 (Sar1a), 66397 (Sar1b)" />
+<area shape=rect	coords=612,332,658,349	href="/dbget-bin/www_bget?mmu:269523"	title="269523 (Vcp)" />
+<area shape=rect	coords=662,407,708,424	href="/dbget-bin/www_bget?mmu:13063+mmu:13067"	title="13063 (Cycs), 13067 (Cyct)" />
+<area shape=rect	coords=733,407,779,424	href="/dbget-bin/www_bget?mmu:12371"	title="12371 (Casp9)" />
+<area shape=rect	coords=804,407,850,424	href="/dbget-bin/www_bget?mmu:12367"	title="12367 (Casp3)" />
+<area shape=rect	coords=804,428,850,445	href="/dbget-bin/www_bget?mmu:12370"	title="12370 (Casp8)" />
+<area shape=rect	coords=662,377,708,394	href="/dbget-bin/www_bget?mmu:11783"	title="11783 (Apaf1)" />
+<area shape=rect	coords=185,456,231,473	href="/dbget-bin/www_bget?mmu:16409"	title="16409 (Itgam)" />
+<area shape=rect	coords=185,473,231,490	href="/dbget-bin/www_bget?mmu:16414+mmu:16415"	title="16414 (Itgb2), 16415 (Itgb2l)" />
+<area shape=rect	coords=108,428,154,445	href="/dbget-bin/www_bget?mmu:12266"	title="12266 (C3)" />
+<area shape=rect	coords=108,464,154,481	href="/dbget-bin/www_bget?mmu:12266"	title="12266 (C3)" />
+<area shape=rect	coords=109,398,155,415	href="/dbget-bin/www_bget?mmu:15510"	title="15510 (Hspd1)" />
+<area shape=rect	coords=694,579,740,596	href="/dbget-bin/www_bget?mmu:18034"	title="18034 (Nfkb2)" />
+<area shape=rect	coords=596,838,642,855	href="/dbget-bin/www_bget?mmu:67160"	title="67160 (Eef1g)" />
+<area shape=rect	coords=596,794,642,811	href="/dbget-bin/www_bget?mmu:13627+mmu:13628"	title="13627 (Eef1a1), 13628 (Eef1a2)" />
+<area shape=rect	coords=695,794,741,811	href="/dbget-bin/www_bget?mmu:15499"	title="15499 (Hsf1)" />
+<area shape=rect	coords=694,755,740,772	href="/dbget-bin/www_bget?mmu:56422"	title="56422 (Hbs1l)" />
+<area shape=rect	coords=823,794,869,811	href="/dbget-bin/www_bget?mmu:15481+mmu:15482+mmu:15511+mmu:15512+mmu:193740"	title="15481 (Hspa8), 15482 (Hspa1l), 15511 (Hspa1b), 15512 (Hspa2), 193740 (Hspa1a)" />
+<area shape=rect	coords=185,990,231,1007	href="/dbget-bin/www_bget?mmu:53791"	title="53791 (Tlr5)" />
+<area shape=rect	coords=185,1019,231,1036	href="/dbget-bin/www_bget?mmu:24088"	title="24088 (Tlr2)" />
+<area shape=rect	coords=185,1084,231,1101	href="/dbget-bin/www_bget?mmu:21898"	title="21898 (Tlr4)" />
+<area shape=rect	coords=185,1052,231,1069	href="/dbget-bin/www_bget?mmu:12475"	title="12475 (Cd14)" />
+<area shape=rect	coords=288,1019,334,1036	href="/dbget-bin/www_bget?mmu:17874"	title="17874 (Myd88)" />
+<area shape=rect	coords=598,1024,641,1041	href="/dbget-bin/www_bget?mmu:21926"	title="21926 (Tnf)" />
+<area shape=rect	coords=598,1044,641,1061	href="/dbget-bin/www_bget?mmu:16176"	title="16176 (Il1b)" />
+<area shape=rect	coords=598,1064,641,1081	href="/dbget-bin/www_bget?mmu:16193"	title="16193 (Il6)" />
+<area shape=rect	coords=598,1084,641,1101	href="/dbget-bin/www_bget?mmu:16159+mmu:16160"	title="16159 (Il12a), 16160 (Il12b)" />
+<area shape=rect	coords=648,1064,691,1081	href="/dbget-bin/www_bget?mmu:14825+mmu:20310+mmu:330122"	title="14825 (Cxcl1), 20310 (Cxcl2), 330122 (Cxcl3)" />
+<area shape=rect	coords=40,45,175,70	href="/dbget-bin/www_bget?mmu05134"	title="mmu05134: Legionellosis" onmouseover="popupTimer(&quot;mmu05134&quot;, &quot;mmu05134: Legionellosis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=885,411,958,445	href="/kegg-bin/show_pathway?mmu04210"	title="mmu04210: Apoptosis" onmouseover="popupTimer(&quot;mmu04210&quot;, &quot;mmu04210: Apoptosis&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=60,496,178,530	href="/kegg-bin/show_pathway?mmu04610"	title="mmu04610: Complement and coagulation cascades" onmouseover="popupTimer(&quot;mmu04610&quot;, &quot;mmu04610: Complement and coagulation cascades&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=323,1043,441,1077	href="/kegg-bin/show_pathway?mmu04620"	title="mmu04620: Toll-like receptor signaling pathway" onmouseover="popupTimer(&quot;mmu04620&quot;, &quot;mmu04620: Toll-like receptor signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

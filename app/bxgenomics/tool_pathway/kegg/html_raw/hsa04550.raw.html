@@ -1,0 +1,392 @@
+<html>
+<!---
+ENTRY       hsa04550
+DEFINITION  Signaling pathways regulating pluripotency of stem cells - Homo sapiens (human)
+--->
+<head>
+<title>
+KEGG PATHWAY: Signaling pathways regulating pluripotency of stem cells - Homo sapiens (human)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Signaling pathways regulating pluripotency of stem cells - Homo sapiens (human)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=04550&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map04550.keg&query=hsa&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+hsa04550">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=hsa04550&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Pluripotent stem cells (PSCs) are basic cells with an indefinite self-renewal capacity and the potential to generate all the cell types of the three germinal layers. The types of PSCs known to date include embryonic stem (ES) and induced pluripotent stem (iPS) cells. ES cells are derived from the inner cell mass (ICM) of blastocyst-stage embryos. iPS cells are generated by reprogramming somatic cells back to pluripotent state with defined reprogramming factors, Oct4, Sox2, Klf4 and c-Myc (also known as Yamanaka factors). PSCs including ES cells and iPS cells are categorized into two groups by their morphology, gene expression profile and external signal dependence. Conventional mouse-type ES/iPS cells are called 'naive state' cells. They are mainly maintained under the control of LIF and BMP signaling. On the other hand, human-type ES/iPS cells, which are in need of Activin and FGF signaling, are termed 'primed state'. However, these signaling pathways converge towards the activation of a core transcriptional network  that is similar in both groups and involves OCt4, Nanog and Sox2. The three transcription factors and their downstream target genes coordinately promote self-renewal and pluripotency.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="hsa.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa" selected>Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="ptr">Pan troglodytes (chimpanzee)</option>
+<option value="pps">Pan paniscus (bonobo)</option>
+<option value="ggo">Gorilla gorilla gorilla (western lowland gorilla)</option>
+<option value="pon">Pongo abelii (Sumatran orangutan)</option>
+<option value="nle">Nomascus leucogenys (northern white-cheeked gibbon)</option>
+<option value="mcc">Macaca mulatta (rhesus monkey)</option>
+<option value="mcf">Macaca fascicularis (crab-eating macaque)</option>
+<option value="csab">Chlorocebus sabaeus (green monkey)</option>
+<option value="rro">Rhinopithecus roxellana (golden snub-nosed monkey)</option>
+<option value="rbb">Rhinopithecus bieti (black snub-nosed monkey)</option>
+<option value="cjc">Callithrix jacchus (white-tufted-ear marmoset)</option>
+<option value="sbq">Saimiri boliviensis boliviensis (Bolivian squirrel monkey)</option>
+<option value="mmu">Mus musculus (mouse)</option>
+<option value="rno">Rattus norvegicus (rat)</option>
+<option value="cge">Cricetulus griseus (Chinese hamster)</option>
+<option value="ngi">Nannospalax galili (Upper Galilee mountains blind mole rat)</option>
+<option value="hgl">Heterocephalus glaber (naked mole rat)</option>
+<option value="ccan">Castor canadensis (American beaver)</option>
+<option value="ocu">Oryctolagus cuniculus (rabbit)</option>
+<option value="tup">Tupaia chinensis (Chinese tree shrew)</option>
+<option value="cfa">Canis familiaris (dog)</option>
+<option value="aml">Ailuropoda melanoleuca (giant panda)</option>
+<option value="umr">Ursus maritimus (polar bear)</option>
+<option value="fca">Felis catus (domestic cat)</option>
+<option value="ptg">Panthera tigris altaica (Amur tiger)</option>
+<option value="aju">Acinonyx jubatus (cheetah)</option>
+<option value="bta">Bos taurus (cow)</option>
+<option value="bom">Bos mutus (wild yak)</option>
+<option value="biu">Bos indicus (zebu cattle)</option>
+<option value="phd">Pantholops hodgsonii (chiru)</option>
+<option value="chx">Capra hircus (goat)</option>
+<option value="oas">Ovis aries (sheep)</option>
+<option value="ssc">Sus scrofa (pig)</option>
+<option value="cfr">Camelus ferus (Wild Bactrian camel)</option>
+<option value="cdk">Camelus dromedarius (Arabian camel)</option>
+<option value="bacu">Balaenoptera acutorostrata scammoni (minke whale)</option>
+<option value="lve">Lipotes vexillifer (Yangtze River dolphin)</option>
+<option value="ecb">Equus caballus (horse)</option>
+<option value="epz">Equus przewalskii (Przewalski's horse)</option>
+<option value="eai">Equus asinus (ass)</option>
+<option value="myb">Myotis brandtii (Brandt's bat)</option>
+<option value="myd">Myotis davidii</option>
+<option value="hai">Hipposideros armiger (great roundleaf bat)</option>
+<option value="rss">Rhinolophus sinicus (Chinese rufous horseshoe bat)</option>
+<option value="pale">Pteropus alecto (black flying fox)</option>
+<option value="lav">Loxodonta africana (African savanna elephant)</option>
+<option value="mdo">Monodelphis domestica (opossum)</option>
+<option value="shr">Sarcophilus harrisii (Tasmanian devil)</option>
+<option value="oaa">Ornithorhynchus anatinus (platypus)</option>
+</select>
+<input type="hidden" name="mapno" value="04550" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="hsa04550" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/hsa/hsa04550.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=rect	coords=125,423,171,440	href="/dbget-bin/www_bget?hsa:51384+hsa:54361+hsa:7471+hsa:7472+hsa:7473+hsa:7474+hsa:7475+hsa:7476+hsa:7477+hsa:7478+hsa:7479+hsa:7480+hsa:7481+hsa:7482+hsa:7483+hsa:7484+hsa:80326+hsa:81029+hsa:89780"	title="51384 (WNT16), 54361 (WNT4), 7471 (WNT1), 7472 (WNT2), 7473 (WNT3), 7474 (WNT5A), 7475 (WNT6), 7476 (WNT7A), 7477 (WNT7B), 7478 (WNT8A), 7479 (WNT8B), 7480 (WNT10B), 7481 (WNT11), 7482 (WNT2B), 7483 (WNT9A), 7484 (WNT9B), 80326 (WNT10A), 81029 (WNT5B), 89780 (WNT3A)" />
+<area shape=rect	coords=495,407,541,424	href="/dbget-bin/www_bget?hsa:10297+hsa:324"	title="10297 (APC2), 324 (APC)" />
+<area shape=rect	coords=449,407,495,424	href="/dbget-bin/www_bget?hsa:8312+hsa:8313"	title="8312 (AXIN1), 8313 (AXIN2)" />
+<area shape=rect	coords=316,424,362,441	href="/dbget-bin/www_bget?hsa:1855+hsa:1856+hsa:1857"	title="1855 (DVL1), 1856 (DVL2), 1857 (DVL3)" />
+<area shape=rect	coords=223,423,269,440	href="/dbget-bin/www_bget?hsa:11211+hsa:2535+hsa:7855+hsa:7976+hsa:8321+hsa:8322+hsa:8323+hsa:8324+hsa:8325+hsa:8326"	title="11211 (FZD10), 2535 (FZD2), 7855 (FZD5), 7976 (FZD3), 8321 (FZD1), 8322 (FZD4), 8323 (FZD6), 8324 (FZD7), 8325 (FZD8), 8326 (FZD9)" />
+<area shape=rect	coords=489,424,535,441	href="/dbget-bin/www_bget?hsa:1499"	title="1499 (CTNNB1)" />
+<area shape=rect	coords=406,424,452,441	href="/dbget-bin/www_bget?hsa:2932"	title="2932 (GSK3B)" />
+<area shape=rect	coords=588,424,634,441	href="/dbget-bin/www_bget?hsa:6927"	title="6927 (HNF1A)" />
+<area shape=rect	coords=125,172,171,189	href="/dbget-bin/www_bget?hsa:3976"	title="3976 (LIF)" />
+<area shape=rect	coords=221,172,267,189	href="/dbget-bin/www_bget?hsa:3572+hsa:3977"	title="3572 (IL6ST), 3977 (LIFR)" />
+<area shape=rect	coords=314,142,360,159	href="/dbget-bin/www_bget?hsa:3716+hsa:3717+hsa:3718"	title="3716 (JAK1), 3717 (JAK2), 3718 (JAK3)" />
+<area shape=rect	coords=410,142,456,159	href="/dbget-bin/www_bget?hsa:6774"	title="6774 (STAT3)" />
+<area shape=rect	coords=771,142,817,159	href="/dbget-bin/www_bget?hsa:9314"	title="9314 (KLF4)" />
+<area shape=rect	coords=314,234,360,251	href="/dbget-bin/www_bget?hsa:5290+hsa:5291+hsa:5293+hsa:5295+hsa:5296+hsa:8503"	title="5290 (PIK3CA), 5291 (PIK3CB), 5293 (PIK3CD), 5295 (PIK3R1), 5296 (PIK3R2), 8503 (PIK3R3)" />
+<area shape=rect	coords=410,234,456,251	href="/dbget-bin/www_bget?hsa:10000+hsa:207+hsa:208"	title="10000 (AKT3), 207 (AKT1), 208 (AKT2)" />
+<area shape=rect	coords=771,233,817,250	href="/dbget-bin/www_bget?hsa:6926"	title="6926 (TBX3)" />
+<area shape=rect	coords=314,197,360,214	href="/dbget-bin/www_bget?hsa:2885"	title="2885 (GRB2)" />
+<area shape=rect	coords=125,248,171,265	href="/dbget-bin/www_bget?hsa:3624+hsa:3625+hsa:3626+hsa:83729"	title="3624 (INHBA), 3625 (INHBB), 3626 (INHBC), 83729 (INHBE)" />
+<area shape=rect	coords=221,261,267,278	href="/dbget-bin/www_bget?hsa:130399+hsa:91+hsa:92+hsa:93"	title="130399 (ACVR1C), 91 (ACVR1B), 92 (ACVR2A), 93 (ACVR2B)" />
+<area shape=rect	coords=316,261,362,278	href="/dbget-bin/www_bget?hsa:4087+hsa:4088"	title="4087 (SMAD2), 4088 (SMAD3)" />
+<area shape=rect	coords=125,349,171,366	href="/dbget-bin/www_bget?hsa:652"	title="652 (BMP4)" />
+<area shape=rect	coords=221,349,267,366	href="/dbget-bin/www_bget?hsa:657+hsa:658+hsa:659+hsa:90"	title="657 (BMPR1A), 658 (BMPR1B), 659 (BMPR2), 90 (ACVR1)" />
+<area shape=rect	coords=424,339,470,356	href="/dbget-bin/www_bget?hsa:5594+hsa:5595"	title="5594 (MAPK1), 5595 (MAPK3)" />
+<area shape=rect	coords=989,230,1035,247	href="/dbget-bin/www_bget?hsa:79923"	title="79923 (NANOG)" />
+<area shape=rect	coords=939,319,985,336	href="/dbget-bin/www_bget?hsa:5460+hsa:5462"	title="5460 (POU5F1), 5462 (POU5F1B)" />
+<area shape=rect	coords=899,142,945,159	href="/dbget-bin/www_bget?hsa:6657"	title="6657 (SOX2)" />
+<area shape=rect	coords=125,745,171,762	href="/dbget-bin/www_bget?hsa:652"	title="652 (BMP4)" />
+<area shape=rect	coords=222,745,268,762	href="/dbget-bin/www_bget?hsa:657+hsa:658+hsa:659+hsa:90"	title="657 (BMPR1A), 658 (BMPR1B), 659 (BMPR2), 90 (ACVR1)" />
+<area shape=rect	coords=315,875,361,892	href="/dbget-bin/www_bget?hsa:3265+hsa:3845+hsa:4893"	title="3265 (HRAS), 3845 (KRAS), 4893 (NRAS)" />
+<area shape=rect	coords=407,875,453,892	href="/dbget-bin/www_bget?hsa:5894"	title="5894 (RAF1)" />
+<area shape=rect	coords=501,875,547,892	href="/dbget-bin/www_bget?hsa:5604+hsa:5605"	title="5604 (MAP2K1), 5605 (MAP2K2)" />
+<area shape=rect	coords=588,875,634,892	href="/dbget-bin/www_bget?hsa:5594+hsa:5595"	title="5594 (MAPK1), 5595 (MAPK3)" />
+<area shape=rect	coords=315,921,361,938	href="/dbget-bin/www_bget?hsa:5290+hsa:5291+hsa:5293+hsa:5295+hsa:5296+hsa:8503"	title="5290 (PIK3CA), 5291 (PIK3CB), 5293 (PIK3CD), 5295 (PIK3R1), 5296 (PIK3R2), 8503 (PIK3R3)" />
+<area shape=rect	coords=407,921,453,938	href="/dbget-bin/www_bget?hsa:10000+hsa:207+hsa:208"	title="10000 (AKT3), 207 (AKT1), 208 (AKT2)" />
+<area shape=rect	coords=125,875,171,892	href="/dbget-bin/www_bget?hsa:2247"	title="2247 (FGF2)" />
+<area shape=rect	coords=221,875,267,892	href="/dbget-bin/www_bget?hsa:2260+hsa:2261+hsa:2263+hsa:2264"	title="2260 (FGFR1), 2261 (FGFR3), 2263 (FGFR2), 2264 (FGFR4)" />
+<area shape=rect	coords=125,808,171,825	href="/dbget-bin/www_bget?hsa:3624+hsa:3625+hsa:3626+hsa:83729"	title="3624 (INHBA), 3625 (INHBB), 3626 (INHBC), 83729 (INHBE)" />
+<area shape=rect	coords=125,921,171,938	href="/dbget-bin/www_bget?hsa:3479"	title="3479 (IGF1)" />
+<area shape=rect	coords=222,921,268,938	href="/dbget-bin/www_bget?hsa:3480"	title="3480 (IGF1R)" />
+<area shape=rect	coords=125,999,171,1016	href="/dbget-bin/www_bget?hsa:51384+hsa:54361+hsa:7471+hsa:7472+hsa:7473+hsa:7474+hsa:7475+hsa:7476+hsa:7477+hsa:7478+hsa:7479+hsa:7480+hsa:7481+hsa:7482+hsa:7483+hsa:7484+hsa:80326+hsa:81029+hsa:89780"	title="51384 (WNT16), 54361 (WNT4), 7471 (WNT1), 7472 (WNT2), 7473 (WNT3), 7474 (WNT5A), 7475 (WNT6), 7476 (WNT7A), 7477 (WNT7B), 7478 (WNT8A), 7479 (WNT8B), 7480 (WNT10B), 7481 (WNT11), 7482 (WNT2B), 7483 (WNT9A), 7484 (WNT9B), 80326 (WNT10A), 81029 (WNT5B), 89780 (WNT3A)" />
+<area shape=rect	coords=491,983,537,1000	href="/dbget-bin/www_bget?hsa:10297+hsa:324"	title="10297 (APC2), 324 (APC)" />
+<area shape=rect	coords=446,983,492,1000	href="/dbget-bin/www_bget?hsa:8312+hsa:8313"	title="8312 (AXIN1), 8313 (AXIN2)" />
+<area shape=rect	coords=315,1000,361,1017	href="/dbget-bin/www_bget?hsa:1855+hsa:1856+hsa:1857"	title="1855 (DVL1), 1856 (DVL2), 1857 (DVL3)" />
+<area shape=rect	coords=222,1000,268,1017	href="/dbget-bin/www_bget?hsa:11211+hsa:2535+hsa:7855+hsa:7976+hsa:8321+hsa:8322+hsa:8323+hsa:8324+hsa:8325+hsa:8326"	title="11211 (FZD10), 2535 (FZD2), 7855 (FZD5), 7976 (FZD3), 8321 (FZD1), 8322 (FZD4), 8323 (FZD6), 8324 (FZD7), 8325 (FZD8), 8326 (FZD9)" />
+<area shape=rect	coords=488,1000,534,1017	href="/dbget-bin/www_bget?hsa:1499"	title="1499 (CTNNB1)" />
+<area shape=rect	coords=405,1000,451,1017	href="/dbget-bin/www_bget?hsa:2932"	title="2932 (GSK3B)" />
+<area shape=rect	coords=989,899,1035,916	href="/dbget-bin/www_bget?hsa:79923"	title="79923 (NANOG)" />
+<area shape=rect	coords=939,989,985,1006	href="/dbget-bin/www_bget?hsa:5460+hsa:5462"	title="5460 (POU5F1), 5462 (POU5F1B)" />
+<area shape=rect	coords=899,813,945,830	href="/dbget-bin/www_bget?hsa:6657"	title="6657 (SOX2)" />
+<area shape=rect	coords=338,745,384,762	href="/dbget-bin/www_bget?hsa:4086+hsa:4090+hsa:4093"	title="4086 (SMAD1), 4090 (SMAD5), 4093 (SMAD9)" />
+<area shape=rect	coords=469,197,515,214	href="/dbget-bin/www_bget?hsa:5604+hsa:5605"	title="5604 (MAP2K1), 5605 (MAP2K2)" />
+<area shape=rect	coords=424,362,470,379	href="/dbget-bin/www_bget?hsa:1432+hsa:5600+hsa:5603+hsa:6300"	title="1432 (MAPK14), 5600 (MAPK11), 5603 (MAPK13), 6300 (MAPK12)" />
+<area shape=rect	coords=221,821,267,838	href="/dbget-bin/www_bget?hsa:130399+hsa:91+hsa:92+hsa:93"	title="130399 (ACVR1C), 91 (ACVR1B), 92 (ACVR2A), 93 (ACVR2B)" />
+<area shape=rect	coords=338,821,384,838	href="/dbget-bin/www_bget?hsa:4087+hsa:4088"	title="4087 (SMAD2), 4088 (SMAD3)" />
+<area shape=rect	coords=421,795,467,812	href="/dbget-bin/www_bget?hsa:4089"	title="4089 (SMAD4)" />
+<area shape=rect	coords=420,723,466,740	href="/dbget-bin/www_bget?hsa:4089"	title="4089 (SMAD4)" />
+<area shape=rect	coords=567,197,613,214	href="/dbget-bin/www_bget?hsa:5594+hsa:5595"	title="5594 (MAPK1), 5595 (MAPK3)" />
+<area shape=rect	coords=771,191,817,208	href="/dbget-bin/www_bget?hsa:4609"	title="4609 (MYC)" />
+<area shape=rect	coords=771,1041,817,1058	href="/dbget-bin/www_bget?hsa:4609"	title="4609 (MYC)" />
+<area shape=rect	coords=316,317,362,334	href="/dbget-bin/www_bget?hsa:4086+hsa:4090+hsa:4093"	title="4086 (SMAD1), 4090 (SMAD5), 4093 (SMAD9)" />
+<area shape=rect	coords=771,317,817,334	href="/dbget-bin/www_bget?hsa:3397+hsa:3398+hsa:3399+hsa:3400"	title="3397 (ID1), 3398 (ID2), 3399 (ID3), 3400 (ID4)" />
+<area shape=rect	coords=1196,145,1242,162	href="/dbget-bin/www_bget?hsa:5460+hsa:5462"	title="5460 (POU5F1), 5462 (POU5F1B)" />
+<area shape=rect	coords=1254,145,1300,162	href="/dbget-bin/www_bget?hsa:6657"	title="6657 (SOX2)" />
+<area shape=rect	coords=1311,145,1357,162	href="/dbget-bin/www_bget?hsa:79923"	title="79923 (NANOG)" />
+<area shape=rect	coords=1196,196,1242,213	href="/dbget-bin/www_bget?hsa:6774"	title="6774 (STAT3)" />
+<area shape=rect	coords=1254,196,1300,213	href="/dbget-bin/www_bget?hsa:8820"	title="8820 (HESX1)" />
+<area shape=rect	coords=1196,221,1242,238	href="/dbget-bin/www_bget?hsa:7547"	title="7547 (ZIC3)" />
+<area shape=rect	coords=1254,221,1300,238	href="/dbget-bin/www_bget?hsa:2103"	title="2103 (ESRRB)" />
+<area shape=rect	coords=1196,263,1242,280	href="/dbget-bin/www_bget?hsa:6929"	title="6929 (TCF3)" />
+<area shape=rect	coords=1254,263,1300,280	href="/dbget-bin/www_bget?hsa:2247"	title="2247 (FGF2)" />
+<area shape=rect	coords=1196,289,1242,306	href="/dbget-bin/www_bget?hsa:7044"	title="7044 (LEFTY2)" />
+<area shape=rect	coords=1254,289,1300,306	href="/dbget-bin/www_bget?hsa:6498"	title="6498 (SKIL)" />
+<area shape=rect	coords=1196,334,1242,351	href="/dbget-bin/www_bget?hsa:56916"	title="56916 (SMARCAD1)" />
+<area shape=rect	coords=1254,334,1300,351	href="/dbget-bin/www_bget?hsa:7994"	title="7994 (KAT6A)" />
+<area shape=rect	coords=1196,360,1242,377	href="/dbget-bin/www_bget?hsa:9869"	title="9869 (SETDB1)" />
+<area shape=rect	coords=1254,360,1300,377	href="/dbget-bin/www_bget?hsa:3720"	title="3720 (JARID2)" />
+<area shape=rect	coords=1196,405,1242,422	href="/dbget-bin/www_bget?hsa:5978"	title="5978 (REST)" />
+<area shape=rect	coords=1196,449,1242,466	href="/dbget-bin/www_bget?hsa:55183"	title="55183 (RIF1)" />
+<area shape=rect	coords=1196,605,1242,622	href="/dbget-bin/www_bget?hsa:5080"	title="5080 (PAX6)" />
+<area shape=rect	coords=1254,605,1300,622	href="/dbget-bin/www_bget?hsa:4211"	title="4211 (MEIS1)" />
+<area shape=rect	coords=1311,605,1357,622	href="/dbget-bin/www_bget?hsa:3211"	title="3211 (HOXB1)" />
+<area shape=rect	coords=1196,631,1242,648	href="/dbget-bin/www_bget?hsa:64211"	title="64211 (LHX5)" />
+<area shape=rect	coords=1254,631,1300,648	href="/dbget-bin/www_bget?hsa:5013"	title="5013 (OTX1)" />
+<area shape=rect	coords=1311,631,1357,648	href="/dbget-bin/www_bget?hsa:4762"	title="4762 (NEUROG1)" />
+<area shape=rect	coords=1196,689,1242,706	href="/dbget-bin/www_bget?hsa:9421"	title="9421 (HAND1)" />
+<area shape=rect	coords=1254,689,1300,706	href="/dbget-bin/www_bget?hsa:1749"	title="1749 (DLX5)" />
+<area shape=rect	coords=1196,715,1242,732	href="/dbget-bin/www_bget?hsa:4617"	title="4617 (MYF5)" />
+<area shape=rect	coords=1254,715,1300,732	href="/dbget-bin/www_bget?hsa:3175"	title="3175 (ONECUT1)" />
+<area shape=rect	coords=1196,775,1242,792	href="/dbget-bin/www_bget?hsa:3670"	title="3670 (ISL1)" />
+<area shape=rect	coords=1254,775,1300,792	href="/dbget-bin/www_bget?hsa:463"	title="463 (ZFHX3)" />
+<area shape=rect	coords=1196,830,1242,847	href="/dbget-bin/www_bget?hsa:80712"	title="80712 (ESX1)" />
+<area shape=rect	coords=588,378,634,395	href="/dbget-bin/www_bget?hsa:6929"	title="6929 (TCF3)" />
+<area shape=rect	coords=771,375,817,392	href="/dbget-bin/www_bget?hsa:2103"	title="2103 (ESRRB)" />
+<area shape=rect	coords=771,283,817,300	href="/dbget-bin/www_bget?hsa:1852"	title="1852 (DUSP9)" />
+<area shape=rect	coords=1007,589,1053,606	href="/dbget-bin/www_bget?hsa:100532731+hsa:10336+hsa:648+hsa:7703+hsa:84108+hsa:84333+hsa:84759"	title="100532731 (COMMD3-BMI1), 10336 (PCGF3), 648 (BMI1), 7703 (PCGF2), 84108 (PCGF6), 84333 (PCGF5), 84759 (PCGF1)" />
+<area shape=rect	coords=420,291,466,308	href="/dbget-bin/www_bget?hsa:4089"	title="4089 (SMAD4)" />
+<area shape=rect	coords=125,271,171,288	href="/dbget-bin/www_bget?hsa:4838"	title="4838 (NODAL)" />
+<area shape=rect	coords=125,831,171,848	href="/dbget-bin/www_bget?hsa:4838"	title="4838 (NODAL)" />
+<area shape=rect	coords=40,45,568,70	href="/dbget-bin/www_bget?hsa04550"	title="hsa04550: Signaling pathways regulating pluripotency of stem cells" onmouseover="popupTimer(&quot;hsa04550&quot;, &quot;hsa04550: Signaling pathways regulating pluripotency of stem cells&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=288,384,390,418	href="/kegg-bin/show_pathway?hsa04310"	title="hsa04310: Wnt signaling pathway" onmouseover="popupTimer(&quot;hsa04310&quot;, &quot;hsa04310: Wnt signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=282,1023,384,1057	href="/kegg-bin/show_pathway?hsa04310"	title="hsa04310: Wnt signaling pathway" onmouseover="popupTimer(&quot;hsa04310&quot;, &quot;hsa04310: Wnt signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=491,284,593,318	href="/kegg-bin/show_pathway?hsa04350"	title="hsa04350: TGF-beta signaling pathway" onmouseover="popupTimer(&quot;hsa04350&quot;, &quot;hsa04350: TGF-beta signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=279,781,381,815	href="/kegg-bin/show_pathway?hsa04350"	title="hsa04350: TGF-beta signaling pathway" onmouseover="popupTimer(&quot;hsa04350&quot;, &quot;hsa04350: TGF-beta signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=333,99,450,133	href="/kegg-bin/show_pathway?hsa04630"	title="hsa04630: Jak-STAT signaling pathway" onmouseover="popupTimer(&quot;hsa04630&quot;, &quot;hsa04630: Jak-STAT signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=514,836,616,870	href="/kegg-bin/show_pathway?hsa04010"	title="hsa04010: MAPK signaling pathway" onmouseover="popupTimer(&quot;hsa04010&quot;, &quot;hsa04010: MAPK signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=328,950,430,984	href="/kegg-bin/show_pathway?hsa04151"	title="hsa04151: PI3K-Akt signaling pathway" onmouseover="popupTimer(&quot;hsa04151&quot;, &quot;hsa04151: PI3K-Akt signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=491,159,593,193	href="/kegg-bin/show_pathway?hsa04010"	title="hsa04010: MAPK signaling pathway" onmouseover="popupTimer(&quot;hsa04010&quot;, &quot;hsa04010: MAPK signaling pathway&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>

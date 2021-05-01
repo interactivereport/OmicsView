@@ -1,0 +1,281 @@
+<html>
+<!---
+ENTRY       hsa05110
+DEFINITION  Vibrio cholerae infection - Homo sapiens (human)
+--->
+<head>
+<title>
+KEGG PATHWAY: Vibrio cholerae infection - Homo sapiens (human)
+</title>
+<style type="text/css">
+<!--
+div.poplay {
+  position: absolute;
+  padding: 2px;
+  background-color: #ffff99;
+  border-top: solid 1px #c0c0c0;
+  border-left: solid 1px #c0c0c0;
+  border-bottom: solid 1px #808080;
+  border-right: solid 1px #808080;
+  visibility: hidden;
+}
+
+span.popup
+{
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+form {
+  margin: 0px;
+}
+
+div.image {
+  position: absolute;
+  padding: 0px;
+  top: 0px;
+  padding: 0px;
+  border: solid 1px #000000;
+}
+
+img {
+  border: none;
+}
+
+
+-->
+</style>
+<link rel="stylesheet" href="/css/kegg.css" type="text/css" />
+<script language="JavaScript" src="/js/dhtml.js"></script>
+
+<script language="JavaScript">
+<!---
+
+
+function resize_map(scale){
+  var form = document.forms["form2"];
+  form.scale.value = scale;
+  form.submit();
+}
+
+function select_menu(){
+  var form = document.forms["selmenu"];
+  if(form.org_name.value == 'set_cookie' || form.org_name.value == 'reset_cookie'){
+    window.open('/kegg/misc/kegg2_select.html','sel_org','toolbar=no,location=no,directories=no,width=500,height=320,resizable=yes');
+  }else{
+    form.action='/kegg-bin/show_pathway';
+    form.submit();
+  }
+}
+
+var timer = 0;
+var p_entry, p_title, p_bgcolor;
+function popupTimer(entry, title, bgcolor)
+{
+  p_entry = entry;
+  p_title = title;
+  p_bgcolor = bgcolor;
+
+  if(timer == 0){
+    var func = "showThumbnail()";
+    timer = setTimeout(func, 1200);
+  }
+}
+
+
+function showThumbnail()
+{
+
+  var url = "";
+  if(p_entry.match(/^[A-Z]+\d+$/))
+  {
+    url = "/kegg/misc/thumbnail/" + p_entry + ".gif";
+  }
+  else if(p_entry.match(/(\d+)$/))
+  {
+    url = "/kegg/misc/thumbnail/map" + RegExp.$1 + ".gif";
+  }
+
+  var html = "";
+
+  if(p_bgcolor != "#ffffff")
+  {
+    html += "<span class=\"popup\">" + p_entry + "</span><br />";
+  }
+
+  html += "<img src=\"" + url + "\" alt=\"Loading...\">";
+
+  var x = getCurrentMouseX();
+  var y = getCurrentMouseY();
+
+  var layer = new Component("poplay");
+  layer.backgroundColor(p_bgcolor);
+  layer.HTML(html);
+  layer.move(x, y+40);
+  layer.visible(true);
+
+  timer = 0;
+}
+
+function hideMapTn(){
+  var layer = new Component("poplay");
+  layer.visible(false);
+
+  if(timer != 0){
+    clearTimeout(timer);
+    timer = 0;
+  }
+}
+
+function switchDescription(){
+  var form = document.forms[0];
+  var status = form.show_description.value;
+
+  if(status == "hide"){
+    document.getElementById("description").style.display = "";
+    document.getElementById("descLink").innerHTML = "Hide description";
+    form.show_description.value='show';
+
+    if(document.forms[1]){
+    	document.forms[1].show_description.value='show';
+    }
+  }
+  else
+  {
+    document.getElementById("description").style.display = 'none';
+    document.getElementById("descLink").innerHTML = "Show description";
+    form.show_description.value='hide';
+
+    if(document.forms[1]){
+      document.forms[1].show_description.value='hide';
+    }
+  }
+}
+
+function btn(bobj,img) { bobj.src = "/Fig/bget/button_" + img + ".gif"; }
+//--->
+</script>
+</head>
+<body>
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+ <tr>
+  <td>
+   <a href="/kegg/kegg2.html"><img align="middle" alt="KEGG" border="0" src="/Fig/bget/kegg3.gif" /></a>
+   &nbsp;&nbsp;&nbsp;<font class="title3"><b>Vibrio cholerae infection - Homo sapiens (human)</b></font>
+  </td>
+  <td valign="bottom" align="right">
+   <a href="javascript:void(window.open('/kegg/document/help_pathway.html','KEGG_Help','toolbar=no,location=no,directories=no,width=720,height=640,resizable=yes,scrollbars=yes'))"><img name="help" src="/Fig/bget/button_Hb.gif" border="0" align="middle" alt="Help" onmouseout="btn(this,'Hb')" onmousedown="btn(this,'Hbd')" onmouseover="btn(this,'Hbh')" onmouseup="btn(this,'Hb')" /></a>
+  </td>
+ </tr>
+</table>
+
+  
+[
+<a href="/kegg-bin/get_htext?query=05110&htext=br08901.keg&option=-a">Pathway menu</a>
+| <a href="/kegg-bin/get_htext?htext=br08601_map05110.keg&query=hsa&option=-a">Organism menu</a>
+| <a href="/dbget-bin/www_bget?pathway+hsa05110">Pathway entry</a>
+
+| <a href="http://www.kegg.jp/kegg-bin/download?entry=hsa05110&format=kgml">Download KGML</a>
+| <a id="descLink" href="javascript:switchDescription()">Show description</a>
+| <a href="javascript:void(window.open('/kegg/tool/color_a_pathway.html','KEGG_Help','height=300,width=600,resizable=yes,scrollbars=yes'))">User data mapping</a>
+
+]
+  
+<table id="description" cellpadding="10" width="800" style="display: none;"><tr><td>
+Cholera toxin (CTX) is one of the main virulence factors of Vibrio cholerae. Once secreted, CTX B-chain (CTXB) binds to ganglioside GM1 on the surface of the host's cells. After binding takes place, the entire CTX complex is carried from plasma membrane (PM) to endoplasmic reticulum (ER). In the ER, the A-chain (CTXA) is recognized by protein disulfide isomerase (PDI), unfolded, and delivered to the membrane where the membrane-associated ER-oxidase, Ero1, oxidizes PDI to release the CTXA into the protein-conducting channel, Sec61. CTXA is then retro-translocated to the cytosol and induces water and electrolyte secretion by increasing cAMP levels via adenylate cyclase (AC) to exert toxicity.
+Other than CTX, Vibrio cholerae generates several toxins that are perilous to eukaryotic cells. Zonula occludens toxin (ZOT) causes tight junction disruption through protein kinase C-dependent actin polymerization. RTX toxin (RtxA) causes actin depolymerization by covalently cross-linking actin monomers into dimers, trimers, and higher multimers. Vibrio cholerae cytolysin (VCC) is an important pore-forming toxin. The assembly of VCC anion channels in cells cause vacuolization and lysis.</td></tr></table>
+<table><tr><td>
+<form name="selmenu" method="get">
+<select name="org_name">
+<option value="map">Reference pathway</option>
+<option value="ko">Reference pathway (KO)</option>
+<option value="set_cookie">-----&lt; Set personalized menu &gt;-----</option>
+<option value="hsa.sort_alp">-----&lt; Sort below by alphabet &gt;-----</option>
+<option value="hsa" selected>Homo sapiens (human)</option>
+<option value="hsadd">Homo sapiens (human) + Disease/drug</option>
+<option value="vch">Vibrio cholerae O1 biovar El Tor N16961</option>
+<option value="vcj">Vibrio cholerae MJ-1236</option>
+<option value="vco">Vibrio cholerae O395</option>
+<option value="vcm">Vibrio cholerae M66-2</option>
+<option value="vvu">Vibrio vulnificus CMCP6</option>
+<option value="vvy">Vibrio vulnificus YJ016</option>
+<option value="vpa">Vibrio parahaemolyticus RIMD 2210633</option>
+<option value="vha">Vibrio campbellii</option>
+<option value="vex">Vibrio antiquarius</option>
+<option value="vfi">Aliivibrio fischeri ES114</option>
+</select>
+<input type="hidden" name="mapno" value="05110" />
+<input type="hidden" name="mapscale" value=>
+<input type="button" value="Go" onclick="select_menu(this.form)" />
+<input type="hidden" name="show_description" value="hide">
+
+</form>
+</td><td>
+<form name="form2" method="get" action="/kegg-bin/show_pathway">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="scale" onChange="resize_map(this.form.scale.value)">
+<option value="1.84" >184%</option>
+<option value="1.5" >150%</option>
+<option value="1.22" >122%</option>
+<option value="1.0" selected>100%</option>
+<option value="0.82" >82%</option>
+<option value="0.67" >67%</option>
+<option value="0.55" >55%</option>
+</select>
+&nbsp;&nbsp;<input type="text" name="query" size=20 value="">
+<input type="hidden" name="map" value="hsa05110" />
+<input type="hidden" name="scale" value=>
+<input type="hidden" name="auto_image" value="">
+<input type="hidden" name="show_description" value="hide">
+<input type="hidden" name="multi_query" />
+
+<!--</form>-->
+</td></tr></table>
+
+
+<img src="/kegg/pathway/hsa/hsa05110.png" name="pathwayimage" usemap="#mapdata" border="0" />
+
+<map name="mapdata">
+<area shape=circle	coords=496,180,4	href="/dbget-bin/www_bget?C00014"	title="C00014 (Ammonia)" onmouseover="popupTimer(&quot;C00014&quot;, &quot;C00014 (Ammonia)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=524,152,4	href="/dbget-bin/www_bget?C00080"	title="C00080 (H+)" onmouseover="popupTimer(&quot;C00080&quot;, &quot;C00080 (H+)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=806,352,4	href="/dbget-bin/www_bget?C00238"	title="C00238 (Potassium cation)" onmouseover="popupTimer(&quot;C00238&quot;, &quot;C00238 (Potassium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=798,389,4	href="/dbget-bin/www_bget?C00238"	title="C00238 (Potassium cation)" onmouseover="popupTimer(&quot;C00238&quot;, &quot;C00238 (Potassium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=798,402,4	href="/dbget-bin/www_bget?C01330"	title="C01330 (Sodium cation)" onmouseover="popupTimer(&quot;C01330&quot;, &quot;C01330 (Sodium cation)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=798,415,4	href="/dbget-bin/www_bget?C00698"	title="C00698 (Cl-)" onmouseover="popupTimer(&quot;C00698&quot;, &quot;C00698 (Cl-)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=248,440,4	href="/dbget-bin/www_bget?C00698"	title="C00698 (Cl-)" onmouseover="popupTimer(&quot;C00698&quot;, &quot;C00698 (Cl-)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=306,323,4	href="/dbget-bin/www_bget?C04911"	title="C04911 (D-Galactosyl-N-acetyl-D-galactosaminyl-(N-acetylneuraminyl)-D-galactosyl-D-glucosylceramide)" onmouseover="popupTimer(&quot;C04911&quot;, &quot;C04911 (D-Galactosyl-N-acetyl-D-galactosaminyl-(N-acetylneuraminyl)-D-galactosyl-D-glucosylceramide)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=464,635,4	href="/dbget-bin/www_bget?C00165"	title="C00165 (Diacylglycerol)" onmouseover="popupTimer(&quot;C00165&quot;, &quot;C00165 (Diacylglycerol)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=464,599,4	href="/dbget-bin/www_bget?C01245"	title="C01245 (D-myo-Inositol 1,4,5-trisphosphate)" onmouseover="popupTimer(&quot;C01245&quot;, &quot;C01245 (D-myo-Inositol 1,4,5-trisphosphate)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=632,375,4	href="/dbget-bin/www_bget?C00575"	title="C00575 (3',5'-Cyclic AMP)" onmouseover="popupTimer(&quot;C00575&quot;, &quot;C00575 (3',5'-Cyclic AMP)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=circle	coords=496,152,4	href="/dbget-bin/www_bget?C00698"	title="C00698 (Cl-)" onmouseover="popupTimer(&quot;C00698&quot;, &quot;C00698 (Cl-)&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=575,236,621,253	href="/dbget-bin/www_bget?hsa:375"	title="375 (ARF1)" />
+<area shape=rect	coords=501,107,547,124	href="/dbget-bin/www_bget?hsa:10312+hsa:127124+hsa:155066+hsa:23545+hsa:245972+hsa:245973+hsa:50617+hsa:51382+hsa:51606+hsa:523+hsa:525+hsa:526+hsa:527+hsa:528+hsa:529+hsa:533+hsa:534+hsa:535+hsa:537+hsa:8992+hsa:90423+hsa:9114+hsa:9296+hsa:9550"	title="10312 (TCIRG1), 127124 (ATP6V1G3), 155066 (ATP6V0E2), 23545 (ATP6V0A2), 245972 (ATP6V0D2), 245973 (ATP6V1C2), 50617 (ATP6V0A4), 51382 (ATP6V1D), 51606 (ATP6V1H), 523 (ATP6V1A), 525 (ATP6V1B1), 526 (ATP6V1B2), 527 (ATP6V0C), 528 (ATP6V1C1), 529 (ATP6V1E1), 533 (ATP6V0B), 534 (ATP6V1G2), 535 (ATP6V0A1), 537 (ATP6AP1), 8992 (ATP6V0E1), 90423 (ATP6V1E2), 9114 (ATP6V0D1), 9296 (ATP6V1F), 9550 (ATP6V1G1)" />
+<area shape=rect	coords=519,214,565,231	href="/dbget-bin/www_bget?hsa:30001"	title="30001 (ERO1A)" />
+<area shape=rect	coords=284,432,330,449	href="/dbget-bin/www_bget?hsa:1080"	title="1080 (CFTR)" />
+<area shape=rect	coords=636,639,682,656	href="/dbget-bin/www_bget?hsa:9414"	title="9414 (TJP2)" />
+<area shape=rect	coords=587,639,633,656	href="/dbget-bin/www_bget?hsa:7082"	title="7082 (TJP1)" />
+<area shape=rect	coords=645,278,691,295	href="/dbget-bin/www_bget?hsa:2778"	title="2778 (GNAS)" />
+<area shape=rect	coords=723,344,769,361	href="/dbget-bin/www_bget?hsa:3784"	title="3784 (KCNQ1)" />
+<area shape=rect	coords=502,612,548,629	href="/dbget-bin/www_bget?hsa:5578"	title="5578 (PRKCA)" />
+<area shape=rect	coords=723,394,769,411	href="/dbget-bin/www_bget?hsa:6558"	title="6558 (SLC12A2)" />
+<area shape=rect	coords=381,612,427,629	href="/dbget-bin/www_bget?hsa:5335+hsa:5336"	title="5335 (PLCG1), 5336 (PLCG2)" />
+<area shape=rect	coords=494,386,540,403	href="/dbget-bin/www_bget?hsa:5566+hsa:5567+hsa:5568"	title="5566 (PRKACA), 5567 (PRKACB), 5568 (PRKACG)" />
+<area shape=rect	coords=562,278,608,295	href="/dbget-bin/www_bget?hsa:10952+hsa:23480+hsa:29927+hsa:55176"	title="10952 (SEC61B), 23480 (SEC61G), 29927 (SEC61A1), 55176 (SEC61A2)" />
+<area shape=rect	coords=619,565,665,582	href="/dbget-bin/www_bget?hsa:60+hsa:71"	title="60 (ACTB), 71 (ACTG1)" />
+<area shape=rect	coords=459,236,505,253	href="/dbget-bin/www_bget?hsa:9601"	title="9601 (PDIA4)" />
+<area shape=rect	coords=723,278,769,295	href="/dbget-bin/www_bget?hsa:109+hsa:115"	title="109 (ADCY3), 115 (ADCY9)" />
+<area shape=rect	coords=359,236,405,253	href="/dbget-bin/www_bget?hsa:10945+hsa:11014+hsa:11015"	title="10945 (KDELR1), 11014 (KDELR2), 11015 (KDELR3)" />
+<area shape=rect	coords=584,667,682,692	href="/kegg-bin/show_pathway?hsa04530"	title="hsa04530: Tight junction" onmouseover="popupTimer(&quot;hsa04530&quot;, &quot;hsa04530: Tight junction&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=36,99,155,133	href="/kegg-bin/show_pathway?map05111"	title="map05111: Biofilm formation - Vibrio cholerae" onmouseover="popupTimer(&quot;map05111&quot;, &quot;map05111: Biofilm formation - Vibrio cholerae&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=172,235,321,260	href="/kegg-bin/show_pathway?map03070"	title="map03070: Bacterial secretion system" onmouseover="popupTimer(&quot;map03070&quot;, &quot;map03070: Bacterial secretion system&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=556,102,709,127	href="/kegg-bin/show_pathway?hsa00190"	title="hsa00190: Oxidative phosphorylation" onmouseover="popupTimer(&quot;hsa00190&quot;, &quot;hsa00190: Oxidative phosphorylation&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+<area shape=rect	coords=40,30,275,55	href="/dbget-bin/www_bget?hsa05110"	title="hsa05110: Vibrio cholerae infection" onmouseover="popupTimer(&quot;hsa05110&quot;, &quot;hsa05110: Vibrio cholerae infection&quot;, &quot;#ffffff&quot;)" onmouseout="hideMapTn()" />
+</map>
+<div id="poplay" class="poplay" />
+
+
+</form>
+
+</body>
+</html>
