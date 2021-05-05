@@ -20,11 +20,11 @@ $BXAF_CONFIG_CUSTOM['TABIX_INDEX']['GeneLevelExpression-Sample'] 	= "/var/www/ht
 $BXAF_CONFIG_CUSTOM['TABIX_INDEX']['GeneAnnotation']			 	= "/var/www/html/{$SHARE_DIR_NAME}/library-4.0/Gene_Annotation/HumanGeneAnnotation.txt";
 $BXAF_CONFIG_CUSTOM['TABIX_INDEX']['GeneAnnotation.gz']			 	= "/var/www/html/{$SHARE_DIR_NAME}/library-4.0/Gene_Annotation/HumanGeneAnnotation.txt.gz";
 
-$BXAF_CONFIG_CUSTOM['GO_PATH']										= "/var/www/html/{$SHARE_DIR_NAME}/library-4.0/Human_Omics/Human_Omics_GO_out_2018Q3/";
-$BXAF_CONFIG_CUSTOM['GO_URL']										= "{$SHARE_DIR_NAME}/library-4.0/Human_Omics/Human_Omics_GO_out_2018Q3/";
+$BXAF_CONFIG_CUSTOM['GO_PATH']										= "/var/www/html/{$SHARE_DIR_NAME}/library-4.0/Human/Human_GO_out_2018Q3/";
+$BXAF_CONFIG_CUSTOM['GO_URL']										= "{$SHARE_DIR_NAME}/library-4.0/Human/Human_GO_out_2018Q3/";
 
-$BXAF_CONFIG_CUSTOM['PAGE_PATH']									= "/var/www/html/{$SHARE_DIR_NAME}/library-4.0/Human_Omics/PAGE_OUT_2018Q3/";
-$BXAF_CONFIG_CUSTOM['PAGE_URL']										= "{$SHARE_DIR_NAME}/library-4.0/Human_Omics/PAGE_OUT_2018Q3/";
+$BXAF_CONFIG_CUSTOM['PAGE_PATH']									= "/var/www/html/{$SHARE_DIR_NAME}/library-4.0/Human/PAGE_OUT_2018Q3/";
+$BXAF_CONFIG_CUSTOM['PAGE_URL']										= "{$SHARE_DIR_NAME}/library-4.0/Human/PAGE_OUT_2018Q3/";
 
 $BXAF_CONFIG_CUSTOM['FUNCTIONAL_ENRICHMENT_FILES']['GMT']			= "/var/www/html/{$SHARE_DIR_NAME}/library-4.0/R_Files/Human_msigdb.v6.2.symbols.gmt";
 $BXAF_CONFIG_CUSTOM['FUNCTIONAL_ENRICHMENT_FILES']['Script']		= "/var/www/html/{$SHARE_DIR_NAME}/library-4.0/Functional_Enrichment/Scripts/";

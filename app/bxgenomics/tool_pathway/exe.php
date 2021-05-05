@@ -349,11 +349,11 @@ if (isset($_GET['action']) && $_GET['action'] == 'generate_pathway_chart') {
 
 
 		foreach($comparison_names as $key=>$c_name){
-
+
 			$min_data = current($gene_data[$c_name]);
-
+
 			$ALL_COLORING_GENE[$gene_name]['Color'][] = mapToGradient($min_data['Log2FoldChange'], 1 + $min_data['color1']);
-
+
 			if($min_data['color2'] != ''){
 				if($min_data['color2field'] == 'PValue'){
 					$ALL_COLORING_GENE[$gene_name]['Color'][] = mapToGradientPValue($min_data['PValue'], $min_data['color2']);
@@ -498,20 +498,39 @@ if (isset($_GET['action']) && $_GET['action'] == 'generate_pathway_chart') {
 	$CHART_OUTPUT .= "var toggle_legend_html = '<div class=\"kaavio-highlighter\" style=\"top:6px; right:265px; width:50px; height:50px;\"><button class=\"btn btn-sm btn-secondary\" style=\"height:24px;padding-top:3px;\" onclick=\"$(\'#lengend_div\').slideToggle(300);\">Toggle Legend</button></div>'; $('wikipathways-pvjs').append(toggle_legend_html);";
 
 
-	// Draw Area Color for Each Box Area
-	foreach ($ALL_COLORING_GENE as $key => $value) {
-		$CHART_OUTPUT .= "
-		createGradient($('svg')[0],'solids_" . str_replace(' ', '_', $key) . "',[
-			{offset:'0%', 'stop-color':'#" . $value['Color'][0] . "'},";
-
-		for ($i = 1; $i < count($value['Color']); $i++) {
-			$border_temp = $i * 100.0 / count($value['Color']);
-			$CHART_OUTPUT .= "
-			{offset:'" . intval($border_temp) . "%','stop-color':'#" . $value['Color'][$i - 1] . "'},
-			{offset:'" . intval($border_temp) . "%','stop-color':'#" . $value['Color'][$i] . "'},";
-		}
-		$CHART_OUTPUT .= "]);";
-	}
+    // Draw Area Color for Each Box Area
+	foreach ($ALL_COLORING_GENE as $key => $value) {
+		$CHART_OUTPUT .= "\ncreateGradient($('svg')[0],'solids_" . str_replace(' ', '_', $key) . "',[\n
+			{offset:'0%', 'stop-color':'#" . $value['Color'][0] . "'}";
+
+		for ($i = 1; $i < count($value['Color']); $i++) {
+			$border_temp = $i * 100.0 / count($value['Color']);
+			$CHART_OUTPUT .= "
+			,\n{offset:'" . intval($border_temp) . "%','stop-color':'#" . $value['Color'][$i - 1] . "'}
+			,\n{offset:'" . intval($border_temp) . "%','stop-color':'#" . $value['Color'][$i] . "'}";
+		}
+		$CHART_OUTPUT .= "\n]);";
+	}
+
+	$gene_font_size = 10;
+	if (intval($_POST['btn_set_gene_font_size']) >= 6 && intval($_POST['btn_set_gene_font_size']) <= 20) {
+		$gene_font_size = intval($_POST['btn_set_gene_font_size']);
+	}
+
+	$CHART_OUTPUT .= "\n\n
+	nodes=$(\"[id^=text-for-]\");
+	for (i=0;i<nodes.length;i++) {
+	    nodes[i].parentElement.appendChild(nodes[i]);
+	    nodes[i].style.textShadow=\"0 0 25px white, 0 0 5px white\";
+	    nodes[i].style.fontSize = $gene_font_size;
+	}
+
+	paths = $(\"[id^=_selector-id-]\");
+	for (i=0;i<paths.length;i++) {
+	    paths[i].style.fillOpacity=1;
+	    paths[i].setAttribute(\"fill-opacity\", 1)
+	}
+	\n\n";
 
 
 	// Include SVG Legend if Checked
@@ -591,7 +610,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'generate_pathway_chart') {
 		$gene_name = $genes_list_flip[ $gene_index ];
 
 		$row = '<tr>';
-		$row .= "<td><a href='http://www.genecards.org/cgi-bin/carddisp.pl?gene=" . $gene_name . "' target='_blank'>" . $gene_name . "</a></td>";
+		$row .= "<td><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.genecards.org_cgi-2Dbin_carddisp.pl-3Fgene-3D-2522-2520.-2520-24gene-5Fname-2520.-2520-2522&amp;d=DwMGaQ&amp;c=n7UHtw8cUfEZZQ61ciL2BA&amp;r=OdwtZvkIS_XYxU-mu3Cni1ISc70-IOCN5KDCkD_RnIM&amp;m=PPI0jG6_szDeGJGVReHJXaZ8Gpg6XMyaimEM9K9MF6A&amp;s=z52UuYOIC2WTNuIF0De2hq0cc0FRIgKGwjKQ7IlXI7A&amp;e=" target="_blank">" . $gene_name . "</a></td>";
 		$row .= '<td>' . $gene_name_desc[ $gene_name] . '</td>';
 
 		foreach($comparison_names as $c_name){
@@ -610,7 +629,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'generate_pathway_chart') {
 				}
 			}
 		}
-
 
 		$row .= '</tr>';
 
@@ -806,7 +824,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'show_kegg_diagram') {
 				foreach($cvs_contents as $row){
 					$table_contents .= "<tr>";
 					foreach($row as $k=>$v){
-						if($k == 'GeneID') $table_contents .= "<td><a href='http://www.genecards.org/cgi-bin/carddisp.pl?gene=" . $geneid_genenames[$v] . "' target='_blank'>" . $geneid_genenames[$v] . "</a></td>";
+						if($k == 'GeneID') $table_contents .= "<td><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.genecards.org_cgi-2Dbin_carddisp.pl-3Fgene-3D-2522-2520.-2520-24geneid-5Fgenenames-5B-24v-5D-2520.-2520-2522&amp;d=DwMGaQ&amp;c=n7UHtw8cUfEZZQ61ciL2BA&amp;r=OdwtZvkIS_XYxU-mu3Cni1ISc70-IOCN5KDCkD_RnIM&amp;m=PPI0jG6_szDeGJGVReHJXaZ8Gpg6XMyaimEM9K9MF6A&amp;s=Jlox14uwa49hddLYCmHC7y7NzPSkyeHKGYblqLKHfuE&amp;e=" target="_blank">" . $geneid_genenames[$v] . "</a></td>";
 						else if($v == 'NA') $table_contents .= "<td></td>";
 						else $table_contents .= "<td style='color: " . get_stat_scale_color2($v, 'Log2FoldChange') . ";'>" . sprintf("%.4f", $v) . "</td>";
 					}
@@ -892,6 +910,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'show_kegg_diagram') {
 		}
 	}
 
+
 
 
 	foreach($comparison_indexnames as $id=>$name) $header[] = $name;
@@ -1029,7 +1048,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'show_kegg_diagram') {
 
 			$v = $cvs_contents[$i]['GeneID'];
 
-			$table_contents .= "<td><a href='http://www.genecards.org/cgi-bin/carddisp.pl?gene=" . $geneid_genenames[$v] . "' target='_blank'>" . $geneid_genenames[$v] . "</a></td><td>" . $gene_name_desc[ $geneid_genenames[$v] ] . "</td>" . implode("", $cols);
+			$table_contents .= "<td><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.genecards.org_cgi-2Dbin_carddisp.pl-3Fgene-3D-2522-2520.-2520-24geneid-5Fgenenames-5B-24v-5D-2520.-2520-2522&amp;d=DwMGaQ&amp;c=n7UHtw8cUfEZZQ61ciL2BA&amp;r=OdwtZvkIS_XYxU-mu3Cni1ISc70-IOCN5KDCkD_RnIM&amp;m=PPI0jG6_szDeGJGVReHJXaZ8Gpg6XMyaimEM9K9MF6A&amp;s=Jlox14uwa49hddLYCmHC7y7NzPSkyeHKGYblqLKHfuE&amp;e=" target="_blank">" . $geneid_genenames[$v] . "</a></td><td>" . $gene_name_desc[ $geneid_genenames[$v] ] . "</td>" . implode("", $cols);
 
 			$table_contents .= "</tr>";
 		}

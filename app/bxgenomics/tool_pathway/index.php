@@ -87,15 +87,14 @@ if (isset($_GET['pathway']) && $_GET['pathway'] != ''){
 	$similar_pathways = find_similar_pathways($_GET['pathway'], $_GET['type']);
 }
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <?php include_once($BXAF_CONFIG['BXAF_PAGE_HEADER']); ?>
 
-    <link   href='/<?php echo $BXAF_CONFIG['BXAF_SYSTEM_SUBDIR']; ?>library/datatables/datatables_all_extensions.min.css' rel='stylesheet' type='text/css'>
-	<script src='/<?php echo $BXAF_CONFIG['BXAF_SYSTEM_SUBDIR']; ?>library/datatables/datatables_all_extensions.min.js'></script>
+    <link   href='/<?php echo $BXAF_CONFIG['BXAF_SYSTEM_SUBDIR']; ?>library/datatables/datatables.min.css' rel='stylesheet' type='text/css'>
+	<script src='/<?php echo $BXAF_CONFIG['BXAF_SYSTEM_SUBDIR']; ?>library/datatables/datatables.min.js'></script>
 
     <script type="text/javascript" src="/<?php echo $BXAF_CONFIG['BXAF_SYSTEM_SUBDIR']; ?>library/jquery/jquery.form.min.js"> </script>
 
@@ -168,6 +167,12 @@ if (isset($_GET['pathway']) && $_GET['pathway'] != ''){
 
                         <div class="w-100 my-3" id="all_comparison_contents"></div>
 
+                        <div class="w-100 my-3 form-inline">
+                            <label class="font-weight-bold">Set Gene Font Size: </label>
+                            <input style="width: 5rem;" type="number" class="form-control mx-2" name="btn_set_gene_font_size" id="btn_set_gene_font_size" value="10" />
+                            <label class="">(range: 6-20)</label>
+                        </div>
+
                         <div class="w-100 form-check form-check-inline">
                             <label class="form-check-label mx-2 hidden" id="btn_busy"><i class="fas fa-pulse fa-spinner"></i></label>
 
@@ -210,7 +215,7 @@ if (isset($_GET['pathway']) && $_GET['pathway'] != ''){
 <!-- Modal to Select Pathway -->
 <!-------------------------------------------------------------------------------------------------------->
 <div class="modal" id="modal_select_pathway" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	<div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h4 class="modal-title">Select Pathway</h4>
@@ -273,8 +278,8 @@ if (isset($_GET['pathway']) && $_GET['pathway'] != ''){
             <tr class="table-info">
               <th>Name</th>
               <th>DiseaseState</th>
-              <th>ComparisonContrast</th>
               <th>CellType</th>
+              <th>Actions</th>
             </tr>
             </thead>
             <tbody>';
@@ -282,12 +287,12 @@ if (isset($_GET['pathway']) && $_GET['pathway'] != ''){
             foreach ($comparison_info as $comparison) {
               echo '
               <tr>
-                <td class="text-nowrap">' . $comparison['Name'] . '
+                <td class="text-nowrap">' . $comparison['Name'] . '</td>
+                <td>' . $comparison['Case_DiseaseState'] . '</td>
+                <td>' . $comparison['Case_CellType'] . '</td>
+                <td class="text-nowrap">
                   <a href="javascript:void(0);" class="btn_select_search_comparison ml-2" content="' . $comparison['Name'] . '"><i class="fas fa-angle-double-right"></i> Select</a>
                 </td>
-                <td>' . $comparison['Case_DiseaseState'] . '</td>
-                <td>' . $comparison['ComparisonContrast'] . '</td>
-                <td>' . $comparison['Case_CellType'] . '</td>
               </tr>';
             }
           echo '
@@ -321,9 +326,12 @@ if (isset($_GET['pathway']) && $_GET['pathway'] != ''){
 
       	<ul>
         <?php
+
 			foreach($similar_pathways as $key => $value){
 				echo "<li><a href='javascript:void(0);' class='btn_select_similar_pathway' content='{$key}' displayed_name='{$value}'>{$value}</a></li>";
 			}
+
+          //echo general_printr($similar_pathways);
         ?>
         </ul>
         <p>If the pathway is not in the list, the likely cause is that some reactome pathways were not converted to wikipathway GPML format.</p>
@@ -464,6 +472,7 @@ if (isset($_GET['pathway']) && $_GET['pathway'] != ''){
     	});
     	$(document).on('click', '.btn_select_search_comparison', function() {
     		var comparison_name = $(this).attr('content');
+            // $('#all_comparison_contents').append( add_comparison_section(comparison_name) );
             $('#Comparison_List').val( comparison_name + "\n" + $('#Comparison_List').val() );
     		$('#modal_select_comparison').modal('hide');
     	});
@@ -484,6 +493,7 @@ if (isset($_GET['pathway']) && $_GET['pathway'] != ''){
                 var name_id = id.replace("comparison_", "comparisonname_");
                 all_comparison_names.push( $('#' + name_id).val() );
             });
+            // alert(all_comparison_names);
 
             var lines = $('#Comparison_List').val().split("\n");
 
@@ -507,9 +517,6 @@ if (isset($_GET['pathway']) && $_GET['pathway'] != ''){
             $('#Comparison_List').val('');
 
     	});
-
-
-
 
     <?php
 
@@ -622,7 +629,8 @@ if (isset($_GET['pathway']) && $_GET['pathway'] != ''){
             url: 'exe.php?action=generate_pathway_chart',
             type: 'post',
             beforeSubmit: function(formData, jqForm, options) {
-                $('#btn_submit').attr('disabled', '').children(':first').removeClass('fa-upload').addClass('fa-spin fa-spinner');
+                $('#btn_submit').attr('disabled', '');
+                $('#btn_busy').removeClass('hidden');
 
                 $('#div_results').html('');
                 $('#div_debug').html('');
@@ -633,7 +641,8 @@ if (isset($_GET['pathway']) && $_GET['pathway'] != ''){
                 return true;
             },
             success: function(response){
-                $('#btn_submit').removeAttr('disabled').children(':first').addClass('fa-upload').removeClass('fa-spin fa-spinner');
+                $('#btn_busy').addClass('hidden');
+                $('#btn_submit').removeAttr('disabled');
 
                 if (response.type == 'Error') {
                     bootbox.alert(response.detail);
@@ -678,7 +687,6 @@ if (isset($_GET['pathway']) && $_GET['pathway'] != ''){
         var comparison_number = 1 + $('.comparison_' + time).length;
         var unique_id = time + '_' + comparison_number;
         var all_comparison_number = 1 + $('.all_comparisons').length;
-
 
         var content = '<div class="my-3 table-light rounded border border-primary p-3" id="file_' + time + '" style="max-width: 1500px;">';
 
