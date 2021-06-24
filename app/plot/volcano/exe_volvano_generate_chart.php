@@ -429,6 +429,10 @@
 				"max":' . $Y_MAX . '
 			},
 
+			"exporting": {
+				scale: 1
+			},
+
 			"plotOptions":{
 				"scatter":{
 					"allowPointSelect":true,

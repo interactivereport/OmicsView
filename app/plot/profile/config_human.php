@@ -13,8 +13,7 @@ $CONFIG_PROFILE = array();
 	  'MemberNumber' => 'Gene Number'
 	);
 	$CONFIG_PROFILE['BUBBLE_PLOT']['demo_gene'] = 'WASH7P';
-	$CONFIG_PROFILE['BUBBLE_PLOT']['default_comparisons'] 
-		= 'GSE44720.GPL10558.test16\nGSE61754.GPL10558.test3\nGSE19407.GPL570.test1\nGSE37558.GPL6947.test4\nGSE8650.GPL97.test3\nGSE64583.GPL10558.test1\nGSE38530.GPL6480.test3\nGSE3365.GPL96.test1\nGSE48762.GPL6947.test37';
+	$CONFIG_PROFILE['BUBBLE_PLOT']['default_comparisons'] = 'GSE16879.GPL570.test1\nGSE16879.GPL570.test12\nGSE16879.GPL570.test14\nGSE16879.GPL570.test15\nGSE52746.GPL17996.test1\nGSE52746.GPL17996.test2\nGSE52746.GPL17996.test3';
 	
 	//------------------------------------------------------------------------------
 	// Functional Enrichment
