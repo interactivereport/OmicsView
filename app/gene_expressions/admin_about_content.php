@@ -33,7 +33,7 @@ if (isAdminUser()){
 	
 	
 	
-	echo printTableHTML($tableContent, 1, 1, 0);
+	echo printTableHTML($tableContent, 1, 1, 0, 'col-lg-7 col-sm-12');
 	
 	echo "<hr/>";
 
