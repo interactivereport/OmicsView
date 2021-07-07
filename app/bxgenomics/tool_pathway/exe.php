@@ -610,7 +610,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'generate_pathway_chart') {
 		$gene_name = $genes_list_flip[ $gene_index ];
 
 		$row = '<tr>';
-		$row .= "<td><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.genecards.org_cgi-2Dbin_carddisp.pl-3Fgene-3D-2522-2520.-2520-24gene-5Fname-2520.-2520-2522&amp;d=DwMGaQ&amp;c=n7UHtw8cUfEZZQ61ciL2BA&amp;r=OdwtZvkIS_XYxU-mu3Cni1ISc70-IOCN5KDCkD_RnIM&amp;m=PPI0jG6_szDeGJGVReHJXaZ8Gpg6XMyaimEM9K9MF6A&amp;s=z52UuYOIC2WTNuIF0De2hq0cc0FRIgKGwjKQ7IlXI7A&amp;e=" target="_blank">" . $gene_name . "</a></td>";
+		$row .= "<td><a href='http://www.genecards.org/cgi-bin/carddisp.pl?gene=" . $gene_name . "' target='_blank'>" . $gene_name . "</a></td>";
 		$row .= '<td>' . $gene_name_desc[ $gene_name] . '</td>';
 
 		foreach($comparison_names as $c_name){
@@ -824,7 +824,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'show_kegg_diagram') {
 				foreach($cvs_contents as $row){
 					$table_contents .= "<tr>";
 					foreach($row as $k=>$v){
-						if($k == 'GeneID') $table_contents .= "<td><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.genecards.org_cgi-2Dbin_carddisp.pl-3Fgene-3D-2522-2520.-2520-24geneid-5Fgenenames-5B-24v-5D-2520.-2520-2522&amp;d=DwMGaQ&amp;c=n7UHtw8cUfEZZQ61ciL2BA&amp;r=OdwtZvkIS_XYxU-mu3Cni1ISc70-IOCN5KDCkD_RnIM&amp;m=PPI0jG6_szDeGJGVReHJXaZ8Gpg6XMyaimEM9K9MF6A&amp;s=Jlox14uwa49hddLYCmHC7y7NzPSkyeHKGYblqLKHfuE&amp;e=" target="_blank">" . $geneid_genenames[$v] . "</a></td>";
+						if($k == 'GeneID') $table_contents .= "<td><a href='http://www.genecards.org/cgi-bin/carddisp.pl?gene=" . $geneid_genenames[$v] . "' target='_blank'>" . $geneid_genenames[$v] . "</a></td>";
 						else if($v == 'NA') $table_contents .= "<td></td>";
 						else $table_contents .= "<td style='color: " . get_stat_scale_color2($v, 'Log2FoldChange') . ";'>" . sprintf("%.4f", $v) . "</td>";
 					}
@@ -1048,7 +1048,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'show_kegg_diagram') {
 
 			$v = $cvs_contents[$i]['GeneID'];
 
-			$table_contents .= "<td><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.genecards.org_cgi-2Dbin_carddisp.pl-3Fgene-3D-2522-2520.-2520-24geneid-5Fgenenames-5B-24v-5D-2520.-2520-2522&amp;d=DwMGaQ&amp;c=n7UHtw8cUfEZZQ61ciL2BA&amp;r=OdwtZvkIS_XYxU-mu3Cni1ISc70-IOCN5KDCkD_RnIM&amp;m=PPI0jG6_szDeGJGVReHJXaZ8Gpg6XMyaimEM9K9MF6A&amp;s=Jlox14uwa49hddLYCmHC7y7NzPSkyeHKGYblqLKHfuE&amp;e=" target="_blank">" . $geneid_genenames[$v] . "</a></td><td>" . $gene_name_desc[ $geneid_genenames[$v] ] . "</td>" . implode("", $cols);
+			$table_contents .= "<td><a href='http://www.genecards.org/cgi-bin/carddisp.pl?gene=" . $geneid_genenames[$v] . "' target='_blank'>" . $geneid_genenames[$v] . "</a></td><td>" . $gene_name_desc[ $geneid_genenames[$v] ] . "</td>" . implode("", $cols);
 
 			$table_contents .= "</tr>";
 		}
