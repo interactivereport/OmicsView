@@ -343,6 +343,8 @@ echo "<form id='form_application' action='javascript:void(0);' method='post' rol
 				
 				if (isset($dataArray['min_matched'])){
 					$selected = $dataArray['min_matched'];
+				} elseif (isset($BXAF_CONFIG['CORRELATION_GENE_COMPARISONS']['min_matched'])){
+					$selected = $BXAF_CONFIG['CORRELATION_GENE_COMPARISONS']['min_matched'];
 				} else {
 					$selected = '0';
 				}
