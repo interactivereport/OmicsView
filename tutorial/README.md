@@ -1,0 +1,1 @@
+This is a supplemental tutorial written in Markdown, which provides the detailed guide for **OmicsView web portal**. Please see the HTML format tutorial at https://interactivereport.github.io/OmicsView/tutorial/docs/. You can also make a local copy of the supplemental tutorial by using **makebook.sh**. 
