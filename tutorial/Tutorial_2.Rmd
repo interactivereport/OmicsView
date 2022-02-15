@@ -19,3 +19,84 @@ Plot showing all disease states (scroll to view other diseases). 5000 randomly s
 Plot after data filtering was applied to select a few diseases. Now 410 out of 9538 data points are shown. The data filter pop-up window was shown to the left of the box plot in the screen shot below.
 
 [![FigureS2.1.3](https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS2.1.3.jpg)](https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS2.1.3.jpg)
+
+## Change Sample Grouping in Gene Expression Plot
+The boxplot is created using CanvasXpress ( https://canvasxpress.org )plug-in, and sample grouping and coloring can be customized by the user. In the example below, we show how sample grouping can be changed. 
+
+[![FigureS2.2.1](https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS2.2.1.jpg)](https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS2.2.1.jpg)
+ 
+Once the sample grouping was changed to tissue, the box plot shows that insulin is only expressed in pancreatic islets.  Users can also change how the data points are colored (default is by disease).
+
+[![FigureS2.2.2](https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS2.2.2.jpg)](https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS2.2.2.jpg)
+
+## View Gene Expression from Microarray Data
+
+The way to view microarray data is very similar to RNA-Seq data. However, since the expression values from different array platforms are typically not directly comparable, the system by default will choose the platform with the largest number of data points. The user can override this filter if needed. 
+In addition, we recommend the user to add data filter because typically there are too many data points from microarray data. Data filters will help the user to focus on the most important tissues or diseases. If there are still more than 5000 data points after data filer, only the first 5000 are shown in the boxplot.
+  
+[![FigureS2.3.1](https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS2.3.1.jpg)](https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS2.3.1.jpg)
+
+[![FigureS2.3.2](https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS2.3.2.jpg)](https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS2.3.2.jpg)
+
+The sample grouping and coloring can be changed by the user. See the section 2.2 for details. 
+ 
+## View Gene Expression from Multiple Genes
+
+Users can view multiple genes on the same boxplot. The interface is similar to single gene, here you need to enter a list of gene symbols. Users can also load the saved gene lists from your collection. In multiple gene plot, you want to filter the data to come up with a reasonable number of data points.
+
+[![FigureS2.4.1](https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS2.4.1.jpg)](https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS2.4.1.jpg)
+  
+From multiple gene plot, you can use the built-in function of CanvassXpress to change grouping and coloring. 
+
+In the example plot above, we can change the setting to use group by to distinguish Crohn’s disease samples and control samples.  
+
+[![FigureS2.4.2](https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS2.4.2.jpg)](https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS2.4.2.jpg)
+  
+In the updated plot above, it’s easy to see that many of these genes are expressed slightly higher in disease (red) vs. control (blue). 
+ 
+## View Gene Expression in Heatmap
+
+Heatmap can be useful to visualize gene profiles from multiple samples. It can also provide information about how genes and samples cluster. This data is from PMID: 25003194
+  
+[![FigureS2.5.1](https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS2.5.1.jpg)](https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS2.5.1.jpg)
+
+Users can enter genes and samples in the box, or load pre-saved genes and samples quickly from your collection. Be default, we will log2 transform the gene expression data, perform scaling of the data across samples for each gene, and limit the scaled value to -3 to 3 before displaying the data in heatmap. This works well in most situations. However, advanced users can change the options. For example, if you want to keep the order of samples as you entered, just uncheck “Enable Clustering Samples”. 
+The heatmap is rendered by CanvasXpress. Users can change the plot size if needed. 
+  
+[![FigureS2.5.2](https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS2.5.2.jpg)](https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS2.5.2.jpg)
+
+In the example heatmap, we entered a few significantly changed genes in Crohn’s disease, and choose a few disease and control samples.  As shown in the heatmap, most of these genes show distinct patterns between disease and control. 
+One of the samples GSM1598422 is labeled as disease, but its gene expression signature match those with normal control very well. Therefore from heatmap clustering, we can decide that this sample is likely an outlier, the sample may be mislabeled, or this patient had very different gene expression patterns form all other patients. 
+ 
+## Export Genes and Samples
+
+This is a useful feature to download raw (counts) and processed (TPM values) expression matrices from the datasets. This gives the user the opportunity to do any downstream analysis on the raw reads independently. 
+ 
+For this functionality, the samples need to belong to the same platform type and the requested limit is to 100 genes and 20 samples. The files are exported as csv and can be loaded and used by the user to perform their own downstream analysis. 
+
+2.7	Similar comparisons
+For a given comparison, this functionality helps identify other similar comparisons. 
+2.7.1	Similar comparisons (GO)
+To identify similar comparisons based on GO terms in up or downregulated genes.
+ 
+ 
+2.7.2	Similar comparisons (PAGE)
+Similarly, the similar comparisons can be identified using PAGE results
+ 
+A list of comparisons that were found similar to the target comparison are displayed. They can be sorted on different attributed like # Terms in Comparison, # Overlaps and. Enrichment score
+ 
+ 
+2.8	Comparisons Venn Diagrams
+A good way to identify similarities and difference between different comparisons is by using the Comparisons Venn Diagram functionality. There are two ways to use this tool: By GO terms and PAGE results.
+2.8.1	Comparisons Venn Diagram (GO)
+For identifying similar GO terms between comparisons either in the Up and Down regulated categories, this functionality can be used. In this example, 3 comparisons from Psoriasis are probed, the user also has the option of probing 2 comparisons by leaving the third field empty.
+ 
+Upon finishing, an overlap summary is generated. This contains a Venn Diagram of the intersection of all the GO terms between the 3 comparisons. The count number can be clicked, as shown below, to view which terms are included.
+  
+Furthermore, there is another section below this where pairs of the comparisons can be probed. Here, just A & B are displayed. 
+2.8.2	Comparisons Venn Diagram (PAGE)
+Similarly, the user can probe the similarities between PAGE results or 2 or 3 comparisons. In this example we probe comparisons from Psoriasis again. 
+ 
+Upon finishing an overlap summary is generated which shows the intersection of the PAGE results between the comparisons. 
+  
+
