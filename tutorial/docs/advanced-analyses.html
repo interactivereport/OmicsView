@@ -144,6 +144,9 @@
 <li class="chapter" data-level="6" data-path="advanced-analyses.html"><a href="advanced-analyses.html"><i class="fa fa-check"></i><b>6</b> Advanced Analyses</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="advanced-analyses.html"><a href="advanced-analyses.html#correlation-tools"><i class="fa fa-check"></i><b>6.1</b> Correlation Tools</a></li>
+<li class="chapter" data-level="6.2" data-path="advanced-analyses.html"><a href="advanced-analyses.html#pca-analysis"><i class="fa fa-check"></i><b>6.2</b> PCA Analysis</a></li>
+<li class="chapter" data-level="6.3" data-path="advanced-analyses.html"><a href="advanced-analyses.html#meta-analysis"><i class="fa fa-check"></i><b>6.3</b> Meta-Analysis</a></li>
+<li class="chapter" data-level="6.4" data-path="advanced-analyses.html"><a href="advanced-analyses.html#meta-analysis-gene-expression"><i class="fa fa-check"></i><b>6.4</b> Meta-Analysis (Gene Expression)</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>7</b> Methods</a>
 <ul>
@@ -156,7 +159,7 @@
 <ul>
 <li class="chapter" data-level="8.2.1" data-path="methods-1.html"><a href="methods-1.html#homer-workflow"><i class="fa fa-check"></i><b>8.2.1</b> HOMER workflow</a></li>
 <li class="chapter" data-level="8.2.2" data-path="methods-1.html"><a href="methods-1.html#gene-set-enrichment-analysis-gsea-workflow-page"><i class="fa fa-check"></i><b>8.2.2</b> Gene Set Enrichment Analysis (GSEA) workflow (PAGE)</a></li>
-<li class="chapter" data-level="8.2.3" data-path="methods-1.html"><a href="methods-1.html#meta-analysis"><i class="fa fa-check"></i><b>8.2.3</b> Meta-Analysis</a></li>
+<li class="chapter" data-level="8.2.3" data-path="methods-1.html"><a href="methods-1.html#meta-analysis-1"><i class="fa fa-check"></i><b>8.2.3</b> Meta-Analysis</a></li>
 <li class="chapter" data-level="8.2.4" data-path="methods-1.html"><a href="methods-1.html#meta-analysis-statistics"><i class="fa fa-check"></i><b>8.2.4</b> Meta-analysis statistics</a></li>
 </ul></li>
 </ul></li>
@@ -184,7 +187,58 @@
 <h1><span class="header-section-number">Chapter 6</span> Advanced Analyses</h1>
 <div id="correlation-tools" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> Correlation Tools</h2>
-<p>Once the user has identified a gene of interest, the user can use correlation tools to find other genes that share similar (or opposite) profiles in terms of gene expression or fold change. First, enter the gene of interest, and samples to be used for correlation. In the example below, we entered OSM gene, and 69 samples involved in Crohn disease.</p>
+<p>Once the user has identified a gene of interest, the user can use correlation tools to find other genes that share similar (or opposite) profiles in terms of gene expression or fold change. First, enter the gene of interest, and samples to be used for correlation. In the example below, we entered OSM gene, and 69 samples involved in Crohn’s disease.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS6.1.1.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS6.1.1.jpg" alt="FigureS6.1.1" /></a></p>
+<p>Click the plot icon will show scatter plot of the target and the correlated gene.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS6.1.2.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS6.1.2.jpg" alt="FigureS6.1.2" /></a></p>
+<p>An additional way to plotting the correlation with other genes, is to enable the log2 transformation of the expression.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS6.1.3.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS6.1.3.jpg" alt="FigureS6.1.3" /></a></p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS6.1.4.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS6.1.4.jpg" alt="FigureS6.1.4" /></a></p>
+<p>Now the expression is log transformed.</p>
+<p>The examples above are from Correlation Tools using Expression. The interface and usage for Correlation Tools using Comparison is similar.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS6.1.5.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS6.1.5.jpg" alt="FigureS6.1.5" /></a></p>
+</div>
+<div id="pca-analysis" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> PCA Analysis</h2>
+<p>Users can select a few samples and use PCA plot to visualize the sample relationships.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS6.2.1.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS6.2.1.jpg" alt="FigureS6.2.1" /></a></p>
+<p>The system will use FactorMineR package to run PCA analysis and display the results.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS6.2.2.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS6.2.2.jpg" alt="FigureS6.2.2" /></a></p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS6.2.3.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS6.2.3.jpg" alt="FigureS6.2.3" /></a></p>
+<p>The PCA tool can also display results from pre-calculated data (basic PCA, or FactorMineR results).</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS6.2.4.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS6.2.4.jpg" alt="FigureS6.2.4" /></a></p>
+</div>
+<div id="meta-analysis" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Meta-Analysis</h2>
+<p>Meta-Analysis can be used to identify genes that are changed consistently across multiple projects. This can be either implemented by doing Meta-analysis using comparisons or meta-analysis using gene expression.
+## Meta-Analysis (Comparisons)
+In the example below, we are looking for the most significant DEGs in Disease vs. Normal comparisons of Crohns Disease.</p>
+<p>The system will use the comparison data (logFC, p-value) to compute combined p-value and rank product. It also uses a simple cutoff to get counts of up- and down- regulated genes. This method is fast and can be applied to any comparison data. However, it does not use the individual sample data or considers number of samples in each comparison.</p>
+<p>We can enable filter by percentage up-regulated genes to focus on genes that are consistently up-regulated.
+From the output table, the user can select the genes most interesting to them. Some key columns are explained below.
+• # of data points: this shows the number of comparisons with valid data for this gene. Although 8 comparisons were entered here, not all genes show up in all experiments. We used minimal 3 data points when we set up display options.
+• Simple count results. Use the cutoff values we entered (logFC 1, FDR 0.05), the system checks if a gene pass the cutoff for each comparison, and computes percentage up- and down-regulation.
+• Rank Products results (recommended results for meta-analysis). This is done with the RankProd package. The system rank genes in each comparison using logFC and computes a combined rank and statistical values. The Rank Products columns shows the rank (smaller is more consistent change), log2Fold Change and FDR.
+• The Combined p-value/FDR (Fisher or Maximum) are computed using the individual p-values with metaDE package. Note unlike RankProd, these values didn’t consider the direction of the change, so the data need to be interpreted carefully, and we recommend using these p-values together with the simple count values to have a better understanding.
+The table can be sorted by any column. In the above view, we sorted the data by logFC. The table can also be sorted by # of data points to view the genes with most data. In the example below, we chose 10 up-regulated genes with most data points form the table and used the bubble plot button to create bubble plot. It can be seen that indeed all these genes show consistent up-regulated in the selected comparisons.</p>
+<p>The resulting bubble plot will show all 8 comparisons for each gene.</p>
+<p>We can also create a gene list from the table for up or down gene lists from meta-analysis (using the green button at top of meta-analysis results) and use the list for subsequent study like functional enrichment or generating heatmap. Below is a heatmap using 100 up-regulated genes from meta-analysis, nd its very clear that the diseased samples have an upregulation of these genes.</p>
+</div>
+<div id="meta-analysis-gene-expression" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Meta-Analysis (Gene Expression)</h2>
+<p>In the example below, we use the same comparisons from Crohns disease.</p>
+<p>By default, the Rank Product Analysis is checked. Uncheck this if the data is too big for Rank product analysis, or you just need a quick run using limma for each individual comparison.</p>
+<p>In the next page, system will display the Case and Control samples for each comparison. At this step, users can edit samples. Users can use this page to remove outliers or add other samples they want to include in the meta-analysis.</p>
+<p>After users review the samples for each comparison, they can go to next step to run the meta-analysis. This step can take a while if the number of samples are large. For the meta-analysis, the system will do the following:
+1) Run limma to get logFC, p-valua and confidence interval for each individual comparison
+2) Run metaDE to get combined p-values
+3) Run Rank Product package for all the expression data to get statistical significance and combined logFC. This step can be very slow is number of samples are large.
+After the analysis is done, the system will show a summary and the result table.</p>
+<p>In the summary, the four comparisons are shown, along with number of genes used for meta-analysis, and number of case and control samples. Because different platforms (especially arrays) have different number of genes present, and some genes may have too low signals to be detected in certain projects, not all genes are present in all the comparisons. In this example, 19,214 genes are present in all comparisons. In some cases, it may be beneficial to remove some comparisons with small number of genes.
+In the meta-analysis result table, results from Rank Product are shown (from RankProd package, preferred results to use), followed by effective size method (MetaDE.ES from metaDE package). The logFC, SE, confidence internal, p-value and FDR for each comparison is shown next. The comparison numbers are the same as those listed in the summary table above. The gene list can be sorted by RankProd (most significant changes) or by logFC_RP (up or down-regulated).
+From this analysis, we can create Forest plot for each gene by click the icon near the gene symbol.</p>
+<p>In the Forest plot, results from individual comparison and combined data are shown. The confidence internal for individual comparison is based on limma output. The confidence internal for combined results is based on p-value from RankProd (or ES method when RankProd is not run).</p>
+<p>The plot can be saved as SVG or PDF. The summary table is shown below the plot.</p>
 
 </div>
 </div>
