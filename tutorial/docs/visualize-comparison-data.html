@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Visualize Comparison Data | Supplementary Materials - OmicsView: omics data analysis through interactive visual analytics</title>
+  <meta name="description" content="Chapter 3 Visualize Comparison Data | Supplementary Materials - OmicsView: omics data analysis through interactive visual analytics" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Visualize Comparison Data | Supplementary Materials - OmicsView: omics data analysis through interactive visual analytics" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="https://github.com/interactivereport/OmicsView" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Visualize Comparison Data | Supplementary Materials - OmicsView: omics data analysis through interactive visual analytics" />
+  
+  
+  
+
+
+
+<meta name="date" content="2022-02-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="visualize-gene-expression.html"/>
+<link rel="next" href="functional-enrichment-from-comparisons.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">OmicsView</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="overview-of-data-in-omicsview.html"><a href="overview-of-data-in-omicsview.html"><i class="fa fa-check"></i><b>1</b> Overview of Data in OmicsView</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="overview-of-data-in-omicsview.html"><a href="overview-of-data-in-omicsview.html#projects"><i class="fa fa-check"></i><b>1.1</b> Projects</a></li>
+<li class="chapter" data-level="1.2" data-path="overview-of-data-in-omicsview.html"><a href="overview-of-data-in-omicsview.html#samples"><i class="fa fa-check"></i><b>1.2</b> Samples</a></li>
+<li class="chapter" data-level="1.3" data-path="overview-of-data-in-omicsview.html"><a href="overview-of-data-in-omicsview.html#comparisons"><i class="fa fa-check"></i><b>1.3</b> Comparisons</a></li>
+<li class="chapter" data-level="1.4" data-path="overview-of-data-in-omicsview.html"><a href="overview-of-data-in-omicsview.html#genes"><i class="fa fa-check"></i><b>1.4</b> Genes</a></li>
+<li class="chapter" data-level="1.5" data-path="overview-of-data-in-omicsview.html"><a href="overview-of-data-in-omicsview.html#saved-genes-and-comparisons"><i class="fa fa-check"></i><b>1.5</b> Saved Genes and Comparisons</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="visualize-gene-expression.html"><a href="visualize-gene-expression.html"><i class="fa fa-check"></i><b>2</b> Visualize Gene Expression</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="visualize-gene-expression.html"><a href="visualize-gene-expression.html#view-gene-expression-from-rna-seq"><i class="fa fa-check"></i><b>2.1</b> View Gene Expression from RNA-Seq</a></li>
+<li class="chapter" data-level="2.2" data-path="visualize-gene-expression.html"><a href="visualize-gene-expression.html#change-sample-grouping-in-gene-expression-plot"><i class="fa fa-check"></i><b>2.2</b> Change Sample Grouping in Gene Expression Plot</a></li>
+<li class="chapter" data-level="2.3" data-path="visualize-gene-expression.html"><a href="visualize-gene-expression.html#view-gene-expression-from-microarray-data"><i class="fa fa-check"></i><b>2.3</b> View Gene Expression from Microarray Data</a></li>
+<li class="chapter" data-level="2.4" data-path="visualize-gene-expression.html"><a href="visualize-gene-expression.html#view-gene-expression-from-multiple-genes"><i class="fa fa-check"></i><b>2.4</b> View Gene Expression from Multiple Genes</a></li>
+<li class="chapter" data-level="2.5" data-path="visualize-gene-expression.html"><a href="visualize-gene-expression.html#view-gene-expression-in-heatmap"><i class="fa fa-check"></i><b>2.5</b> View Gene Expression in Heatmap</a></li>
+<li class="chapter" data-level="2.6" data-path="visualize-gene-expression.html"><a href="visualize-gene-expression.html#export-genes-and-samples"><i class="fa fa-check"></i><b>2.6</b> Export Genes and Samples</a></li>
+<li class="chapter" data-level="2.7" data-path="visualize-gene-expression.html"><a href="visualize-gene-expression.html#similar-comparisons"><i class="fa fa-check"></i><b>2.7</b> Similar comparisons</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="visualize-gene-expression.html"><a href="visualize-gene-expression.html#similar-comparisons-go"><i class="fa fa-check"></i><b>2.7.1</b> Similar comparisons (GO)</a></li>
+<li class="chapter" data-level="2.7.2" data-path="visualize-gene-expression.html"><a href="visualize-gene-expression.html#similar-comparisons-page"><i class="fa fa-check"></i><b>2.7.2</b> Similar comparisons (PAGE)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="visualize-gene-expression.html"><a href="visualize-gene-expression.html#comparisons-venn-diagrams"><i class="fa fa-check"></i><b>2.8</b> Comparisons Venn Diagrams</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="visualize-gene-expression.html"><a href="visualize-gene-expression.html#comparisons-venn-diagram-go"><i class="fa fa-check"></i><b>2.8.1</b> Comparisons Venn Diagram (GO)</a></li>
+<li class="chapter" data-level="2.8.2" data-path="visualize-gene-expression.html"><a href="visualize-gene-expression.html#comparisons-venn-diagram-page"><i class="fa fa-check"></i><b>2.8.2</b> Comparisons Venn Diagram (PAGE)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="visualize-comparison-data.html"><a href="visualize-comparison-data.html"><i class="fa fa-check"></i><b>3</b> Visualize Comparison Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="visualize-comparison-data.html"><a href="visualize-comparison-data.html#dashboard-view-of-comparison"><i class="fa fa-check"></i><b>3.1</b> Dashboard View of Comparison</a></li>
+<li class="chapter" data-level="3.2" data-path="visualize-comparison-data.html"><a href="visualize-comparison-data.html#set-dashboard-preference"><i class="fa fa-check"></i><b>3.2</b> Set Dashboard Preference</a></li>
+<li class="chapter" data-level="3.3" data-path="visualize-comparison-data.html"><a href="visualize-comparison-data.html#dynamic-filtering-of-comparisons-on-dashboard"><i class="fa fa-check"></i><b>3.3</b> Dynamic Filtering of Comparisons on Dashboard</a></li>
+<li class="chapter" data-level="3.4" data-path="visualize-comparison-data.html"><a href="visualize-comparison-data.html#bubble-plot-of-comparisons-associated-with-a-single-gene"><i class="fa fa-check"></i><b>3.4</b> Bubble Plot of Comparisons Associated with a Single Gene</a></li>
+<li class="chapter" data-level="3.5" data-path="visualize-comparison-data.html"><a href="visualize-comparison-data.html#data-filter-and-advanced-settings-in-bubble-plot"><i class="fa fa-check"></i><b>3.5</b> Data Filter and Advanced Settings in Bubble Plot</a></li>
+<li class="chapter" data-level="3.6" data-path="visualize-comparison-data.html"><a href="visualize-comparison-data.html#bubble-plot-of-sets-of-genes-and-comparisons"><i class="fa fa-check"></i><b>3.6</b> Bubble Plot of Sets of Genes and Comparisons</a></li>
+<li class="chapter" data-level="3.7" data-path="visualize-comparison-data.html"><a href="visualize-comparison-data.html#get-significant-genes-from-comparisons"><i class="fa fa-check"></i><b>3.7</b> Get significant genes from comparisons</a></li>
+<li class="chapter" data-level="3.8" data-path="visualize-comparison-data.html"><a href="visualize-comparison-data.html#view-significantly-changed-genes-in-bubble-plot"><i class="fa fa-check"></i><b>3.8</b> View Significantly Changed Genes in Bubble Plot</a></li>
+<li class="chapter" data-level="3.9" data-path="visualize-comparison-data.html"><a href="visualize-comparison-data.html#volcano-plot-of-a-comparison"><i class="fa fa-check"></i><b>3.9</b> Volcano Plot of a Comparison</a></li>
+<li class="chapter" data-level="3.10" data-path="visualize-comparison-data.html"><a href="visualize-comparison-data.html#view-multiple-volcano-plots-together"><i class="fa fa-check"></i><b>3.10</b> View Multiple Volcano Plots Together</a></li>
+<li class="chapter" data-level="3.11" data-path="visualize-comparison-data.html"><a href="visualize-comparison-data.html#overlap-comparison-data-to-pathway-graph"><i class="fa fa-check"></i><b>3.11</b> Overlap Comparison Data to Pathway Graph</a></li>
+<li class="chapter" data-level="3.12" data-path="visualize-comparison-data.html"><a href="visualize-comparison-data.html#pathway-plot-from-several-comparisons"><i class="fa fa-check"></i><b>3.12</b> Pathway Plot from Several Comparisons</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="functional-enrichment-from-comparisons.html"><a href="functional-enrichment-from-comparisons.html"><i class="fa fa-check"></i><b>4</b> Functional Enrichment from Comparisons</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="functional-enrichment-from-comparisons.html"><a href="functional-enrichment-from-comparisons.html#enrichment-from-up-and-down-regulated-genes"><i class="fa fa-check"></i><b>4.1</b> Enrichment from Up and Down Regulated Genes</a></li>
+<li class="chapter" data-level="4.2" data-path="functional-enrichment-from-comparisons.html"><a href="functional-enrichment-from-comparisons.html#view-changed-genes-from-a-functional-term-in-volcano-plot"><i class="fa fa-check"></i><b>4.2</b> View Changed Genes from a Functional Term in Volcano Plot</a></li>
+<li class="chapter" data-level="4.3" data-path="functional-enrichment-from-comparisons.html"><a href="functional-enrichment-from-comparisons.html#view-enriched-pathways-directly-from-comparison-details"><i class="fa fa-check"></i><b>4.3</b> View Enriched Pathways Directly from Comparison Details</a></li>
+<li class="chapter" data-level="4.4" data-path="functional-enrichment-from-comparisons.html"><a href="functional-enrichment-from-comparisons.html#gene-set-enrichment-from-ranked-genes"><i class="fa fa-check"></i><b>4.4</b> Gene Set Enrichment from Ranked Genes</a></li>
+<li class="chapter" data-level="4.5" data-path="functional-enrichment-from-comparisons.html"><a href="functional-enrichment-from-comparisons.html#pathway-heatmap-from-comparisons"><i class="fa fa-check"></i><b>4.5</b> Pathway Heatmap From Comparisons</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-upload.html"><a href="data-upload.html"><i class="fa fa-check"></i><b>5</b> Data Upload</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-upload.html"><a href="data-upload.html#data-type"><i class="fa fa-check"></i><b>5.1</b> Data Type</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="data-upload.html"><a href="data-upload.html#supported-data-file-format"><i class="fa fa-check"></i><b>5.1.1</b> Supported Data File Format</a></li>
+<li class="chapter" data-level="5.1.2" data-path="data-upload.html"><a href="data-upload.html#expression-data-format"><i class="fa fa-check"></i><b>5.1.2</b> Expression Data Format</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="data-upload.html"><a href="data-upload.html#data-upload-options"><i class="fa fa-check"></i><b>5.2</b> Data Upload options</a></li>
+<li class="chapter" data-level="5.3" data-path="data-upload.html"><a href="data-upload.html#source-file-format"><i class="fa fa-check"></i><b>5.3</b> Source File format</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="data-upload.html"><a href="data-upload.html#project-info-file"><i class="fa fa-check"></i><b>5.3.1</b> Project Info file</a></li>
+<li class="chapter" data-level="5.3.2" data-path="data-upload.html"><a href="data-upload.html#sample-info-file"><i class="fa fa-check"></i><b>5.3.2</b> Sample Info file</a></li>
+<li class="chapter" data-level="5.3.3" data-path="data-upload.html"><a href="data-upload.html#comparison-info-file"><i class="fa fa-check"></i><b>5.3.3</b> Comparison Info file</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="data-upload.html"><a href="data-upload.html#data-formats"><i class="fa fa-check"></i><b>5.4</b> Data Formats</a></li>
+<li class="chapter" data-level="5.5" data-path="data-upload.html"><a href="data-upload.html#gene-expression-data"><i class="fa fa-check"></i><b>5.5</b> Gene Expression Data</a></li>
+<li class="chapter" data-level="5.6" data-path="data-upload.html"><a href="data-upload.html#comparison-data"><i class="fa fa-check"></i><b>5.6</b> Comparison Data</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="advanced-analyses.html"><a href="advanced-analyses.html"><i class="fa fa-check"></i><b>6</b> Advanced Analyses</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="advanced-analyses.html"><a href="advanced-analyses.html#correlation-tools"><i class="fa fa-check"></i><b>6.1</b> Correlation Tools</a></li>
+<li class="chapter" data-level="6.2" data-path="advanced-analyses.html"><a href="advanced-analyses.html#pca-analysis"><i class="fa fa-check"></i><b>6.2</b> PCA Analysis</a></li>
+<li class="chapter" data-level="6.3" data-path="advanced-analyses.html"><a href="advanced-analyses.html#meta-analysis"><i class="fa fa-check"></i><b>6.3</b> Meta-Analysis</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="advanced-analyses.html"><a href="advanced-analyses.html#meta-analysis-comparisons"><i class="fa fa-check"></i><b>6.3.1</b> Meta-Analysis (Comparisons)</a></li>
+<li class="chapter" data-level="6.3.2" data-path="advanced-analyses.html"><a href="advanced-analyses.html#meta-analysis-gene-expression"><i class="fa fa-check"></i><b>6.3.2</b> Meta-Analysis (Gene Expression)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="step-by-step-guide-of-running-the-crohns-disease-meta-analysis.html"><a href="step-by-step-guide-of-running-the-crohns-disease-meta-analysis.html"><i class="fa fa-check"></i><b>7</b> Step-by-step guide of running the Crohn’s disease meta-analysis</a></li>
+<li class="chapter" data-level="8" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>8</b> Methods</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="methods.html"><a href="methods.html#data-processing"><i class="fa fa-check"></i><b>8.1</b> Data processing</a></li>
+<li class="chapter" data-level="8.2" data-path="methods.html"><a href="methods.html#functional-and-pathway-enrichment"><i class="fa fa-check"></i><b>8.2</b> Functional and Pathway Enrichment</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="methods.html"><a href="methods.html#homer-workflow"><i class="fa fa-check"></i><b>8.2.1</b> HOMER workflow</a></li>
+<li class="chapter" data-level="8.2.2" data-path="methods.html"><a href="methods.html#gene-set-enrichment-analysis-gsea-workflow-page"><i class="fa fa-check"></i><b>8.2.2</b> Gene Set Enrichment Analysis (GSEA) workflow (PAGE)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="methods.html"><a href="methods.html#meta-analysis-1"><i class="fa fa-check"></i><b>8.3</b> Meta-Analysis</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="methods.html"><a href="methods.html#meta-analysis-statistics"><i class="fa fa-check"></i><b>8.3.1</b> Meta-analysis statistics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="supplementary-tables.html"><a href="supplementary-tables.html"><i class="fa fa-check"></i><b>9</b> Supplementary Tables</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="supplementary-tables.html"><a href="supplementary-tables.html#table-s1.-feature-comparison-of-tools"><i class="fa fa-check"></i><b>9.1</b> Table S1. Feature comparison of tools</a></li>
+<li class="chapter" data-level="9.2" data-path="supplementary-tables.html"><a href="supplementary-tables.html#table-s2.-mapping-between-use-cases-and-omicsview-menu-items"><i class="fa fa-check"></i><b>9.2</b> Table S2. Mapping between use cases and OmicsView menu items</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Supplementary Materials - OmicsView: omics data analysis through interactive visual analytics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="visualize-comparison-data" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Visualize Comparison Data</h1>
+<p>There are 235 comparisons in the demo system, covering different categories including Disease vs. Normal, Treatment vs. Control, Tissue 1 vs. Tissue 2 etc. The system offers many ways to visualize the data and help users find the most interesting data related to their study.</p>
+<div id="dashboard-view-of-comparison" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Dashboard View of Comparison</h2>
+<p>The dashboard shows a summary of all the comparisons.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.1.1.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.1.1.jpg" alt="FigureS3.1.1" /></a></p>
+<p>The dashboard shows Comparison Categories, Cell Type, Disease State, Treatment, Platform summaries. A table is also available below the dashboard that lists all the comparisons.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.1.2.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.1.2.jpg" alt="FigureS3.1.2" /></a></p>
+</div>
+<div id="set-dashboard-preference" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Set Dashboard Preference</h2>
+<p>Users can change how the comparison summary is displayed by following the red numbers.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.2.1.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.2.1.jpg" alt="FigureS3.2.1" /></a></p>
+<p>Since there are many Cell Types and Disease States, the user can choose to display only the top 15 categories, or all categories. See example screenshots below.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.2.2.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.2.2.jpg" alt="FigureS3.2.2" /></a></p>
+<p>When the user chooses only the top 15 categories, all other categories are shown as Other Cell Type. There are other data points where the Cell Type is unknown from the study. Two categories denoted as “Other” and “Unknown” can be hidden by the user in the preference.</p>
+</div>
+<div id="dynamic-filtering-of-comparisons-on-dashboard" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Dynamic Filtering of Comparisons on Dashboard</h2>
+<p>The user can click any chart in the dashboard to focus on one or more categories that are of interest to the study.
+In the example below, we are only interested in Disease vs. Normal comparisons, and we further narrow down the data to three disease areas: ulcerative colitis, Crohn’s disease, and rheumatoid arthritis. Now we are looking at 36 out of 199 comparisons. The table at the bottom of the page shows details of these 36 comparisons. The “Reset All Charts” link above the statistics panel is used to show all comparisons again.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.3.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.3.jpg" alt="FigureS3.3" /></a></p>
+</div>
+<div id="bubble-plot-of-comparisons-associated-with-a-single-gene" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Bubble Plot of Comparisons Associated with a Single Gene</h2>
+<p>For each gene, users can view all the available comparisons in a bubble chart.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.4.1.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.4.1.jpg" alt="FigureS3.4.1" /></a></p>
+<p>The default settings work for most users. After clicking the Plot button, you will see a plot like below:</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.4.2.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.4.2.jpg" alt="FigureS3.4.2" /></a></p>
+<p>In the bubble plot, the X-axis shows log2 Fold Change of the comparison, the Y-axis shows disease state. Each dot represents the comparison result of this gene from one comparison. The color of the dot represents cell type, and the size of the dot represents significance (-log10(FDR), larger is more significant).
+The user can click and unclick the color legend at right to select or deselect cell types. When mouse over a dot, more details are shown. And the user can also click the dot to link to other graphs.
+The tool bar at top right corner allows the user to zoom and pan the graph.</p>
+</div>
+<div id="data-filter-and-advanced-settings-in-bubble-plot" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Data Filter and Advanced Settings in Bubble Plot</h2>
+<p>In addition, advanced users can change settings by click “Modify Settings Button.” For example, the user may want to show a selected list of diseases. After clicking Customize in Case_DiseaseState, user can select which diseases to display in the pop-up window.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.5.1.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.5.1.jpg" alt="FigureS3.5.1" /></a></p>
+<p>After modifying the setting, the user can click plot button to view the new chart. The system will display
+how many data points are chosen based on the filter.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.5.2.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.5.2.jpg" alt="FigureS3.5.2" /></a></p>
+</div>
+<div id="bubble-plot-of-sets-of-genes-and-comparisons" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Bubble Plot of Sets of Genes and Comparisons</h2>
+<p>It can be useful to look at a set of genes (e.g., all differentially expressed genes, or genes from a certain pathways) in a set of related comparisons (e.g., all from the same disease).
+To view this type of bubble plot, select Bubble Plot (Multiple Genes).</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.6.1.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.6.1.jpg" alt="FigureS3.6.1" /></a></p>
+<p>In the Genes and Comparisons Bubble plot window, users can now enter the symbols of the genes, and the comparison names. However, it is much easier to use the saved genes and saved comparisons features, or other tools from the system to quickly get a gene set.
+In the example below, we use dashboard to select 8 comparisons that are for Disease vs. Normal in Crohn’s disease (CD). We save the comparisons and load in the bubble plot tool. For gene list, we get the up-regulated immune response genes from comparison GSE57945.GPL11154.DESeq2.test1 and paste into the gene names fields.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.6.2.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.6.2.jpg" alt="FigureS3.6.2" /></a></p>
+<p>In the bubble plot, the gene symbols are listed in Y-axis. The X-axis represents logFC, color of the bubble represents comparison, and the size of the bubble represents the significance.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.6.3.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.6.3.jpg" alt="FigureS3.6.3" /></a></p>
+<p>In the legend, the color keys for comparisons are shown. Users can click the color key in the legend to hide/show comparisons. The size of the color dot in the legend correlates to the largest bubble for that comparison, which is the most significant gene with the smallest FDR.</p>
+</div>
+<div id="get-significant-genes-from-comparisons" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> Get significant genes from comparisons</h2>
+<p>Another way to get a gene set to visualize in the genes/comparisons bubble plot is to filter for significantly changed genes. To do this, first select a few comparisons from the dash board, and click the “View Significantly Changed Genes” button.
+Dashboard filter:</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.7.1.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.7.1.jpg" alt="FigureS3.7.1" /></a></p>
+<p>In table, select comparisons and view significantly changed genes.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.7.2.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.7.2.jpg" alt="FigureS3.7.2" /></a></p>
+<p>In the significantly Changed Genes window, the comparisons from the previous page are already loaded. You can add or remove comparisons if needed.
+Now select direction (up-, down-, or both), and use the logFC cutoff and FDR value to get a list of genes. Depending on the comparisons, sometimes you may need to adjust the logFC and FDR values to get a good list of genes. In general, for bubble plot, using &lt;100 genes will make the graph easier to read.
+Once you are happy with the gene list, you can save it. You can also export the list for later use.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.7.3.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.7.3.jpg" alt="FigureS3.7.3" /></a></p>
+</div>
+<div id="view-significantly-changed-genes-in-bubble-plot" class="section level2" number="3.8">
+<h2><span class="header-section-number">3.8</span> View Significantly Changed Genes in Bubble Plot</h2>
+<p>Back to the bubble plot, users can load the saved comparisons and saved genes and view the plot.
+In the example below, it can be seen that most significant genes come from up-regulated direction.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.8.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.8.jpg" alt="FigureS3.8" /></a></p>
+</div>
+<div id="volcano-plot-of-a-comparison" class="section level2" number="3.9">
+<h2><span class="header-section-number">3.9</span> Volcano Plot of a Comparison</h2>
+<p>Volcano plot is useful to view a top level summary of how many genes are significantly up- or down-regulated in a comparison.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.9.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.9.jpg" alt="FigureS3.9" /></a></p>
+<p>Users can use mouse to drag over an area to zoom in. Mouse over a point will show the gene details. Click the data point will show you links to other graphs.</p>
+</div>
+<div id="view-multiple-volcano-plots-together" class="section level2" number="3.10">
+<h2><span class="header-section-number">3.10</span> View Multiple Volcano Plots Together</h2>
+<p>Users can also show multiple comparisons side-by-side. If needed, the user can also highlight the same group of genes across the volcano plots.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.10.1.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.10.1.jpg" alt="FigureS3.10.1" /></a></p>
+<p>The resulting volcano plots are shown as below. Selected genes are shown as orange dots.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.10.2.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.10.2.jpg" alt="FigureS3.10.2" /></a></p>
+</div>
+<div id="overlap-comparison-data-to-pathway-graph" class="section level2" number="3.11">
+<h2><span class="header-section-number">3.11</span> Overlap Comparison Data to Pathway Graph</h2>
+<p>If users are interested in a particular pathway, sometimes it is useful to map the RNA-Seq or microarray data to the pathway for visualization.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.11.1.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.11.1.jpg" alt="FigureS3.11.1" /></a></p>
+<p>In the pathway plot, typically we use red-blue color scale to show the log2 Fold Change. Blue is down-regulated, red is up-regulated.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.11.2.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.11.2.jpg" alt="FigureS3.11.2" /></a></p>
+</div>
+<div id="pathway-plot-from-several-comparisons" class="section level2" number="3.12">
+<h2><span class="header-section-number">3.12</span> Pathway Plot from Several Comparisons</h2>
+<p>The user can add multiple comparisons from the pathway plot tool by clicking Add Comparison link. This is a good functionality to overlay differential genes from multiple comparisons along a pathway.</p>
+<p>In this example we use data from Connor-Robson et al., Neurobiology of Disease, 2019. In this paper, the authors performed proteomics (Mass spec) and RNAseq analysis on diseased and normal iPSCs. They performed both analysis at 2 timepoints of differentiation: D35 and D56. This visualization will identify if the same genes are differentially expressed in the proteomic and the RNAseq datasets, as well as in the two timepoints on a WikiPathway.</p>
+<p>The data was uploaded into OmicsView. For the proteomic dataset, the protein ID was converted to the gene ID. Here the 4 comparisons (2 Proteomics and 2 RNAseq) are loaded, and the P13k Akt signaling pathway is probed.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.12.1.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.12.1.jpg" alt="FigureS3.12.1" /></a></p>
+<p>The pathway plot now has 4 color bars corresponding to the different comparisons.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.12.2.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.12.2.jpg" alt="FigureS3.12.2" /></a></p>
+<p>Users can also zoom into the plot for better visibility of the genes. The figure below is zoomed into the circular section from the plot above.</p>
+<p><a href="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.12.3.jpg"><img src="https://interactivereport.github.io/OmicsView/tutorial/figures/FigureS3.12.3.jpg" alt="FigureS3.12.3" /></a></p>
+<p>In this example, many of the ECM genes are getting differentially regulated in the same direction across all 4 comparisons. If a particular gene is clicked on, like COL2A1 here, the details of changes in the gene in each comparison can be seen.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="visualize-gene-expression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="functional-enrichment-from-comparisons.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["OmicsView_Supp.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+},
+"pandoc_args": ["--lua-filter=scholarly-metadata.lua", "--lua-filter=author-info-blocks.lua"]
+});
+});
+</script>
+
+</body>
+
+</html>
