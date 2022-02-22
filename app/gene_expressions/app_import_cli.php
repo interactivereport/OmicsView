@@ -1,5 +1,5 @@
 <?php
-
+$BXAF_CONFIG['API'] = 1;
 if (php_sapi_name() !== 'cli'){	
 	exit();
 }

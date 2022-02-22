@@ -26,19 +26,19 @@ if (isset($_GET['action']) && $_GET['action'] == 'list'){
     	$sql .= " AND (" . implode(" OR ", $search_array) . ")";
     }
 
-	if(isset($_POST['order']) && is_array($_POST['order']) && count($_POST['order']) > 0){
-	    // Order Condition
-	    $sql .= " ORDER BY ";
-	    $condition_array = array();
-	    for ($i = 0; $i < count($_POST['order']); $i++) {
-	        $order = $_POST['columns'][$_POST['order'][$i]['column']]['data'];
-	        $asc = $_POST['order'][$i]['dir'];
-	        if(! in_array($order, array('Actions'))){
-	            $condition_array[] = "`$order` $asc";
-	        }
-	    }
-	    $sql .= implode(", ", $condition_array);
-	}
+if(isset($_POST['order']) && is_array($_POST['order']) && count($_POST['order']) > 0){
+    // Order Condition
+    $sql .= " ORDER BY ";
+    $condition_array = array();
+    for ($i = 0; $i < count($_POST['order']); $i++) {
+        $order = $_POST['columns'][$_POST['order'][$i]['column']]['data'];
+        $asc = $_POST['order'][$i]['dir'];
+        if(! in_array($order, array('Actions'))){
+            $condition_array[] = "`$order` $asc";
+        }
+    }
+    $sql .= implode(", ", $condition_array);
+}
 
 
     $sql0 = "SELECT COUNT(*) FROM `$table` WHERE $filter ";
@@ -58,7 +58,11 @@ if (isset($_GET['action']) && $_GET['action'] == 'list'){
 
     foreach($data as $value) {
         $row = array();
+
+		$value['Enrichment'] = pow(10, $value['logP']);
+
         foreach($value as $k=>$v){
+
             if($k == 'Comparison_Name'){
 				$row[$k] = '<a href="' . $BXAF_CONFIG['BXAF_APP_URL'] . 'plot/search_comparison/single_comparison.php?type=comparison&id=' . $value['Comparison_Index'] . '">' . $v . '</a>';
             }
@@ -69,6 +73,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'list'){
         $output_array['data'][] = $row;
 
     }
+	header('Content-Type: application/json');
     echo json_encode($output_array);
 
     exit();
@@ -81,9 +86,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'list'){
 <html lang="en">
 <head>
 	<?php include_once($BXAF_CONFIG['BXAF_PAGE_HEADER']); ?>
-<link type="text/css" rel="stylesheet" href="css/style.css" />
-
-
 
     <style>
         .hidden{
@@ -103,13 +105,29 @@ if (isset($_GET['action']) && $_GET['action'] == 'list'){
 		<div id="bxaf_page_right" class="<?php echo $BXAF_CONFIG['BXAF_PAGE_CSS_RIGHT']; ?>">
 
 			<div id="bxaf_page_right_content" class="w-100 p-2">
+            
+            	<div class="container-fluid">
+                
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="Xpage-header pt-3">
+                           GO Enrichment of Comparisons
+                            </h1>
+                            <hr>
+                        </div>
+                    </div>
 
-				<h1>
-					GO Enrichment of Comparisons
+                    <div>
+                        <a href='Javascript: void(0);' onclick="if( $('#form_main').hasClass('hidden') ) $('#form_main').removeClass('hidden'); else $('#form_main').addClass('hidden');" style='font-size: 1rem;'><i class='fas fa-search'></i> Advanced Search</a>
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="mx-1" style='font-size: 1rem;'><i class='fas fa-sync'></i> Reset Search Condition</a>
+                    </div>
 
-					<a href='Javascript: void(0);' onclick="if( $('#form_main').hasClass('hidden') ) $('#form_main').removeClass('hidden'); else $('#form_main').addClass('hidden');" style='font-size: 1rem;'><i class='fas fa-search'></i> Advanced Search</a>
-					<a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="mx-1" style='font-size: 1rem;'><i class='fas fa-sync'></i> Reset Search Condition</a>
-				</h1>
+                    <h1>
+                        GO Enrichment of Comparisons
+    
+                        <a href='Javascript: void(0);' onclick="if( $('#form_main').hasClass('hidden') ) $('#form_main').removeClass('hidden'); else $('#form_main').addClass('hidden');" style='font-size: 1rem;'><i class='fas fa-search'></i> Advanced Search</a>
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="mx-1" style='font-size: 1rem;'><i class='fas fa-sync'></i> Reset Search Condition</a>
+                    </h1>
 
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="hidden" id="form_main" method="get">
 				<div class="w-100 my-3 border border-primary rounded">
@@ -130,15 +148,15 @@ if (isset($_GET['action']) && $_GET['action'] == 'list'){
 							</div>
 
 							<select class="custom-select" name="GO_Tree" id="GO_Tree">
-							<?php
-								$sql = "SELECT DISTINCT `GO_Tree` FROM `tbl_comparison_go_enrichment_10_2`";
-								$options = $BXAF_MODULE_CONN->get_col($sql);
-								array_unshift($options, '');
-								$default = '';
-								if($_GET['GO_Tree'] != '') $default = $_GET['GO_Tree'];
-								foreach($options as $opt) echo "<option value='$opt' " . ($default == $opt ? 'selected' : '') . ">$opt</option>";
-							?>
-							  </select>
+								<?php
+                                $sql = "SELECT DISTINCT `GO_Tree` FROM `tbl_comparison_go_enrichment_10_2`";
+                                $options = $BXAF_MODULE_CONN->get_col($sql);
+                                array_unshift($options, '');
+                                $default = '';
+                                if($_GET['GO_Tree'] != '') $default = $_GET['GO_Tree'];
+                                foreach($options as $opt) echo "<option value='$opt' " . ($default == $opt ? 'selected' : '') . ">$opt</option>";
+                                ?>
+							</select>
 						</div>
 
 						<div class="col-md-12 col-lg-4 my-2">
@@ -223,6 +241,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'list'){
 			    		</thead>
 			    	</table>
 			    </div>
+                
+                </div>
 
 
             </div>

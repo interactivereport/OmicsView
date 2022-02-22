@@ -220,6 +220,15 @@ if(isset($_GET['action']) && $_GET['action'] == "search_page") {
 	$sql = "SELECT `ComparisonIndex` FROM `Comparisons` WHERE `ComparisonID` = ?s";
 	$comparison_index = $BXAF_MODULE_CONN->get_one($sql, $_POST['comparison1']);
 
+	if($comparison_index == ''){
+		$sql = "SELECT `ComparisonIndex` FROM `App_User_Data_Comparisons` WHERE `ComparisonID` = ?s";
+		$comparison_index = $BXAF_MODULE_CONN->get_one($sql, $_POST['comparison1']);
+	}
+	if($comparison_index == ''){
+		echo "Error: No comparison is found.";
+		exit();
+	}
+
 	$FDR = '025';
 	if(isset($_POST['FDR']) && $_POST['FDR'] != '') $FDR = $_POST['FDR'];
 
@@ -232,6 +241,7 @@ if(isset($_GET['action']) && $_GET['action'] == "search_page") {
 
 	$target_list = array();
 
+	$found_matches = array();
 	$found_counts = array();
 	$overlap_counts = array();
 	$overlap_details = array();
@@ -241,7 +251,9 @@ if(isset($_GET['action']) && $_GET['action'] == "search_page") {
 	$overlap_details1 = array();
 
 	if (($handle = fopen($file_full_dir, "r")) !== FALSE) {
-	    while (($data = fgetcsv($handle)) !== FALSE) {
+
+		  while (($data = fgets($handle)) !== FALSE) {
+			$data = explode(',', $data);
 			if($comparison_index == $data[0]){
 				array_shift($data);
 				$target_list = $data;
@@ -249,81 +261,75 @@ if(isset($_GET['action']) && $_GET['action'] == "search_page") {
 			}
 	    }
 		fclose($handle);
+
 	}
 
+	$matches = array();
+	$files = array();
+	if($_POST['Z_Score'] == 'pos'){
+		if($_POST['Z_Score1'] == 'pos'){
+			$files[] = "list_{$FDR}_pos.txt";  // Match
+			$matches[] = 'Match';
+		}
+		else if($_POST['Z_Score1'] == 'neg'){
+			$files[] = "list_{$FDR}_neg.txt";  // Anti-Match
+			$matches[] = 'Anti-Match';
+		}
+		else {
+			$files[] = "list_{$FDR}_pos.txt";  // Match
+			$matches[] = 'Match';
+			$files[] = "list_{$FDR}_neg.txt";  // Anti-Match
+			$matches[] = 'Anti-Match';
+		}
+	}
+	else if($_POST['Z_Score'] == 'neg'){
+		if($_POST['Z_Score1'] == 'pos'){
+			$files[] = "list_{$FDR}_neg.txt";  // Match
+			$matches[] = 'Match';
+		}
+		else if($_POST['Z_Score1'] == 'neg'){
+			$files[] = "list_{$FDR}_pos.txt";  // Anti-Match
+			$matches[] = 'Anti-Match';
+		}
+		else {
+			$files[] = "list_{$FDR}_pos.txt";  // Anti-Match
+			$matches[] = 'Anti-Match';
+			$files[] = "list_{$FDR}_neg.txt";  // Match
+			$matches[] = 'Match';
+		}
+	}
 
-	if($_POST['Z_Score1'] == ''){
-		$z_score1 = $z_score;
-		$file_full_dir1 = "$dir/list_{$FDR}_{$z_score1}.txt";
-	    if (($handle = fopen($file_full_dir1, "r")) !== FALSE) {
+	foreach($files as $i=>$f){
 
-			while (($data = fgetcsv($handle)) !== FALSE) {
+		$file_full_dir1 = "$dir/$f";
+		if (($handle = fopen($file_full_dir1, "r")) !== FALSE) {
+
+			  while (($data = fgets($handle)) !== FALSE) {
+				$data = explode(',', $data);
+
 				if($comparison_index == $data[0]){
 					continue;
 				}
 				else {
 					$comparison = array_shift($data);
 
+					$found_matches[$comparison] = $matches[$i];
 					$found_counts[$comparison] = count($data);
 					$overlap = array_intersect($target_list, $data);
 					if(count($overlap) > 0){
 						$overlap_details[$comparison] = implode(", ", $overlap);
 						$overlap_counts[$comparison]  = count($overlap);
 					}
-
-				}
-	        }
-	        fclose($handle);
-	    }
-
-		$z_score1 = $z_score == 'pos' ? 'neg' : 'pos';
-		$file_full_dir1 = "$dir/list_{$FDR}_{$z_score1}.txt";
-	    if (($handle = fopen($file_full_dir1, "r")) !== FALSE) {
-
-			while (($data = fgetcsv($handle)) !== FALSE) {
-				if($comparison_index == $data[0]){
-					continue;
-				}
-				else {
-					$comparison = array_shift($data);
-
-					$found_counts1[$comparison] += count($data);
-					$overlap = array_intersect($target_list, $data);
-					if(count($overlap) > 0){
-						$overlap_details1[$comparison] = implode(", ", $overlap);
-						$overlap_counts1[$comparison]  = count($overlap);
+					else {
+						$overlap_details[$comparison] = '';
+						$overlap_counts[$comparison]  = 0;
 					}
-
 				}
-	        }
-	        fclose($handle);
-	    }
-	}
-	else {
-		if($_POST['Z_Score1'] == '1') $z_score1 = $z_score;
-		else if($_POST['Z_Score1'] == '-1')  $z_score1 = $z_score == 'pos' ? 'neg' : 'pos';
+			}
+			fclose($handle);
 
-		$file_full_dir1 = "$dir/list_{$FDR}_{$z_score1}.txt";
-	    if (($handle = fopen($file_full_dir1, "r")) !== FALSE) {
 
-			while (($data = fgetcsv($handle)) !== FALSE) {
-				if($comparison_index == $data[0]){
-					continue;
-				}
-				else {
-					$comparison = array_shift($data);
-
-					$found_counts[$comparison] = count($data);
-					$overlap = array_intersect($target_list, $data);
-					if(count($overlap) > 0){
-						$overlap_details[$comparison] = implode(", ", $overlap);
-						$overlap_counts[$comparison]  = count($overlap);
-					}
-
-				}
-	        }
-	        fclose($handle);
-	    }
+		}
 
 	}
 
@@ -352,7 +358,7 @@ if(isset($_GET['action']) && $_GET['action'] == "search_page") {
 
 
 
-	$table_contents = "<div class='my-5 lead text-center'>Target Comparison: <span class='text-danger'>" . $_POST['comparison1'] . "</span>, Found MSigDB terms: <span class='text-danger'>" . count($target_list) . "</span></div>";
+	$table_contents = "<div class='my-5 lead text-center'>Target Comparison: <span class='text-danger'>" . $_POST['comparison1'] . "</span>, Found MSigDB terms: <span class='text-danger'>" . (count($target_list) - 1) . "</span></div>";
 
 	$names = array();
 	foreach($overlap_counts as $comparison=>$count) $names[] = $comparison_id_names[$comparison];
@@ -380,51 +386,30 @@ if(isset($_GET['action']) && $_GET['action'] == "search_page") {
 			$table_contents .= " <a class='mx-2' title='Show Reactome Pathway' href='../tool_pathway/reactome.php?id=" . $comparison . "' target='_blank'><span class='badge badge-pill table-success text-danger'>R</span></a>";
 			$table_contents .= " <a class='mx-2' title='Show KEGG Pathway' href='../tool_pathway/kegg.php?id=" . $comparison . "' target='_blank'><span class='badge badge-pill table-success text-danger'>K</span></a>";
 
-			$table_contents .= " <a title='Show Venn Diagrams' href='comparison_page_venn.php?comparison1=" . urlencode($_POST['comparison1']) . "&comparison2=" . urlencode($comparison_id_names[$comparison]) . "&Z_Score1=" . $_POST['Z_Score'] . "&Z_Score2=" . $_POST['Z_Score1'] . "&FDR=" . $FDR . "' target='_blank'><i class='fas fa-adjust'></i></a></td>";
+			$Z_Score2 = '';
+			if($found_matches[$comparison] == 'Match'){
+				if($_POST['Z_Score'] == 'pos') $Z_Score2 = 'pos';
+				else $Z_Score2 = 'neg';
+			}
+			else {
+				if($_POST['Z_Score'] == 'pos') $Z_Score2 = 'neg';
+				else $Z_Score2 = 'pos';
+			}
 
-			$table_contents .= "<td>" . $found_counts[$comparison] . "</td>";
+			$table_contents .= " <a title='Show Venn Diagrams' href='comparison_page_venn.php?comparison1=" . urlencode($_POST['comparison1']) . "&comparison2=" . urlencode($comparison_id_names[$comparison]) . "&Z_Score1=" . $_POST['Z_Score'] . "&Z_Score2=" . $Z_Score2 . "&FDR=" . $FDR . "' target='_blank'><i class='fas fa-adjust'></i></a></td>";
 
-			$table_contents .= "<td>" . $count . "</td>";
+			$table_contents .= "<td>" . ($found_counts[$comparison] - 1) . "</td>";
+
+			$table_contents .= "<td>" . ($count - 1) . "</td>";
 
 			$table_contents .= "<td>$score</td>";
 
-			$table_contents .= "<td>" . ($_POST['Z_Score1'] == '' ? 'Match' : ($_POST['Z_Score1'] == '1' ? 'Match' : 'Anti-Match')) . "</td>";
+			$table_contents .= "<td>" . $found_matches[$comparison] . "</td>";
 
 		$table_contents .= "</tr>";
 
 	}
-	foreach($overlap_counts1 as $comparison=>$count){
 
-		if(100 * $count / count($target_list) < intval($_POST['Minimum_Overlaps'])) continue;
-
-		$score = sprintf("%.4f", ($count / $found_counts1[$comparison]) / (count($target_list) / $msigdb_records) );
-
-		$table_contents .= "<tr>";
-
-			$table_contents .= "<td><input type='checkbox' class='checkbox_check_individual' value='" . $comparison_id_names[$comparison] . "' /></td><td>" . $comparison_id_names[$comparison] . " ";
-
-			$table_contents .= " <a class='mx-2' title='Show Comparison Details' href='../../plot/search_comparison/single_comparison.php?type=comparison&id=" . $comparison . "' target='_blank'><i class='fas fa-list'></i></a>";
-			$table_contents .= " <a class='mx-2' title='Show Vocano Plot' href='../../plot/volcano/index.php?id=" . $comparison . "' target='_blank'><span class='badge badge-pill table-success text-danger'>V</span></a>";
-			$table_contents .= " <a class='mx-2' title='Show WikiPathway' href='../tool_pathway/index.php?id=" . $comparison . "' target='_blank'><span class='badge badge-pill table-success text-danger'>W</span></a>";
-			$table_contents .= " <a class='mx-2' title='Show Reactome Pathway' href='../tool_pathway/reactome.php?id=" . $comparison . "' target='_blank'><span class='badge badge-pill table-success text-danger'>R</span></a>";
-			$table_contents .= " <a class='mx-2' title='Show KEGG Pathway' href='../tool_pathway/kegg.php?id=" . $comparison . "' target='_blank'><span class='badge badge-pill table-success text-danger'>K</span></a>";
-
-			$table_contents .= " <a title='Show Venn Diagrams' href='comparison_page_venn.php?comparison1=" . urlencode($_POST['comparison1']) . "&comparison2=" . urlencode($comparison_id_names[$comparison]) . "&Z_Score1=" . $_POST['Z_Score'] . "&Z_Score2=" . $_POST['Z_Score1'] . "&FDR=" . $FDR . "' target='_blank'><i class='fas fa-adjust'></i></a></td>";
-
-			$table_contents .= "<td>" . $found_counts1[$comparison] . "</td>";
-
-			$table_contents .= "<td>" . $count . "</td>";
-
-			$table_contents .= "<td>$score</td>";
-
-			$table_contents .= "<td>" . ($_POST['Z_Score1'] == '' ? 'Anti-Match' : ($_POST['Z_Score1'] == '1' ? 'Match' : 'Anti-Match')) . "</td>";
-
-			// if($_POST['Show_Terms'] == 1) $table_contents .= "<td>" . $overlap_details[$comparison] . "</td>";
-			// else $table_contents .= "<td></td>";
-
-		$table_contents .= "</tr>";
-
-	}
 
 	$table_contents .= "</tbody></table>";
 	$table_contents .= "</div>";
@@ -650,6 +635,7 @@ if(isset($_GET['action']) && $_GET['action'] == "show_venn_diagram") {
 	}
 	$comparisons_flip = array_flip($comparisons);
 
+
 	if(isset($_GET['type']) && $_GET['type'] == "go_results") {
 
 		$db_table = 'tbl_comparison_go_enrichment_10_6';
@@ -661,6 +647,7 @@ if(isset($_GET['action']) && $_GET['action'] == "show_venn_diagram") {
 		foreach($comparisons as $i=>$comparison){
 			$sql = "SELECT * FROM `$db_table` WHERE `GO_Tree` = ?s AND `Direction` = ?s AND `Comparison_Name` = ?s";
 			$go_info[$i] = $BXAF_MODULE_CONN->get_row($sql, $go_tree, $_POST['Direction' . ($i+1)], $comparison);
+
 		}
 
 		$BXAF_CONFIG['BXAF_VENN_DATA_DIR'] = $BXAF_CONFIG['BXGENOMICS_CACHE_DIR'];
@@ -676,8 +663,16 @@ if(isset($_GET['action']) && $_GET['action'] == "show_venn_diagram") {
 	}
 
 	else if(isset($_GET['type']) && $_GET['type'] == "page_results") {
+
 		$sql = "SELECT `ComparisonIndex`, `ComparisonID` FROM `Comparisons` WHERE `ComparisonID` IN (?a)";
 		$comparison_name_ids = $BXAF_MODULE_CONN->get_assoc('ComparisonID', $sql, $comparisons);
+		if(! is_array($comparison_name_ids)) $comparison_name_ids = array();
+
+		$sql = "SELECT `ComparisonIndex`, `ComparisonID` FROM `App_User_Data_Comparisons` WHERE `ComparisonID` IN (?a)";
+		$comparison_name_ids2 = $BXAF_MODULE_CONN->get_assoc('ComparisonID', $sql, $comparisons);
+		if(! is_array($comparison_name_ids2)) $comparison_name_ids2 = array();
+
+		$comparison_name_ids = array_merge($comparison_name_ids, $comparison_name_ids2);
 
 		$FDR = '025';
 		if(isset($_POST['FDR']) && $_POST['FDR'] != '') $FDR = $_POST['FDR'];
@@ -694,7 +689,9 @@ if(isset($_GET['action']) && $_GET['action'] == "show_venn_diagram") {
 			$file_full_dir = "$dir/list_{$FDR}_{$z_score}.txt";
 
 			if (($handle = fopen($file_full_dir, "r")) !== FALSE) {
-		        while (($data = fgetcsv($handle)) !== FALSE) {
+
+				while (($data = fgets($handle)) !== FALSE) {
+					$data = explode(',', $data);
 					$comparison_index = array_shift($data);
 
 					if($comparison_name_ids[$c] == $comparison_index){
@@ -703,14 +700,23 @@ if(isset($_GET['action']) && $_GET['action'] == "show_venn_diagram") {
 					}
 		        }
 				fclose($handle);
+
 			}
 		}
 
-		$sql = "SELECT `Name` FROM `tbl_page_genesets` WHERE `ID` IN (?a)";
+		$sql = "SELECT `Name` FROM `tbl_page_genesets` WHERE `Name` IN (?a)";
 		foreach($comparisons as $i=>$c){
 			$value_result[ $i ] = $BXAF_MODULE_CONN->get_col($sql, $value_result[ $i ]);
 		}
 
+	}
+
+
+	foreach($value_result as $i=>$list){
+		foreach($list as $j=>$c){
+			if($c == '') unset($list[$j]);
+		}
+		$value_result[$i] = array_values($list);
 	}
 
 	$name_keys = array(
@@ -752,13 +758,16 @@ if(isset($_GET['action']) && $_GET['action'] == "show_venn_diagram") {
 					';
 
 
+
 					// TOP 01: Individual Group
 					foreach($value_result as $key=>$value){
-					echo '
-						<tr>
-							<td>'.$name_result[$key].'</td>
-							<td><a href="javascript:void(0);" class="content_detail" type="0" method="'.$key.'" other="" case="individual" title="'.$name_result[$key].'">'.count($value_result[$key]).'</td>
-						</tr>';
+						$count = count($value_result[$key]);
+						if($count <= 0) continue;
+						echo '
+							<tr>
+								<td>'.$name_result[$key].'</td>
+								<td><a href="javascript:void(0);" class="content_detail" type="0" method="'.$key.'" other="" case="individual" title="' . $name_result[$key] . '">' . count($value_result[$key]) . '</td>
+							</tr>';
 
 					}
 
@@ -768,10 +777,12 @@ if(isset($_GET['action']) && $_GET['action'] == "show_venn_diagram") {
 					for($i=0; $i<count($value_result)-1; $i++){
 						for($j=$i+1; $j<count($value_result); $j++){
 							if(is_array($value_result[$i]) && is_array($value_result[$j]) && count($value_result[$i])>0 && count($value_result[$j])>0){
+								$count = count(array_intersect($value_result[$i], $value_result[$j]));
+								if($count <= 0) continue;
 								echo '
 									<tr>
 										<td>'.$name_result[$i].' &amp; '.$name_result[$j].'</td>
-										<td><a href="javascript:void(0);" class="content_detail" type="0" method="'.$i.'_'.$j.'" other="" case="double" title="'.$name_result[$i].' & '.$name_result[$j].'">'.count(array_intersect($value_result[$i], $value_result[$j])).'</a></td>
+										<td><a href="javascript:void(0);" class="content_detail" type="0" method="'.$i.'_'.$j.'" other="" case="double" title="'.$name_result[$i].' & '.$name_result[$j].'">' . $count . '</a></td>
 									</tr>';
 							}
 						}
@@ -783,17 +794,21 @@ if(isset($_GET['action']) && $_GET['action'] == "show_venn_diagram") {
 					for($i=0; $i<count($value_result)-1; $i++){
 						for($j=$i+1; $j<count($value_result); $j++){
 							for($k=$j+1; $k<count($value_result); $k++){
+
 								if(is_array($value_result[$i]) && is_array($value_result[$j]) && is_array($value_result[$k]) && count($value_result[$i])>0 && count($value_result[$j])>0 && count($value_result[$k])>0){
+
+									$count = count(array_intersect($value_result[$k], array_intersect($value_result[$i], $value_result[$j])));
+									if($count <= 0) continue;
+
 									echo '
 										<tr>
 											<td>'.$name_result[$i].', '.$name_result[$j].' &amp; '.$name_result[$k].'</td>
-											<td><a href="javascript:void(0);" class="content_detail" type="0" method="'.$i.'_'.$j.'_'.$k.'" other="" case="triple" title="'.$name_result[$i].' & '.$name_result[$j].' & '.$name_result[$k].'">'.count(array_intersect($value_result[$k], array_intersect($value_result[$i], $value_result[$j]))).'</td>
+											<td><a href="javascript:void(0);" class="content_detail" type="0" method="'.$i.'_'.$j.'_'.$k.'" other="" case="triple" title="'.$name_result[$i].' & '.$name_result[$j].' & '.$name_result[$k].'">' . $count . '</td>
 										</tr>';
 								}
 							}
 						}
 					}
-
 
 
 					// TOP 03: Occur In Total Groups
@@ -804,7 +819,11 @@ if(isset($_GET['action']) && $_GET['action'] == "show_venn_diagram") {
 							$array_total_intersect = array_intersect($array_total_intersect, $value_result[$i]);
 							$array_total_intersect_name = $array_total_intersect_name.' & '.$name_result[$i];
 						}
-						echo '<tr><td>'.$array_total_intersect_name.'</td><td><a href="javascript:void(0);" class="content_detail" type="0" method="total" other="" case="total" title="Intersection of All Groups">'.count($array_total_intersect).'</a></td></tr>';
+
+						$count = count($array_total_intersect);
+						if($count > 0) {
+							echo '<tr><td>'.$array_total_intersect_name.'</td><td><a href="javascript:void(0);" class="content_detail" type="0" method="total" other="" case="total" title="Intersection of All Groups">'.$count.'</a></td></tr>';
+						}
 
 					}
 
@@ -817,10 +836,13 @@ if(isset($_GET['action']) && $_GET['action'] == "show_venn_diagram") {
 							if($i != $key){$array_other_groups = array_merge($array_other_groups, $value_result[$i]); }
 						}
 
+						$count = count(array_diff($value_result[$key], $array_other_groups));
+						if($count <= 0) continue;
+
 						echo '
 							<tr>
 								<td>'.$name_result[$key].' only</td>
-								<td><a href="javascript:void(0);" class="content_detail" type="0" method="'.$key.'_only" other="" case="unique" title="'.$name_result[$key].' Only">'.count(array_diff($value_result[$key], $array_other_groups)).'</td>
+								<td><a href="javascript:void(0);" class="content_detail" type="0" method="'.$key.'_only" other="" case="unique" title="'.$name_result[$key].' Only">' . $count . '</td>
 							</tr>';
 					}
 
@@ -828,17 +850,20 @@ if(isset($_GET['action']) && $_GET['action'] == "show_venn_diagram") {
 
 					// TOP 05: Union Groups
 
+
 					$array_other_groups = array();
 					for($i=0; $i<count($value_result); $i++){
 						$array_other_groups = array_unique(array_merge($array_other_groups, $value_result[$i]));
 					}
 
-					echo '
-						<tr>
-							<td>Combined</td>
-							<td><a href="javascript:void(0);" class="content_detail" type="0" method="union" other="" case="union" title="Union of All Groups">'.count($array_other_groups).'</td>
-						</tr>';
-
+					$count = count($array_other_groups);
+					if($count > 0) {
+						echo '
+							<tr>
+								<td>Combined</td>
+								<td><a href="javascript:void(0);" class="content_detail" type="0" method="union" other="" case="union" title="Union of All Groups">'.$count.'</td>
+							</tr>';
+					}
 
 					echo '
 					</tbody>
@@ -1291,6 +1316,7 @@ if(isset($_GET['action']) && $_GET['action'] == "show_venn_diagram") {
 		}
 		if(count($name_result)>3){
 			$output_name_array[] = implode('&', $name_result);
+			//print_r($array_total_intersect); exit();
 		}
 		fputcsv($file,$output_name_array);
 
@@ -1328,6 +1354,7 @@ if(isset($_GET['action']) && $_GET['action'] == "show_venn_diagram") {
 				for($j=$i+1; $j<count($value_result)-1; $j++){
 					for($k=$j+1; $k<count($value_result); $k++){
 						if(is_array($value_result[$i]) && is_array($value_result[$j]) && is_array($value_result[$k]) && $intersect_number[$i]>0 && $intersect_number[$j]>0 && $intersect_number[$k]>0){
+							//$temp_array = array_intersect($value_result[$i], $value_result[$j], $value_result[$k]);
 							if($intersect_number[$i.'_'.$j.'_'.$k] > $len){
 								$temp_array_compact = array();
 								foreach($intersect_values[$i.'_'.$j.'_'.$k] as $id=>$info){
@@ -1352,6 +1379,7 @@ if(isset($_GET['action']) && $_GET['action'] == "show_venn_diagram") {
 			fputcsv($file,$temp);
 		}
 
+		//fputcsv($file,$output_name_array);
 	fclose($file);
 
 

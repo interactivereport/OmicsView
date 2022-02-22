@@ -14,9 +14,7 @@ $lists_gene = $BXAF_MODULE_CONN -> get_all($sql);
 <html lang="en">
 <head>
 	<?php include_once($BXAF_CONFIG['BXAF_PAGE_HEADER']); ?>
-<link type="text/css" rel="stylesheet" href="css/style.css" />
-
-
+    
 	<script src="/<?php echo $BXAF_CONFIG['BXAF_SYSTEM_SUBDIR']; ?>library/jquery/jquery.form.min.js.php"></script>
 
 	<link href="/<?php echo $BXAF_CONFIG['BXAF_SYSTEM_SUBDIR']; ?>library/jquery-ui/jquery-ui.min.css.php" rel="stylesheet">
@@ -495,18 +493,23 @@ $lists_gene = $BXAF_MODULE_CONN -> get_all($sql);
 		<div id="bxaf_page_right" class="<?php echo $BXAF_CONFIG['BXAF_PAGE_CSS_RIGHT']; ?>">
 			<div id="bxaf_page_right_content" class="<?php echo $BXAF_CONFIG['BXAF_PAGE_CSS_RIGHT_CONTENT']; ?>">
 	  			<div class="container-fluid">
+                
+                
+                 	
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="Xpage-header pt-3">
+                          		Calculate Overlap Between Lists and Draw Venn Diagrams
+                            </h1>
+                            <hr>
+                        </div>
+                    </div>
 
 
 					<div class="my-3">
-						<h1>
-							Calculate Overlap Between Lists and Draw Venn Diagrams
-
-						</h1>
-
-						<div class="my-3">
-							Tip: This tool calculates the intersections between two or more lists. Please enter one ID per row, or upload a file.
+							This tool calculates the intersections between two or more lists. Please enter one ID per row, or upload a file.
 							<a href="venn_draw.php" class="mx-2 btn btn-success btn-sm"><i class="fas fa-link"></i> Draw the Area-Proportional Venn Diagram directly</a>
-						</div>
 					</div>
 
 

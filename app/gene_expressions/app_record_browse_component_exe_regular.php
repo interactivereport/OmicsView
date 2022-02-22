@@ -92,6 +92,14 @@ if ($rowCount == 0){
 				$currentSQLCondition = "(`{$field}` LIKE '%{$tempValue}')";
 			} elseif ($operator == 5){
 				$currentSQLCondition = "(`{$field}` IN ({$tempValue}))";
+			} elseif ($operator == 6){
+				$currentSQLCondition = "(`{$field}` > {$tempValue})";
+			} elseif ($operator == 7){
+				$currentSQLCondition = "(`{$field}` >= {$tempValue})";
+			} elseif ($operator == 8){
+				$currentSQLCondition = "(`{$field}` <= {$tempValue})";
+			} elseif ($operator == 9){
+				$currentSQLCondition = "(`{$field}` < {$tempValue})";
 			}
 			
 			

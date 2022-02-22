@@ -1,7 +1,5 @@
 <?php
 
-
-
 function prepareSingleBubblePlotHistogram($geneIndex = -1, $otherOptions = array()){
 	
 	global $APP_CONFIG;
@@ -495,14 +493,6 @@ function prepareSingleBubblePlotDataByGeneName_Plotly_Single_v2($geneIndex = -1,
 			}
 		}
 		
-		if (0){
-			$random = rand(1, 120);
-			if ($random > 2){
-				unset($allComparisonData[$tempKey]);
-				continue;
-			}
-		}
-		
 		if (!isset($results['Summary']['Log2FoldChange']['min'])){
 			$results['Summary']['Log2FoldChange']['min'] = $comparisonData['Log2FoldChange'];
 		}
@@ -909,7 +899,6 @@ function prepareSingleBubblePlotDataByGeneName_Plotly_Subplot_v2($geneIndex = -1
 	
 	$legendIndex = 0;
 	foreach($allComparisonData as $tempKey => $comparisonData){
-
 		
 		$comparisonIndex 	= $comparisonData['ComparisonIndex'];
 		$comparison 		= $allComparisons[$comparisonIndex];

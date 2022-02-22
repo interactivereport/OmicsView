@@ -91,6 +91,10 @@ $APP_CONFIG['APP']['Search']['Operator'][1]	= 'Is';
 $APP_CONFIG['APP']['Search']['Operator'][2]	= 'Is not';
 $APP_CONFIG['APP']['Search']['Operator'][3]	= 'Starts With';
 $APP_CONFIG['APP']['Search']['Operator'][4]	= 'Ends With';
+$APP_CONFIG['APP']['Search']['Operator'][6]	= '&gt;';
+$APP_CONFIG['APP']['Search']['Operator'][7]	= '&ge;';
+$APP_CONFIG['APP']['Search']['Operator'][8]	= '&le;';
+$APP_CONFIG['APP']['Search']['Operator'][9]	= '&lt;';
 
 //In Seconds, 0: Never expire
 $APP_CONFIG['APP']['Cache_Expiration_Length'] = 86400;

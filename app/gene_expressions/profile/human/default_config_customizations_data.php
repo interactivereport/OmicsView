@@ -1,9 +1,6 @@
 <?php
 
-//*********************
-// Data Info
-//*********************
-
+//Last Updated: 2022-02-21
 
 $currentTable = 'ComparisonData';
 $APP_CONFIG['DB_Dictionary'][$currentTable]['id'] 			= 'ComparisonData';
@@ -77,54 +74,6 @@ $APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['Control_SampleID_Coun
 $APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['SampleID_Count']['HideFromUpdate']			= 1;
 
 
-
-/*
-$currentTable = 'ExonJunctionAnnotation';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['id'] 			= 'ExonJunctionAnnotation';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Title'] 		= 'Exon Junction Annotation';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['File_Example'] = 'ExonJunctionAnnotation.txt';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Empty_Table']	= 0;
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['ExonJunctionIndex']['Data_Type'] 	= 'INTEGER(11)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['ComparisonID']['Data_Type'] 		= 'VARCHAR(256)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['Strand']['Data_Type'] 				= 'VARCHAR(4)';
-
-
-
-$currentTable = 'ExonJunctionData';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['id'] 			= 'ExonJunctionData';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Title'] 		= 'Exon Junction Data';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['File_Example'] = 'ExonJunctionData.txt';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Empty_Table']	= 0;
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['SampleIndex']['Data_Type'] 			= 'INTEGER(11)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['ExonJunctionIndex']['Data_Type'] 	= 'INTEGER(11)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['GeneIndex']['Data_Type']			= 'INTEGER(11)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['ReadCount']['Data_Type'] 			= 'VARCHAR(256)';
-
-
-
-$currentTable = 'FusionAnnotation';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['id'] 			= 'FusionAnnotation';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Title'] 		= 'Fusion Annotation';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['File_Example'] = 'FusionAnnotation.txt';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Empty_Table']	= 0;
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['FusionIndex']['Data_Type'] 			= 'INTEGER(11)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['FusionID']['Data_Type'] 			= 'VARCHAR(256)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['Strand']['Data_Type'] 				= 'VARCHAR(4)';
-
-
-
-$currentTable = 'FusionData';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['id'] 			= 'FusionData';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Title'] 		= 'Fusion Data';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['File_Example']	= 'FusionData.txt';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Empty_Table']	= 0;
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['SampleIndex']['Data_Type'] 			= 'INTEGER(11)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['FusionIndex']['Data_Type'] 			= 'INTEGER(11)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['SeedCount']['Data_Type'] 			= 'VARCHAR(16)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['RescuedCount']['Data_Type'] 		= 'VARCHAR(16)';
-*/
-
-
 $currentTable = 'GeneAnnotation';
 $APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['id'] 			= 'GeneAnnotation';
 $APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Title'] 		= 'Gene Annotation';
@@ -183,7 +132,6 @@ $APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['AccNum']['Title'] 			
 $APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['Biotype']['Title'] 					= 'Biotype';
 
 
-
 $currentTable = 'GeneFPKM';
 $APP_CONFIG['DB_Dictionary'][$currentTable]['id'] 			= 'GeneFPKM';
 $APP_CONFIG['DB_Dictionary'][$currentTable]['Title'] 		= 'Gene FPKM';
@@ -210,48 +158,6 @@ $APP_CONFIG['DB_Dictionary'][$currentTable]['SQL']['Value']['Data_Type'] 				= '
 $APP_CONFIG['DB_Dictionary'][$currentTable]['SQL']['Value']['Title']	 				= 'Gene Level Expression';
 $APP_CONFIG['DB_Dictionary'][$currentTable]['SQL_Extra'][] = 'UNIQUE KEY `SampleIndex_GeneIndex` (`SampleIndex`,`GeneIndex`)';
 
-
-/*
-$currentTable = 'Mutations';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['id'] 			= 'Mutations';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Title'] 		= 'Mutations';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['File_Example'] = 'Mutations.txt';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Empty_Table']	= 0;
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['MutationIndex']['Data_Type'] 		= 'INTEGER(11)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['GeneID']['Data_Type'] 				= 'VARCHAR(256)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['GeneName']['Data_Type'] 			= 'VARCHAR(256)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['TranscriptID']['Data_Type'] 		= 'VARCHAR(256)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['TranscriptName']['Data_Type']		= 'VARCHAR(256)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['TranscriptStrand']['Data_Type'] 	= 'VARCHAR(4)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['Cosmic_ID']['Data_Type'] 			= 'VARCHAR(256)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['Cosmic_Gene']['Data_Type']			= 'VARCHAR(256)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['Cosmic_Strand']['Data_Type'] 		= 'VARCHAR(4)';
-
-
-
-$currentTable = 'Mutations_Canonical';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['id'] 			= 'Mutations_Canonical';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Title'] 		= 'Mutations Canonical';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['File_Example'] = 'Mutations_Canonical.txt';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Empty_Table']	= 0;
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['MutationIndex']['Data_Type'] 		= 'INTEGER(11)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['GeneID']['Data_Type'] 				= 'VARCHAR(256)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['GeneName']['Data_Type'] 			= 'VARCHAR(256)';
-
-
-
-$currentTable = 'ProbeLevelExpression';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['id'] 			= 'ProbeLevelExpression';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Title'] 		= 'Probe Level Expression';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['File_Example'] = 'ProbeLevelExpression.txt';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Empty_Table']	= 0;
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['SampleIndex']['Data_Type'] 		= 'INTEGER(11)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['GeneIndex']['Data_Type'] 		= 'INTEGER(11)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['ProbeName']['Data_Type'] 		= 'VARCHAR(256)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['Expression']['Data_Type'] 		= 'VARCHAR(256)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['DetectionPValue']['Data_Type'] 	= 'VARCHAR(256)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['Percentile']['Data_Type'] 		= 'VARCHAR(256)';
-*/
 
 
 $currentTable = 'Projects';
@@ -292,18 +198,6 @@ $APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['Disease']['Title']			
 $APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['PlatformType']['Title']			= 'Platform Type';
 $APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['PlatformProvider']['Title']		= 'Platform Provider';
 
-
-
-/*
-$currentTable = 'RnaSeqMutation';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['id'] 			= 'RnaSeqMutation';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Title'] 		= 'RNASeq Mutation';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['File_Example'] = 'RnaSeqMutation.txt';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Empty_Table']	= 0;
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['SampleIndex']['Data_Type'] 		= 'INTEGER(11)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['MutationIndex']['Data_Type'] 	= 'INTEGER(11)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['GeneIndex']['Data_Type'] 		= 'INTEGER(11)';
-*/
 
 
 $currentTable = 'Samples';
@@ -378,28 +272,6 @@ $APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL_Extra'][] = 'UNIQUE KEY 
 $APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL_Extra'][] = 'UNIQUE KEY `SampleID_Unique` (`SampleID`)';
 
 
-/*
-$currentTable = 'TranscriptAnnotation';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['id'] 			= 'TranscriptAnnotation';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Title'] 		= 'Transcript Annotation';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['File_Example'] = 'TranscriptAnnotation.txt';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Empty_Table']	= 0;
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['TranscriptIndex']['Data_Type'] 	= 'INTEGER(11)';
-
-
-
-$currentTable = 'TranscriptFPKM';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['id'] 			= 'TranscriptFPKM';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Title'] 		= 'Transcript FPKM';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['File_Example'] = 'TranscriptFPKM.txt';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Empty_Table']	= 0;
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['SampleIndex']['Data_Type'] 		= 'INTEGER(11)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['TranscriptIndex']['Data_Type'] 	= 'INTEGER(11)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['FPKM']['Data_Type'] 			= 'VARCHAR(16)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['Count']['Data_Type'] 			= 'VARCHAR(16)';
-
-*/
-
 $currentTable = 'HumanGeneList';
 $APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['id'] 			= 'HumanGeneList';
 $APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Title'] 		= 'Human Gene List';
@@ -415,21 +287,6 @@ $APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['Uniprot']['Data_Type'
 $APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['AccNum']['Data_Type'] 			= 'TEXT';
 
 
-/*
-$currentTable = 'MouseGeneList';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['id'] 			= 'MouseGeneList';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Title'] 		= 'Mouse Gene List';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['File_Example'] = 'MouseGeneList.txt';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['Empty_Table']	= 0;
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['geneID']['Data_Type'] 			= 'INTEGER(11)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['Symbol']['Data_Type'] 			= 'VARCHAR(255)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['alias']['Data_Type'] 			= 'VARCHAR(255)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['GeneName']['Data_Type'] 			= 'VARCHAR(255)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['Ensembl']['Data_Type'] 			= 'VARCHAR(255)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['Unigene']['Data_Type'] 			= 'VARCHAR(255)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['Uniprot']['Data_Type'] 			= 'VARCHAR(255)';
-$APP_CONFIG_CUSTOM['DB_Dictionary'][$currentTable]['SQL']['AccNum']['Data_Type'] 			= 'TEXT';
-*/
 
 
 unset($currentTable);

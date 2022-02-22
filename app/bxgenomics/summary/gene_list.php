@@ -123,7 +123,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'list'){
 <html lang="en">
 <head>
 	<?php include_once($BXAF_CONFIG['BXAF_PAGE_HEADER']); ?>
-	<link type="text/css" rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 	<?php if(file_exists($BXAF_CONFIG['BXAF_PAGE_MENU'])) include_once($BXAF_CONFIG['BXAF_PAGE_MENU']); ?>
@@ -134,14 +133,26 @@ if (isset($_GET['action']) && $_GET['action'] == 'list'){
 
 		<div id="bxaf_page_right" class="<?php echo $BXAF_CONFIG['BXAF_PAGE_CSS_RIGHT']; ?>">
 
+			
 			<div id="bxaf_page_right_content" class="w-100 p-2">
+            <div class='container-fluid'>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="Xpage-header pt-3">
+                      Human Gene List
+                        </h1>
+                        <hr>
+                    </div>
+                </div>
 
-				<h1>
-					Human Gene List
-
+				<div>
 					<a href='Javascript: void(0);' onclick="if( $('#form_main').hasClass('hidden') ) $('#form_main').removeClass('hidden'); else $('#form_main').addClass('hidden');" style='font-size: 1rem;'><i class='fas fa-search'></i> Advanced Search</a>
 					<a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="mx-1" style='font-size: 1rem;'><i class='fas fa-sync'></i> Reset Search Condition</a>
-				</h1>
+				</div>
+            
+
+				
 
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="" id="form_main" method="get">
 
@@ -155,15 +166,15 @@ if (isset($_GET['action']) && $_GET['action'] == 'list'){
 							</div>
 
 							<select class="custom-select" name="Category" id="Category" placeholder="List Category">
-	<?php
-		$sql = "SELECT DISTINCT `Category` FROM `tbl_go_gene_list` WHERE `Species` = '{$BXAF_CONFIG['SPECIES']}' ";
-		$options = $BXAF_MODULE_CONN->get_col($sql);
-		array_unshift($options, '');
-		$default = '';
-		if($_GET['Category'] != '') $default = $_GET['Category'];
-		foreach($options as $opt) echo "<option value='$opt' " . ($default == $opt ? 'selected' : '') . ">$opt</option>";
-	?>
-							  </select>
+								<?php
+                                    $sql = "SELECT DISTINCT `Category` FROM `tbl_go_gene_list` WHERE `Species` = '{$BXAF_CONFIG['SPECIES']}' ";
+                                    $options = $BXAF_MODULE_CONN->get_col($sql);
+                                    array_unshift($options, '');
+                                    $default = '';
+                                    if($_GET['Category'] != '') $default = $_GET['Category'];
+                                    foreach($options as $opt) echo "<option value='$opt' " . ($default == $opt ? 'selected' : '') . ">$opt</option>";
+                                ?>
+							 </select>
 						</div>
 
 						<div class="col-md-12 col-lg-3 my-2">
@@ -238,7 +249,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'list'){
 
 
             </div>
-
+			</div>
 		    <?php if(file_exists($BXAF_CONFIG['BXAF_PAGE_FOOTER'])) include_once($BXAF_CONFIG['BXAF_PAGE_FOOTER']); ?>
 
 		</div>

@@ -68,7 +68,27 @@ fclose($file);
 <script type="text/javascript" src="../library/bootbox.min.js.php"></script>
 <script type="text/javascript" src="../library/plotly.min.js"></script>
 <script type="text/javascript" src="../library/config.js"></script>
-<script type="text/javascript" src="../library/dataTable/dataTable.min.js.php"></script>
+
+<?php
+
+echo "
+
+		<link rel='stylesheet' type='text/css' href='../../gene_expressions/js/dataTables/latest/jquery.dataTables.min.css'>\n
+    	<link rel='stylesheet' type='text/css' href='../../gene_expressions/js/dataTables.buttons/latest/buttons.dataTables.min.css'>\n
+    	<link rel='stylesheet' type='text/css' href='../../gene_expressions/js/dataTables.select/latest/select.dataTables.min.css'>\n
+
+		<script type='text/javascript' src='../../gene_expressions/js/dataTables/latest/jquery.dataTables.min.js'></script>\n
+		<script type='text/javascript' src='../../gene_expressions/js/dataTables.buttons/latest/dataTables.buttons.min.js'></script>\n
+		<script type='text/javascript' src='../../gene_expressions/js/dataTables.buttons/latest/buttons.flash.min.js'></script>\n
+		<script type='text/javascript' src='../../gene_expressions/js/jszip/latest/jszip.min.js'></script>\n
+		<script type='text/javascript' src='../../gene_expressions/js/pdfmake/latest/pdfmake.min.js'></script>\n
+		<script type='text/javascript' src='../../gene_expressions/js/pdfmake/latest/vfs_fonts.js'></script>\n
+		<script type='text/javascript' src='../../gene_expressions/js/dataTables.buttons/latest/buttons.html5.min.js'></script>\n
+		<script type='text/javascript' src='../../gene_expressions/js/dataTables.buttons/latest/buttons.print.min.js'></script>\n
+		<script type='text/javascript' src='../../gene_expressions/js/dataTables.buttons/latest/buttons.colVis.min.js'></script>\n
+		<script type='text/javascript' src='../../gene_expressions/js/dataTables.select/latest/dataTables.select.min.js'></script>\n";
+		
+?>
 
 
 <style>
@@ -110,10 +130,8 @@ strong {
               <?php
                 $index = 1;
                 foreach ($header as $colname) {
-                  echo '<option value="' . $colname . '">';
-                  echo 'PC' . $index;
-                  echo '</option>';
-                  $index++;
+	                  echo "<option value='{$colname}'>PC{$index}</option>";
+    	              $index++;
                 }
               ?>
             </select>
@@ -122,23 +140,7 @@ strong {
             <!-- Data Table -->
             <!--------------------------------------------------------------------------------------------->
             <div id="div_variables_datatable">
-            <i class="fas fa-spin fa-spinner fa-pulse"></i> Loading the content...
-            <?php /*
-              <table class="table table-sm table-striped table-bordered" id="variables_datatable">
-                <thead>
-                  <tr>
-                    <th>Variable</th>
-                    <th>Contrib</th>
-                    <th>Coord</th>
-                    <th>Cos2</th>
-                  </tr>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
-			  */ ?>
-              
-
+	            <i class="fas fa-spin fa-spinner fa-pulse"></i> Loading the content...
             </div>
 
 
@@ -161,7 +163,7 @@ strong {
                 <i class="fa fa-upload"></i> Upload
               </button>
             </form>
-            <div id="container_attributes_file" class="w-100">
+            <div id="container_attributes_file" class="w-100" style='display:none;'>
             <i class="fas fa-spin fa-spinner fa-pulse"></i> Loading the content...
               <table class="table table-bordered table-striped table-sm" id="table_attributes">
                 <thead><tr></tr></thead>
@@ -288,7 +290,7 @@ function onChangeDimHandler() {
       table_content += '<table class="table table-sm table-striped table-bordered" id="variables_datatable">';
       table_content += '  <thead>';
       table_content += '    <tr>';
-      table_content += '      <th>Variable</th>';
+      table_content += '      <th>Sample Name</th>';
       table_content += '      <th>Contrib</th>';
       table_content += '      <th>Coord</th>';
       table_content += '      <th>Cos2</th>';
@@ -314,7 +316,25 @@ function onChangeDimHandler() {
       table_content += '</table>';
 
       $('#div_variables_datatable').html(table_content);
-      $('#variables_datatable').DataTable();
+      $('#variables_datatable').DataTable({
+		dom: '<"row col-12"l>Bfrtip',
+		buttons: [
+            {
+                extend: 'copyHtml5',
+            },
+			{
+                extend: 'csvHtml5',
+            },
+            {
+                extend: 'excelHtml5',
+            },
+            {
+                extend: 'pdfHtml5',
+            },
+
+        ]  
+		  
+	  });
 
 
     }

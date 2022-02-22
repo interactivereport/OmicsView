@@ -37,6 +37,9 @@ if (true){
 							echo "<div class='row'>";
 								echo "<div class='col-12'>";
 									echo "<h1 class='Xpage-header pt-3'>{$PAGE['Header']}</h1>";
+									
+									echo general_print_tutorial_link();
+									
 									echo "<hr/>";
 								echo "</div>";
 							echo "</div>";

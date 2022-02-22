@@ -1,10 +1,10 @@
 <?php
 
-function log2($number){
+function log2($number = NULL){
 	return log($number, 2);
 }
 
-function calculateStdev($array){
+function calculateStdev($array = NULL){
 	$sum 	= array_sum($array);
 	$count 	= array_size($array);
 	
@@ -22,7 +22,7 @@ function calculateStdev($array){
 	}
 }
 
-function calculateMean($array){
+function calculateMean($array = NULL){
 	$sum 	= array_sum($array);
 	$count 	= array_size($array);
 	
@@ -35,7 +35,7 @@ function calculateMean($array){
 	return $mean;
 }
 
-function calculateZScore($number, $mean, $stdev){
+function calculateZScore($number = NULL, $mean = NULL, $stdev = NULL){
 	
 	$number = floatval($number);
 	$mean 	= floatval($mean);
@@ -267,7 +267,7 @@ function getCorrelationCoefficient_Spearman_Details($argOrg1 = array(), $argOrg2
 
 
 //http://www.clemson.edu/ces/phoenix/tutorials/regression/index.html
-function getLinearRegression($arrayX, $arrayY){
+function getLinearRegression($arrayX = NULL, $arrayY = NULL){
 	cleanTwoNumericArrays($arrayX, $arrayY);
 	
 	$arrayX = array_values($arrayX);
@@ -301,7 +301,7 @@ function getLinearRegression($arrayX, $arrayY){
 
 }
 
-function getRank($candidate, $allCandidates){
+function getRank($candidate = NULL, $allCandidates = NULL){
 	
 	arsort($allCandidates);
 	$rankArray 	= array_keys($allCandidates);
@@ -318,7 +318,7 @@ function getRank($candidate, $allCandidates){
 
 
 
-function getRankArray($allCandidates){
+function getRankArray($allCandidates = NULL){
 	
 	$rankArray = $allCandidates;
 	
@@ -335,7 +335,7 @@ function getRankArray($allCandidates){
 }
 
 
-function cleanTwoNumericArrays(&$array1, &$array2){
+function cleanTwoNumericArrays(&$array1 = NULL, &$array2 = NULL){
 	
 	
 	foreach($array1 as $tempKey => $tempValue){

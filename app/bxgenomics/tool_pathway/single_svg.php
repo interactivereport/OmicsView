@@ -54,7 +54,6 @@ $(document).ready(function() {
 
 
 	var annotation_text = 'Header';
-	
 	// Click on gene box
 	$(document).on('click', '#pvjs-widget', function() {
 

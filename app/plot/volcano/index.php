@@ -128,23 +128,29 @@ $(document).ready(function() {
       <div id="bxaf_page_right_content" class="<?php echo $BXAF_CONFIG['BXAF_PAGE_CSS_RIGHT_CONTENT']; ?>">
 
 
-        <div class="container-fluid px-0 pt-3">
-
-    			<h1 class="page-header">
-    				Volcano Plot 
-    				<?php
-    				if ($COMPARISON_ID_DEFAULT) {
-    					echo '
-    					<a href="../search_comparison/comparison_gene_table.php?id=' . $ROWID . '" class="font-sanspro-300 font_normal">
-    						<i class="fa fa-angle-double-right"></i> View Genes
-    					</a> &nbsp;';
-    				}
-    				?>
-    				<!-- <a href="example.php" id="volcano_btn_load_demo" class="font-sanspro-300 font_normal">
-    					<i class="fa fa-angle-double-right"></i> Load Example
-    				</a> -->
-    			</h1>
-          <hr />
+        <div class="container-fluid xpx-0 xpt-3">
+				<div class="row">
+                	<div class="col-12">
+                    	<h1 class="Xpage-header pt-3">Volcano Plot</h1>
+                            <?php
+							
+							if (true){
+								echo general_print_tutorial_link('Volcano Plot');
+							}
+							
+                            if ($COMPARISON_ID_DEFAULT) {
+                                echo '
+								&nbsp;&nbsp;
+                                <a href="../search_comparison/comparison_gene_table.php?id=' . $ROWID . '" class="font-sanspro-300 font_normal">
+                                    <i class="fa fa-angle-double-right"></i> View Genes
+                                </a>';
+                            }
+                            ?>
+                		
+                        <hr>
+                    </div>
+                </div>
+    			
     			<div class="row mx-0 p-l-1">
     				<div class="col-md-12">
     				<form id="form_valcano_chart" method="post" enctype="multipart/form-data">

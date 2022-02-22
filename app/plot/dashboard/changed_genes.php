@@ -115,11 +115,19 @@ echo '
 
       <div id="bxaf_page_right_content" class="w-100 p-2">
 
-    		<div class="container-fluid">
-    		<h1 class="pt-3">
-    			<?php echo $APP_MESSAGE['Significantly Changed Genes']; ?>
-    		</h1>
-        <hr />
+    		
+            
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="Xpage-header pt-3">
+                      <?php echo $APP_MESSAGE['Significantly Changed Genes']; ?>
+                        </h1>
+                        <hr>
+                    </div>
+                </div>
+            
     		<div class="row mx-0 pl-3" id="first_form_div">
 
     			<form id="form_changed_genes" method="post" enctype="multipart/form-data">

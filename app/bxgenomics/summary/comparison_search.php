@@ -8,7 +8,6 @@ include_once(__DIR__ . "/config.php");
 <html lang="en">
 <head>
 	<?php include_once($BXAF_CONFIG['BXAF_PAGE_HEADER']); ?>
-	<link type="text/css" rel="stylesheet" href="css/style.css" />
 
 	<link href="/<?php echo $BXAF_CONFIG['BXAF_SYSTEM_SUBDIR']; ?>library/jquery-ui/jquery-ui.min.css.php" rel="stylesheet">
 	<script src="/<?php echo $BXAF_CONFIG['BXAF_SYSTEM_SUBDIR']; ?>library/jquery-ui/jquery-ui.min.js.php"></script>
@@ -30,17 +29,23 @@ include_once(__DIR__ . "/config.php");
         <?php if(file_exists($BXAF_CONFIG['BXAF_PAGE_LEFT'])) include_once($BXAF_CONFIG['BXAF_PAGE_LEFT']); ?>
 
 		<div id="bxaf_page_right" class="<?php echo $BXAF_CONFIG['BXAF_PAGE_CSS_RIGHT']; ?>">
-
+			
 			<div id="bxaf_page_right_content" class="w-100 p-2">
+				<div class="container-fluid">
+                
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="Xpage-header pt-3">
+                           Search Similar Comparisons Based on GO Enrichment Results
+                            </h1>
+                            <?php echo general_print_tutorial_link('Similar Comparison (GO)'); ?>
+                            <hr>
+                        </div>
+                    </div>
 
+				
 
-				<h1>
-					Search Similar Comparisons Based on GO Enrichment Results
-
-				</h1>
-				<hr class="w-100 my-1" />
-
-				<div class="my-5 w-100">
+				<div xclass="my-5 w-100">
 
 	                <form class="" id="form_main" method="post">
 
@@ -160,6 +165,7 @@ include_once(__DIR__ . "/config.php");
 				</div>
 
 
+            </div>
             </div>
 
 		    <?php if(file_exists($BXAF_CONFIG['BXAF_PAGE_FOOTER'])) include_once($BXAF_CONFIG['BXAF_PAGE_FOOTER']); ?>

@@ -1,23 +1,29 @@
 <?php
 
-function printrExpress($array, $sortKey = 0){
+function printrExpress($array = NULL, $sortKey = 0){
 	if ($sortKey){
 		natksort($array);
 	}
 	return "<pre>" . print_r($array, true) . "</pre>";
 }
 
-function printMsg($string){
-	return "\n\n\n<p>{$string}</p>\n\n\n";
+function printMsg($string = ''){
+	
+	if (php_sapi_name() === 'cli'){
+		return "{$string}\n";	
+	} else {
+		return "\n\n\n<p>{$string}</p>\n\n\n";
+	}
 }
 
-function natksort(&$array){
+
+function natksort(&$array = NULL){
 	if (array_size($array) > 0){
 		uksort($array, 'strnatcasecmp');
 	}
 }
 
-function array_size($array){
+function array_size($array = NULL){
 	if (is_array($array)){
 		return intval(sizeof($array));
 	} else {
@@ -25,7 +31,7 @@ function array_size($array){
 	}
 }
 
-function array_clean($array, $addslashes = 0, $unique = 1, $sort = 0, $preserveKey = 0){
+function array_clean($array = NULL, $addslashes = 0, $unique = 1, $sort = 0, $preserveKey = 0){
 
 	if (array_size($array) > 0){
 		$array = array_map('trim', $array);
@@ -49,12 +55,12 @@ function array_clean($array, $addslashes = 0, $unique = 1, $sort = 0, $preserveK
 	return $array;
 }
 
-function array_iunique($array) { 
+function array_iunique($array = NULL) { 
     $lowered = array_map('strtolower', $array); 
     return array_intersect_key($array, array_unique($lowered)); 
 } 
 
-function naturalSort2DArray(&$array){
+function naturalSort2DArray(&$array = NULL){
 	
 	if (!function_exists('naturalSort2DArrayCompare')){
 		function naturalSort2DArrayCompare($a, $b){
@@ -140,7 +146,7 @@ if(!function_exists("array_column")){
 }
 
 
-function printTableHTML($tableContent, $compact = 1, $striped = 0, $tableOnly = 1, $divClass = 'col-lg-5 col-sm-12', $tableClass = ''){
+function printTableHTML($tableContent = NULL, $compact = 1, $striped = 0, $tableOnly = 1, $divClass = 'col-lg-5 col-sm-12', $tableClass = ''){
 	
 	
 	if ((array_size($tableContent['Header']) <= 0) && (array_size($tableContent['Body']) <= 0)) return false;
@@ -217,7 +223,7 @@ function getTableClass($compact = 1, $striped = 0){
 	return implode(' ', $classes);
 }
 
-function printFontAwesomeIcon($icon, $quoteType = 1, $fixWidth = 1){
+function printFontAwesomeIcon($icon = NULL, $quoteType = 1, $fixWidth = 1){
 	
 	global $APP_CONFIG;
 	
@@ -233,7 +239,7 @@ function printFontAwesomeIcon($icon, $quoteType = 1, $fixWidth = 1){
 }
 
 
-function getAlerts($message, $type = 'danger', $class='col-lg-8 col-md-12 col-xs-12 col-sm-12'){
+function getAlerts($message = NULL, $type = 'danger', $class='col-lg-8 col-md-12 col-xs-12 col-sm-12'){
 
 	$results .= "<div class='row'>";
 		$results .=  "<div class='{$class}'>";
@@ -248,7 +254,7 @@ function getAlerts($message, $type = 'danger', $class='col-lg-8 col-md-12 col-xs
 }
 
 
-function endsWith($haystack, $needle){
+function endsWith($haystack = NULL, $needle = NULL){
     $length = strlen($needle);
     if ($length == 0) {
         return true;
@@ -258,7 +264,7 @@ function endsWith($haystack, $needle){
 }
 
 
-function printModal($modalID, $modalTitle, $modalBody, $modalButtonText, $modalBodyClass = '', $modalDialogClass = '', $modalButtonID = '', $disableClose = 0){
+function printModal($modalID = NULL, $modalTitle = NULL, $modalBody = NULL, $modalButtonText = NULL, $modalBodyClass = '', $modalDialogClass = '', $modalButtonID = '', $disableClose = 0){
 	
 	unset($results);
 	
@@ -304,7 +310,7 @@ function printModal($modalID, $modalTitle, $modalBody, $modalButtonText, $modalB
 }
 
 
-function printConfirmation($modalID, $modalTitle, $modalBody, $modalButtonTextAction = 'Close', $modalButtonTextCancel = 'Cancel', $modalButtonActionClass = 'actionTrigger'){
+function printConfirmation($modalID = NULL, $modalTitle = NULL, $modalBody = NULL, $modalButtonTextAction = 'Close', $modalButtonTextCancel = 'Cancel', $modalButtonActionClass = 'actionTrigger'){
 	
 	unset($results);
 	
@@ -335,7 +341,7 @@ function printConfirmation($modalID, $modalTitle, $modalBody, $modalButtonTextAc
 	
 }
 
-function splitData($string){
+function splitData($string = NULL){
 	
 	if (!is_array($string)){
 		$string = trim($string);
@@ -362,7 +368,7 @@ function splitData($string){
 }
 
 
-function startTimer($key){
+function startTimer($key = NULL){
 	
 	if (!isDebugMode()) return false;
 	
@@ -376,7 +382,7 @@ function startTimer($key){
 
 
 
-function processTimer($timer, $format = 0){
+function processTimer($timer = NULL, $format = 0){
 	
 	global $APP_CONFIG;
 	
@@ -459,7 +465,7 @@ function isDebugMode(){
 	return $_SESSION['DEBUG_MODE'];	
 }
 
-function displayLongText($string, $length = -1){
+function displayLongText($string = NULL, $length = -1){
 	
 	global $BXAF_CONFIG;
 	
@@ -496,7 +502,7 @@ function isAdminUser($email = ''){
 	
 }
 
-function getSVGCode($svg){
+function getSVGCode($svg = NULL){
 	
 	if (strpos($svg, 'data:image/svg+xml,') === 0){
 
@@ -511,7 +517,7 @@ function getSVGCode($svg){
 	
 }
 
-function guessFileDelimiter($file){
+function guessFileDelimiter($file = NULL){
 	
 	if (!file_exists($file)){
 		return false;
@@ -610,7 +616,7 @@ function getFileHeader($file = '', $delimiter = ''){
 }
 
 
-function readFirstFewLinesFromFile($file, $rowCount = 5, $combine = 1, $delimiter){
+function readFirstFewLinesFromFile($file = NULL, $rowCount = 5, $combine = 1, $delimiter = NULL){
 
 	
 	if (!file_exists($file)){
@@ -708,7 +714,7 @@ function readFirstFewLinesFromFile($file, $rowCount = 5, $combine = 1, $delimite
 }
 
 
-function sanitizeColumnHeader($string){
+function sanitizeColumnHeader($string = NULL){
 
 	$string = str_replace('  ', ' ', $string);
 	$string = str_replace(array('.', '[', ',', ' '), '_', $string);
@@ -720,7 +726,7 @@ function sanitizeColumnHeader($string){
 	return $string;
 }
 
-function sanitizeColumnHeader2($string){
+function sanitizeColumnHeader2($string = NULL){
 
 	$string = sanitizeColumnHeader($string);
 	$string = str_replace('_', '', $string);
@@ -728,7 +734,7 @@ function sanitizeColumnHeader2($string){
 	return $string;
 }
 
-function sanitizeJavaScriptValue($string){
+function sanitizeJavaScriptValue($string = NULL){
 	$string = trim($string);
 	$string = str_replace('"', '', $string);
 	return $string;	
@@ -742,7 +748,7 @@ function getUniqueID(){
 	return md5($APP_CONFIG['User_Info']['ID'] . '_' . microtime(true) . mt_rand());
 }
 
-function printWizard($wizard){
+function printWizard($wizard = NULL){
 
 	$size = array_size($wizard);
 	
@@ -829,7 +835,7 @@ function printWizard($wizard){
 }
 
 
-function fromCamelCase($input) {
+function fromCamelCase($input = NULL) {
 	
 	$input = trim($input);
 	
@@ -851,11 +857,11 @@ function fromCamelCase($input) {
 	return $input;
 }
 
-function fixEncoding($string){
+function fixEncoding($string = NULL){
 	return recode_string("us..flat", $string);	
 }
 
-function ucwords2($title){
+function ucwords2($title = NULL){
 	
 	$title = trim($title);
 	
@@ -878,7 +884,7 @@ function ucwords2($title){
 }
 
 
-function string2number($string){
+function string2number($string = NULL){
 	$string = trim($string);
 	
 	if ($string == '') return '';
@@ -949,7 +955,7 @@ function getRandomRGBColor($identifier = '', &$colorLibrary = array(), $colorInd
 	
 }
 
-function roundNumber($string, $decimal){
+function roundNumber($string = NULL, $decimal = NULL){
 	
 	$string = str_replace('E', 'e', $string);
 	
@@ -967,7 +973,7 @@ function roundNumber($string, $decimal){
 	return $results;
 }
 
-function formatFileSize($bytes){
+function formatFileSize($bytes = NULL){
 	
 	if ($bytes >= 1073741824){
 		$bytes = number_format($bytes / 1073741824, 2) . ' GB';

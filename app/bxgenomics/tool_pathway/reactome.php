@@ -645,12 +645,18 @@ if (isset($_GET['pathway']) && $_GET['pathway'] != ''){
         <?php if(file_exists($BXAF_CONFIG['BXAF_PAGE_LEFT'])) include_once($BXAF_CONFIG['BXAF_PAGE_LEFT']); ?>
 		<div id="bxaf_page_right" class="<?php echo $BXAF_CONFIG['BXAF_PAGE_CSS_RIGHT']; ?>">
 			<div id="bxaf_page_right_content" class="w-100 p-2">
-
-                <div class="d-flex">
-                    <h1>Reactome Pathway Visualization</h1>
-                    <div class="ml-5 mt-2 text-muted"></div>
-                </div>
-                <hr class="w-100 my-1" />
+            
+	            <div class="container-fluid">
+                
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="Xpage-header pt-3">
+                            Reactome Pathway Visualization
+                            </h1>
+                            <hr/>
+                        </div>
+                    </div>
+                
 
                     <form class="my-2" id="form_main" method="post" enctype="multipart/form-data">
 
@@ -892,6 +898,7 @@ if (isset($_GET['pathway']) && $_GET['pathway'] != ''){
     </div>
 
 
+            </div>
             </div>
 
 		    <?php if(file_exists($BXAF_CONFIG['BXAF_PAGE_FOOTER'])) include_once($BXAF_CONFIG['BXAF_PAGE_FOOTER']); ?>

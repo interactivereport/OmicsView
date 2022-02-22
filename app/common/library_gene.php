@@ -222,6 +222,22 @@ function search_gene_indexes($gene_names = NULL){
 	
 }
 
+function genes_temporary_enables_TPM(){
+	global $BXAF_CONFIG;
+	
+	$BXAF_CONFIG['USE_TPM_ALWAYS_OVERRIDE'] = true;
+	
+	return true;
+}
+
+function genes_temporary_disables_TPM(){
+	global $BXAF_CONFIG;
+	
+	$BXAF_CONFIG['USE_TPM_ALWAYS_OVERRIDE'] = false;
+	
+	return true;
+}
+
 
 function gene_uses_TPM(){
 
@@ -229,8 +245,15 @@ function gene_uses_TPM(){
 	
 	if (!$BXAF_CONFIG['HAS_TPM_DATA']) return false;
 	
-	if (isset($BAXF_CACHE[__FUNCTION__])){
-		return $BAXF_CACHE[__FUNCTION__];
+	
+	if (!$BXAF_CONFIG['USE_TPM_ALWAYS_OVERRIDE']){
+		if (isset($BAXF_CACHE[__FUNCTION__])){
+			return $BAXF_CACHE[__FUNCTION__];
+		}
+	}
+	
+	if ($BXAF_CONFIG['USE_TPM_ALWAYS_OVERRIDE']){
+		return true;	
 	}
 	
 	if (isset($_SESSION['User_Settings']['Gene_Data_Type'])){
@@ -255,9 +278,7 @@ function gene_uses_TPM(){
 	}
 	
 	if ($results == ''){
-		
 		$results = $BXAF_CONFIG['USE_TPM_ALWAYS'];
-
 	} else {
 	
 		$results = unserialize($results);

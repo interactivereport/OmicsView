@@ -2,7 +2,7 @@
 include_once('config_init.php');
 
 $PAGE['Title'] 		= "Import Internal Data";
-//$PAGE['Header']		= "Import Internal Data";
+$PAGE['Header']		= "Import Internal Data";
 $PAGE['Category']	= "List";
 
 $PAGE['URL']		= 'app_internal_data_import.php';

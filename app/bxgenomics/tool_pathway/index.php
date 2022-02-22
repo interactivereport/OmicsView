@@ -109,14 +109,18 @@ if (isset($_GET['pathway']) && $_GET['pathway'] != ''){
 
 
           		<div class="container-fluid">
-
-                    <div class="d-flex">
-                        <h3>WikiPathway Visualization</h3>
-                        <div class="ml-5 mt-2"><a href="<?php echo $_SERVER['PHP_SELF']; ?>"><i class="fas fa-sync"></i> Start Over</a></div>
-                        <div class="ml-5 mt-2 text-muted">Note: <span class="text-danger">*</span> denotes required fields.</div>
+                
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="Xpage-header pt-3">
+                            	WikiPathway Visualization
+                            </h1>
+                            
+                            <?php echo general_print_tutorial_link('WikiPathway Visualization'); ?>
+                            <hr>
+                        </div>
                     </div>
-                    <hr class="w-100 my-1" />
-
+                    
 
                     <div class="mt-3 w-100">
                         <div class="form-group">

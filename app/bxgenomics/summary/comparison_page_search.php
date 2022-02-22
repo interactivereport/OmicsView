@@ -41,15 +41,11 @@ if(isset($_GET['action']) && $_GET['action'] == "get_gene_list") {
 	exit();
 }
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<?php include_once($BXAF_CONFIG['BXAF_PAGE_HEADER']); ?>
-<link type="text/css" rel="stylesheet" href="css/style.css" />
-
 
 	<link href="/<?php echo $BXAF_CONFIG['BXAF_SYSTEM_SUBDIR']; ?>library/jquery-ui/jquery-ui.min.css.php" rel="stylesheet">
 	<script src="/<?php echo $BXAF_CONFIG['BXAF_SYSTEM_SUBDIR']; ?>library/jquery-ui/jquery-ui.min.js.php"></script>
@@ -81,11 +77,17 @@ if(isset($_GET['action']) && $_GET['action'] == "get_gene_list") {
 			<div id="bxaf_page_right_content" class="w-100 p-2">
 
 
-				<h1>
-					Search Similar Comparisons Based on PAGE Results
-
-				</h1>
-				<hr class="w-100 my-1" />
+				<div class="container-fluid">
+                
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="Xpage-header pt-3">
+                           Search Similar Comparisons Based on PAGE Results
+                            </h1>
+                            <hr>
+                            <?php echo general_print_tutorial_link('Similar Comparison (PAGE)'); ?>
+                        </div>
+                    </div>
 
 				<div class="my-5 w-100">
 
@@ -147,10 +149,10 @@ if(isset($_GET['action']) && $_GET['action'] == "get_gene_list") {
 								</div>
 
 								<div class="form-group form-check form-check-inline my-1">
-								  <input class="form-check-input mr-2" type="radio" name="Z_Score1" value="1" checked>
+								  <input class="form-check-input mr-2" type="radio" name="Z_Score1" value="pos" checked>
 								  <label class="form-check-label">Match</label>
 
-								  <input class="form-check-input mx-2" type="radio" name="Z_Score1" value="-1">
+								  <input class="form-check-input mx-2" type="radio" name="Z_Score1" value="neg">
 								  <label class="form-check-label">Anti-Match</label>
 
   								  <input class="form-check-input mx-2" type="radio" name="Z_Score1" value="">
@@ -165,12 +167,7 @@ if(isset($_GET['action']) && $_GET['action'] == "get_gene_list") {
 	                    <div class="row my-3 mx-5">
 	                        <input class="btn btn-primary" type="submit" value="Search">
 	                        <input class="btn btn-default mx-1" type="reset" value="Reset">
-<!--
-							<div class="form-check form-check-inline mx-2">
-							  <input class="form-check-input" type="checkbox" name="Show_Terms" value="1">
-							  <label class="form-check-label">Show Overlapped Terms</label>
-							</div>
- -->
+
 							<div class="form-inline mx-2">
 								<label class="form-check-label ml-5">Minimum Overlap Percentage (%): </label>
 								<input class="form-control mx-2" type="input" name="Minimum_Overlaps" value="20" style="width: 5rem;">
@@ -191,6 +188,9 @@ if(isset($_GET['action']) && $_GET['action'] == "get_gene_list") {
 
 
 				</div>
+                
+                
+                </div>
 
 
             </div>
@@ -348,7 +348,7 @@ if(isset($_GET['action']) && $_GET['action'] == "get_gene_list") {
 				},
 				success: function(response) {
 					if(response != ''){
-						window.location = "../../plot/heatmap/index.php?key=" + response;
+						window.location = "../../plot/heatmap/index.php?bxaf_save_to_cache_key=" + response;
 					}
 				}
 

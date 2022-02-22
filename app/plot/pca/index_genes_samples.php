@@ -56,12 +56,20 @@ $sample_additional_attributes = array(
 
 
 
-          <div class="container-fluid px-0 pt-3 w-100">
+          <div class="container-fluid xpx-0 xpt-3 xw-100">
 
-      			<h1 class="">
-      				PCA Tool for <?php echo $APP_MESSAGE['Genes']; ?> &amp; Samples
-      			</h1>
-            <hr />
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="Xpage-header pt-3">
+                      		PCA Tool for <?php echo $APP_MESSAGE['Genes']; ?> &amp; Samples
+                        </h1>
+                        <?php echo general_print_tutorial_link(); ?>
+                        <hr>
+                        
+                    </div>
+                </div>
+
+          
             <?php include_once('component_header.php'); ?>
 
             <!--------------------------------------------------------------------------------------------->
@@ -74,49 +82,43 @@ $sample_additional_attributes = array(
               <div class="col-md-6">
                 <p>
                   <?php
-				  
-				  echo "<table>";
-					echo "<tr>";
-						if (true){
-							echo "<td>";
-								echo "<strong>{$APP_MESSAGE['Gene Names']}:</strong>";
-							echo "</td>";
-						}
-						
-						if (true){
-							echo "<td>";
-								echo "&nbsp;";
-							echo "</td>";	
-						}
-						
-						if (true){
-							echo "<td>";
-								echo "<a href='javascript:void(0);' id='btn_show_comparison_list' type='gene'><i class='fas fa-shopping-cart' aria-hidden='true'></i> {$APP_MESSAGE['Load Saved Genes']}</a>";
-							echo "</td>";
-						}
-						
-						if (true){
-							echo "<td>";
-								echo "&nbsp; &nbsp;";
-							echo "</td>";	
-						}
-						
-						
-						if (true){
-							echo "<td>";
-								echo genesets_api_get_header_code('', '', 'textarea_gene_names');
-								echo genesets_api_get_body_code();
-							echo "</td>";
-						}
-						
-						echo "</tr>";
-					echo "</table>";
-				  
+					  echo "<table>";
+						echo "<tr>";
+							if (true){
+								echo "<td>";
+									echo "<strong>{$APP_MESSAGE['Gene Names']}:</strong>";
+								echo "</td>";
+							}
+							
+							if (true){
+								echo "<td>";
+									echo "&nbsp;";
+								echo "</td>";	
+							}
+							
+							if (true){
+								echo "<td>";
+									echo "<a href='javascript:void(0);' id='btn_show_comparison_list' type='gene'><i class='fas fa-shopping-cart' aria-hidden='true'></i> {$APP_MESSAGE['Load Saved Genes']}</a>";
+								echo "</td>";
+							}
+							
+							if (true){
+								echo "<td>";
+									echo "&nbsp; &nbsp;";
+								echo "</td>";	
+							}
+							
+							
+							if (true){
+								echo "<td>";
+									echo genesets_api_get_header_code('', '', 'textarea_gene_names');
+									echo genesets_api_get_body_code();
+								echo "</td>";
+							}
+							
+							echo "</tr>";
+						echo "</table>";
 				  ?>
-                  
-                  
-                  
-                  
                 </p>
                 <textarea class="form-control" style="height:200px;" id="textarea_gene_names"></textarea>
               </div>
@@ -124,19 +126,34 @@ $sample_additional_attributes = array(
               <!-- Sample Names -->
               <div class="col-md-6">
                 <p>
-                  <strong>Sample Names:</strong>
-                  <a
-                    href="javascript:void(0);"
-                    id="btn_show_comparison_list"
-                    type="sample">
-                    <i class="fa fa-floppy-o"></i>
-                    Load Saved Samples
-                  </a>
+                  <?php
+					  echo "<table>";
+						echo "<tr>";
+							if (true){
+								echo "<td>";
+									echo "<strong>Sample Names:</strong>";
+								echo "</td>";
+							}
+							
+							if (true){
+								echo "<td>";
+									echo "&nbsp;";
+								echo "</td>";	
+							}
+							
+							if (true){
+								echo "<td>";
+									echo "<a href='javascript:void(0);' id='btn_show_comparison_list' type='sample'><i class='fas fa-shopping-cart'></i> Load Saved Samples </a>";
+								echo "</td>";
+							}
+							
+							
+							
+							echo "</tr>";
+						echo "</table>";
+				  ?>
                 </p>
-                <textarea
-                  class="form-control"
-                  style="height:200px;"
-                  id="textarea_sample_names"></textarea>
+                <textarea class="form-control" style="height:200px;" id="textarea_sample_names"></textarea>
               </div>
 
               <!-- Sample Attributes -->

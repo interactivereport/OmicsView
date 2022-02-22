@@ -82,8 +82,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'list'){
 <html lang="en">
 <head>
 	<?php include_once($BXAF_CONFIG['BXAF_PAGE_HEADER']); ?>
-<link type="text/css" rel="stylesheet" href="css/style.css" />
-
 
 
     <style>
@@ -104,13 +102,22 @@ if (isset($_GET['action']) && $_GET['action'] == 'list'){
 		<div id="bxaf_page_right" class="<?php echo $BXAF_CONFIG['BXAF_PAGE_CSS_RIGHT']; ?>">
 
 			<div id="bxaf_page_right_content" class="w-100 p-2">
-
-				<h1>
-					Search MSigDB
-
-					<a href='Javascript: void(0);' onclick="if( $('#form_main').hasClass('hidden') ) $('#form_main').removeClass('hidden'); else $('#form_main').addClass('hidden');" style='font-size: 1rem;'><i class='fas fa-search'></i> Advanced Search</a>
+            
+            
+            	<div class="container-fluid">
+                
+                    <div class="row">
+                        <div class="col-12">
+                                <h1 class="Xpage-header pt-3">
+                               Search MSigDB
+                                </h1>
+                                <a href='Javascript: void(0);' onclick="if( $('#form_main').hasClass('hidden') ) $('#form_main').removeClass('hidden'); else $('#form_main').addClass('hidden');" style='font-size: 1rem;'><i class='fas fa-search'></i> Advanced Search</a>
 					<a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="mx-1" style='font-size: 1rem;'><i class='fas fa-sync'></i> Reset Search Condition</a>
-				</h1>
+                    
+                            <hr>
+                        </div>
+                    </div>
+            
 
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="" id="form_main" method="get">
 
@@ -167,6 +174,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'list'){
 			    		</thead>
 			    	</table>
 			    </div>
+                
+                </div>
 
 
             </div>

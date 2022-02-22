@@ -382,15 +382,20 @@ if (isset($_GET['action']) && $_GET['action'] == 'select_msigdb_page_list'){
 		<div id="bxaf_page_right" class="<?php echo $BXAF_CONFIG['BXAF_PAGE_CSS_RIGHT']; ?>">
 
 			<div id="bxaf_page_right_content" class="w-100 p-2">
-
-				<h1>
-					Search PAGE Results
-
-				</h1>
+            	<div class='container-fluid'>
+                
+                <div class="row">
+                        <div class="col-12">
+                            <h1 class="Xpage-header pt-3">
+                           Search PAGE Results
+                            </h1>
+                            <hr>
+                        </div>
+                    </div>
 
 
                 <form class="w-100" id="form_main" method="post">
-					<div class="container-fluid my-3 border table-info border-info rounded">
+					<div class="my-3 border table-info border-info rounded">
 
 						<div class="row my-3">
 
@@ -466,7 +471,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'select_msigdb_page_list'){
                 </div>
 
             </div>
-
+			</div>
 		    <?php if(file_exists($BXAF_CONFIG['BXAF_PAGE_FOOTER'])) include_once($BXAF_CONFIG['BXAF_PAGE_FOOTER']); ?>
 
 		</div>

@@ -383,6 +383,10 @@ echo "<form id='form_application' action='javascript:void(0);' method='post' rol
 					if ($dataArray[$sql_name]){
 						$checked = 'checked';
 					}
+				} else {
+					if (isset($BXAF_CONFIG['META_ANALYSIS_COMPARISONS']['n_data_points_value'])){
+						$checked = 'checked';
+					}
 				}
 				
 				$sql_name2 		= 'n_data_points_value';
@@ -390,6 +394,10 @@ echo "<form id='form_application' action='javascript:void(0);' method='post' rol
 				
 				if (isset($dataArray[$sql_name2])){
 					$value		= $dataArray[$sql_name2];
+				} else {
+					if (isset($BXAF_CONFIG['META_ANALYSIS_COMPARISONS']['n_data_points_value'])){
+						$value		= $BXAF_CONFIG['META_ANALYSIS_COMPARISONS']['n_data_points_value'];
+					}
 				}
 				
 

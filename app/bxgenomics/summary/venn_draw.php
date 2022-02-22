@@ -10,7 +10,6 @@ $BXAF_CONFIG['BXAF_VENN_DATA_URL'] = $BXAF_CONFIG['BXGENOMICS_CACHE_URL'];
 <html lang="en">
 <head>
 	<?php include_once($BXAF_CONFIG['BXAF_PAGE_HEADER']); ?>
-<link type="text/css" rel="stylesheet" href="css/style.css" />
 
 	<script src="/<?php echo $BXAF_CONFIG['BXAF_SYSTEM_SUBDIR']; ?>library/jquery/jquery.form.min.js.php"></script>
 
@@ -117,7 +116,7 @@ $BXAF_CONFIG['BXAF_VENN_DATA_URL'] = $BXAF_CONFIG['BXGENOMICS_CACHE_URL'];
 					<div class="my-3">
 						<h1>
 							Area-Proportional Venn Diagram Plotter and Editor
-							
+
 						</h1>
 
 						<div class="my-3">

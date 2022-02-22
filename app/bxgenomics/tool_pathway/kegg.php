@@ -130,14 +130,23 @@ foreach ($internal_comparison_info as $values) {
 
 
       		<div class="container-fluid">
-
-                <div class="d-flex">
-                    <h3>KEGG Pathway Visualization</h3>
-                    <div class="ml-5 mt-2"><a href="<?php echo $_SERVER['PHP_SELF']; ?>"><i class="fas fa-sync"></i> Start Over</a></div>
-                    <div class="ml-5 mt-2 text-muted">Note: <span class="text-danger">*</span> denotes required fields.</div>
+            
+            	<div class="row">
+                    <div class="col-12">
+                        <h1 class="Xpage-header pt-3">
+                        KEGG Pathway Visualization
+                        </h1>
+                        <hr>
+                    </div>
                 </div>
 
-                <hr class="w-100 my-1" />
+                <div xclass="d-flex">
+                    <div xclass="ml-5 mt-2"><a href="<?php echo $_SERVER['PHP_SELF']; ?>"><i class="fas fa-sync"></i> Start Over</a></div>
+                    <div xclass="ml-5 mt-2 text-muted">Note: <span class="text-danger">*</span> denotes required fields.</div>
+                </div>
+                
+                 
+                
 
                 <form class="my-3" id="form_show_pathway" enctype="multipart/form-data" method="post" style="max-width: 50rem;">
 

@@ -220,19 +220,32 @@
     } else {
       $displayed_label_size  = $legend_3;
     }
+	
     // If from attributes file
     if ($legend_3_src == 'attributes') {
-      for ($i = 1; $i <= count($data_x); $i++) {
-        $data_size[]    = abs($legends_data[$i][$legend_3_col_index]);
-      }
+		for ($i = 1; $i <= count($data_x); $i++) {
+			//$data_size[]    	= abs($legends_data[$i][$legend_3_col_index]);
+			$data_size_raw[] 	= $legends_data[$i][$legend_3_col_index];
+		}
+    } else {
+		// If from data file
+		for ($i = 1; $i <= count($data_x); $i++) {
+			//$data_size[]    	= abs($file_data[$i][$legend_3_col_index]);
+			$data_size_raw[] 	= $file_data[$i][$legend_3_col_index];
+		}
     }
-    // If from data file
-    else {
-      for ($i = 1; $i <= count($data_x); $i++) {
-        $data_size[]    = abs($file_data[$i][$legend_3_col_index]);
-      }
-    }
+	
+	$data_size_raw_normalized = general_scale_array($data_size_raw, 1, 10);
+	
+	//$data_size = $data_size_raw_normalized;	
+	$data_size = $data_size_raw;	
+	
   }
+  
+  
+  
+  
+  
 
   //-----------------------------------------------------------------------------------------
   // If Arrow Chart
@@ -512,17 +525,19 @@
   "data": {
               "x":          [' . implode(', ', $data_x) . '],
 
-              "y":          [' . implode(', ', $data_y) . '],';
+              "y":          [' . implode(', ', $data_y) . '],
+			  
+			  ';
 
               if ($CHART_TYPE != 'variables_plot' && count($data_size) > 0) {
-                $HTML .= '"size_var":   [' . implode(', ', $data_size) . '],';
+                $HTML .= '"size_var":   [' . implode(', ', $data_size) . '],' . "\n";
               } else {
                 $has_size_var = 'false';
               }
 			  
 			  
 			  if (true){
-				   $HTML .= '"tooltip_text":    ["' . implode('", "', $tooltip_text) . '"],';
+				   $HTML .= '"tooltip_text":    ["' . implode('", "', $tooltip_text) . '"],' . "\n";
 			  }
 			  
 			  
@@ -535,10 +550,11 @@
 
               "symbol_var": ["' . implode('", "', $data_shape) . '"],
 
-              "key_var":    [' . implode(', ', $data_key) . ']';
+              "key_var":    [' . implode(', ', $data_key) . ']
+			  ';
 
               if ($CHART_TYPE == 'variables_plot') {
-                $HTML .= ', "type_var": ["' . implode('", "', $data_arrow) . '"]';
+                $HTML .= ', "type_var": ["' . implode('", "', $data_arrow) . '"]' . "\n";
               }
   $HTML .= '
           },

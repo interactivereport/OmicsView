@@ -76,8 +76,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'list'){
 <html lang="en">
 <head>
 	<?php include_once($BXAF_CONFIG['BXAF_PAGE_HEADER']); ?>
-<link type="text/css" rel="stylesheet" href="css/style.css" />
-
 
 	<link href="/<?php echo $BXAF_CONFIG['BXAF_SYSTEM_SUBDIR']; ?>library/jquery-ui/jquery-ui.min.css.php" rel="stylesheet">
 	<script src="/<?php echo $BXAF_CONFIG['BXAF_SYSTEM_SUBDIR']; ?>library/jquery-ui/jquery-ui.min.js.php"></script>
@@ -106,14 +104,21 @@ if (isset($_GET['action']) && $_GET['action'] == 'list'){
 
 		<div id="bxaf_page_right" class="<?php echo $BXAF_CONFIG['BXAF_PAGE_CSS_RIGHT']; ?>">
 
+	
 			<div id="bxaf_page_right_content" class="<?php echo $BXAF_CONFIG['BXAF_PAGE_CSS_RIGHT_CONTENT']; ?>">
+	            <div class="container-fluid">
+                
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="Xpage-header pt-3">
+                           Compare Gene Lists with Venn Diagrams
+                            </h1>
+                            <hr>
+                        </div>
+                    </div>
 
-
-				<h1>
-					Compare Gene Lists with Venn Diagrams
-
-				</h1>
-				<hr class="w-100 my-1" />
+            
+            
 
 				<div class="my-5 w-100">
 
@@ -182,7 +187,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'list'){
 
 
             </div>
-
+			</div>
+            
 		    <?php if(file_exists($BXAF_CONFIG['BXAF_PAGE_FOOTER'])) include_once($BXAF_CONFIG['BXAF_PAGE_FOOTER']); ?>
 
 		</div>

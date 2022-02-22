@@ -64,8 +64,20 @@ if (general_array_size($_SESSION['Multiple_Bubble_Plot'][$_GET['Session']]) > 0)
 		<div id="bxaf_page_right_content" class="<?php echo $BXAF_CONFIG['BXAF_PAGE_CSS_RIGHT_CONTENT']; ?>">
 
 			<div class="container-fluid">
-                <h1 class="pt-3"><?php echo $APP_MESSAGE['Genes']; ?> &amp; Comparisons Bubble Plot</h1>
-				<hr />
+                <div class="row">
+                	<div class="col-12">
+                    	<h1 class="Xpage-header pt-3"><?php echo $APP_MESSAGE['Genes']; ?> &amp; Comparisons Bubble Plot</h1>
+                        
+                        <?php echo general_print_tutorial_link(); ?>
+                        
+                        <?php if ($BXAF_CONFIG['APP_PROFILE'] == 'human'){ ?>
+							&nbsp;&nbsp;<a href="javascript:void(0);" id="btn_load_example" ><i class="fa fa-fw fa-info-circle"></i> Load Example Data</a>
+                    	<?php } ?>
+                        
+                        
+                        <hr/>
+                    </div>
+                </div>
 				<div class="row mx-0 p-l-1" id="first_form_div">
                 
                 	<?php if ($BXAF_CONFIG['APP_PROFILE'] == 'human'){ ?>
@@ -75,7 +87,7 @@ if (general_array_size($_SESSION['Multiple_Bubble_Plot'][$_GET['Session']]) > 0)
 						<div class="row mt-1">
                         
 							<div class="col-md-6">
-                                <p>
+                                <div>
                                 
                                     
                                 <?php
@@ -118,18 +130,18 @@ if (general_array_size($_SESSION['Multiple_Bubble_Plot'][$_GET['Session']]) > 0)
 									echo "</table>";
 								  
 								  ?>    
-                                </p>
+                                </div>
 								<textarea name="genes" class="form-control height-150" id="textarea_genes"><?php if ($META) echo $meta_genenames; ?></textarea>
               				</div>
               
                           <div class="col-md-6">
-                                <p>
+                                <div>
                                     <strong>Comparison IDs:</strong>
                                     
                                     <a href="javascript:void(0);" id="btn_show_comparison_list" type="comparison">
                                         <i class="fa fa-fw fa-shopping-cart"></i> Load Saved Comparison IDs
                                     </a>
-                                </p>
+                                </div>
                                 <textarea name="comparisons" class="form-control height-150" id="textarea_comparisons"><?php if ($META) echo $meta_compnames; ?></textarea>
                           </div>
               

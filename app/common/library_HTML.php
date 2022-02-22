@@ -78,4 +78,20 @@ function general_get_table_class($compact = 1, $striped = 0){
 	return implode(' ', $classes);
 }
 
+
+function general_print_tutorial_link($file = ''){
+	
+	global $BXAF_CONFIG;
+	
+	if ($file == '') $file = basename($_SERVER['PHP_SELF']);
+	
+	$tutorialURL = $BXAF_CONFIG['Tutorial'][$file];
+									
+	if ($tutorialURL != ''){
+		return "<a href='{$tutorialURL}' target='_blank'><i class='fas fa-fw fas fa-book' aria-hidden='true'></i> Tutorial</a>";
+	}
+	
+	return '';
+	
+}
 ?>
