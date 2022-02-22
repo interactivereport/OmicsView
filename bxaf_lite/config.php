@@ -3,6 +3,7 @@
 include_once(__DIR__ . "/config_session.php");
 
 
+
 /***********************************************************
  * CUSTOMIZE THESE SETTINGS in /bxaf_setup/config.php *
  **********************************************************/
@@ -12,11 +13,11 @@ $BXAF_CONFIG['BXAF_KEY'] 				= 'bioinforx';
 // Default Admin Login Password
 $BXAF_CONFIG['BXAF_ADMIN_PASSWORD'] 	= 'adminpassword';
 
-$BXAF_CONFIG['HOST_DEFAULT_EMAIL']		= 'ron@bioinforx.com';
+$BXAF_CONFIG['HOST_DEFAULT_EMAIL']		= 'info@bioinforx.com';
 $BXAF_CONFIG['HOST_DEFAULT_CONTACT']	= 'Contact';
 
 //Optional settings
-$BXAF_CONFIG['BXAF_PAGE_EMAIL']			= 'ron@bioinforx.com';
+$BXAF_CONFIG['BXAF_PAGE_EMAIL']			= 'info@bioinforx.com';
 $BXAF_CONFIG['BXAF_PAGE_APP_NAME'] 		= 'My Application';
 $BXAF_CONFIG['BXAF_PAGE_APP_NAME_SHOW'] = true;
 
@@ -44,8 +45,9 @@ $BXAF_CONFIG['BXAF_PAGE_CSS_LEFT_FIXED_WIDTH']	= '';
 $BXAF_CONFIG['BXAF_PAGE_CSS_RIGHT']				= 'col-md-12 col-lg-9 col-xl-10 d-flex align-content-between flex-wrap';
 $BXAF_CONFIG['BXAF_PAGE_CSS_RIGHT_CONTENT']		= 'w-100 p-2';
 
+$BXAF_CONFIG['BXAF_PAGE_LOGIN_NAME_WELCOME_MESSAGE']	= 'Sign in your account';
 $BXAF_CONFIG['BXAF_PAGE_LOGIN_NAME_TITLE']				= 'Your Email or Login Name';
-$BXAF_CONFIG['BXAF_PAGE_LOGIN_NAME_PLACEHOLDER']		= 'E-mail, e.g., test@test.edu';
+$BXAF_CONFIG['BXAF_PAGE_LOGIN_NAME_PLACEHOLDER']		= 'E-mail, e.g., name@example.com';
 $BXAF_CONFIG['BXAF_PAGE_LOGIN_PASSWORD_PLACEHOLDER'] 	= 'Password is case sensitive.';
 
 // Example of Fixed Left width
@@ -152,6 +154,11 @@ $BXAF_CONFIG['BXAF_USER_DEFAULT_PASSWORD']	= '';
 $BXAF_CONFIG['BXAF_LOGIN_SUCCESS']  = $BXAF_CONFIG['BXAF_WEB_URL'];
 
 
+$BXAF_CONFIG['EMAIL_POST_URL']  = $BXAF_CONFIG['BXAF_SYSTEM_URL'] . "bxaf_send_email.php";
+
+
+
+
 
 //Database for user accounts: sqlite or mysql
 $BXAF_CONFIG['BXAF_DB_DRIVER'] 		= 'sqlite';
@@ -179,12 +186,12 @@ $BXAF_CONFIG['TBL_BXAF_LOGIN_LOG'] 	= 'tbl_bxaf_login_log';
 include_once(dirname(__DIR__) . "/bxaf_setup/config.php");
 
 // Overwrite settings with custom values
-if(is_array($BXAF_CONFIG_CUSTOM) && count($BXAF_CONFIG_CUSTOM) > 0){
+if (is_array($BXAF_CONFIG_CUSTOM) && count($BXAF_CONFIG_CUSTOM) > 0){
 	foreach($BXAF_CONFIG_CUSTOM as $key=>$val) $BXAF_CONFIG[$key] = $val;
 }
 
 if ($BXAF_CONFIG['API']){
-	$BXAF_CONFIG['PAGE_LOGIN_REQUIRED'] = false;
+	$BXAF_CONFIG['PAGE_LOGIN_REQUIRED'] = false;	
 }
 
 
@@ -220,10 +227,12 @@ if (($_GET['API_Key'] != '') && ($_GET['API_Key'] == $BXAF_CONFIG['API_Key'])){
 }
 
 
-if (isset($BXAF_CONFIG['BXAF_LOGIN_REQUIRED']) && $BXAF_CONFIG['BXAF_LOGIN_REQUIRED'] &&
+if (isset($BXAF_CONFIG['BXAF_LOGIN_REQUIRED']) && $BXAF_CONFIG['BXAF_LOGIN_REQUIRED'] && 
    (!isset($BXAF_CONFIG['PAGE_LOGIN_REQUIRED']) || $BXAF_CONFIG['PAGE_LOGIN_REQUIRED'] == true)){
+	   
 	   include_once(__DIR__ . "/login_config.php");
 }
+
 
 
 
